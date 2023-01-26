@@ -11,5 +11,8 @@
     "plugin:import/recommended",
     "airbnb-typescript/base",
     "prettier"
-  ]
+  ],
+  "rules": {
+    "@typescript-eslint/no-var-requires": 0
+  }
 }
