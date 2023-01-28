@@ -10,7 +10,8 @@ const config = {
   // prettier-ignore
   plugins: [
     Plugin.scss,
-    Plugin.html,
+    Plugin.index,
+    Plugin.page404,
     Plugin.eslint,
     Plugin.favicon,
     Plugin.cleaner,
