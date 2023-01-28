@@ -1,3 +1,4 @@
+import navigationController from "controller/navigation.controller";
 import { Layout } from "types/layout.types";
 import authView from "./auth.view";
 import logoView from "./logo.view";
@@ -9,6 +10,13 @@ class HeaderView {
   init(root: HTMLElement) {
     this.createLayout(root);
     this.render();
+    this.addHandlers(root);
+  }
+
+  addHandlers(root: HTMLElement) {
+    root.addEventListener("click", (event: MouseEvent) => {
+      navigationController.route(event);
+    });
   }
 
   createLayout(root: HTMLElement) {

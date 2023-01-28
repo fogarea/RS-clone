@@ -1,5 +1,4 @@
 class AuthView {
-
   render(root: HTMLElement) {
     const auth = document.createElement("div");
 

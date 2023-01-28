@@ -1,15 +1,10 @@
 import counterController from "controller/counter.controller";
 import counterModel from "model/counter.model";
 import { state } from "store/state";
-
-type Layout = {
-  inputContainer: HTMLElement;
-  buttonsContainer: HTMLElement;
-};
+import { Layout } from "types/layout.types";
 
 class CounterView {
   layout = {} as Layout;
-
 
   async init(root: HTMLElement) {
     this.createLayout(root);
@@ -32,7 +27,10 @@ class CounterView {
     this.layout.inputContainer = document.createElement("div");
     this.layout.buttonsContainer = document.createElement("div");
 
-    root.append(this.layout.inputContainer, this.layout.buttonsContainer);
+    root.replaceChildren(
+      this.layout.inputContainer,
+      this.layout.buttonsContainer
+    );
   }
 
   renderLoader(root: HTMLElement) {
