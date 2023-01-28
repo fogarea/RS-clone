@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 import navigationController from "controller/navigation.controller";
->>>>>>> c6b7121 (feat: implement base routing)
 import { Layout } from "types/layout.types";
 import authView from "./auth.view";
 import logoView from "./logo.view";
@@ -13,8 +10,6 @@ class HeaderView {
   init(root: HTMLElement) {
     this.createLayout(root);
     this.render();
-<<<<<<< HEAD
-=======
     this.addHandlers(root);
   }
 
@@ -22,7 +17,6 @@ class HeaderView {
     root.addEventListener("click", (event: MouseEvent) => {
       navigationController.route(event);
     });
->>>>>>> c6b7121 (feat: implement base routing)
   }
 
   createLayout(root: HTMLElement) {

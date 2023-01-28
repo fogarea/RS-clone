@@ -6,7 +6,7 @@ class NavigationModel extends EventEmitter {
     super();
 
     state.basePath =
-      this.route.host.indexOf("github.io") === -1 ? "/" : "/RS-CLONE";
+      this.route.host.indexOf("github.io") === -1 ? "/" : "/RS-clone/";
   }
 
   get route() {
@@ -18,7 +18,9 @@ class NavigationModel extends EventEmitter {
       host: route.host,
       path,
       resource,
-      parameter
+      parameter,
+      href: route.href,
+      origin: route.origin
     };
   }
 }

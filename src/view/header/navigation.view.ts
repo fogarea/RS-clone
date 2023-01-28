@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-class NavigationView {
-
-  render(root: HTMLElement) {
-    const navigation = document.createElement("div");
-
-    root.append(navigation);
-=======
 import { state } from "store/state";
 import { Routing } from "types/route.types";
 
@@ -30,7 +22,6 @@ class NavigationView {
 
     navigation.append(link1, link2, link3);
     root.replaceChildren(navigation);
->>>>>>> c6b7121 (feat: implement base routing)
   }
 }
 

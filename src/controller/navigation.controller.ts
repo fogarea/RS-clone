@@ -23,6 +23,7 @@ class NavigationController {
     const restoreRoute = localStorage.getItem("restore.route");
 
     if (restoreRoute) {
+      localStorage.removeItem("restore.route");
       this.applyRoute(restoreRoute);
     } else {
       navigationModel.emit("route.update");
