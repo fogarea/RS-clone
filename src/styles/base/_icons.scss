@@ -1,0 +1,11 @@
+@use "../abstract" as *;
+.icon {
+	cursor: pointer;
+	display: inline-flex;
+}
+
+.icon--promo {
+	background-image: url("./../assets/svg/promo/promo.svg");
+	@include icon-size(630px, 700px);
+	background-size: 100%;
+}

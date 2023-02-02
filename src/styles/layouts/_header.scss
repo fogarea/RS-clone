@@ -1,0 +1,27 @@
+@use "../abstract" as *;
+
+.header {
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+	padding: 15px 0 17px 0;
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		display: flex;
+		height: 70px;
+	}
+
+	&__buttons {
+		& > .button:last-child {
+			margin-left: 14px;
+		}
+
+		@include media-mobile-big {
+			display: none;
+		}
+	}
+}

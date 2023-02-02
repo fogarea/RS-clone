@@ -8,8 +8,8 @@ const BaseConfig = {
   mode: process.env.NODE_ENV,
 
   entry: {
-    index: ["./index.ts", "./scss/app.module.scss"],
-    404: ["./404.ts", "./scss/404.module.scss"]
+    index: ["./index.ts", "./styles/style.scss"],
+    404: ["./404.ts"]
   },
 
   output: {
