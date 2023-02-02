@@ -1,0 +1,9 @@
+@use "../abstract" as *;
+
+.logo {
+	@include media-mobile-big {
+		img {
+			width: 160px;
+		}
+	}
+}

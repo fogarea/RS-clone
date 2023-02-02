@@ -1,0 +1,51 @@
+@use "../abstract" as *;
+
+.button {
+	padding: 15px 40px 15px;
+	border-radius: 10px;
+	cursor: pointer;
+	font-family: $font-family-primary;
+	@include font(1.6rem, 2.2rem, normal);
+	@extend %transition;
+
+	&--bordered{
+		background: var(--bordered-btn-color);
+		border: 1px solid var(--border-btn-color);
+		color: var(--bordered-btn-text-color);
+
+		&:hover {
+			background: var(--bordered-btn-hover-color);
+		}
+	}
+
+	&--colored{
+		background: var(--colored-btn-color);
+		border: 1px solid var(--colored-btn-color);
+		color: var(--colored-btn-text-color);
+
+		&:hover {
+			background: var(--colored-btn-hover-color);
+		}
+	}
+}
+
+.open-btn,
+.close-btn {
+	font-size: 30px;
+	cursor: pointer;
+	display: none;
+
+	@include media-laptop {
+		display: inline-flex;
+		color: #ffffff;
+		background-color: inherit;
+	}
+}
+
+.close-btn {
+	@include media-laptop {
+		position: absolute;
+		top: 40px;
+		right: 60px;
+	}
+}

@@ -3,25 +3,29 @@ import { Routing } from "types/route.types";
 
 class NavigationView {
   render(root: HTMLElement) {
-    const navigation = document.createElement("div");
+    const navList = document.createElement("ul");
+    navList.className = "nav__list";
 
-    const link1 = document.createElement("a");
-    link1.classList.add("navigation__link");
-    link1.textContent = "hello";
-    link1.href = state.basePath + Routing.HELLO;
+    navList.append(
+      this.generateNavItem("Main", ""),
+      this.generateNavItem("Trainings", Routing.TRAININGS),
+      this.generateNavItem("Contacts", Routing.CONTACTS)
+    );
 
-    const link2 = document.createElement("a");
-    link2.classList.add("navigation__link");
-    link2.textContent = "counter";
-    link2.href = state.basePath + Routing.COUNTER;
+    root.replaceChildren(navList);
+  }
 
-    const link3 = document.createElement("a");
-    link3.classList.add("navigation__link");
-    link3.textContent = "about";
-    link3.href = state.basePath + Routing.ABOUT;
+  generateNavItem(text: string, route: Routing | "") {
+    const navItem = document.createElement("li");
+    navItem.className = "nav__item";
 
-    navigation.append(link1, link2, link3);
-    root.replaceChildren(navigation);
+    const navItemLink = document.createElement("a");
+    navItemLink.textContent = text;
+    navItemLink.href = state.basePath + route;
+
+    navItem.append(navItemLink);
+
+    return navItem;
   }
 }
 

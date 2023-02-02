@@ -1,0 +1,86 @@
+@use "../abstract" as *;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.html {
+	font-size: 10px;
+	scroll-behavior: smooth;
+}
+
+.body {
+	font-family: $font-family-primary;
+	@include font(1.6rem, 2.6rem, normal);
+	background: var(--primary-bg-color);
+	color: var(--text-color);
+}
+
+.body--scroll__disable {
+	overflow-y: hidden;
+}
+
+:root {
+	--primary-color: #{$color-primary-dark};
+	--primary-bg-color: #{$color-primary-bg-dark};
+
+	--accent-color: #{$color-accent-dark};
+
+	--bordered-btn-color: #{$color-bordered-btn-dark};
+	--border-btn-color: #{$color-primary-dark};
+	--bordered-btn-text-color: #{$color-text-btn-dark};
+	--bordered-btn-hover-color: #{$color-hover-bordered-btn-dark};
+
+	--colored-btn-color: #{$color-colored-btn-dark};
+	--colored-btn-text-color: #{$color-light};
+	--colored-btn-hover-color: #{$color-hover-colored-btn-dark};
+
+	--text-color: #{$color-text-dark};
+	--link-text-color: #{$color-link-text-dark};
+	--link-text-hover-color: #{$color-link-hover-text-dark};
+}
+
+.body--light {
+	--primary-color: #{$color-primary-light};
+	--primary-bg-color: #{$color-primary-bg-light};
+	--accent-color: #{$color-accent-light};
+	--bordered-btn-color: #{$color-bordered-btn-light};
+	--border-btn-color: #{$color-primary-light};
+	--bordered-btn-text-color: #{$color-text-btn-light};
+	--bordered-btn-hover-color: #{$color-hover-bordered-btn-light};
+
+	--colored-btn-color: #{$color-colored-btn-light};
+	--colored-btn-text-color: #{$color-light};
+	--colored-btn-hover-color: #{$color-hover-colored-btn-light};
+
+	--text-color: #{$color-text-light};
+	--link-text-color: #{$color-link-text-light};
+	--link-text-hover-color: #{$color-link-hover-text-light};
+
+}
+
+h1 {
+	font-family: $font-family-primary;
+	@include font(7.4rem, 9.4rem);
+	@include media-mobile-big {
+		@include font(3.2rem, 4.2rem);
+	}
+}
+
+h2 {
+	@include font(3.6em, 4.6rem);
+	@include media-mobile-big {
+		@include font(2.4rem, 3.3rem);
+	}
+}
+
+h3 {
+	@include font(2.4rem, 3.4rem);
+	@include media-mobile-big {
+		@include font(2.1rem, 3.1rem);
+	}
+}
+
+h4 {
+	@include font(2.2rem, 3.0rem, 600);
+	@include media-tablet {
+		@include font(2.0rem, 3.0rem, 600);
+	}
+}
