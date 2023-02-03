@@ -1,6 +1,5 @@
 @use "../abstract" as *;
 .icon {
-	cursor: pointer;
 	display: inline-flex;
 }
 
@@ -8,4 +7,17 @@
 	background-image: url("./../assets/svg/promo/promo.svg");
 	@include icon-size(630px, 700px);
 	background-size: 100%;
+}
+
+.icon--gh {
+	display: inline-flex;
+	background-image: url("./../assets/svg/github/github.svg");
+	@include icon-size(30px, 30px);
+	background-size: 100%;
+
+	transition: all 0.5s ease 0s;
+	&:hover {
+		transform: scale(1.1);
+		cursor: pointer;
+	}
 }

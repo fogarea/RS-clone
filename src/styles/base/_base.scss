@@ -21,6 +21,8 @@
 	--primary-color: #{$color-primary-dark};
 	--primary-bg-color: #{$color-primary-bg-dark};
 
+	--secondary-bg-color: #{$color-secondary-bg-dark};
+
 	--accent-color: #{$color-accent-dark};
 
 	--bordered-btn-color: #{$color-bordered-btn-dark};
@@ -35,11 +37,14 @@
 	--text-color: #{$color-text-dark};
 	--link-text-color: #{$color-link-text-dark};
 	--link-text-hover-color: #{$color-link-hover-text-dark};
+
+	--icon--invert: invert(0%);
 }
 
 .body--light {
 	--primary-color: #{$color-primary-light};
 	--primary-bg-color: #{$color-primary-bg-light};
+	--secondary-bg-color: #{$color-secondary-bg-light};
 	--accent-color: #{$color-accent-light};
 	--bordered-btn-color: #{$color-bordered-btn-light};
 	--border-btn-color: #{$color-primary-light};
@@ -49,11 +54,11 @@
 	--colored-btn-color: #{$color-colored-btn-light};
 	--colored-btn-text-color: #{$color-light};
 	--colored-btn-hover-color: #{$color-hover-colored-btn-light};
-
 	--text-color: #{$color-text-light};
 	--link-text-color: #{$color-link-text-light};
 	--link-text-hover-color: #{$color-link-hover-text-light};
 
+	--icon--invert: invert(100%);
 }
 
 h1 {
@@ -72,14 +77,14 @@ h2 {
 }
 
 h3 {
-	@include font(2.4rem, 3.4rem);
+	@include font(3.2rem, 4.2rem);
 	@include media-mobile-big {
 		@include font(2.1rem, 3.1rem);
 	}
 }
 
 h4 {
-	@include font(2.2rem, 3.0rem, 600);
+	@include font(2.6rem, 3.0rem, 600);
 	@include media-tablet {
 		@include font(2.0rem, 3.0rem, 600);
 	}

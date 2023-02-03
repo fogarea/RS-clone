@@ -1,7 +1,7 @@
 import { Layout } from "types/layout.types";
 import imageView from "./image.view";
 import contentView from "./content.view";
-import promoButtonView from "./promoButton.view";
+import promoButtonView from "./promo.button.view";
 
 class PromoView {
   layout = {} as Layout;
