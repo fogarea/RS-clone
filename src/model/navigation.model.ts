@@ -1,4 +1,5 @@
 import { state } from "store/state";
+import { Routing } from "types/route.types";
 import EventEmitter from "utils/observer.utils";
 
 class NavigationModel extends EventEmitter {
@@ -15,6 +16,7 @@ class NavigationModel extends EventEmitter {
     const [resource, parameter] = path.split("/");
 
     return {
+      protocol: route.protocol + `//`,
       host: route.host,
       path,
       resource,
@@ -22,6 +24,15 @@ class NavigationModel extends EventEmitter {
       href: route.href,
       origin: route.origin
     };
+  }
+
+  createRoute(path?: Routing) {
+    return (
+      this.route.protocol +
+      this.route.host +
+      state.basePath +
+      (path ? path : "")
+    );
   }
 }
 

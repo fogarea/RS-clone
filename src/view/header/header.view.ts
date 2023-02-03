@@ -1,10 +1,13 @@
 import navigationController from "controller/navigation.controller";
 import { Layout } from "types/layout.types";
-import loginButtonsView from "./loginButtons.view";
+import loginButtonsView from "./buttons/login.button.view";
 import logoView from "../components/logo.view";
-import navigationView from "./navigation.view";
 import colorSchemeView from "./colorScheme.view";
 import switchColorScheme from "../../utils/switchColorScheme";
+import { state } from "store/state";
+import profileButtonView from "./buttons/profile.button.view";
+import navigationAppView from "./navigation/navigation.app.view";
+import navigationLandingView from "./navigation/navigation.landing.view";
 
 class HeaderView {
   layout = {} as Layout;
@@ -39,24 +42,30 @@ class HeaderView {
     this.layout.colorScheme = document.createElement("label");
     this.layout.colorScheme.className = "header__scheme switch-scheme";
 
-    this.layout.loginButtons = document.createElement("div");
-    this.layout.loginButtons.className = "header__buttons";
+    this.layout.buttons = document.createElement("div");
+    this.layout.buttons.className = "header__buttons";
 
     this.layout.wrapper.append(
       this.layout.logo,
       this.layout.navigation,
       this.layout.colorScheme,
-      this.layout.loginButtons
+      this.layout.buttons
     );
 
-    root.append(this.layout.wrapper);
+    root.replaceChildren(this.layout.wrapper);
   }
 
   render() {
     logoView.render(this.layout.logo as HTMLAnchorElement, "header__logo logo");
-    navigationView.render(this.layout.navigation);
     colorSchemeView.render(this.layout.colorScheme);
-    loginButtonsView.render(this.layout.loginButtons);
+
+    if (state.user.authorized) {
+      navigationAppView.render(this.layout.navigation);
+      profileButtonView.render(this.layout.buttons);
+    } else {
+      navigationLandingView.render(this.layout.navigation);
+      loginButtonsView.render(this.layout.buttons);
+    }
   }
 }
 

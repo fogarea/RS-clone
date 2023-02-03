@@ -29,7 +29,7 @@ class FooterView {
 
     this.layout.wrapper.append(this.layout.logo);
 
-    root.append(this.layout.wrapper);
+    root.replaceChildren(this.layout.wrapper);
   }
 
   render() {
