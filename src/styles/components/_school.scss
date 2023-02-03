@@ -1,0 +1,63 @@
+@use "../abstract" as *;
+
+.school {
+	margin-bottom: 80px;
+
+	// .school__wrapper
+	&__wrapper {
+	}
+
+	// .school__title
+	&__title {
+		margin: 30px 0 60px;
+	}
+
+	// .school__content
+	&__content {
+		@extend %block-shadowed;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		background: var(--secondary-bg-color);
+		padding: 26px 36px 26px;
+		border-radius: 10px;
+	}
+
+	// .school__img
+	&__img {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-basis: 30%;
+		max-height: 260px;
+		filter: var(--icon--invert);
+
+		>* {
+			max-width: 300px;
+		}
+	}
+
+	// .school__desc
+	&__desc {
+		@include font(1.4em, 4.6rem, 300);
+		flex-basis: 60%;
+		padding: 26px 36px 26px;
+
+		>*:first-child {
+			padding-bottom: 30px;
+		}
+	}
+
+	// .school__text
+	&__text {
+	}
+
+	&__link {
+		text-decoration: underline;
+		color: var(--link-text-color);
+		&:hover {
+			color: var(--link-text-hover-color);
+		}
+	}
+}

@@ -1,6 +1,6 @@
 import { Layout } from "types/layout.types";
 import contentView from "../goals/content.view";
-import goalsButtonView from "./goalsButton.view";
+import goalsButtonView from "./goals.button.view";
 
 class GoalsView {
   layout = {} as Layout;

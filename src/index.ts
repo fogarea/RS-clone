@@ -7,10 +7,11 @@ import { Routing } from "types/route.types";
 import authorizationView from "view/authorization/authorization.view";
 import counterView from "view/counter/counter.view";
 import headerView from "view/header/header.view";
-import helloView from "view/hello/hello.view";
+import trainingsView from "view/trainings/trainings.view";
 import mainView from "view/main/main.view";
 import registrationView from "view/registration/registration.view";
 import footerView from "./view/footer/footer.view";
+import aboutView from "./view/about/about.view";
 
 class App {
   layout = {} as Layout;
@@ -32,11 +33,11 @@ class App {
     const routeCallback = () => {
       switch (navigationModel.route.path) {
         case Routing.TRAININGS:
-          helloView.init(this.layout.main);
+          trainingsView.init(this.layout.main);
           break;
 
         case Routing.CONTACTS:
-          counterView.init(this.layout.main);
+          aboutView.init(this.layout.main);
           break;
 
         case "":
@@ -53,19 +54,19 @@ class App {
           break;
 
         case Routing.DASHBOARD:
-          helloView.init(this.layout.main);
+          counterView.init(this.layout.main);
           break;
 
         case Routing.WORKOUT:
-          helloView.init(this.layout.main);
+          counterView.init(this.layout.main);
           break;
 
         case Routing.MEAL:
-          helloView.init(this.layout.main);
+          counterView.init(this.layout.main);
           break;
 
         case Routing.PROGRESS:
-          helloView.init(this.layout.main);
+          counterView.init(this.layout.main);
           break;
 
         case Routing.PROFILE:
