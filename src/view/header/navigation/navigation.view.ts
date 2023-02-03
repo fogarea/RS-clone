@@ -1,20 +1,7 @@
 import { state } from "store/state";
 import { Routing } from "types/route.types";
 
-class NavigationView {
-  render(root: HTMLElement) {
-    const navList = document.createElement("ul");
-    navList.className = "nav__list";
-
-    navList.append(
-      this.generateNavItem("Main", ""),
-      this.generateNavItem("Trainings", Routing.TRAININGS),
-      this.generateNavItem("Contacts", Routing.CONTACTS)
-    );
-
-    root.replaceChildren(navList);
-  }
-
+export default class NavigationView {
   generateNavItem(text: string, route: Routing | "") {
     const navItem = document.createElement("li");
     navItem.className = "nav__item";
@@ -28,5 +15,3 @@ class NavigationView {
     return navItem;
   }
 }
-
-export default new NavigationView();

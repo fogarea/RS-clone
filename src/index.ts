@@ -1,25 +1,30 @@
+import authController from "controller/auth.controller";
 import navigationController from "controller/navigation.controller";
+import authModel from "model/auth.model";
 import navigationModel from "model/navigation.model";
 import { Layout } from "types/layout.types";
 import { Routing } from "types/route.types";
+import authorizationView from "view/authorization/authorization.view";
 import counterView from "view/counter/counter.view";
 import headerView from "view/header/header.view";
 import helloView from "view/hello/hello.view";
 import mainView from "view/main/main.view";
+import registrationView from "view/registration/registration.view";
 import footerView from "./view/footer/footer.view";
 
 class App {
   layout = {} as Layout;
 
-  init() {
+  async init() {
     const root = document.querySelector("#root");
 
     if (!(root instanceof HTMLElement)) return;
 
     this.createLayout(root);
-
+    await authController.autoLogin();
     this.render();
     this.subscribe();
+
     navigationController.handleRoute();
   }
 
@@ -39,6 +44,34 @@ class App {
           mainView.init(this.layout.main);
           break;
 
+        case Routing.REGISTRATION:
+          registrationView.init(this.layout.main);
+          break;
+
+        case Routing.AUTHORIZATION:
+          authorizationView.init(this.layout.main);
+          break;
+
+        case Routing.DASHBOARD:
+          helloView.init(this.layout.main);
+          break;
+
+        case Routing.WORKOUT:
+          helloView.init(this.layout.main);
+          break;
+
+        case Routing.MEAL:
+          helloView.init(this.layout.main);
+          break;
+
+        case Routing.PROGRESS:
+          helloView.init(this.layout.main);
+          break;
+
+        case Routing.PROFILE:
+          counterView.init(this.layout.main);
+          break;
+
         default:
           console.log(404);
           break;
@@ -46,6 +79,13 @@ class App {
     };
     window.addEventListener("popstate", routeCallback);
     navigationModel.on("route.update", routeCallback);
+    authModel.on("auth.update", () => {
+      routeCallback();
+      this.render();
+    });
+    authModel.on("auth.update.header", () => {
+      this.render();
+    });
   }
 
   createLayout(root: HTMLElement) {
