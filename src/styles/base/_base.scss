@@ -17,6 +17,10 @@
 	overflow-y: hidden;
 }
 
+.main {
+	margin-bottom: 80px;
+}
+
 :root {
 	--primary-color: #{$color-primary-dark};
 	--primary-bg-color: #{$color-primary-bg-dark};
@@ -39,6 +43,13 @@
 	--link-text-hover-color: #{$color-link-hover-text-dark};
 
 	--icon--invert: invert(0%);
+
+	--input-border-color: #{$color-input-bordered-dark};
+	--input-bg-color: #{$color-input-bg-dark};
+
+	--input-text-color: #{$color-input-text-dark};
+
+	--logo: #{$logo-dark};
 }
 
 .body--light {
@@ -59,6 +70,13 @@
 	--link-text-hover-color: #{$color-link-hover-text-light};
 
 	--icon--invert: invert(100%);
+
+	--input-border-color: #{$color-input-bordered-light};
+	--input-bg-color: #{$color-input-bg-light};
+
+	--input-text-color: #{$color-input-text-light};
+
+	--logo: #{$logo-light};
 }
 
 h1 {
@@ -70,7 +88,7 @@ h1 {
 }
 
 h2 {
-	@include font(3.6em, 4.6rem);
+	@include font(5.7rem, 4.6rem);
 	@include media-mobile-big {
 		@include font(2.4rem, 3.3rem);
 	}

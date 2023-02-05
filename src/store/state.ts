@@ -12,6 +12,9 @@ export const state: State = {
   user: {
     authorized: false,
     id: "",
-    login: ""
+    email: "",
+    name: "",
+    surname: "",
+    phone: ""
   }
 };

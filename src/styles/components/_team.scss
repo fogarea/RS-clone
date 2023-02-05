@@ -12,22 +12,9 @@
 		margin: 30px 0 60px;
 	}
 
-	// .team__desc
-	&__desc {
-		margin: 0 0 45px;
-		@include media-mobile-big {
-			margin: 0 0 20px;
-		}
-	}
-
 	// .team__content
 	&__content {
 		gap: 30px;
-	}
-
-	@include media-tablet {
-		text-align: center;
-		padding: 0 0 60px;
 	}
 }
 
@@ -61,7 +48,7 @@
 
 	// .team-member__role
 	&__role {
-		@include font(1.4em, 4.6rem, 300);
+		@include font(2.2rem, 4.6rem, 300);
 	}
 
 	// .team-member__gh

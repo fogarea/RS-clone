@@ -1,11 +1,13 @@
 export type HttpRegisterRequest = {
-  login: string;
+  name: string;
+  surname: string;
+  phone: string;
+  email: string;
   password: string;
-  gender: string;
 };
 
 export type HttpLoginRequest = {
-  login: string;
+  email: string;
   password: string;
 };
 

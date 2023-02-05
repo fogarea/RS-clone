@@ -35,7 +35,7 @@
 		max-width: 487px;
 		margin: 0 0 45px;
 		font-family: $font-family-primary;
-		@include font(1.9em, 4.6rem, 300);
+		@include font(3.0rem, 4.6rem, 300);
 
 		@include media-tablet {
 			width: 360px;
