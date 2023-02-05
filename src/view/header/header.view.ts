@@ -2,7 +2,7 @@ import navigationController from "controller/navigation.controller";
 import { Layout } from "types/layout.types";
 import loginButtonsView from "./buttons/login.button.view";
 import logoView from "../components/logo.view";
-import colorSchemeView from "./colorScheme.view";
+import colorSchemeView from "./color.scheme.view";
 import switchColorScheme from "../../utils/switchColorScheme";
 import { state } from "store/state";
 import profileButtonView from "./buttons/profile.button.view";

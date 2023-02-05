@@ -3,6 +3,12 @@
 	display: inline-flex;
 }
 
+.icon--logo {
+	background-image: var(--logo);
+	@include icon-size(160px, 60px);
+	background-size: 100%;
+}
+
 .icon--promo {
 	background-image: url("./../assets/svg/promo/promo.svg");
 	@include icon-size(630px, 700px);
@@ -20,4 +26,28 @@
 		transform: scale(1.1);
 		cursor: pointer;
 	}
+}
+
+.icon--profile{
+	background-image: url("./../assets/svg/registration/profile.svg");
+	@include icon-size(18px, 18px);
+	background-size: 100%;
+}
+
+.icon--message{
+	background-image: url("./../assets/svg/registration/message.svg");
+	@include icon-size(18px, 18px);
+	background-size: 100%;
+}
+
+.icon--lock{
+	background-image: url("./../assets/svg/registration/lock.svg");
+	@include icon-size(18px, 18px);
+	background-size: 100%;
+}
+
+.icon--call{
+	background-image: url("./../assets/svg/registration/call.svg");
+	@include icon-size(18px, 18px);
+	background-size: 100%;
 }

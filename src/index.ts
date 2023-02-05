@@ -4,7 +4,7 @@ import authModel from "model/auth.model";
 import navigationModel from "model/navigation.model";
 import { Layout } from "types/layout.types";
 import { Routing } from "types/route.types";
-import authorizationView from "view/authorization/authorization.view";
+import authorizationView from "view/authorization/auth.view";
 import counterView from "view/counter/counter.view";
 import headerView from "view/header/header.view";
 import trainingsView from "view/trainings/trainings.view";

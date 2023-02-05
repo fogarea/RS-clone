@@ -3,9 +3,12 @@
 .goals {
 	// .goal__wrapper
 	&__wrapper {
+	}
+
+	&__content {
 		display: flex;
 		flex-direction: column;
-		gap: 50px;
+		gap: 60px;
 	}
 
 	&__button {
@@ -24,31 +27,16 @@
 
 	// .goal__img
 	&__img {
-		width: 100%;
-		max-width: 400px;
-		height: 400px;
-		background-repeat: no-repeat;
-	}
-
-	&__first-img {
-		background-image: url("./../assets/svg/promo/promo2.svg");
-	}
-
-	&__second-img {
-		background-image: url("./../assets/svg/promo/promo3.svg");
-	}
-
-	&__third-img {
-		background-image: url("./../assets/svg/promo/promo4.svg");
-	}
-
-	&__fourth-img {
-		background-image: url("./../assets/svg/promo/promo5.svg");
+		>* {
+			max-width: 400px;
+			width: 100%;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
 	}
 
 	// .goal__content
 	&__content {
-		//padding-right: 65px;
 		text-align: center;
 	}
 
@@ -59,15 +47,9 @@
 
 	// .goal__text
 	&__text {
-		@include font(1.6em, 4.6rem, 300);
+		@include font(2.5rem, 4.6rem, 300);
 		max-width: 500px;
 	}
-}
-
-.title {
-}
-
-.text {
 }
 
 .order {

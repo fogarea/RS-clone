@@ -32,7 +32,7 @@ class TrainingsContentView {
                             </div>
                             <div class="training__content">
                                 <h4 class="training__title">Improve Shape</h4>
-                                <p class="training__text">I have a low amount of body fat and need / want to build more muscle</p>
+                                <p class="training__text">I have a low amount of body fat and want to build more muscle</p>
                                 <div class="training_button">
                                     <button class="button button--colored button--large">Try it out</button>
                                 </div>

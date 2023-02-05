@@ -1,5 +1,8 @@
 export type User = {
   authorized: boolean;
   id: string;
-  login: string;
+  email: string;
+  name: string;
+  surname: string;
+  phone: string;
 };

@@ -9,13 +9,15 @@ import navigationController from "./navigation.controller";
 
 class AuthController {
   async register(request: HttpRegisterRequest) {
-    const { _id: id } = await authService.register(request);
+    const { id } = await authService.register(request);
 
     if (id) await this.login(request);
   }
 
   async login(request: HttpLoginRequest) {
-    const { _id: id, login, status } = await authService.login(request);
+    const { id, email, name, surname, phone, status } = await authService.login(
+      request
+    );
 
     if (status === 403) return;
 
@@ -24,7 +26,10 @@ class AuthController {
     authModel.updateUserState({
       authorized: true,
       id,
-      login
+      email,
+      name,
+      surname,
+      phone
     });
 
     navigationController.applyRoute(navigationModel.createRoute());
@@ -32,13 +37,16 @@ class AuthController {
   }
 
   async autoLogin() {
-    const { id, login } = await authService.autoLogin();
+    const { id, email, name, surname, phone } = await authService.autoLogin();
 
     if (id) {
       authModel.updateUserState({
         authorized: true,
         id,
-        login
+        email,
+        name,
+        surname,
+        phone
       });
     }
   }
@@ -48,7 +56,10 @@ class AuthController {
     authModel.updateUserState({
       authorized: false,
       id: "",
-      login: ""
+      email: "",
+      name: "",
+      surname: "",
+      phone: ""
     });
     authModel.emit("auth.update");
   }

@@ -1,26 +1,91 @@
-import button from "view/components/button";
+//import { HttpRegisterRequest } from "types/http.request.types";
+//import authController from "../../controller/auth.controller";
+import { Layout } from "types/layout.types";
+//import promoView from "../main/promo/promo.view";
+import registrationFormView from "./registration.form.view";
+import redirectAuthView from "./redirect.auth.view";
 import { HttpRegisterRequest } from "types/http.request.types";
-import authController from "controller/auth.controller";
+import authController from "../../controller/auth.controller";
 
 class RegistrationView {
+  layout = {} as Layout;
+
   init(root: HTMLElement) {
-    this.render(root);
+    this.createLayout(root);
+    this.render();
+    this.addHandler();
   }
 
-  render(root: HTMLElement) {
-    const container = document.createElement("div");
+  createLayout(root: HTMLElement) {
+    this.layout.registration = document.createElement("section");
+    this.layout.registration.className = "registration";
 
-    const onRegister = async () => {
-      const request: HttpRegisterRequest = {
-        login: "sam6_frontend",
-        password: "qwerty",
-        gender: "female"
-      };
-      await authController.register(request);
-    };
+    this.layout.wrapper = document.createElement("div");
+    this.layout.wrapper.className = "wrapper registration__wrapper";
 
-    button.render(container, "button--colored", "Register", onRegister);
-    root.replaceChildren(container);
+    this.layout.content = document.createElement("div");
+    this.layout.content.className = "registration__content";
+
+    this.layout.desc = document.createElement("div");
+    this.layout.desc.className = "registration__desc";
+
+    this.layout.text = document.createElement("p");
+    this.layout.text.className = "registration__text";
+    this.layout.text.innerText = "Hey there,";
+
+    this.layout.textBold = document.createElement("p");
+    this.layout.textBold.className = "registration__text--bold";
+    this.layout.textBold.innerText = "Create an Account";
+
+    this.layout.desc.append(this.layout.text, this.layout.textBold);
+
+    this.layout.form = document.createElement("form");
+    this.layout.form.className = "registration__form reg-form";
+    this.layout.form.id = "reg-form";
+
+    this.layout.redirect = document.createElement("div");
+    this.layout.redirect.className = "registration__login";
+
+    this.layout.content.append(
+      this.layout.desc,
+      this.layout.form,
+      this.layout.redirect
+    );
+
+    this.layout.wrapper.append(this.layout.content);
+
+    this.layout.registration.append(this.layout.wrapper);
+
+    root.replaceChildren(this.layout.registration);
+  }
+
+  render() {
+    registrationFormView.render(this.layout.form);
+    redirectAuthView.init(this.layout.redirect);
+  }
+
+  addHandler() {
+    this.layout.form.addEventListener("submit", async (e: Event) => {
+      e.preventDefault();
+
+      const errors = document.querySelectorAll(".error");
+      if (errors.length) return;
+
+      if (e.target instanceof HTMLFormElement) {
+        const form = e.target;
+        const formData = Object.fromEntries(new FormData(form).entries());
+
+        const request: HttpRegisterRequest = {
+          name: `${formData.name}`,
+          surname: `${formData.surname}`,
+          phone: `${formData.phone}`,
+          email: `${formData.email}`,
+          password: `${formData.password}`
+        };
+
+        await authController.register(request);
+      }
+    });
   }
 }
 
