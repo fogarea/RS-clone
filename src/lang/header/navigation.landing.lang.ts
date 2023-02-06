@@ -3,8 +3,8 @@ import lang from "../lang";
 
 const navLandingDictionary: Languages = {
   navItem: {
-    ru: ["Главная", "Тренировки", "Контакты"],
-    en: ["Main", "Trainings", "Contacts"]
+    ru: ["Главная", "Программы", "Контакты"],
+    en: ["Main", "Programs", "Contacts"]
   }
 };
 

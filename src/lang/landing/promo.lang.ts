@@ -8,12 +8,12 @@ const promoDictionary: Languages = {
   },
   text: {
     ru: [
-      "Дашборд, трекер тренировок и рацион питания, все в одном месте! Зарегистрируйтесь чтобы начать.\n" +
+      "Дашборд, трекер тренировок и рацион питания, все в одном месте! Присоединяйтесь сейчас.\n" +
         "Нажмите на кнопку ниже."
     ],
     en: [
       "Dashboard, workout tracker and meal planner, all in one place! Try our app right now.\n" +
-        "Click the link below."
+        "Click the button below."
     ]
   },
   btn: {

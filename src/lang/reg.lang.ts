@@ -7,7 +7,7 @@ const regDictionary: Languages = {
     en: "Hey there,"
   },
   title: {
-    ru: "Зарегистрируйся",
+    ru: "Присоединяйся!",
     en: "Create an Account"
   },
   name: {

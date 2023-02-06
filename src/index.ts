@@ -7,8 +7,8 @@ import { Routing } from "types/route.types";
 import authorizationView from "view/authorization/auth.view";
 import counterView from "view/counter/counter.view";
 import headerView from "view/header/header.view";
-import trainingsView from "view/programs/programs.view";
-import mainView from "view/main/main.view";
+import programsView from "view/programs/programs.view";
+import mainView from "view/landing/landing.view";
 import registrationView from "view/registration/registration.view";
 import footerView from "./view/footer/footer.view";
 import aboutView from "./view/about/about.view";
@@ -33,16 +33,16 @@ class App {
   subscribe() {
     const routeCallback = () => {
       switch (navigationModel.route.path) {
-        case Routing.TRAININGS:
-          trainingsView.init(this.layout.main);
+        case Routing.PROGRAMS:
+          programsView.init(this.layout.main);
           break;
 
-        case Routing.CONTACTS:
+        case Routing.ABOUT:
           aboutView.init(this.layout.main);
           break;
 
         case "":
-        case Routing.MAIN:
+        case Routing.LANDING:
           mainView.init(this.layout.main);
           break;
 

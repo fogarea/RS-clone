@@ -7,7 +7,7 @@ const authDictionary: Languages = {
     en: "Hey there,"
   },
   title: {
-    ru: "С возвращением",
+    ru: "С возвращением!",
     en: "Welcome Back"
   },
   email: {
