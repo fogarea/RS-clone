@@ -1,21 +1,24 @@
 import { Layout } from "types/layout.types";
-import trainingsContentView from "../trainings/content.view";
-import { getTrainingsLang } from "../../lang/trainings.lang";
+import { getProgramsLang } from "../../lang/programs.lang";
+import programContentVew from "./content.view";
+import programsController from "../../controller/programs.controller";
 
-class TrainingsView {
+class ProgramsView {
   layout = {} as Layout;
 
-  init(root: HTMLElement) {
+  async init(root: HTMLElement) {
     this.createLayout(root);
+
+    await programsController.getAll();
     this.render();
     //this.addHandlers(root);
   }
 
   createLayout(root: HTMLElement) {
-    const { title, subtitle } = getTrainingsLang();
+    const { title, subtitle } = getProgramsLang();
 
     this.layout.section = document.createElement("section");
-    this.layout.section.className = "trainings";
+    this.layout.section.className = "programs";
 
     this.layout.wrapper = document.createElement("div");
     this.layout.wrapper.className = "wrapper trainings__wrapper";
@@ -42,8 +45,8 @@ class TrainingsView {
   }
 
   render() {
-    trainingsContentView.render(this.layout.content);
+    programContentVew.render(this.layout.content);
   }
 }
 
-export default new TrainingsView();
+export default new ProgramsView();

@@ -7,7 +7,7 @@ import { Routing } from "types/route.types";
 import authorizationView from "view/authorization/auth.view";
 import counterView from "view/counter/counter.view";
 import headerView from "view/header/header.view";
-import trainingsView from "view/trainings/trainings.view";
+import trainingsView from "view/programs/programs.view";
 import mainView from "view/main/main.view";
 import registrationView from "view/registration/registration.view";
 import footerView from "./view/footer/footer.view";

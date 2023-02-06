@@ -1,9 +1,11 @@
 import { User } from "types/user.types";
+import { Program } from "types/program.types";
 
 interface State {
   counter: number;
   basePath: string;
   user: User;
+  programs: Program[];
 }
 
 export const state: State = {
@@ -16,5 +18,14 @@ export const state: State = {
     name: "",
     surname: "",
     phone: ""
-  }
+  },
+  programs: [
+    {
+      title: "",
+      description: "",
+      media: [""],
+      trainings: [""],
+      id: ""
+    }
+  ]
 };

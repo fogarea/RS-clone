@@ -1,4 +1,5 @@
 import { HttpUnionRequest } from "types/http.request.types";
+import lang from "../lang/lang";
 
 interface Request {
   method: "GET" | "PUT" | "POST" | "DELETE" | "OPTIONS";
@@ -23,6 +24,9 @@ class AxiosService {
     const headers = new Headers();
     headers.append("Content-Type", "application/json; charset=UTF-8");
     if (token) headers.append("Authorization", `Bearer: ${token}`);
+
+    const language = lang.getLang();
+    headers.append("Lang", `${language}`);
 
     let URL = path;
     if (method === "GET" && body) {
