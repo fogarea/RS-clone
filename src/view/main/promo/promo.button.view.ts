@@ -2,6 +2,7 @@ import button from "../../components/button";
 import navigationModel from "../../../model/navigation.model";
 import { Routing } from "types/route.types";
 import navigationController from "../../../controller/navigation.controller";
+import { getPromoLang } from "../../../lang/landing/promo.lang";
 
 class PromoButtonView {
   render(root: HTMLElement) {
@@ -10,7 +11,9 @@ class PromoButtonView {
       navigationController.applyRoute(route);
     };
 
-    button.render(root, "button--colored", "Join to our team", onSingUp);
+    const { btn } = getPromoLang();
+
+    button.render(root, "button--colored", `${btn}`, onSingUp);
   }
 }
 

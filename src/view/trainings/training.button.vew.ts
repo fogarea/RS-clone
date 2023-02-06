@@ -1,8 +1,11 @@
 import button from "../components/button";
+import { getTrainingsLang } from "../../lang/trainings.lang";
 
 class TrainingButtonView {
   render(root: HTMLElement) {
-    button.render(root, "button button--colored button--large", "Try it out");
+    const { btn } = getTrainingsLang();
+
+    button.render(root, "button button--colored button--large", `${btn}`);
   }
 }
 

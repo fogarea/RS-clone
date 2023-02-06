@@ -1,6 +1,7 @@
 import { Layout } from "types/layout.types";
 import aboutContentView from "./content.view";
 import schoolView from "./school/school.view";
+import { getAboutLang } from "../../lang/about.lang";
 
 class AboutView {
   layout = {} as Layout;
@@ -12,6 +13,8 @@ class AboutView {
   }
 
   createLayout(root: HTMLElement) {
+    const { title } = getAboutLang();
+
     this.layout.section = document.createElement("section");
     this.layout.section.className = "team";
 
@@ -20,7 +23,7 @@ class AboutView {
 
     this.layout.title = document.createElement("h2");
     this.layout.title.className = "team__title title";
-    this.layout.title.innerText = "Our Team";
+    this.layout.title.innerText = `${title}`;
 
     this.layout.content = document.createElement("div");
     this.layout.content.className =

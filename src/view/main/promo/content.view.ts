@@ -1,7 +1,13 @@
+import { getPromoLang } from "../../../lang/landing/promo.lang";
+
 class PromoContentView {
   render(root: HTMLElement) {
-    root.innerHTML = `<h1 class="promo__title title">Everybody <span class="promo__title-char">CAN</span> train!</h1>
-                         <p class="promo__text text">Dashboard, workout tracker and meal planner, all in one place! Try our app right now. <br> Click the link below.</p>`;
+    const { title, text } = getPromoLang();
+
+    if (text && title) {
+      root.innerHTML = `<h1 class="promo__title title">${title[0]} <span class="promo__title-char">${title[1]}</span> ${title[2]}</h1>
+                         <p class="promo__text text">${text}</p>`;
+    }
   }
 }
 

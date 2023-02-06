@@ -1,5 +1,6 @@
 import { Layout } from "types/layout.types";
 import trainingsContentView from "../trainings/content.view";
+import { getTrainingsLang } from "../../lang/trainings.lang";
 
 class TrainingsView {
   layout = {} as Layout;
@@ -11,6 +12,8 @@ class TrainingsView {
   }
 
   createLayout(root: HTMLElement) {
+    const { title, subtitle } = getTrainingsLang();
+
     this.layout.section = document.createElement("section");
     this.layout.section.className = "trainings";
 
@@ -19,12 +22,11 @@ class TrainingsView {
 
     this.layout.title = document.createElement("h2");
     this.layout.title.className = "trainings__title title";
-    this.layout.title.innerText = "Available training sessions";
+    this.layout.title.innerText = `${title}`;
 
     this.layout.desc = document.createElement("p");
     this.layout.desc.className = "trainings__desc";
-    this.layout.desc.innerText =
-      "Try our training programs. You can choose training program for your goal";
+    this.layout.desc.innerText = `${subtitle}`;
 
     this.layout.content = document.createElement("div");
     this.layout.content.className = "trainings__content layout-3-columns";

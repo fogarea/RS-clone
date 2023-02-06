@@ -2,6 +2,7 @@ import button from "../../components/button";
 import navigationModel from "../../../model/navigation.model";
 import { Routing } from "types/route.types";
 import navigationController from "../../../controller/navigation.controller";
+import { getPromoLang } from "../../../lang/landing/promo.lang";
 
 class GoalsButtonView {
   render(root: HTMLElement) {
@@ -10,7 +11,9 @@ class GoalsButtonView {
       navigationController.applyRoute(route);
     };
 
-    button.render(root, "button--bordered", "Sign Up Now", onSingUp);
+    const { btn } = getPromoLang();
+
+    button.render(root, "button--bordered", `${btn}`, onSingUp);
   }
 }
 

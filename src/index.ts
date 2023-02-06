@@ -12,6 +12,7 @@ import mainView from "view/main/main.view";
 import registrationView from "view/registration/registration.view";
 import footerView from "./view/footer/footer.view";
 import aboutView from "./view/about/about.view";
+import lang from "./lang/lang";
 
 class App {
   layout = {} as Layout;
@@ -20,7 +21,7 @@ class App {
     const root = document.querySelector("#root");
 
     if (!(root instanceof HTMLElement)) return;
-
+    lang.init();
     this.createLayout(root);
     await authController.autoLogin();
     this.render();

@@ -1,8 +1,7 @@
 import { state } from "store/state";
-import { Routing } from "types/route.types";
 
 export default class NavigationView {
-  generateNavItem(text: string, route: Routing | "") {
+  generateNavItem(text: string, route: string) {
     const navItem = document.createElement("li");
     navItem.className = "nav__item";
 

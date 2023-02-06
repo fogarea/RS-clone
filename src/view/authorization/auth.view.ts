@@ -3,6 +3,7 @@ import authFormView from "./auth.form.view";
 import redirectRegView from "./redirect.reg.view";
 import { HttpLoginRequest } from "types/http.request.types";
 import authController from "../../controller/auth.controller";
+import { getAuthLang } from "../../lang/auth.lang";
 
 class AuthView {
   layout = {} as Layout;
@@ -14,6 +15,8 @@ class AuthView {
   }
 
   createLayout(root: HTMLElement) {
+    const { greeting, title } = getAuthLang();
+
     this.layout.auth = document.createElement("section");
     this.layout.auth.className = "authorization";
 
@@ -28,11 +31,11 @@ class AuthView {
 
     this.layout.text = document.createElement("p");
     this.layout.text.className = "authorization__text";
-    this.layout.text.innerText = "Hey there,";
+    this.layout.text.innerText = `${greeting}`;
 
     this.layout.textBold = document.createElement("p");
     this.layout.textBold.className = "authorization__text--bold";
-    this.layout.textBold.innerText = "Welcome Back";
+    this.layout.textBold.innerText = `${title}`;
 
     this.layout.desc.append(this.layout.text, this.layout.textBold);
 
