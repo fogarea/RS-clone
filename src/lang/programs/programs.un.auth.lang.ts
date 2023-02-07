@@ -1,7 +1,7 @@
-import lang from "./lang";
+import lang from "../lang";
 import { Languages } from "types/lang.types";
 
-const programsDictionary: Languages = {
+const programsUnAuthDictionary: Languages = {
   title: {
     ru: "Программы тренировок",
     en: "Available training sessions"
@@ -9,11 +9,8 @@ const programsDictionary: Languages = {
   subtitle: {
     ru: "Попробуйте наши программы тренировок. Вы можете подобрать программу под вашу цель",
     en: "Try our training programs. You can choose training program for your goal"
-  },
-  btn: {
-    ru: "Попробовать",
-    en: "Try it out"
   }
 };
 
-export const getProgramsLang = () => lang.getDictionaryLang(programsDictionary);
+export const getProgramsUnAuthLang = () =>
+  lang.getDictionaryLang(programsUnAuthDictionary);

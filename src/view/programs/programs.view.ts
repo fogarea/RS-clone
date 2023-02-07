@@ -1,7 +1,10 @@
 import { Layout } from "types/layout.types";
-import { getProgramsLang } from "../../lang/programs.lang";
+import { getProgramsUnAuthLang } from "../../lang/programs/programs.un.auth.lang";
 import programContentVew from "./content.view";
 import programsController from "../../controller/programs.controller";
+import { state } from "../../store/state";
+import { getProgramsAuthLang } from "../../lang/programs/programs.auth.lang";
+import profileController from "../../controller/profile.controller";
 
 class ProgramsView {
   layout = {} as Layout;
@@ -11,11 +14,13 @@ class ProgramsView {
 
     await programsController.getAll();
     this.render();
-    //this.addHandlers(root);
+    this.addHandlers(root);
   }
 
   createLayout(root: HTMLElement) {
-    const { title, subtitle } = getProgramsLang();
+    const { title, subtitle } = state.user.authorized
+      ? getProgramsAuthLang()
+      : getProgramsUnAuthLang();
 
     this.layout.section = document.createElement("section");
     this.layout.section.className = "programs";
@@ -46,6 +51,15 @@ class ProgramsView {
 
   render() {
     programContentVew.render(this.layout.content);
+  }
+
+  addHandlers(root: HTMLElement) {
+    root.addEventListener("click", async (e: Event) => {
+      const target = e.target as HTMLElement;
+
+      if (target.tagName === "BUTTON")
+        await profileController.createProgram(target.id);
+    });
   }
 }
 

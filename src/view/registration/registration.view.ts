@@ -3,7 +3,7 @@ import registrationFormView from "./registration.form.view";
 import redirectAuthView from "./redirect.auth.view";
 import { HttpRegisterRequest } from "types/http.request.types";
 import authController from "../../controller/auth.controller";
-import { getRegLang } from "../../lang/reg.lang";
+import { getRegLang } from "../../lang/reg/reg.lang";
 
 class RegistrationView {
   layout = {} as Layout;

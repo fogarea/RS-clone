@@ -11,7 +11,9 @@ export class InputField {
     type: string,
     iconCls: string,
     placeholder: string,
-    callbacks?: EventCallback[]
+    callbacks?: EventCallback[],
+    min?: string,
+    max?: string
   ) {
     const label = document.createElement("label");
     label.className = "reg-form__label";
@@ -27,6 +29,11 @@ export class InputField {
     input.placeholder = `${placeholder}`;
     input.autocomplete = "on";
     input.required = true;
+
+    if (min && max) {
+      input.min = min;
+      input.max = max;
+    }
 
     label.append(icon, input);
 

@@ -2,7 +2,7 @@ import { Layout } from "types/layout.types";
 import { state } from "../../store/state";
 import { Routing } from "types/route.types";
 import navigationController from "../../controller/navigation.controller";
-import { getRegLang } from "../../lang/reg.lang";
+import { getRegLang } from "../../lang/reg/reg.lang";
 
 class RedirectAuthView {
   layout = {} as Layout;

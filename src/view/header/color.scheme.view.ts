@@ -8,6 +8,7 @@ class ColorSchemeView {
 
     const slider = document.createElement("span");
     slider.className = "switch-scheme__slider";
+    slider.id = "switch-scheme";
 
     switchColorScheme.init(checkbox);
 

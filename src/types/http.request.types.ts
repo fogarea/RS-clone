@@ -11,12 +11,16 @@ export type HttpLoginRequest = {
   password: string;
 };
 
-export type HttpTestRequest = {
-  title: string;
-  content: string;
+export type HttpProfileRequest = {
+  _id: string;
+  height?: number;
+  weight?: number;
+  gender?: string;
+  birthday?: string;
+  program?: string;
 };
 
 export type HttpUnionRequest =
   | HttpRegisterRequest
   | HttpLoginRequest
-  | HttpTestRequest;
+  | HttpProfileRequest;

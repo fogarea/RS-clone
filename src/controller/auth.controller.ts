@@ -6,18 +6,25 @@ import {
   HttpRegisterRequest
 } from "types/http.request.types";
 import navigationController from "./navigation.controller";
+import { Routing } from "types/route.types";
 
 class AuthController {
   async register(request: HttpRegisterRequest) {
-    const { id } = await authService.register(request);
+    const { id, status } = await authService.register(request);
+
+    if (status === 403) return;
+
+    if (status === 404) return;
 
     if (id) await this.login(request);
+
+    const route = navigationModel.createRoute(Routing.COMPLETE);
+    navigationController.applyRoute(route);
   }
 
   async login(request: HttpLoginRequest) {
-    const { id, email, name, surname, phone, status } = await authService.login(
-      request
-    );
+    const { id, email, name, surname, phone, profile, progress, status } =
+      await authService.login(request);
 
     if (status === 403) return;
 
@@ -29,15 +36,15 @@ class AuthController {
       email,
       name,
       surname,
-      phone
+      phone,
+      profile,
+      progress
     });
-
-    navigationController.applyRoute(navigationModel.createRoute());
-    authModel.emit("auth.update.header");
   }
 
   async autoLogin() {
-    const { id, email, name, surname, phone } = await authService.autoLogin();
+    const { id, email, name, surname, phone, profile, progress } =
+      await authService.autoLogin();
 
     if (id) {
       authModel.updateUserState({
@@ -46,9 +53,19 @@ class AuthController {
         email,
         name,
         surname,
-        phone
+        phone,
+        profile,
+        progress
       });
+
+      this.redirectToHome();
     }
+  }
+
+  redirectToHome() {
+    const route = navigationModel.createRoute(Routing.DASHBOARD);
+    navigationController.applyRoute(route);
+    authModel.emit("auth.update.header");
   }
 
   logout() {
@@ -59,9 +76,14 @@ class AuthController {
       email: "",
       name: "",
       surname: "",
-      phone: ""
+      phone: "",
+      progress: "",
+      profile: ""
     });
-    authModel.emit("auth.update");
+    const route = navigationModel.createRoute(Routing.LANDING);
+    navigationController.applyRoute(route);
+
+    authModel.emit("auth.update.header");
   }
 }
 

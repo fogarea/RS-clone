@@ -81,6 +81,7 @@ class AuthView {
         };
 
         await authController.login(request);
+        await authController.redirectToHome();
       }
     });
   }
