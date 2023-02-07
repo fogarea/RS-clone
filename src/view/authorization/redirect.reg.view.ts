@@ -2,6 +2,7 @@ import { Layout } from "types/layout.types";
 import { state } from "../../store/state";
 import { Routing } from "types/route.types";
 import navigationController from "../../controller/navigation.controller";
+import { getAuthLang } from "../../lang/auth.lang";
 
 class RedirectRegView {
   layout = {} as Layout;
@@ -14,14 +15,16 @@ class RedirectRegView {
   }
 
   createLayout(root: HTMLElement) {
+    const { redirect, link } = getAuthLang();
+
     this.layout.content = document.createElement("p");
     this.layout.content.className = "authorization__redirect";
-    this.layout.content.innerText = "Don’t have an account yet? ";
+    this.layout.content.innerText = `${redirect}`;
 
     this.link = document.createElement("a");
     this.link.href = state.basePath + Routing.REGISTRATION;
     this.link.className = "authorization__link";
-    this.link.innerText = "Register";
+    this.link.innerText = `${link}`;
 
     this.layout.content.append(this.link);
 

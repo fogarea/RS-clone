@@ -1,7 +1,7 @@
 import { InputField } from "./input.field";
 
 class EmailFieldView extends InputField {
-  init(root: HTMLElement, id: string) {
+  init(root: HTMLElement, id: string, placeholder: string) {
     const callback = [
       {
         event: "focusout",
@@ -20,7 +20,15 @@ class EmailFieldView extends InputField {
       }
     ];
 
-    this.render(root, id, "email", "email", "icon--message", "Email", callback);
+    this.render(
+      root,
+      id,
+      "email",
+      "email",
+      "icon--message",
+      placeholder,
+      callback
+    );
   }
 }
 

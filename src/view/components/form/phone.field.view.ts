@@ -1,7 +1,7 @@
 import { InputField } from "./input.field";
 
 class PhoneFieldView extends InputField {
-  init(root: HTMLElement) {
+  init(root: HTMLElement, placeholder: string) {
     const callbacks = [
       {
         event: "input",
@@ -56,7 +56,7 @@ class PhoneFieldView extends InputField {
       "phone",
       "text",
       "icon--call",
-      "Phone",
+      placeholder,
       callbacks
     );
   }

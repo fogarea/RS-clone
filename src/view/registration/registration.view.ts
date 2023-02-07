@@ -1,11 +1,9 @@
-//import { HttpRegisterRequest } from "types/http.request.types";
-//import authController from "../../controller/auth.controller";
 import { Layout } from "types/layout.types";
-//import promoView from "../main/promo/promo.view";
 import registrationFormView from "./registration.form.view";
 import redirectAuthView from "./redirect.auth.view";
 import { HttpRegisterRequest } from "types/http.request.types";
 import authController from "../../controller/auth.controller";
+import { getRegLang } from "../../lang/reg.lang";
 
 class RegistrationView {
   layout = {} as Layout;
@@ -17,6 +15,8 @@ class RegistrationView {
   }
 
   createLayout(root: HTMLElement) {
+    const { greeting, title } = getRegLang();
+
     this.layout.registration = document.createElement("section");
     this.layout.registration.className = "registration";
 
@@ -31,11 +31,11 @@ class RegistrationView {
 
     this.layout.text = document.createElement("p");
     this.layout.text.className = "registration__text";
-    this.layout.text.innerText = "Hey there,";
+    this.layout.text.innerText = `${greeting}`;
 
     this.layout.textBold = document.createElement("p");
     this.layout.textBold.className = "registration__text--bold";
-    this.layout.textBold.innerText = "Create an Account";
+    this.layout.textBold.innerText = `${title}`;
 
     this.layout.desc.append(this.layout.text, this.layout.textBold);
 

@@ -1,7 +1,7 @@
 import { InputField } from "./input.field";
 
 class FirstNameFieldView extends InputField {
-  init(root: HTMLElement) {
+  init(root: HTMLElement, placeholder: string) {
     const callbacks = [
       {
         event: "input",
@@ -34,7 +34,7 @@ class FirstNameFieldView extends InputField {
       "name",
       "text",
       "icon--profile",
-      "First Name",
+      placeholder,
       callbacks
     );
   }

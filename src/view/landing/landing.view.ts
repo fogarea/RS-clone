@@ -2,7 +2,7 @@ import { Layout } from "types/layout.types";
 import promoView from "./promo/promo.view";
 import goalsView from "./goals/goals.view";
 
-class MainView {
+class LandingView {
   layout = {} as Layout;
 
   init(root: HTMLElement) {
@@ -26,4 +26,4 @@ class MainView {
   }
 }
 
-export default new MainView();
+export default new LandingView();

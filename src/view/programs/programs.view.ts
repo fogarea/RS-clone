@@ -1,30 +1,35 @@
 import { Layout } from "types/layout.types";
-import trainingsContentView from "../trainings/content.view";
+import { getProgramsLang } from "../../lang/programs.lang";
+import programContentVew from "./content.view";
+import programsController from "../../controller/programs.controller";
 
-class TrainingsView {
+class ProgramsView {
   layout = {} as Layout;
 
-  init(root: HTMLElement) {
+  async init(root: HTMLElement) {
     this.createLayout(root);
+
+    await programsController.getAll();
     this.render();
     //this.addHandlers(root);
   }
 
   createLayout(root: HTMLElement) {
+    const { title, subtitle } = getProgramsLang();
+
     this.layout.section = document.createElement("section");
-    this.layout.section.className = "trainings";
+    this.layout.section.className = "programs";
 
     this.layout.wrapper = document.createElement("div");
     this.layout.wrapper.className = "wrapper trainings__wrapper";
 
     this.layout.title = document.createElement("h2");
     this.layout.title.className = "trainings__title title";
-    this.layout.title.innerText = "Available training sessions";
+    this.layout.title.innerText = `${title}`;
 
     this.layout.desc = document.createElement("p");
     this.layout.desc.className = "trainings__desc";
-    this.layout.desc.innerText =
-      "Try our training programs. You can choose training program for your goal";
+    this.layout.desc.innerText = `${subtitle}`;
 
     this.layout.content = document.createElement("div");
     this.layout.content.className = "trainings__content layout-3-columns";
@@ -40,8 +45,8 @@ class TrainingsView {
   }
 
   render() {
-    trainingsContentView.render(this.layout.content);
+    programContentVew.render(this.layout.content);
   }
 }
 
-export default new TrainingsView();
+export default new ProgramsView();

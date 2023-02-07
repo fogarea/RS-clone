@@ -1,7 +1,7 @@
 import { InputField } from "./input.field";
 
 class PasswordFieldView extends InputField {
-  init(root: HTMLElement, id: string) {
+  init(root: HTMLElement, id: string, placeholder: string) {
     const callback = [
       {
         event: "focusout",
@@ -24,7 +24,7 @@ class PasswordFieldView extends InputField {
       "password",
       "password",
       "icon--lock",
-      "Password",
+      placeholder,
       callback
     );
   }

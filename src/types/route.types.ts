@@ -1,7 +1,7 @@
 export enum Routing {
-  MAIN = "/",
-  TRAININGS = "trainings",
-  CONTACTS = "contacts",
+  LANDING = "/",
+  PROGRAMS = "programs",
+  ABOUT = "about",
   REGISTRATION = "registration",
   AUTHORIZATION = "authorization",
   DASHBOARD = "dashboard",

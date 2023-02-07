@@ -1,6 +1,7 @@
 .vscode
 build
 node_modules
+/.idea
 /.idea/modules.xml
 /.idea/RS-clone.iml
 /.idea/vcs.xml
