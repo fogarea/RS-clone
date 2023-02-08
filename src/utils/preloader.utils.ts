@@ -1,33 +1,38 @@
+import navigationModel from "model/navigation.model";
+import { state } from "store/state";
 import { Layout } from "types/layout.types";
 
 interface Image {
   src: string;
   size: string;
 }
+const githubPath =
+  "https://raw.githubusercontent.com/fogarea/assets/fitness/";
+
+const path =
+  navigationModel.route.protocol +
+  navigationModel.route.host +
+  state.basePath +
+  "assets/";
+
 const arrayImage: Image[] = [
-  { src: "../assets/img/404.jpg", size: "215 kB" },
-  { src: "../assets/img/team/ilya.jpeg", size: "18.6 kB" },
-  { src: "../assets/img/team/kostya.png", size: "317 kB" },
-  { src: "../assets/img/team/nataliya.jpeg", size: "39.1 kB" },
-  { src: "../assets/svg/color-scheme/dark.svg", size: "0.172 kB" },
-  { src: "../assets/svg/color-scheme/light.svg", size: "0.620 kB" },
-  // { src: "../assets/svg/github/gh.svg", size: "2.15 kB" },
-  // { src: "../assets/svg/github/github-face.svg", size: "1.65 kB" },
-  { src: "../assets/svg/github/github.svg", size: "2.16 kB" },
-  { src: "../assets/svg/logo/logo.svg", size: "13.7 kB" },
-  { src: "../assets/svg/promo/promo.svg", size: "26.8 kB" },
-  { src: "../assets/svg/promo/promo2.svg", size: "14.3 kB" },
-  { src: "../assets/svg/promo/promo3.svg", size: "12.1 kB" },
-  { src: "../assets/svg/promo/promo4.svg", size: "10.8 kB" },
-  { src: "../assets/svg/promo/promo5.svg", size: "17.9 kB" },
-  // { src: "../assets/svg/promo/promo6.svg", size: "17.9 kB" },
-  { src: "../assets/svg/rs/logo_rs.svg", size: "14.9 kB" },
-  { src: "../assets/svg/trainings/training1.svg", size: "23.5 kB" },
-  { src: "../assets/svg/trainings/training2.svg", size: "20.5 kB" },
-  { src: "../assets/svg/trainings/training3.svg", size: "22.3 kB" },
-  { src: "../assets/svg/trainings/training4.svg", size: "14.9 kB" },
-  { src: "../assets/svg/trainings/training5.svg", size: "16.8 kB" },
-  { src: "../assets/svg/trainings/training6.svg", size: "17.4 kB" }
+  { src: path + "img/404.jpg", size: "215 kB" },
+  { src: path + "img/team/ilya.jpeg", size: "18.6 kB" },
+  { src: path + "img/team/kostya.png", size: "317 kB" },
+  { src: path + "img/team/nataliya.jpeg", size: "39.1 kB" },
+  { src: path + "svg/color-scheme/dark.svg", size: "0.172 kB" },
+  { src: path + "svg/color-scheme/light.svg", size: "0.620 kB" },
+  // { src:  path +  "svg/github/gh.svg", size: "2.15 kB" },
+  // { src: path +  "svg/github/github-face.svg", size: "1.65 kB" },
+  { src: path + "svg/github/github.svg", size: "2.16 kB" },
+  { src: path + "svg/logo/logo.svg", size: "13.7 kB" },
+  { src: path + "svg/rs/logo_rs.svg", size: "14.9 kB" },
+  { src: githubPath + "programs/1.svg", size: "23.5 kB" },
+  { src: githubPath + "programs/2.svg", size: "20.5 kB" },
+  { src: githubPath + "programs/3.svg", size: "22.3 kB" },
+  { src: githubPath + "programs/4.svg", size: "14.9 kB" },
+  { src: githubPath + "programs/5.svg", size: "16.8 kB" },
+  { src: githubPath + "programs/6.svg", size: "17.4 kB" },
 ];
 
 class Preloader {
@@ -55,7 +60,7 @@ class Preloader {
     this.layout.percentsNumber.textContent = "0";
 
     this.layout.percents = document.createElement("span");
-    this.layout.percents.textContent = "%";
+    this.layout.percents.textContent = " %";
 
     this.layout.preloaderPercents.append(
       this.layout.percentsNumber,
@@ -131,29 +136,29 @@ class Preloader {
 // ВТОРОЙ СПОСОБ
 
 // const sources: string[] = [
-//   "../assets/img/404.jpg",
-//   "../assets/img/team/ilya.jpeg",
-//   "../assets/img/team/kostya.png",
-//   "../assets/img/team/nataliya.jpeg",
-//   "../assets/svg/color-scheme/dark.svg",
-//   "../assets/svg/color-scheme/light.svg",
-//   "../assets/svg/github/gh.svg",
-// // "../assets/svg/github/github-face.svg",
-// // "../assets/svg/github/github.svg",
-//   "../assets/svg/logo/logo.svg",
-//   "../assets/svg/promo/promo.svg",
-//   "../assets/svg/promo/promo2.svg",
-//   "../assets/svg/promo/promo3.svg",
-//   "../assets/svg/promo/promo4.svg",
-//   "../assets/svg/promo/promo5.svg",
-// //   "../assets/svg/promo/promo6.svg",
-//   "../assets/svg/rs/logo_rs.svg",
-//   "../assets/svg/trainings/training1.svg",
-//   "../assets/svg/trainings/training2.svg",
-//   "../assets/svg/trainings/training3.svg",
-//   "../assets/svg/trainings/training4.svg",
-//   "../assets/svg/trainings/training5.svg",
-//   "../assets/svg/trainings/training6.svg"
+//   "img/404.jpg",
+//   "img/team/ilya.jpeg",
+//   "img/team/kostya.png",
+//   "img/team/nataliya.jpeg",
+//   "svg/color-scheme/dark.svg",
+//   "svg/color-scheme/light.svg",
+//   "svg/github/gh.svg",
+// // "svg/github/github-face.svg",
+// // "svg/github/github.svg",
+//   "svg/logo/logo.svg",
+//   "svg/promo/promo.svg",
+//   "svg/promo/promo2.svg",
+//   "svg/promo/promo3.svg",
+//   "svg/promo/promo4.svg",
+//   "svg/promo/promo5.svg",
+// //   "svg/promo/promo6.svg",
+//   "svg/rs/logo_rs.svg",
+//   "svg/trainings/training1.svg",
+//   "svg/trainings/training2.svg",
+//   "svg/trainings/training3.svg",
+//   "svg/trainings/training4.svg",
+//   "svg/trainings/training5.svg",
+//   "svg/trainings/training6.svg"
 // ];
 
 // class Preloader {

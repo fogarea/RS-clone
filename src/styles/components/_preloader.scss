@@ -41,8 +41,8 @@
   border: 16px solid $color-light;
   border-radius: 50%;
   border-top: 16px solid $color-primary-light;
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   -webkit-animation: spin 2s linear infinite; // Safari
   animation: spin 2s linear infinite;
 }
@@ -71,13 +71,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-39%, -45%);
   font-family: $font-family-primary;
   @include font(1.6rem, 5.8rem);
 }
 
 .percents__number {
-  font-size: 3.6rem;
+  font-size: 4.2rem;
 }
 
 .img__container {
