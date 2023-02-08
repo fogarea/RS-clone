@@ -14,6 +14,7 @@ import aboutView from "./view/about/about.view";
 import lang from "./lang/lang";
 import completeView from "./view/registration/complete/complete.view";
 import registrationView from "./view/registration/registration.view";
+import preloaderUtils from "utils/preloader.utils";
 
 class App {
   layout = {} as Layout;
@@ -23,6 +24,8 @@ class App {
 
     if (!(root instanceof HTMLElement)) return;
     lang.init();
+
+    preloaderUtils.init(root);
     this.createLayout(root);
     await authController.autoLogin();
     this.render();
