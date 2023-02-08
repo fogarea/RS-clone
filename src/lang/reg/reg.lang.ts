@@ -1,4 +1,4 @@
-import lang from "./lang";
+import lang from "../lang";
 import { Languages } from "types/lang.types";
 
 const regDictionary: Languages = {

@@ -1,15 +1,14 @@
-import { User } from "types/user.types";
+import { Profile, User } from "types/user.types";
 import { Program } from "types/program.types";
 
 interface State {
-  counter: number;
   basePath: string;
   user: User;
+  profile: Profile;
   programs: Program[];
 }
 
 export const state: State = {
-  counter: 0,
   basePath: "",
   user: {
     authorized: false,
@@ -17,7 +16,17 @@ export const state: State = {
     email: "",
     name: "",
     surname: "",
-    phone: ""
+    phone: "",
+    profile: "",
+    progress: ""
+  },
+  profile: {
+    id: "",
+    height: 0,
+    weight: 0,
+    gender: "",
+    birthday: "",
+    program: ""
   },
   programs: [
     {

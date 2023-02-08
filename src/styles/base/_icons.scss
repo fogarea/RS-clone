@@ -51,3 +51,27 @@
 	@include icon-size(18px, 18px);
 	background-size: 100%;
 }
+
+.icon--date{
+	background-image: url("./../assets/svg/registration/date.svg");
+	@include icon-size(18px, 18px);
+	background-size: 100%;
+}
+
+.icon--gender{
+	background-image: url("./../assets/svg/registration/gender.svg");
+	@include icon-size(18px, 18px);
+	background-size: 100%;
+}
+
+.icon--height{
+	background-image: url("./../assets/svg/registration/height.svg");
+	@include icon-size(18px, 18px);
+	background-size: 100%;
+}
+
+.icon--weight{
+	background-image: url("./../assets/svg/registration/weight.svg");
+	@include icon-size(18px, 18px);
+	background-size: 100%;
+}

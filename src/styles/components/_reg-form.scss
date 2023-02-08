@@ -1,7 +1,8 @@
 @use "../abstract" as *;
 
 .registration,
-.authorization {
+.authorization,
+.complete {
 	margin-bottom: 80px;
 
 	// .registration__wrapper
@@ -120,4 +121,8 @@
 			background: var(--colored-btn-hover-color);
 		}
 	}
+}
+
+.reg-form select {
+	appearance: none;
 }

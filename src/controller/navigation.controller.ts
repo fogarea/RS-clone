@@ -3,11 +3,10 @@ import navigationModel from "model/navigation.model";
 class NavigationController {
   route(event: Event) {
     event.preventDefault();
-
     if (!(event.target instanceof HTMLElement)) return;
 
-    const target = event.target.closest(".header__logo")
-      ? (event.target.closest(".header__logo") as HTMLAnchorElement)
+    const target = event.target.closest(".logo")
+      ? (event.target.closest(".logo") as HTMLAnchorElement)
       : (event.target as HTMLAnchorElement);
 
     if (!target) return;

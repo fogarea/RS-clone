@@ -5,14 +5,15 @@ import navigationModel from "model/navigation.model";
 import { Layout } from "types/layout.types";
 import { Routing } from "types/route.types";
 import authorizationView from "view/authorization/auth.view";
-import counterView from "view/counter/counter.view";
+import dashboardView from "view/dashboard/dashboard.view";
 import headerView from "view/header/header.view";
 import programsView from "view/programs/programs.view";
 import mainView from "view/landing/landing.view";
-import registrationView from "view/registration/registration.view";
 import footerView from "./view/footer/footer.view";
 import aboutView from "./view/about/about.view";
 import lang from "./lang/lang";
+import completeView from "./view/registration/complete/complete.view";
+import registrationView from "./view/registration/registration.view";
 
 class App {
   layout = {} as Layout;
@@ -54,24 +55,28 @@ class App {
           authorizationView.init(this.layout.main);
           break;
 
+        case Routing.COMPLETE:
+          completeView.init(this.layout.main);
+          break;
+
         case Routing.DASHBOARD:
-          counterView.init(this.layout.main);
+          dashboardView.init(this.layout.main);
           break;
 
         case Routing.WORKOUT:
-          counterView.init(this.layout.main);
+          dashboardView.init(this.layout.main);
           break;
 
         case Routing.MEAL:
-          counterView.init(this.layout.main);
+          dashboardView.init(this.layout.main);
           break;
 
         case Routing.PROGRESS:
-          counterView.init(this.layout.main);
+          dashboardView.init(this.layout.main);
           break;
 
         case Routing.PROFILE:
-          counterView.init(this.layout.main);
+          dashboardView.init(this.layout.main);
           break;
 
         default:

@@ -3,10 +3,13 @@ class SwitchColorScheme {
     !this.scheme ? (this.darkScheme = checkbox) : (this.lightScheme = checkbox);
   }
 
-  public changeScheme(e: Event) {
-    const target = e.target as HTMLInputElement;
-    target.checked ? (this.lightScheme = target) : (this.darkScheme = target);
-    this.scheme = target.checked;
+  public changeScheme(switcher: HTMLElement) {
+    const input = switcher.previousElementSibling;
+
+    if (input instanceof HTMLInputElement) {
+      input.checked ? (this.darkScheme = input) : (this.lightScheme = input);
+      this.scheme = input.checked;
+    }
   }
 
   private set lightScheme(checkbox: HTMLInputElement) {
