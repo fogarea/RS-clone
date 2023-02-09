@@ -15,6 +15,7 @@ import lang from "./lang/lang";
 import completeView from "./view/registration/complete/complete.view";
 import registrationView from "./view/registration/registration.view";
 import preloaderUtils from "utils/preloader.utils";
+import coverView from "view/cover/cover.view";
 
 class App {
   layout = {} as Layout;
@@ -75,7 +76,7 @@ class App {
           break;
 
         case Routing.PROGRESS:
-          dashboardView.init(this.layout.main);
+          coverView.init(this.layout.main);
           break;
 
         case Routing.PROFILE:
