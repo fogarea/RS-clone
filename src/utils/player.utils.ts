@@ -46,7 +46,22 @@ class Player {
 
   createLayout(root: HTMLElement) {
     this.layout.player = document.createElement("div");
-    this.layout.player.id = "player-" + Math.round(Math.random() * 1000000);
+    this.layout.player.setAttribute(
+      "style",
+      `
+        width: 480px;
+        box-sizing: border-box;
+        padding: 20px;
+        aspect-ratio: 4/3;
+        background-image: url("https://img.youtube.com/vi/${this.training.media}/hqdefault.jpg");
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+      `
+    );
+    this.layout.player.id = "player-" + this.training.media;
     root.append(this.layout.player);
   }
 
@@ -128,4 +143,4 @@ class Player {
   }
 }
 
-export default new Player();
+export default Player;

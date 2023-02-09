@@ -1,4 +1,4 @@
-import player from "utils/player.utils";
+import Player from "utils/player.utils";
 import { Layout } from "types/layout.types";
 import progressController from "controller/progress.controller";
 import profileController from "controller/profile.controller";
@@ -20,10 +20,9 @@ class CoverView {
   }
 
   render() {
-    // tmp: object must be replaced with state.user.program[training-id]
     if (profileController.program?.trainings) {
       for (const traning of profileController.program.trainings) {
-        player.create(this.layout.wrapper, traning);
+        if (traning) new Player().create(this.layout.wrapper, traning);
       }
     } else {
       console.log("выберите программу");
