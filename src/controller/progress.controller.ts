@@ -28,7 +28,7 @@ class ProgressController {
       _id: progress.id,
       watched: progress.watched,
       calories: progress.calories,
-      finished: [...progress.finished]
+      finished: [...progress.finished.filter((v, i, a) => a.indexOf(v) === i)]
     };
   }
 

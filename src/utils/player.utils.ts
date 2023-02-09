@@ -122,11 +122,13 @@ class Player {
     else if (this.timer) clearTimeout(this.timer);
   }
 
-  updateTrainings() {
+  updateTrainings(drop = "") {
     if (!this.player) return;
 
     this.currentTraining.watchedTime += 1;
-    this.currentTraining.currentTime = Math.round(this.player.getCurrentTime());
+    this.currentTraining.currentTime = drop
+      ? 0
+      : Math.round(this.player.getCurrentTime());
     this.currentTraining.calories = +(
       (this.currentTraining.watchedTime * this.training.calories) /
       this.player.getDuration()
@@ -138,7 +140,7 @@ class Player {
 
   private finishTraining() {
     this.stackProgress(false);
-    this.updateTrainings();
+    this.updateTrainings("drop");
     progressController.finishTraning(this.training.id);
   }
 }
