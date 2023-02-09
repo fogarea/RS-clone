@@ -1,3 +1,6 @@
+import { Program } from "./program.types";
+import { Progress } from "./progress.types";
+
 export type User = {
   authorized: boolean;
   id: string;
@@ -5,8 +8,8 @@ export type User = {
   name: string;
   surname: string;
   phone: string;
-  profile: string;
-  progress: string;
+  profile: Profile;
+  progress: Progress;
 };
 
 export type Profile = {
@@ -15,5 +18,5 @@ export type Profile = {
   weight: number;
   gender: string;
   birthday: string;
-  program?: string;
+  program?: Program;
 };

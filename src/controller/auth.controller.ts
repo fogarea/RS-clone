@@ -7,6 +7,7 @@ import {
 } from "types/http.request.types";
 import navigationController from "./navigation.controller";
 import { Routing } from "types/route.types";
+import { initialUser } from "store/state";
 
 class AuthController {
   async register(request: HttpRegisterRequest) {
@@ -57,8 +58,6 @@ class AuthController {
         profile,
         progress
       });
-
-      this.redirectToHome();
     }
   }
 
@@ -69,17 +68,9 @@ class AuthController {
   }
 
   logout() {
+    localStorage.removeItem("trainings");
     localStorage.removeItem("accessToken");
-    authModel.updateUserState({
-      authorized: false,
-      id: "",
-      email: "",
-      name: "",
-      surname: "",
-      phone: "",
-      progress: "",
-      profile: ""
-    });
+    authModel.updateUserState(initialUser);
     const route = navigationModel.createRoute(Routing.LANDING);
     navigationController.applyRoute(route);
 

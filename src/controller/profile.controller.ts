@@ -30,7 +30,7 @@ class ProfileController {
 
   async createProgram(programId: string) {
     const profile: HttpProfileRequest = {
-      _id: state.user.profile,
+      _id: state.user.profile.id,
       program: programId
     };
 
@@ -51,6 +51,26 @@ class ProfileController {
     });
 
     await authController.autoLogin();
+    authController.redirectToHome();
+  }
+
+  get program() {
+    const currentProgram = state.user.profile.program || "";
+    return state.programs.find((program) => program.id === currentProgram);
+  }
+
+  get isCompletedReg() {
+    return (
+      !state.user.authorized ||
+      (state.user.authorized && state.user.profile?.birthday)
+    );
+  }
+
+  get isSelectedProgram() {
+    return (
+      !state.user.authorized ||
+      (state.user.authorized && state.user.profile?.program)
+    );
   }
 }
 
