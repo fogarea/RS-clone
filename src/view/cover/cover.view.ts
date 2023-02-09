@@ -1,6 +1,7 @@
 import player from "utils/player.utils";
 import { Layout } from "types/layout.types";
 import progressController from "controller/progress.controller";
+import profileController from "controller/profile.controller";
 
 class CoverView {
   layout = {} as Layout;
@@ -20,14 +21,13 @@ class CoverView {
 
   render() {
     // tmp: object must be replaced with state.user.program[training-id]
-    player.create(this.layout.wrapper, {
-      id: "63e0e37a979600ef61a1443c",
-      title: "workout",
-      description: "8 min abs",
-      tag: ["abs"],
-      media: "nV80y796Gwk",
-      calories: 50000
-    });
+    if (profileController.program?.trainings) {
+      for (const traning of profileController.program.trainings) {
+        player.create(this.layout.wrapper, traning);
+      }
+    } else {
+      console.log("выберите программу");
+    }
   }
 
   addHandlers() {
@@ -38,7 +38,7 @@ class CoverView {
     setTimeout(() => {
       progressController.watchProgress();
       this.watchProgress();
-    }, 60000);
+    }, 3000);
   }
 }
 

@@ -4,9 +4,7 @@ import EventEmitter from "utils/observer.utils";
 
 class ProfileModel extends EventEmitter {
   updateProfile(profile: Profile) {
-    state.profile = { ...profile };
-
-    console.log("state.profile", state.profile);
+    state.user.profile = { ...profile };
   }
 }
 

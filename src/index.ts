@@ -16,6 +16,8 @@ import completeView from "./view/registration/complete/complete.view";
 import registrationView from "./view/registration/registration.view";
 import preloaderUtils from "utils/preloader.utils";
 import coverView from "view/cover/cover.view";
+import programsController from "controller/programs.controller";
+import profileController from "controller/profile.controller";
 
 class App {
   layout = {} as Layout;
@@ -27,6 +29,7 @@ class App {
     lang.init();
 
     preloaderUtils.init(root);
+    await programsController.getAll();
     this.createLayout(root);
     await authController.autoLogin();
     this.render();
@@ -37,6 +40,16 @@ class App {
 
   subscribe() {
     const routeCallback = () => {
+      if (!profileController.isCompletedReg) {
+        completeView.init(this.layout.main);
+        return;
+      }
+
+      if (!profileController.isSelectedProgram) {
+        programsView.init(this.layout.main);
+        return;
+      }
+
       switch (navigationModel.route.path) {
         case Routing.PROGRAMS:
           programsView.init(this.layout.main);

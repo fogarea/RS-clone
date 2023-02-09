@@ -26,7 +26,7 @@ class Player {
   }
 
   getTrainings() {
-    this.trainings = JSON.parse(localStorage.getItem("tranings") || "{}");
+    this.trainings = JSON.parse(localStorage.getItem("trainings") || "{}");
 
     this.currentTraining ??= {
       finished: false,
@@ -46,13 +46,8 @@ class Player {
 
   createLayout(root: HTMLElement) {
     this.layout.player = document.createElement("div");
-    this.layout.player.id = "player";
-    this.layout.player.setAttribute(
-      "style",
-      "width: calc(100% - 50px); aspect-ratio: 16/9; margin: 25px;"
-    );
-
-    root.replaceChildren(this.layout.player);
+    this.layout.player.id = "player-" + Math.round(Math.random() * 1000000);
+    root.append(this.layout.player);
   }
 
   render() {
@@ -117,13 +112,13 @@ class Player {
 
     this.currentTraining.watchedTime += 1;
     this.currentTraining.currentTime = Math.round(this.player.getCurrentTime());
-    this.currentTraining.calories = Math.round(
+    this.currentTraining.calories = +(
       (this.currentTraining.watchedTime * this.training.calories) /
-        this.player.getDuration()
-    );
+      this.player.getDuration()
+    ).toFixed(3);
     this.currentTraining.finished = this.player.getState() === "ended";
 
-    localStorage.setItem("tranings", JSON.stringify(this.trainings));
+    localStorage.setItem("trainings", JSON.stringify(this.trainings));
   }
 
   private finishTraining() {

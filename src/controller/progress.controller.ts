@@ -1,14 +1,35 @@
+import progressModel from "model/progress.model";
+import progressService from "service/progress.service";
+import { state } from "store/state";
+import { HttpProgressRequest } from "types/http.request.types";
+import { Progress } from "types/progress.types";
 import { Trainings } from "types/training.types";
 
 class ProgressController {
   finishTraning(id: string) {
-    console.log(`update user Progress, add ${id} to 'finished'`);
+    const progress = { ...state.user.progress };
+    progress.finished.push(id);
+    progressModel.update(progress);
+
+    progressService.update(this.createHttpProgress(progress));
   }
 
   updateProgress(watched: number, calories: number) {
-    console.log(
-      `update user Progress, increase 'watched' by ${watched} and 'calories' by ${calories}`
-    );
+    const progress = { ...state.user.progress };
+    progress.watched += watched;
+    progress.calories += calories;
+    progressModel.update(progress);
+
+    progressService.update(this.createHttpProgress(progress));
+  }
+
+  private createHttpProgress(progress: Progress): HttpProgressRequest {
+    return {
+      _id: progress.id,
+      watched: progress.watched,
+      calories: progress.calories,
+      finished: [...progress.finished]
+    };
   }
 
   watchProgress() {
@@ -16,7 +37,7 @@ class ProgressController {
     let calories = 0;
 
     const trainings: Trainings = JSON.parse(
-      localStorage.getItem("tranings") || "{}"
+      localStorage.getItem("trainings") || "{}"
     );
 
     for (const id in trainings) {
@@ -29,7 +50,7 @@ class ProgressController {
 
     if (watched || calories) {
       this.updateProgress(watched, calories);
-      localStorage.setItem("tranings", JSON.stringify(trainings));
+      localStorage.setItem("trainings", JSON.stringify(trainings));
     }
   }
 }

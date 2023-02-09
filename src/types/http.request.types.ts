@@ -20,6 +20,13 @@ export type HttpProfileRequest = {
   program?: string;
 };
 
+export type HttpProgressRequest = {
+  _id: string;
+  watched: number;
+  calories: number;
+  finished: string[];
+};
+
 export type HttpUnionRequest =
   | HttpRegisterRequest
   | HttpLoginRequest

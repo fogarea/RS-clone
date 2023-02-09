@@ -6,7 +6,7 @@ class AuthModel extends EventEmitter {
   updateUserState(user: User) {
     state.user = { ...user };
 
-    console.log("state.user", state.user);
+    console.log("state", state);
   }
 }
 

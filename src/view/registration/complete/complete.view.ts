@@ -74,7 +74,7 @@ class CompleteView {
         const formData = Object.fromEntries(new FormData(form).entries());
 
         const profile: HttpProfileRequest = {
-          _id: state.user.profile,
+          _id: state.user.profile.id,
           gender: `${formData.gender}`,
           birthday: `${formData.birthday}`,
           weight: parseInt(`${formData.weight}`),
