@@ -100,7 +100,7 @@ class Preloader {
       this.finishPreloader();
     }, 10000);
 
-    document.body.classList.add("non-scroll");
+    document.body.classList.add("body--scroll__disable");
 
     document.addEventListener("DOMContentLoaded", () => {
       let totalSize = 0;
@@ -143,7 +143,7 @@ class Preloader {
 
     preloader.classList.add("hide-preloader");
     this.layout.percentsNumber.innerHTML = "100";
-    document.body.classList.remove("non-scroll");
+    document.body.classList.remove("body--scroll__disable");
   }
 }
 

@@ -11,7 +11,7 @@ class ProgramsView {
   async init(root: HTMLElement) {
     this.createLayout(root);
     this.render();
-    this.addHandlers(root);
+    this.addHandlers();
   }
 
   createLayout(root: HTMLElement) {
@@ -50,8 +50,8 @@ class ProgramsView {
     programContentVew.render(this.layout.content);
   }
 
-  addHandlers(root: HTMLElement) {
-    root.addEventListener("click", async (e: Event) => {
+  addHandlers() {
+    this.layout.content.addEventListener("click", async (e: Event) => {
       const target = e.target as HTMLElement;
 
       if (target.tagName === "BUTTON")

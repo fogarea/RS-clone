@@ -1,5 +1,4 @@
 import authModel from "model/auth.model";
-import navigationModel from "model/navigation.model";
 import authService from "service/auth.service";
 import {
   HttpLoginRequest,
@@ -11,69 +10,46 @@ import { initialUser } from "store/state";
 
 class AuthController {
   async register(request: HttpRegisterRequest) {
-    const { id, status } = await authService.register(request);
+    const { status, ...user } = await authService.register(request);
 
     if (status === 403) return;
 
     if (status === 404) return;
 
-    if (id) await this.login(request);
+    if (user.id) await this.login(request);
 
-    const route = navigationModel.createRoute(Routing.COMPLETE);
-    navigationController.applyRoute(route);
+    navigationController.createRoute(Routing.COMPLETE);
   }
 
   async login(request: HttpLoginRequest) {
-    const { id, email, name, surname, phone, profile, progress, status } =
-      await authService.login(request);
+    const { status, ...user } = await authService.login(request);
 
     if (status === 403) return;
 
     if (status === 404) return;
 
-    authModel.updateUserState({
-      authorized: true,
-      id,
-      email,
-      name,
-      surname,
-      phone,
-      profile,
-      progress
-    });
+    authModel.updateUserState({ authorized: true, ...user });
   }
 
   async autoLogin() {
-    const { id, email, name, surname, phone, profile, progress } =
-      await authService.autoLogin();
-
-    if (id) {
-      authModel.updateUserState({
-        authorized: true,
-        id,
-        email,
-        name,
-        surname,
-        phone,
-        profile,
-        progress
-      });
-    }
+    const user = await authService.autoLogin();
+    if (user.id) authModel.updateUserState({ authorized: true, ...user });
   }
 
   redirectToHome() {
-    const route = navigationModel.createRoute(Routing.DASHBOARD);
-    navigationController.applyRoute(route);
-    authModel.emit("auth.update.header");
+    navigationController.createRoute(Routing.DASHBOARD);
+    this.headerUpdate();
   }
 
   logout() {
     localStorage.removeItem("trainings");
     localStorage.removeItem("accessToken");
     authModel.updateUserState(initialUser);
-    const route = navigationModel.createRoute(Routing.LANDING);
-    navigationController.applyRoute(route);
 
+    this.headerUpdate();
+  }
+
+  headerUpdate() {
     authModel.emit("auth.update.header");
   }
 }

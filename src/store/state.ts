@@ -26,7 +26,8 @@ export const initialUser = {
     weight: 0,
     gender: "",
     birthday: ""
-  }
+  },
+  achievements: { "": false }
 };
 
 export const state: State = {

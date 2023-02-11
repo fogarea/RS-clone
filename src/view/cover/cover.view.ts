@@ -21,8 +21,12 @@ class CoverView {
 
   render() {
     if (profileController.program?.trainings) {
-      for (const traning of profileController.program.trainings) {
-        if (traning) new Player().create(this.layout.wrapper, traning);
+      console.log(
+        "profileController.program.trainings",
+        profileController.program.trainings
+      );
+      for (const training of profileController.program.trainings) {
+        if (training) new Player().create(this.layout.wrapper, training);
       }
     } else {
       console.log("выберите программу");
@@ -37,7 +41,7 @@ class CoverView {
     setTimeout(() => {
       progressController.watchProgress();
       this.watchProgress();
-    }, 3000);
+    }, 30000);
   }
 }
 

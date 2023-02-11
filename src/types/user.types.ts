@@ -1,5 +1,6 @@
 import { Program } from "./program.types";
 import { Progress } from "./progress.types";
+import { Achievements } from "types/achievements.types";
 
 export type User = {
   authorized: boolean;
@@ -10,6 +11,7 @@ export type User = {
   phone: string;
   profile: Profile;
   progress: Progress;
+  achievements: Achievements;
 };
 
 export type Profile = {

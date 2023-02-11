@@ -1,0 +1,24 @@
+@use "../abstract" as *;
+
+.today {
+	// .today__wrapper
+	&__wrapper {
+	}
+
+	// .today__title
+	&__title {
+		margin: 0 0 30px;
+	}
+
+	// .today__content
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 30px;
+	}
+
+	// .today__workout
+	&__workout {
+	}
+}

@@ -15,18 +15,21 @@ class HeaderView {
   init(root: HTMLElement) {
     this.createLayout(root);
     this.render();
-    this.addHandlers(root);
+    this.addHandlers();
   }
 
-  addHandlers(root: HTMLElement) {
-    root.addEventListener("click", (event: Event) => {
+  addHandlers() {
+    this.layout.wrapper.addEventListener("click", (event: Event) => {
       const target = event.target as HTMLElement;
 
       if (target.tagName === "A" || target.tagName === "SPAN") {
         navigationController.route(event);
       }
 
-      if (target.id === "switch-scheme") switchColorScheme.changeScheme(target);
+      if (target.id === "switch-scheme") {
+        console.log(111);
+        switchColorScheme.changeScheme(target);
+      }
     });
   }
 

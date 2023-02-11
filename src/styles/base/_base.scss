@@ -50,6 +50,8 @@
 
 	--input-text-color: #{$color-input-text-dark};
 
+	--card-bg-color: #{$color-card-bg-dark};
+
 	--logo: #{$logo-dark};
 }
 
@@ -77,6 +79,8 @@
 
 	--input-text-color: #{$color-input-text-light};
 
+	--card-bg-color: #{$color-card-bg-light};
+
 	--logo: #{$logo-light};
 }
 
@@ -96,9 +100,9 @@ h2 {
 }
 
 h3 {
-	@include font(3.2rem, 4.2rem);
+	@include font(2.6rem, 4.2rem, 300);
 	@include media-mobile-big {
-		@include font(2.1rem, 3.1rem);
+		@include font(2.1rem, 3.1rem, 300);
 	}
 }
 

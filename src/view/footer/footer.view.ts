@@ -2,9 +2,9 @@ import { Layout } from "types/layout.types";
 import logoView from "../components/logo.view";
 import navigationController from "../../controller/navigation.controller";
 import lang from "../../lang/lang";
-import navigationModel from "../../model/navigation.model";
-import authModel from "../../model/auth.model";
 import langSwitcherView from "./lang.switcher.view";
+import programsController from "../../controller/programs.controller";
+import authController from "../../controller/auth.controller";
 
 class FooterView {
   layout = {} as Layout;
@@ -24,13 +24,14 @@ class FooterView {
       }
     });
 
-    this.layout.select.addEventListener("change", (e: Event) => {
+    this.layout.select.addEventListener("change", async (e: Event) => {
       const select = e.target as HTMLSelectElement;
+
       lang.setLang(`${select.value}`);
 
-      // TODO refactor
-      navigationModel.emit("route.update");
-      authModel.emit("auth.update.header");
+      await programsController.getAll();
+      navigationController.reRenderRoute();
+      authController.headerUpdate();
     });
   }
 

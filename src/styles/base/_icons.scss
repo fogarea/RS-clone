@@ -75,3 +75,56 @@
 	@include icon-size(18px, 18px);
 	background-size: 100%;
 }
+
+.icon-round {
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	&--shadow {
+		background: var(--card-bg-color);
+	}
+}
+
+.icon--blur {
+	opacity: 0.2;
+}
+
+.icon--fire {
+	background-image: url("./../assets/svg/achievements/fire.svg");
+	@include icon-size(34px, 34px);
+	background-size: 100%;
+}
+
+.icon--calendar {
+	background-image: url("./../assets/svg/achievements/calendar.svg");
+	@include icon-size(34px, 34px);
+	background-size: 100%;
+}
+
+.icon--dumbbells {
+	background-image: url("./../assets/svg/achievements/dumbbells.svg");
+	@include icon-size(34px, 34px);
+	background-size: 100%;
+}
+
+.icon--salad {
+	background-image: url("./../assets/svg/achievements/salad.svg");
+	@include icon-size(34px, 34px);
+	background-size: 100%;
+}
+
+.icon--water {
+	background-image: url("./../assets/svg/achievements/water.svg");
+	@include icon-size(34px, 34px);
+	background-size: 100%;
+}
+
+.icon--lowebody-training {
+	background-image: url("./../assets/svg/workout/lowebody-workout.svg");
+	@include icon-size(73px, 90px);
+	background-size: 100%;
+}

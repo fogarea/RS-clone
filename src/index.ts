@@ -18,6 +18,7 @@ import preloaderUtils from "utils/preloader.utils";
 import coverView from "view/cover/cover.view";
 import programsController from "controller/programs.controller";
 import profileController from "controller/profile.controller";
+import profileWrapperView from "./view/profile/profile.wrapper.view";
 
 class App {
   layout = {} as Layout;
@@ -93,7 +94,7 @@ class App {
           break;
 
         case Routing.PROFILE:
-          dashboardView.init(this.layout.main);
+          profileWrapperView.init(this.layout.main);
           break;
 
         default:

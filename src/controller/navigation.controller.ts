@@ -1,4 +1,5 @@
 import navigationModel from "model/navigation.model";
+import { Routing } from "types/route.types";
 
 class NavigationController {
   route(event: Event) {
@@ -30,6 +31,15 @@ class NavigationController {
     } else {
       navigationModel.emit("route.update");
     }
+  }
+
+  createRoute(path?: Routing) {
+    const route = navigationModel.createRoute(path);
+    this.applyRoute(route);
+  }
+
+  reRenderRoute() {
+    navigationModel.emit("route.update");
   }
 }
 
