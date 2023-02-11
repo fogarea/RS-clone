@@ -9,6 +9,7 @@ export type User = {
   name: string;
   surname: string;
   phone: string;
+  avatar: number;
   profile: Profile;
   progress: Progress;
   achievements: Achievements;

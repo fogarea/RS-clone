@@ -19,6 +19,8 @@ import coverView from "view/cover/cover.view";
 import programsController from "controller/programs.controller";
 import profileController from "controller/profile.controller";
 import profileWrapperView from "./view/profile/profile.wrapper.view";
+import editProfileView from "./view/profile/edit/profile/edit.profile.view";
+import editProfileDetailsView from "./view/profile/edit/details/edit.profile.details.view";
 
 class App {
   layout = {} as Layout;
@@ -95,6 +97,14 @@ class App {
 
         case Routing.PROFILE:
           profileWrapperView.init(this.layout.main);
+          break;
+
+        case Routing.EDIT_PROFILE:
+          editProfileView.init(this.layout.main);
+          break;
+
+        case Routing.EDIT_DETAILS:
+          editProfileDetailsView.init(this.layout.main);
           break;
 
         default:

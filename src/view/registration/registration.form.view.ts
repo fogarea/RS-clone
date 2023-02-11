@@ -8,13 +8,20 @@ import { getRegLang } from "../../lang/reg/reg.lang";
 
 class RegistrationFormView {
   render(root: HTMLElement) {
-    const { name, surname, phone, email, password, btn } = getRegLang();
+    const {
+      namePlace,
+      surnamePlace,
+      phonePlace,
+      emailPlace,
+      passwordPlace,
+      btn
+    } = getRegLang();
 
-    firstNameFieldView.init(root, `${name}`);
-    lastNameFieldView.init(root, `${surname}`);
-    phoneFieldView.init(root, `${phone}`);
-    emailFieldView.init(root, "reg-email", `${email}`);
-    passwordFieldView.init(root, "reg-password", `${password}`);
+    firstNameFieldView.init(root, `${namePlace}`);
+    lastNameFieldView.init(root, `${surnamePlace}`);
+    phoneFieldView.init(root, `${phonePlace}`);
+    emailFieldView.init(root, "reg-email", `${emailPlace}`);
+    passwordFieldView.init(root, "reg-password", `${passwordPlace}`);
     submitButtonView.render(root, `${btn}`);
   }
 }

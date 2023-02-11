@@ -11,6 +11,7 @@
 		display: flex;
 		justify-content: space-around;
 		gap: 15px;
+		margin-bottom: 30px;
 	}
 
 	// .physique__card
@@ -33,5 +34,9 @@
 	// .physique__text
 	&__text {
 		color: #454550;
+	}
+
+	&__edit-btn {
+		text-align: center;
 	}
 }

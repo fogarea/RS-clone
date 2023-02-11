@@ -18,12 +18,12 @@ class RedirectRegView {
     const { redirect, link } = getAuthLang();
 
     this.layout.content = document.createElement("p");
-    this.layout.content.className = "authorization__redirect";
+    this.layout.content.className = "form__redirect";
     this.layout.content.innerText = `${redirect}`;
 
     this.link = document.createElement("a");
     this.link.href = state.basePath + Routing.REGISTRATION;
-    this.link.className = "authorization__link";
+    this.link.className = "form__link";
     this.link.innerText = `${link}`;
 
     this.layout.content.append(this.link);

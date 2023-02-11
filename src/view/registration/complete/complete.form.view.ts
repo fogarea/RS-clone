@@ -6,14 +6,32 @@ import { getCompleteLang } from "../../../lang/reg/complete.lang";
 
 class CompleteFormView {
   render(root: HTMLElement) {
-    const { gender, genderOptions, birthday, weight, height, btn } =
-      getCompleteLang();
+    const {
+      genderPlace,
+      genderOptions,
+      birthdayPlace,
+      weightPlace,
+      heightPlace,
+      btn
+    } = getCompleteLang();
 
     if (Array.isArray(genderOptions))
-      selectFieldView.init(root, `${gender}`, genderOptions);
-    dateFieldView.init(root, `${birthday}`);
-    numberFieldView.init(root, "weight", "icon--weight", "weight", `${weight}`);
-    numberFieldView.init(root, "height", "icon--height", "height", `${height}`);
+      selectFieldView.init(root, `${genderPlace}`, genderOptions);
+    dateFieldView.init(root, `${birthdayPlace}`);
+    numberFieldView.init(
+      root,
+      "weight",
+      "icon--weight",
+      "weight",
+      `${weightPlace}`
+    );
+    numberFieldView.init(
+      root,
+      "height",
+      "icon--height",
+      "height",
+      `${heightPlace}`
+    );
     submitButtonView.render(root, `${btn}`);
   }
 }

@@ -16,14 +16,14 @@ export class InputField {
     max?: string
   ) {
     const label = document.createElement("label");
-    label.className = "reg-form__label";
+    label.className = "form-fields__label";
     label.setAttribute("for", `${id}`);
 
     const icon = document.createElement("span");
-    icon.className = `reg-form__icon icon ${iconCls}`;
+    icon.className = `form-fields__icon icon ${iconCls}`;
 
     const input = document.createElement("input");
-    input.className = "reg-form__input";
+    input.className = "form-fields__input";
     input.name = `${name}`;
     input.type = `${type}`;
     input.placeholder = `${placeholder}`;
@@ -40,6 +40,8 @@ export class InputField {
     if (callbacks) this.addHandlers(input, callbacks);
 
     root.append(label);
+
+    return input;
   }
 
   addHandlers(input: HTMLInputElement, callbacks: EventCallback[]) {

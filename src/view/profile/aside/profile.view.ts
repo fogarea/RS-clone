@@ -3,8 +3,11 @@ import profileController from "../../../controller/profile.controller";
 import button from "../../components/button";
 import { Layout } from "types/layout.types";
 import { getProfileLang } from "../../../lang/profile/profile.lang";
+import navigationController from "../../../controller/navigation.controller";
+import { Routing } from "types/route.types";
 
-const image = require("../../../assets/svg/profile/user.svg") as string;
+const MEDIA_ENDPOINT =
+  "https://raw.githubusercontent.com/fogarea/assets/fitness/user";
 
 class ProfileView {
   layout = {} as Layout;
@@ -16,7 +19,9 @@ class ProfileView {
 
   createLayout(root: HTMLElement) {
     const { title } = getProfileLang();
-    const { name, surname } = state.user;
+    const { name, surname, avatar } = state.user;
+
+    const avatarLink = `${MEDIA_ENDPOINT}/${state.user.profile.gender.toLowerCase()}/${avatar}.svg`;
 
     this.layout.wrapper = document.createElement("div");
     this.layout.wrapper.className = "profile__wrapper cards__container";
@@ -26,7 +31,7 @@ class ProfileView {
 
     this.layout.img = document.createElement("div");
     this.layout.img.className = "profile__img";
-    this.layout.img.innerHTML = `<img src="${image}" alt="Profile Picture">`;
+    this.layout.img.innerHTML = `<img src="${avatarLink}" alt="Profile Picture">`;
 
     this.layout.info = document.createElement("div");
     this.layout.info.className = "profile__content";
@@ -59,9 +64,7 @@ class ProfileView {
 
   renderButton() {
     const { btn } = getProfileLang();
-    const onEdit = () => {
-      console.log("Edit");
-    };
+    const onEdit = () => navigationController.createRoute(Routing.EDIT_PROFILE);
 
     button.render(this.layout.button, "button--rounded", `${btn}`, onEdit);
   }

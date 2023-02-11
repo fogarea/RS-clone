@@ -1,7 +1,7 @@
 import { InputField } from "./input.field";
 
 class LastNameFieldView extends InputField {
-  init(root: HTMLElement, placeholder: string) {
+  init(root: HTMLElement, placeholder: string, value?: string) {
     const callbacks = [
       {
         event: "input",
@@ -28,7 +28,7 @@ class LastNameFieldView extends InputField {
       }
     ];
 
-    this.render(
+    const input = this.render(
       root,
       "last-name",
       "surname",
@@ -37,6 +37,8 @@ class LastNameFieldView extends InputField {
       placeholder,
       callbacks
     );
+
+    if (value) input.value = value;
   }
 }
 
