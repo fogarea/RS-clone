@@ -12,7 +12,8 @@
     "lib": ["es2021", "DOM", "DOM.Iterable"],
     "jsx": "react",
     "paths": {
-      "types/*": ["types/*"]
+      "types/*": ["types/*"],
+      "lang/*": ["lang/*"]
     }
   },
   "files": ["src/index.ts"],
