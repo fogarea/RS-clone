@@ -1,0 +1,30 @@
+@use "../abstract" as *;
+
+.other {
+	// .other__wrapper
+	&__wrapper {
+	}
+
+	// .other__title
+	&__title {
+		margin: 0 0 30px;
+	}
+
+	// .other__content
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+	}
+
+	// .other__text
+	&__text {
+		text-align: center;
+	}
+
+	// .other__button
+	&__button {
+	}
+}

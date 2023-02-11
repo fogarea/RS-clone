@@ -1,0 +1,44 @@
+@use "../abstract" as *;
+
+.progress {
+	// .progress__wrapper
+	&__wrapper {
+	}
+
+	// .progress__title
+	&__title {
+		margin: 0 0 30px;
+	}
+
+	// .progress__content
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 50px;
+		justify-content: center;
+	}
+
+	// .progress__item
+	&__item {
+		@extend %block-shadowed;
+		display: flex;
+		flex-basis: 45%;
+		flex-direction: column;
+		text-align: center;
+		background: var(--card-bg-color);
+		padding: 11px 25px;
+	}
+}
+
+.progress-item {
+	// .progress-item__number
+	&__number {
+		@include font(4.2rem, 4.6rem, 300);
+		color: var(--colored-btn-color);
+	}
+
+	// .progress-item__text
+	&__text {
+		@include font(2.2rem, 4.6rem, 300);
+	}
+}

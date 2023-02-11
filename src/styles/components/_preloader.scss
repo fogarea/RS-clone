@@ -1,9 +1,5 @@
 @use "../abstract"as *;
 
-.non-scroll {
-  overflow: hidden;
-}
-
 .non-transition * {
   transition: none !important;
 }

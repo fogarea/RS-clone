@@ -1,0 +1,24 @@
+@use "../abstract" as *;
+
+.achievements {
+	// .achievements__wrapper
+	&__wrapper {
+	}
+
+	// .achievements__title
+	&__title {
+		margin: 0 0 30px;
+	}
+
+	// .achievements__content
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 50px;
+		justify-content: center;
+	}
+
+	// .achievements__item
+	&__item {
+	}
+}

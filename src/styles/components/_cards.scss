@@ -1,0 +1,40 @@
+@use "../abstract" as *;
+
+.cards {
+	display: grid;
+	column-gap: 32px;
+	grid-template: 1fr / 1fr minmax(400px, 2fr);
+
+	@media screen and (max-width: 985px) {
+		row-gap: 32px;
+		grid-template: 1fr/1fr;
+	}
+
+	@media screen and (max-width: 550px) {
+		padding: 0 5px;
+	}
+
+	&__container {
+		@extend %block-shadowed;
+		background: var(--secondary-bg-color);
+		padding: 15px 32px 32px 32px;
+	}
+}
+
+.aside {
+	grid-column: 1 / 2;
+	display: flex;
+	gap: 32px;
+	flex-direction: column;
+}
+
+.content {
+	grid-column: 2/3;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+
+	@media screen and (max-width: 985px) {
+		grid-column: 1/2;
+	}
+}

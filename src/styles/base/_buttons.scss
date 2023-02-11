@@ -28,6 +28,18 @@
 		}
 	}
 
+	&--rounded{
+		border-radius: 99px;
+		padding: 6px 30px;
+		background: var(--colored-btn-color);
+		border: 1px solid var(--colored-btn-color);
+		color: var(--colored-btn-text-color);
+
+		&:hover {
+			background: var(--colored-btn-hover-color);
+		}
+	}
+
 	&--large {
 		width: 100%;
 	}

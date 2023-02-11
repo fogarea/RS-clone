@@ -51,8 +51,7 @@ class ProgramsView {
   }
 
   addHandlers() {
-    const programs = document.querySelector(".programs");
-    programs?.addEventListener("click", async (e: Event) => {
+    this.layout.content.addEventListener("click", async (e: Event) => {
       const target = e.target as HTMLElement;
 
       if (target.tagName === "BUTTON")
