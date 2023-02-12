@@ -1,9 +1,15 @@
 @use "../abstract" as *;
 
 .physique {
-	// .physique__title
-	&__title {
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 		margin: 0 0 30px;
+		font-family: $font-family-primary;
+		@include font(1.6rem, 3.5rem, normal);
+		@extend %transition;
 	}
 
 	// .physique__content
@@ -11,7 +17,6 @@
 		display: flex;
 		justify-content: space-around;
 		gap: 15px;
-		margin-bottom: 30px;
 	}
 
 	// .physique__card
@@ -34,9 +39,5 @@
 	// .physique__text
 	&__text {
 		color: #454550;
-	}
-
-	&__edit-btn {
-		text-align: center;
 	}
 }

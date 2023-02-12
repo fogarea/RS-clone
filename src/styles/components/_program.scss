@@ -5,8 +5,14 @@
 	&__wrapper {
 	}
 
-	&__title {
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 		margin: 0 0 30px;
+		font-family: $font-family-primary;
+		@include font(1.6rem, 3.5rem, normal);
+		@extend %transition;
 	}
 
 	// .program__content
@@ -54,10 +60,7 @@
 		}
 	}
 
-	// .program__img
-
-
-	// .program__button
-	&__button {
+	& .training__text {
+		margin-bottom: 0;
 	}
 }

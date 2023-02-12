@@ -5,7 +5,6 @@ import { Layout } from "types/layout.types";
 import { getProfileLang } from "../../../lang/profile/profile.lang";
 import navigationController from "../../../controller/navigation.controller";
 import { Routing } from "types/route.types";
-import button from "../../components/button";
 
 class PhysiqueView {
   layout = {} as Layout;
@@ -13,7 +12,18 @@ class PhysiqueView {
   render(root: HTMLElement) {
     this.createLayout(root);
     this.renderCards();
-    this.renderButton();
+    this.renderEditLink();
+    this.addHandler();
+  }
+
+  addHandler() {
+    this.layout.wrapper.addEventListener("click", (event: Event) => {
+      const target = event.target as HTMLElement;
+
+      if (target.tagName === "A" || target.tagName === "SPAN") {
+        navigationController.route(event);
+      }
+    });
   }
 
   createLayout(root: HTMLElement) {
@@ -22,21 +32,22 @@ class PhysiqueView {
     this.layout.wrapper = document.createElement("div");
     this.layout.wrapper.className = "physique__wrapper cards__container";
 
+    this.layout.top = document.createElement("div");
+    this.layout.top.className = "physique__top";
+
     this.layout.title = document.createElement("h3");
     this.layout.title.className = "physique__title title";
     this.layout.title.innerText = `${title}`;
 
+    this.layout.edit = document.createElement("span");
+    this.layout.edit.className = "aside__edit-link";
+
+    this.layout.top.append(this.layout.title, this.layout.edit);
+
     this.layout.content = document.createElement("div");
     this.layout.content.className = "physique__content";
 
-    this.layout.button = document.createElement("div");
-    this.layout.button.className = "physique__edit-btn";
-
-    this.layout.wrapper.append(
-      this.layout.title,
-      this.layout.content,
-      this.layout.button
-    );
+    this.layout.wrapper.append(this.layout.top, this.layout.content);
 
     root.replaceChildren(this.layout.wrapper);
   }
@@ -61,11 +72,14 @@ class PhysiqueView {
                                 </div>`;
   }
 
-  renderButton() {
+  renderEditLink() {
     const { btn } = getProfileLang();
-    const onEdit = () => navigationController.createRoute(Routing.EDIT_DETAILS);
 
-    button.render(this.layout.button, "button--rounded", `${btn}`, onEdit);
+    const editLink = document.createElement("a");
+    editLink.textContent = `${btn}`;
+    editLink.href = state.basePath + Routing.EDIT_DETAILS;
+
+    this.layout.edit.append(editLink);
   }
 }
 
