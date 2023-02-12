@@ -6,7 +6,8 @@ class NumberFieldView extends InputField {
     id: string,
     icon: string,
     name: string,
-    placeholder: string
+    placeholder: string,
+    value?: string
   ) {
     const callbacks = [
       {
@@ -15,9 +16,9 @@ class NumberFieldView extends InputField {
           if (e.target instanceof HTMLInputElement) {
             this.removeErrorMessage(e.target);
 
-            const value = e.target.value;
+            const val = e.target.value;
 
-            value.length > 1 && value.length < 4
+            val.length > 1 && val.length < 4
               ? this.addCorrectMessage(e.target)
               : this.addErrorMessage(e.target);
           }
@@ -25,7 +26,17 @@ class NumberFieldView extends InputField {
       }
     ];
 
-    this.render(root, id, name, "number", icon, placeholder, callbacks);
+    const input = this.render(
+      root,
+      id,
+      name,
+      "number",
+      icon,
+      placeholder,
+      callbacks
+    );
+
+    if (value) input.value = value;
   }
 }
 

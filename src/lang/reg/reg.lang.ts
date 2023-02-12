@@ -10,23 +10,23 @@ const regDictionary: Languages = {
     ru: "Присоединяйся!",
     en: "Create an Account"
   },
-  name: {
+  namePlace: {
     ru: "Имя",
     en: "First Name"
   },
-  surname: {
+  surnamePlace: {
     ru: "Фамилия",
     en: "Last Name"
   },
-  phone: {
+  phonePlace: {
     ru: "Номер телефона",
     en: "Phone"
   },
-  email: {
+  emailPlace: {
     ru: "Почта",
     en: "Email"
   },
-  password: {
+  passwordPlace: {
     ru: "Пароль",
     en: "Password"
   },

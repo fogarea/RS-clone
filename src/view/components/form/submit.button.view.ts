@@ -1,10 +1,10 @@
 class SubmitButtonView {
   render(root: HTMLElement, text: string) {
     const wrapper = document.createElement("div");
-    wrapper.className = "reg-form__submit";
+    wrapper.className = "form-fields__submit";
 
     const input = document.createElement("input");
-    input.className = "reg-form__button";
+    input.className = "form-fields__button";
     input.type = "submit";
     input.value = `${text}`;
 

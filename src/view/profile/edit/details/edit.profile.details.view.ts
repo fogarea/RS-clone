@@ -1,11 +1,13 @@
 import { Layout } from "types/layout.types";
-import completeFormView from "./complete.form.view";
-import profileController from "../../../controller/profile.controller";
-import { state } from "../../../store/state";
-import { getCompleteLang } from "../../../lang/reg/complete.lang";
-import formDataView from "../../components/form.data.view";
+import { getProfileEditLang } from "../../../../lang/profile/edit.lang";
+import { state } from "../../../../store/state";
+import profileController from "../../../../controller/profile.controller";
+import formDataView from "../../../components/form.data.view";
+import navigationController from "../../../../controller/navigation.controller";
+import { Routing } from "types/route.types";
+import editProfileDetailsFormView from "./edit.profile.details.form.view";
 
-class CompleteView {
+class EditProfileDetailsView {
   layout = {} as Layout;
 
   init(root: HTMLElement) {
@@ -15,7 +17,7 @@ class CompleteView {
   }
 
   createLayout(root: HTMLElement) {
-    const { text, textBold } = getCompleteLang();
+    const { text, textBold } = getProfileEditLang();
 
     this.layout = formDataView.createLayout(root, `${textBold}`, `${text}`);
 
@@ -24,7 +26,7 @@ class CompleteView {
   }
 
   render() {
-    completeFormView.render(this.layout.formFields);
+    editProfileDetailsFormView.render(this.layout.formFields);
   }
 
   addHandler() {
@@ -38,16 +40,18 @@ class CompleteView {
         const form = e.target;
         const formData = Object.fromEntries(new FormData(form).entries());
 
-        await profileController.createProfile({
+        await profileController.updateProfile({
           _id: state.user.profile.id,
           gender: `${formData.gender}`,
           birthday: `${formData.birthday}`,
           weight: parseInt(`${formData.weight}`),
           height: parseInt(`${formData.height}`)
         });
+
+        navigationController.createRoute(Routing.PROFILE);
       }
     });
   }
 }
 
-export default new CompleteView();
+export default new EditProfileDetailsView();

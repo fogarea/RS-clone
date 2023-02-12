@@ -21,10 +21,6 @@ class CoverView {
 
   render() {
     if (profileController.program?.trainings) {
-      console.log(
-        "profileController.program.trainings",
-        profileController.program.trainings
-      );
       for (const training of profileController.program.trainings) {
         if (training) new Player().create(this.layout.wrapper, training);
       }

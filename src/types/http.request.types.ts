@@ -6,6 +6,13 @@ export type HttpRegisterRequest = {
   password: string;
 };
 
+export type HttpUserRequest = {
+  name: string;
+  surname: string;
+  avatar: number;
+  phone: string;
+};
+
 export type HttpLoginRequest = {
   email: string;
   password: string;
@@ -30,4 +37,5 @@ export type HttpProgressRequest = {
 export type HttpUnionRequest =
   | HttpRegisterRequest
   | HttpLoginRequest
+  | HttpUserRequest
   | HttpProfileRequest;

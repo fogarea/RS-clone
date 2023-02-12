@@ -10,7 +10,7 @@ const completeDictionary: Languages = {
     ru: "Заполните данные профиля,",
     en: "Let’s complete your profile"
   },
-  gender: {
+  genderPlace: {
     ru: "Пол",
     en: "Gender"
   },
@@ -18,15 +18,15 @@ const completeDictionary: Languages = {
     ru: ["Мужской", "Женский"],
     en: ["Male", "Female"]
   },
-  birthday: {
+  birthdayPlace: {
     ru: "Дата рождения",
     en: "Date of Birth"
   },
-  weight: {
+  weightPlace: {
     ru: "Вес (кг)",
     en: "Weight (kg)"
   },
-  height: {
+  heightPlace: {
     ru: "Рост (см)",
     en: "Height (cm)"
   },

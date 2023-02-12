@@ -4,6 +4,7 @@ import redirectRegView from "./redirect.reg.view";
 import { HttpLoginRequest } from "types/http.request.types";
 import authController from "../../controller/auth.controller";
 import { getAuthLang } from "../../lang/auth.lang";
+import formDataView from "../components/form.data.view";
 
 class AuthView {
   layout = {} as Layout;
@@ -17,55 +18,18 @@ class AuthView {
   createLayout(root: HTMLElement) {
     const { greeting, title } = getAuthLang();
 
-    this.layout.auth = document.createElement("section");
-    this.layout.auth.className = "authorization";
+    this.layout = formDataView.createLayout(root, `${title}`, `${greeting}`);
 
-    this.layout.wrapper = document.createElement("div");
-    this.layout.wrapper.className = "wrapper authorization__wrapper";
-
-    this.layout.content = document.createElement("div");
-    this.layout.content.className = "authorization__content";
-
-    this.layout.desc = document.createElement("div");
-    this.layout.desc.className = "authorization__desc";
-
-    this.layout.text = document.createElement("p");
-    this.layout.text.className = "authorization__text";
-    this.layout.text.innerText = `${greeting}`;
-
-    this.layout.textBold = document.createElement("p");
-    this.layout.textBold.className = "authorization__text--bold";
-    this.layout.textBold.innerText = `${title}`;
-
-    this.layout.desc.append(this.layout.text, this.layout.textBold);
-
-    this.layout.form = document.createElement("form");
-    this.layout.form.className = "authorization__form reg-form";
-    this.layout.form.id = "auth-form";
-
-    this.layout.redirect = document.createElement("div");
-    this.layout.redirect.className = "authorization__login";
-
-    this.layout.content.append(
-      this.layout.desc,
-      this.layout.form,
-      this.layout.redirect
-    );
-
-    this.layout.wrapper.append(this.layout.content);
-
-    this.layout.auth.append(this.layout.wrapper);
-
-    root.replaceChildren(this.layout.auth);
+    root.replaceChildren(this.layout.form);
   }
 
   render() {
-    authFormView.render(this.layout.form);
+    authFormView.render(this.layout.formFields);
     redirectRegView.init(this.layout.redirect);
   }
 
   addHandler() {
-    this.layout.form.addEventListener("submit", async (e: Event) => {
+    this.layout.formFields.addEventListener("submit", async (e: Event) => {
       e.preventDefault();
 
       const errors = document.querySelectorAll(".error");

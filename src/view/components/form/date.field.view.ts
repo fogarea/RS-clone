@@ -1,7 +1,7 @@
 import { InputField } from "./input.field";
 
 class DateFieldView extends InputField {
-  init(root: HTMLElement, placeholder: string) {
+  init(root: HTMLElement, placeholder: string, value?: string) {
     const callbacks = [
       {
         event: "focus",
@@ -12,7 +12,7 @@ class DateFieldView extends InputField {
       }
     ];
 
-    this.render(
+    const input = this.render(
       root,
       "date",
       "birthday",
@@ -23,6 +23,8 @@ class DateFieldView extends InputField {
       "1900-01-01",
       "2023-01-01"
     );
+
+    if (value) input.value = value;
   }
 }
 

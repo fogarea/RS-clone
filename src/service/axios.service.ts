@@ -2,7 +2,7 @@ import { HttpUnionRequest } from "types/http.request.types";
 import lang from "../lang/lang";
 
 interface Request {
-  method: "GET" | "PUT" | "POST" | "DELETE" | "OPTIONS";
+  method: "GET" | "PUT" | "POST" | "DELETE" | "OPTIONS" | "PATCH";
 }
 
 interface AxiosRequest extends Request {
@@ -36,7 +36,7 @@ class AxiosService {
     request.headers = headers;
     request.method = method;
     request.credentials = "include";
-    if (method === "POST" || method === "PUT") {
+    if (method === "POST" || method === "PUT" || method === "PATCH") {
       request.body = JSON.stringify(body);
     }
 

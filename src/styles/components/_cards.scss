@@ -26,6 +26,20 @@
 	display: flex;
 	gap: 32px;
 	flex-direction: column;
+
+	&__edit-link {
+		align-self: flex-end;
+		text-align: center;
+
+		a {
+			position: relative;
+			text-decoration: none;
+			color: var(--link-text-color);
+			&:hover {
+				color: var(--accent-color);
+			}
+		}
+	}
 }
 
 .content {

@@ -27,7 +27,6 @@ class HeaderView {
       }
 
       if (target.id === "switch-scheme") {
-        console.log(111);
         switchColorScheme.changeScheme(target);
       }
     });
