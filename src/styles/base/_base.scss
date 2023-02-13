@@ -1,5 +1,4 @@
 @use "../abstract" as *;
-//@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 .html {
@@ -39,6 +38,9 @@
 	--colored-btn-text-color: #{$color-light};
 	--colored-btn-hover-color: #{$color-hover-colored-btn-dark};
 
+	--bordered-link-btn-color: #{$color-bordered-link-btn-dark};
+	--bordered-link-btn-hover-color: #{$color-hover-colored-btn-dark};
+
 	--text-color: #{$color-text-dark};
 	--link-text-color: #{$color-link-text-dark};
 	--link-text-hover-color: #{$color-link-hover-text-dark};
@@ -52,14 +54,21 @@
 
 	--card-bg-color: #{$color-card-bg-dark};
 
+	--round-icon-bg-color: #{$color-round-bg-dark};
+
+	--tag-bg-color: #{$color-tag-bg-dark};
+
 	--logo: #{$logo-dark};
 }
 
 .body--light {
 	--primary-color: #{$color-primary-light};
 	--primary-bg-color: #{$color-primary-bg-light};
+
 	--secondary-bg-color: #{$color-secondary-bg-light};
+
 	--accent-color: #{$color-accent-light};
+
 	--bordered-btn-color: #{$color-bordered-btn-light};
 	--border-btn-color: #{$color-primary-light};
 	--bordered-btn-text-color: #{$color-text-btn-light};
@@ -68,6 +77,10 @@
 	--colored-btn-color: #{$color-colored-btn-light};
 	--colored-btn-text-color: #{$color-light};
 	--colored-btn-hover-color: #{$color-hover-colored-btn-light};
+
+	--bordered-link-btn-color: #{$color-bordered-link-btn-light};
+	--bordered-link-btn-hover-color: #{$color-hover-colored-btn-light};
+
 	--text-color: #{$color-text-light};
 	--link-text-color: #{$color-link-text-light};
 	--link-text-hover-color: #{$color-link-hover-text-light};
@@ -80,6 +93,10 @@
 	--input-text-color: #{$color-input-text-light};
 
 	--card-bg-color: #{$color-card-bg-light};
+
+	--round-icon-bg-color: #{$color-round-bg-light};
+
+	--tag-bg-color: #{$color-tag-bg-light};
 
 	--logo: #{$logo-light};
 }

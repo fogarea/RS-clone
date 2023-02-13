@@ -23,6 +23,7 @@ import editProfileView from "./view/profile/edit/profile/edit.profile.view";
 import editProfileDetailsView from "./view/profile/edit/details/edit.profile.details.view";
 import workoutView from "view/workout/workout.view";
 import trainingView from "view/workout/training.view";
+import goalsView from "./view/goals/goals.view";
 
 class App {
   layout = {} as Layout;
@@ -110,6 +111,10 @@ class App {
 
         case Routing.EDIT_DETAILS:
           editProfileDetailsView.init(this.layout.main);
+          break;
+
+        case Routing.GOALS:
+          goalsView.init(this.layout.main);
           break;
 
         default:

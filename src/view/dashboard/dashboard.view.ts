@@ -1,24 +1,27 @@
-import button from "../components/button";
-import authController from "../../controller/auth.controller";
-import navigationController from "../../controller/navigation.controller";
-import { Routing } from "types/route.types";
+import { Layout } from "types/layout.types";
+import trainingsView from "./trainings/trainings.view";
+import todayMealsView from "./today.meals.view";
+import goalsView from "./goals.view";
 
 class DashboardView {
+  layout = {} as Layout;
+
   init(root: HTMLElement) {
     this.createLayout(root);
+    this.render();
   }
 
   createLayout(root: HTMLElement) {
-    const container = document.createElement("div");
+    this.layout.wrapper = document.createElement("div");
+    this.layout.wrapper.className = "dashboard-cards wrapper";
 
-    const onLogout = () => {
-      authController.logout();
-      navigationController.createRoute(Routing.LANDING);
-    };
+    root.replaceChildren(this.layout.wrapper);
+  }
 
-    button.render(container, "button--colored", "Log-out", onLogout);
-
-    root.replaceChildren(container);
+  render() {
+    goalsView.render(this.layout.wrapper);
+    todayMealsView.render(this.layout.wrapper);
+    trainingsView.init(this.layout.wrapper);
   }
 }
 
