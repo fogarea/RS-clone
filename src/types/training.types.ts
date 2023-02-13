@@ -3,6 +3,7 @@ export type Training = {
   title: string;
   description: string;
   tag: string[];
+  icon: string;
   media: string;
   calories: number;
 };

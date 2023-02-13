@@ -34,7 +34,9 @@
 	// .progress-item__number
 	&__number {
 		@include font(4.2rem, 4.6rem, 300);
-		color: var(--colored-btn-color);
+		background: var(--colored-btn-color);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 
 	// .progress-item__text

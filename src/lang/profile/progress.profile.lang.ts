@@ -7,7 +7,7 @@ const profileProgressDictionary: Languages = {
     en: "Progress"
   },
   caloriesText: {
-    ru: "Потрачено каллорий",
+    ru: "Потрачено калорий",
     en: "Calories burned"
   },
   trainings: {

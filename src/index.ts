@@ -21,6 +21,7 @@ import profileController from "controller/profile.controller";
 import profileWrapperView from "./view/profile/profile.wrapper.view";
 import editProfileView from "./view/profile/edit/profile/edit.profile.view";
 import editProfileDetailsView from "./view/profile/edit/details/edit.profile.details.view";
+import goalsView from "./view/goals/goals.view";
 
 class App {
   layout = {} as Layout;
@@ -105,6 +106,10 @@ class App {
 
         case Routing.EDIT_DETAILS:
           editProfileDetailsView.init(this.layout.main);
+          break;
+
+        case Routing.GOALS:
+          goalsView.init(this.layout.main);
           break;
 
         default:

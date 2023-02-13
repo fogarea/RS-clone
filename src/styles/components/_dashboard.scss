@@ -1,0 +1,12 @@
+@use "../abstract" as *;
+
+.dashboard-cards {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	//grid-template-rows: 0.5fr 1fr 1fr;
+	gap: 30px 30px;
+	grid-template-areas:
+    "goals meals meals"
+    "workouts workouts workouts"
+    "workouts workouts workouts";
+}

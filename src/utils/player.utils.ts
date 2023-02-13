@@ -71,15 +71,15 @@ class Player {
 
     if (this.currentTraining.finished) {
       // finished
-      text = "repeat workout";
+      text = "repeat workouts";
       type = "button--bordered";
     } else if (this.currentTraining.currentTime) {
       // started
-      text = "continue workout";
+      text = "continue workouts";
       type = "button--bordered";
     } else {
       // new
-      text = "start workout";
+      text = "start workouts";
       type = "button--bordered";
     }
 
