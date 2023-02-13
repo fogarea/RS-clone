@@ -62,6 +62,9 @@ $color-card-bg-dark: #f8f9fa6b;
 $color-round-bg-light: #f8f9fa;
 $color-round-bg-dark: #f8f9fa6b;
 
+$logo-light: url("./../assets/svg/logo/logo-light.svg");
+$logo-dark: url("./../assets/svg/logo/logo-dark.svg");
+
 $color-bordered-link-btn-light: linear-gradient(274.42deg, #fbfbfc 0%, #fbfbfc 124.45%) padding-box, linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%) border-box;
 
 $color-bordered-link-btn-dark: linear-gradient(274.42deg, rgb(255 255 255 / 30%) 0%, rgb(255 255 255 / 30%) 124.45%) padding-box, linear-gradient(274.42deg, rgba(153, 187, 131, 0) 0%, rgba(159, 157, 255, 0) 124.45%) border-box;
@@ -71,9 +74,6 @@ $color-hover-colored-btn-dark: #ba8ca4;
 
 $color-tag-bg-light: #f2f2f2a6;
 $color-tag-bg-dark: #f8f9fa6b;
-
-$logo-light: url("./../assets/svg/logo/logo-light.svg");
-$logo-dark: url("./../assets/svg/logo/logo-dark.svg");
 
 $arrow-left-light: url("./../assets/svg/arrow/arrow-left-light.svg");
 $arrow-left-dark: url("./../assets/svg/arrow/arrow-left-dark.svg");
