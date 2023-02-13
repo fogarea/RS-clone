@@ -1,48 +1,48 @@
 @use "../abstract" as *;
 
-.t-training__tags > div,
-.t-training__calories {
-  color: $color-link-text-dark;
-  background: $color-primary-light;
-  padding: 0 10px;
-  border-radius: 5px;
-  padding: 5px 21px;
-  border-radius: 20px;
-}
-
 .t-training {
   // t-training__wrapper
   &__wrapper {
     display: flex;
-    gap: 30px;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  // t-training__first-line
-  &__first-line {
+  &__content {
+    @extend %block-shadowed;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 30px;
+    text-align: center;
+    background: var(--card-bg-color);
+    padding: 30px 32px 30px 32px;
   }
 
   // t-training__title
   &__title {
-    flex: 1;
-    font-size: 4.5rem;
+    @include font(3.6rem, 4.6rem, 500);
   }
 
   // t-training__desc
   &__desc {
-    font-size: 2.2rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 4.6rem;
+    @include font(2.2rem, 4.6rem, 300);
+    max-width: 900px;
   }
 
   // t-training__info
   &__info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    position: relative;
+    gap: 30px;
+  }
+
+  &__tags {
+    justify-content: center;
+
+    & .tag {
+      @include font(1.8rem, 3.6rem, 300);
+    }
   }
 
   // t-training__back
@@ -56,24 +56,10 @@
     top: 7px;
   }
 
-  // t-training__tags
-  &__tags {
-    display: flex;
-    gap: 20px;
-    flex: 1;
-  }
-
   // t-training__last-line
   &__last-line {
     display: flex;
     gap: 30px;
-  }
-
-  // t-training__calories
-  &__calories {
-    color: $color-accent-dark;
-    text-shadow: 0 0 2px $color-bordered-btn-dark;
-    background: $color-text-light;
   }
 }
 

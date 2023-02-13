@@ -5,6 +5,9 @@ import trainingCartView from "../../components/training.cart.view";
 import { getTrainingCardLang } from "../../../lang/training.card.lang";
 import { getCompletedTrainingsLang } from "../../../lang/dashboard/completed.trainings.lang";
 import { getActiveTrainingsLang } from "../../../lang/dashboard/active.trainings.lang";
+import navigationModel from "../../../model/navigation.model";
+import { Routing } from "types/route.types";
+import navigationController from "../../../controller/navigation.controller";
 
 class TrainingsListView {
   layout = {} as Layout;
@@ -41,12 +44,16 @@ class TrainingsListView {
     if (activeTrainings) {
       const { btn } = getTrainingCardLang();
 
-      activeTrainings.forEach((training: Training) =>
+      activeTrainings.forEach((training: Training) => {
+        const route =
+          navigationModel.createRoute(Routing.WORKOUT) + "/" + training.id;
+
         trainingCartView.render(this.layout.content, training, {
           text: `${btn}`,
-          classes: "button--rounded"
-        })
-      );
+          classes: "button--rounded",
+          callback: () => navigationController.applyRoute(route)
+        });
+      });
     }
   }
 
@@ -57,11 +64,16 @@ class TrainingsListView {
       const { btn } = getTrainingCardLang();
 
       completedTrainings.forEach((training) => {
-        if (training)
+        if (training) {
+          const route =
+            navigationModel.createRoute(Routing.WORKOUT) + "/" + training.id;
+
           trainingCartView.render(this.layout.content, training, {
             text: `${btn}`,
-            classes: "button--rounded"
+            classes: "button--rounded",
+            callback: () => navigationController.applyRoute(route)
           });
+        }
       });
     }
   }

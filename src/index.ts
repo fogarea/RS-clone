@@ -21,8 +21,8 @@ import profileController from "controller/profile.controller";
 import profileWrapperView from "./view/profile/profile.wrapper.view";
 import editProfileView from "./view/profile/edit/profile/edit.profile.view";
 import editProfileDetailsView from "./view/profile/edit/details/edit.profile.details.view";
-import workoutView from "view/workout/workout.view";
-import trainingView from "view/workout/training.view";
+import workoutView from "view/workouts/workouts.view";
+import trainingView from "view/workouts/training.view";
 import goalsView from "./view/goals/goals.view";
 
 class App {

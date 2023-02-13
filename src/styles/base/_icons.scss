@@ -9,6 +9,17 @@
 	background-size: 100%;
 }
 
+.icon--arrow {
+	background-image: var(--arrow-left);
+	@include icon-size(15px, 15px);
+	background-size: 100%;
+	cursor: pointer;
+
+	&:hover {
+		background-image: var(--arrow-left-hover);
+	}
+}
+
 .icon--promo {
 	background-image: url("./../assets/svg/promo/promo.svg");
 	@include icon-size(630px, 700px);

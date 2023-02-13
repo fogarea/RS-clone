@@ -1,9 +1,9 @@
 import { Routing } from "types/route.types";
-import { getWorkoutLang } from "lang/workout/workout.lang";
 import profileController from "controller/profile.controller";
 import navigationController from "controller/navigation.controller";
 import trainingCartView from "view/components/training.cart.view";
 import navigationModel from "model/navigation.model";
+import { getTrainingCardLang } from "lang/training.card.lang";
 
 class TrainingListView {
   async init(root: HTMLElement) {
@@ -12,7 +12,7 @@ class TrainingListView {
   }
 
   render(root: HTMLElement) {
-    const { open } = getWorkoutLang();
+    const { btn } = getTrainingCardLang();
     const userProgram = profileController.program;
     if (!userProgram) return;
 
@@ -21,7 +21,7 @@ class TrainingListView {
         navigationModel.createRoute(Routing.WORKOUT) + "/" + training.id;
 
       trainingCartView.render(root, training, {
-        text: `${open}`,
+        text: `${btn}`,
         classes: "button--rounded",
         callback: () => navigationController.applyRoute(route)
       });

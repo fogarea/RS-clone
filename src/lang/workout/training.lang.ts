@@ -3,12 +3,11 @@ import { Languages } from "types/lang.types";
 
 const trainingDictionary: Languages = {
   back: {
-    ru: "назад",
-    en: "back"
+    ru: "Тренировки",
+    en: "Workouts"
   },
-
   calorie: {
-    ru: "калории",
+    ru: "калорий",
     en: "calories"
   }
 };

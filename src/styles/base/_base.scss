@@ -59,6 +59,9 @@
 	--tag-bg-color: #{$color-tag-bg-dark};
 
 	--logo: #{$logo-dark};
+
+	--arrow-left: #{$arrow-left-dark};
+	--arrow-left-hover: #{$arrow-left-hover-dark};
 }
 
 .body--light {
@@ -99,6 +102,9 @@
 	--tag-bg-color: #{$color-tag-bg-light};
 
 	--logo: #{$logo-light};
+
+	--arrow-left: #{$arrow-left-light};
+	--arrow-left-hover: #{$arrow-left-hover-light};
 }
 
 h1 {

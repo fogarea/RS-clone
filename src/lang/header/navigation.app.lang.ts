@@ -3,8 +3,8 @@ import lang from "../lang";
 
 const navAppDictionary: Languages = {
   navItem: {
-    ru: ["Дашборд", "Тренировки", "Питание", "Прогресс"],
-    en: ["Dashboard", "Workout", "Meal", "Progress"]
+    ru: ["Дашборд", "Тренировки", "Питание", "Медитации"],
+    en: ["Dashboard", "Workouts", "Meals", "Meditations"]
   }
 };
 
