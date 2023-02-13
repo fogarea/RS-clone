@@ -7,9 +7,9 @@ const workoutDictionary: Languages = {
     en: "open"
   },
 
-  back: {
-    ru: "назад",
-    en: "back"
+  change: {
+    ru: "сменить",
+    en: "change"
   }
 };
 

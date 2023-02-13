@@ -1,58 +1,68 @@
-$color-light: #FCFCFF;
+$color-light: #fcfcff;
 
 $color-overlay: rgba(80, 80, 80, 0.4);
-$font-family-primary: 'Montserrat', sans-serif;
+$font-family-primary: "Montserrat", sans-serif;
 
-$width-container: 1197px;
+$width-container: 1260px;
 
 $tablet-width: 768px;
+$notebook-width: 1050px;
+$mobile-huge-width: 600px;
 $mobile-big-width: 414px;
 $mobile-small-width: 320px;
 
-$color-primary-light: #5B66FE;
+$color-primary-light: #5b66fe;
 $color-primary-dark: #454550;
 
-$color-accent-light: #5B66FE;
+$color-accent-light: #5b66fe;
 $color-accent-dark: #ba8ca4;
 
-$color-primary-bg-light: linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%);
+$color-primary-bg-light: linear-gradient(
+  274.42deg,
+  #92a3fd 0%,
+  #9dceff 124.45%
+);
 $color-primary-bg-dark: #212224;
 
 $color-secondary-bg-light: #f6f4f7; //#f8f9fa; //linear-gradient(274.42deg, #E9E5F6 0%, #F2EEEC 124.45%);
-$color-secondary-bg-dark: linear-gradient(274.42deg, #99BB83 0%, #9F9DFF 124.45%);
+$color-secondary-bg-dark: linear-gradient(
+  274.42deg,
+  #99bb83 0%,
+  #9f9dff 124.45%
+);
 
 $color-text-light: #1d1617;
-$color-text-dark: #FCFCFF;
+$color-text-dark: #fcfcff;
 
-$color-text-btn-light: #173A56;
+$color-text-btn-light: #173a56;
 $color-text-btn-dark: #1d1617;
 
-$color-bordered-btn-light: #FCFCFF;
-$color-bordered-btn-dark: #FCFCFF;
+$color-bordered-btn-light: #fcfcff;
+$color-bordered-btn-dark: #fcfcff;
 
-$color-colored-btn-light: #5B66FE;
+$color-colored-btn-light: #5b66fe;
 $color-colored-btn-dark: #ba8ca4;
 
-$color-hover-colored-btn-light: #92A3FD;
+$color-hover-colored-btn-light: #92a3fd;
 $color-hover-colored-btn-dark: #ac8da8d4;
 
-$color-hover-bordered-btn-light: #92A3FD;
+$color-hover-bordered-btn-light: #92a3fd;
 $color-hover-bordered-btn-dark: #dddc;
 
-$color-link-text-light: #2F281E;
-$color-link-text-dark: #FCFCFF;
+$color-link-text-light: #2f281e;
+$color-link-text-dark: #fcfcff;
 
-$color-link-hover-text-light: #FCFCFFCC;
+$color-link-hover-text-light: #fcfcffcc;
 $color-link-hover-text-dark: #7f7f89;
 
 $color-input-bordered-light: #ddd;
-$color-input-bordered-dark: #FCFCFF;
+$color-input-bordered-dark: #fcfcff;
 
-$color-input-bg-light: #FCFCFF;
-$color-input-bg-dark: #F7F8F8;
+$color-input-bg-light: #fcfcff;
+$color-input-bg-dark: #f7f8f8;
 
-$color-input-text-light: #2F281E;
-$color-input-text-dark: #2F281E;
+$color-input-text-light: #2f281e;
+$color-input-text-dark: #2f281e;
 
 $color-card-bg-light: #f8f9fa; //#f6f4f7;
 $color-card-bg-dark: #f8f9fa6b;
@@ -61,5 +71,3 @@ $logo-light: url("./../assets/svg/logo/logo-light.svg");
 $logo-dark: url("./../assets/svg/logo/logo-dark.svg");
 
 // #ba8ca4 button dark theme
-
-

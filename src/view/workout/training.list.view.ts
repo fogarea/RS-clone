@@ -1,8 +1,9 @@
-import { state } from "store/state";
 import { Routing } from "types/route.types";
 import { getWorkoutLang } from "lang/workout/workout.lang";
 import profileController from "controller/profile.controller";
 import navigationController from "controller/navigation.controller";
+import trainingCartView from "view/components/training.cart.view";
+import navigationModel from "model/navigation.model";
 
 class TrainingListView {
   async init(root: HTMLElement) {
@@ -16,14 +17,14 @@ class TrainingListView {
     if (!userProgram) return;
 
     for (const training of userProgram.trainings) {
-      const trainingItem = document.createElement("div");
+      const route =
+        navigationModel.createRoute(Routing.WORKOUT) + "/" + training.id;
 
-      const trainingLink = document.createElement("a");
-      trainingLink.href = state.basePath + Routing.WORKOUT + "/" + training.id;
-      trainingLink.textContent = `${open}`;
-
-      trainingItem.append(trainingLink);
-      root.append(trainingItem);
+      trainingCartView.render(root, training, {
+        text: `${open}`,
+        classes: "button--rounded",
+        callback: () => navigationController.applyRoute(route)
+      });
     }
   }
 

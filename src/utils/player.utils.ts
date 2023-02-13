@@ -46,21 +46,13 @@ class Player {
 
   createLayout(root: HTMLElement) {
     this.layout.player = document.createElement("div");
+    this.layout.player.classList.add("yt-player");
     this.layout.player.setAttribute(
       "style",
-      `
-        width: 480px;
-        box-sizing: border-box;
-        aspect-ratio: 4/3;
-        background-image: url("https://img.youtube.com/vi/${this.training.media}/hqdefault.jpg");
-        background-repeat: no-repeat;
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-end;
-        margin-bottom: 20px;
-      `
+      `background-image: url("https://img.youtube.com/vi/${this.training.media}/hqdefault.jpg");`
     );
     this.layout.player.id = "player-" + this.training.media;
+
     root.append(this.layout.player);
   }
 
@@ -71,15 +63,15 @@ class Player {
     if (this.currentTraining.finished) {
       // finished
       text = "repeat workout";
-      type = "button--bordered";
+      type = "button--colored button--shine";
     } else if (this.currentTraining.currentTime) {
       // started
       text = "continue workout";
-      type = "button--bordered";
+      type = "button--colored button--shine";
     } else {
       // new
       text = "start workout";
-      type = "button--bordered";
+      type = "button--colored button--shine";
     }
 
     button.render(this.layout.player, type, text, () => this.createPlayer());
