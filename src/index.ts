@@ -21,6 +21,8 @@ import profileController from "controller/profile.controller";
 import profileWrapperView from "./view/profile/profile.wrapper.view";
 import editProfileView from "./view/profile/edit/profile/edit.profile.view";
 import editProfileDetailsView from "./view/profile/edit/details/edit.profile.details.view";
+import workoutView from "view/workout/workout.view";
+import trainingView from "view/workout/training.view";
 
 class App {
   layout = {} as Layout;
@@ -53,7 +55,9 @@ class App {
         return;
       }
 
-      switch (navigationModel.route.path) {
+      const parameter = navigationModel.route.parameter;
+
+      switch (navigationModel.route.resource) {
         case Routing.PROGRAMS:
           programsView.init(this.layout.main);
           break;
@@ -84,7 +88,8 @@ class App {
           break;
 
         case Routing.WORKOUT:
-          dashboardView.init(this.layout.main);
+          if (parameter) trainingView.init(this.layout.main, parameter);
+          else workoutView.init(this.layout.main);
           break;
 
         case Routing.MEAL:

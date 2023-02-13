@@ -51,7 +51,6 @@ class Player {
       `
         width: 480px;
         box-sizing: border-box;
-        padding: 20px;
         aspect-ratio: 4/3;
         background-image: url("https://img.youtube.com/vi/${this.training.media}/hqdefault.jpg");
         background-repeat: no-repeat;

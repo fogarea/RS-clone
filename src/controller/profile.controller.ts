@@ -65,6 +65,13 @@ class ProfileController {
     return state.programs.find((program) => program.id === currentProgram);
   }
 
+  getTraining(currentTraining: string) {
+    const currentProgram = state.user.profile.program || "";
+    return state.programs
+      .find((program) => program.id === currentProgram)
+      ?.trainings.find((training) => training.id === currentTraining);
+  }
+
   get isCompletedReg() {
     return (
       !state.user.authorized ||
