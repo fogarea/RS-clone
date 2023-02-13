@@ -1,0 +1,127 @@
+@use "../abstract" as *;
+
+.t-training__tags > div,
+.t-training__calories {
+  color: $color-link-text-dark;
+  background: $color-primary-light;
+  padding: 0 10px;
+  border-radius: 5px;
+  padding: 5px 21px;
+  border-radius: 20px;
+}
+
+.t-training {
+  // t-training__wrapper
+  &__wrapper {
+    display: flex;
+    gap: 30px;
+  }
+
+  // t-training__first-line
+  &__first-line {
+    display: flex;
+    gap: 30px;
+  }
+
+  // t-training__title
+  &__title {
+    flex: 1;
+    font-size: 4.5rem;
+  }
+
+  // t-training__desc
+  &__desc {
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 4.6rem;
+  }
+
+  // t-training__info
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  // t-training__back
+  &__back {
+    min-width: 133px;
+    text-align: center;
+    text-decoration: none;
+    flex: 0 0 133px;
+    align-self: flex-start;
+    position: relative;
+    top: 7px;
+  }
+
+  // t-training__tags
+  &__tags {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+  }
+
+  // t-training__last-line
+  &__last-line {
+    display: flex;
+    gap: 30px;
+  }
+
+  // t-training__calories
+  &__calories {
+    color: $color-accent-dark;
+    text-shadow: 0 0 2px $color-bordered-btn-dark;
+    background: $color-text-light;
+  }
+}
+
+@include media-notebook {
+  .t-training {
+    // t-training__wrapper
+    &__wrapper {
+      flex-direction: column;
+    }
+
+    // t-training__training
+    &__training {
+      display: flex;
+      justify-content: center;
+    }
+
+    // t-training__desc
+    &__desc {
+      margin: 20px 0;
+    }
+  }
+}
+
+@include media-mobile-huge {
+  .t-training {
+    // t-training__first-line
+    // t-training__last-line
+    &__first-line,
+    &__last-line {
+      text-align: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+    &__last-line {
+      gap: 20px;
+    }
+
+    // .t-training__back
+    &__back {
+      align-self: center;
+      justify-self: flex-end;
+      flex: 0;
+    }
+
+    // t-training__tags
+    &__tags {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
