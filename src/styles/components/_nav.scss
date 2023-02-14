@@ -10,12 +10,18 @@
 		font-family: $font-family-primary;
 		@include font(1.6rem, 3.5rem, normal);
 		@extend %transition;
-		a {
+
+		&--link {
 			text-decoration: none;
 			color: var(--link-text-color);
 			&:hover {
 				color: var(--link-text-hover-color);
 			}
+		}
+
+		&--active {
+			color: var(--link-text-hover-color);
+			cursor: default;
 		}
 	}
 

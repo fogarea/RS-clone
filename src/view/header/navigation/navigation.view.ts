@@ -6,6 +6,7 @@ export default class NavigationView {
     navItem.className = "nav__item";
 
     const navItemLink = document.createElement("a");
+    navItemLink.className = "nav__item--link";
     navItemLink.textContent = text;
     navItemLink.href = state.basePath + route;
 

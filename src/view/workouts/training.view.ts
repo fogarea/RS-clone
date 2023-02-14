@@ -35,10 +35,6 @@ class TrainingView {
     this.layout.content = document.createElement("div");
     this.layout.content.className = "t-training__content";
 
-    this.layout.title = document.createElement("h3");
-    this.layout.title.className = "t-training__title title";
-    this.layout.title.textContent = userTraining.title;
-
     this.layout.video = document.createElement("div");
     this.layout.video.className = "t-training__video";
     new Player().create(this.layout.video, userTraining);
@@ -46,11 +42,13 @@ class TrainingView {
     this.layout.info = document.createElement("div");
     this.layout.info.className = "t-training__info";
 
-    this.layout.content.append(
-      this.layout.video,
-      this.layout.title,
-      this.layout.info
-    );
+    this.layout.title = document.createElement("h3");
+    this.layout.title.className = "t-training__title title";
+    this.layout.title.textContent = userTraining.title;
+
+    this.layout.info.append(this.layout.title);
+
+    this.layout.content.append(this.layout.video, this.layout.info);
 
     this.layout.description = document.createElement("div");
     this.layout.description.className = "t-training__desc";

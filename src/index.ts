@@ -73,10 +73,12 @@ class App {
           break;
 
         case Routing.REGISTRATION:
+          headerView.toggleActiveLink();
           registrationView.init(this.layout.main);
           break;
 
         case Routing.AUTHORIZATION:
+          headerView.toggleActiveLink();
           authorizationView.init(this.layout.main);
           break;
 
@@ -102,18 +104,22 @@ class App {
           break;
 
         case Routing.PROFILE:
+          headerView.toggleActiveLink();
           profileWrapperView.init(this.layout.main);
           break;
 
         case Routing.EDIT_PROFILE:
+          headerView.toggleActiveLink();
           editProfileView.init(this.layout.main);
           break;
 
         case Routing.EDIT_DETAILS:
+          headerView.toggleActiveLink();
           editProfileDetailsView.init(this.layout.main);
           break;
 
         case Routing.GOALS:
+          headerView.toggleActiveLink();
           goalsView.init(this.layout.main);
           break;
 

@@ -22,6 +22,11 @@ class HeaderView {
     this.layout.wrapper.addEventListener("click", (event: Event) => {
       const target = event.target as HTMLElement;
 
+      if (target.closest(".nav__item--link")) {
+        this.toggleActiveLink();
+        target.classList.add("nav__item--active");
+      }
+
       if (target.tagName === "A" || target.tagName === "SPAN") {
         navigationController.route(event);
       }
@@ -68,6 +73,12 @@ class HeaderView {
       navigationLandingView.render(this.layout.navigation);
       loginButtonsView.render(this.layout.buttons);
     }
+  }
+
+  toggleActiveLink() {
+    this.layout.navigation
+      .querySelectorAll(".nav__item--link")
+      .forEach((navItem) => navItem.classList.remove("nav__item--active"));
   }
 }
 

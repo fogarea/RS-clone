@@ -9,14 +9,10 @@
   }
 
   &__content {
-    @extend %block-shadowed;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    text-align: center;
-    background: var(--card-bg-color);
-    padding: 30px 32px 30px 32px;
   }
 
   // t-training__title
@@ -35,6 +31,11 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+
+    @extend %block-shadowed;
+    text-align: center;
+    background: var(--card-bg-color);
+    padding: 30px 32px 30px 32px;
   }
 
   &__tags {

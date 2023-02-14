@@ -57,10 +57,10 @@ $color-input-text-light: #2f281e;
 $color-input-text-dark: #2f281e;
 
 $color-card-bg-light: #fbfbfc;
-$color-card-bg-dark: #f8f9fa6b;
+$color-card-bg-dark: rgb(248 249 250 / 15%); //#f8f9fa6b;
 
 $color-round-bg-light: #f8f9fa;
-$color-round-bg-dark: #f8f9fa6b;
+$color-round-bg-dark: rgb(248 249 250 / 15%); //#f8f9fa6b;
 
 $logo-light: url("./../assets/svg/logo/logo-light.svg");
 $logo-dark: url("./../assets/svg/logo/logo-dark.svg");
@@ -73,7 +73,7 @@ $color-hover-colored-btn-light: linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 1
 $color-hover-colored-btn-dark: #ba8ca4;
 
 $color-tag-bg-light: #f2f2f2a6;
-$color-tag-bg-dark: #f8f9fa6b;
+$color-tag-bg-dark: rgb(248 249 250 / 15%);//#f8f9fa6b;
 
 $arrow-left-light: url("./../assets/svg/arrow/arrow-left-light.svg");
 $arrow-left-dark: url("./../assets/svg/arrow/arrow-left-dark.svg");
