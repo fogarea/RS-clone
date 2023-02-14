@@ -11,25 +11,17 @@ $mobile-huge-width: 600px;
 $mobile-big-width: 414px;
 $mobile-small-width: 320px;
 
-$color-primary-light: #5b66fe;
+$color-primary-light: #7079fe;
 $color-primary-dark: #454550;
 
-$color-accent-light: #5b66fe;
+$color-accent-light: #7079fe;
 $color-accent-dark: #ba8ca4;
 
-$color-primary-bg-light: linear-gradient(
-  274.42deg,
-  #92a3fd 0%,
-  #9dceff 124.45%
-);
+$color-primary-bg-light: linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%);
 $color-primary-bg-dark: #212224;
 
-$color-secondary-bg-light: #f6f4f7; //#f8f9fa; //linear-gradient(274.42deg, #E9E5F6 0%, #F2EEEC 124.45%);
-$color-secondary-bg-dark: linear-gradient(
-  274.42deg,
-  #99bb83 0%,
-  #9f9dff 124.45%
-);
+$color-secondary-bg-light: #f6f4f7;
+$color-secondary-bg-dark: linear-gradient(274.42deg, #99BB83 0%, #9F9DFF 124.45%);
 
 $color-text-light: #1d1617;
 $color-text-dark: #fcfcff;
@@ -40,7 +32,7 @@ $color-text-btn-dark: #1d1617;
 $color-bordered-btn-light: #fcfcff;
 $color-bordered-btn-dark: #fcfcff;
 
-$color-colored-btn-light: #5b66fe;
+$color-colored-btn-light: linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%);
 $color-colored-btn-dark: #ba8ca4;
 
 $color-hover-colored-btn-light: #92a3fd;
@@ -64,10 +56,27 @@ $color-input-bg-dark: #f7f8f8;
 $color-input-text-light: #2f281e;
 $color-input-text-dark: #2f281e;
 
-$color-card-bg-light: #f8f9fa; //#f6f4f7;
-$color-card-bg-dark: #f8f9fa6b;
+$color-card-bg-light: #fbfbfc;
+$color-card-bg-dark: rgb(248 249 250 / 15%); //#f8f9fa6b;
+
+$color-round-bg-light: #f8f9fa;
+$color-round-bg-dark: rgb(248 249 250 / 15%); //#f8f9fa6b;
 
 $logo-light: url("./../assets/svg/logo/logo-light.svg");
 $logo-dark: url("./../assets/svg/logo/logo-dark.svg");
 
-// #ba8ca4 button dark theme
+$color-bordered-link-btn-light: linear-gradient(274.42deg, #fbfbfc 0%, #fbfbfc 124.45%) padding-box, linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%) border-box;
+
+$color-bordered-link-btn-dark: linear-gradient(274.42deg, rgb(255 255 255 / 30%) 0%, rgb(255 255 255 / 30%) 124.45%) padding-box, linear-gradient(274.42deg, rgba(153, 187, 131, 0) 0%, rgba(159, 157, 255, 0) 124.45%) border-box;
+
+$color-hover-colored-btn-light: linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%) padding-box, linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%) border-box;
+$color-hover-colored-btn-dark: #ba8ca4;
+
+$color-tag-bg-light: #f2f2f2a6;
+$color-tag-bg-dark: rgb(248 249 250 / 15%);//#f8f9fa6b;
+
+$arrow-left-light: url("./../assets/svg/arrow/arrow-left-light.svg");
+$arrow-left-dark: url("./../assets/svg/arrow/arrow-left-dark.svg");
+
+$arrow-left-hover-light: url("./../assets/svg/arrow/arrow-left-light-hover.svg");
+$arrow-left-hover-dark: url("./../assets/svg/arrow/arrow-left-dark-hover.svg");

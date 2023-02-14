@@ -1,6 +1,6 @@
 import { Routing } from "types/route.types";
 import NavigationView from "./navigation.view";
-import { getNavLandingLang } from "../../../lang/header/navigation.landing.lang";
+import { getNavLandingLang } from "lang/header/navigation.landing.lang";
 
 const routes = ["", Routing.PROGRAMS, Routing.ABOUT];
 
@@ -16,6 +16,10 @@ class NavigationLandingView extends NavigationView {
         navListLanding.append(this.generateNavItem(navItem[i], routes[i]));
       }
     }
+
+    navListLanding
+      .querySelector(".nav__item--link")
+      ?.classList.add("nav__item--active");
 
     root.replaceChildren(navListLanding);
   }

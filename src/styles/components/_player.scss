@@ -2,14 +2,16 @@
 
 .yt-player {
   @extend %block-shadowed;
-  width: 480px;
+  width: 720px;
   box-sizing: border-box;
   aspect-ratio: 4/3;
   background-repeat: no-repeat;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  background-size: contain;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 400px;
+  background-position: center;
 
   @include media-notebook {
     width: 100%;

@@ -22,6 +22,10 @@ class NavigationAppView extends NavigationView {
       }
     }
 
+    navListApp
+      .querySelector(".nav__item--link")
+      ?.classList.add("nav__item--active");
+
     root.replaceChildren(navListApp);
   }
 }

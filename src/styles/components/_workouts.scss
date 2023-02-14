@@ -1,0 +1,20 @@
+@use "../abstract" as *;
+
+.workouts {
+
+  &__title {
+    margin: 0 0 30px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    .training-cart {
+      max-width: 530px;
+    }
+  }
+}

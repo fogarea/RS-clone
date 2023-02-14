@@ -32,9 +32,38 @@
 		text-align: center;
 
 		a {
-			position: relative;
 			text-decoration: none;
 			color: var(--link-text-color);
+			&:hover {
+				color: var(--accent-color);
+			}
+		}
+	}
+
+	&__back-btn {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		align-self: flex-start;
+		text-align: center;
+
+		color: var(--link-text-color);
+
+
+		&:hover {
+			a {
+				color: var(--accent-color);
+			}
+
+			.icon {
+				background-image: var(--arrow-left-hover);
+			}
+		}
+
+		a {
+			text-decoration: none;
+			color: var(--link-text-color);
+
 			&:hover {
 				color: var(--accent-color);
 			}

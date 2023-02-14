@@ -12,7 +12,7 @@ const promoDictionary: Languages = {
         "Нажмите на кнопку ниже."
     ],
     en: [
-      "Dashboard, workout tracker and meal planner, all in one place! Try our app right now.\n" +
+      "Dashboard, workouts tracker and meals planner, all in one place! Try our app right now.\n" +
         "Click the button below."
     ]
   },

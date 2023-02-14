@@ -59,7 +59,7 @@
 		text-decoration: underline;
 		color: var(--colored-btn-color);
 		&:hover {
-			color: var(--colored-btn-hover-color);
+			color: var(--accent-color);
 		}
 	}
 }
@@ -127,6 +127,7 @@
 
 		&:hover {
 			background: var(--colored-btn-hover-color);
+			opacity: 0.8;
 		}
 	}
 }

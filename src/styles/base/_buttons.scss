@@ -28,15 +28,33 @@
 		}
 	}
 
-	&--rounded{
+	&--rounded {
 		border-radius: 99px;
 		padding: 6px 30px;
 		background: var(--colored-btn-color);
-		border: 1px solid var(--colored-btn-color);
+		//border: 1px solid var(--colored-btn-color);
 		color: var(--colored-btn-text-color);
 
 		&:hover {
-			background: var(--colored-btn-hover-color);
+			opacity: 0.8;
+		}
+	}
+
+	&--link {
+		background: var(--bordered-link-btn-color);
+		border: 1px solid transparent;
+		border-radius: 99px;
+		padding: 6px 30px;
+
+		&:hover {
+			background: var(--bordered-link-btn-hover-color);
+			color: var(--colored-btn-text-color);
+
+			& a {
+				background: $color-light;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
 		}
 	}
 

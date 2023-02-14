@@ -11,5 +11,6 @@ export enum Routing {
   PROGRESS = "progress",
   PROFILE = "profile",
   EDIT_PROFILE = "edit",
-  EDIT_DETAILS = "details"
+  EDIT_DETAILS = "details",
+  GOALS = "goals"
 }

@@ -72,6 +72,12 @@ class ProfileController {
       ?.trainings.find((training) => training.id === currentTraining);
   }
 
+  get completedTrainings() {
+    return this.program?.trainings.map((training) => {
+      if (state.user.progress.finished.includes(training.id)) return training;
+    });
+  }
+
   get isCompletedReg() {
     return (
       !state.user.authorized ||

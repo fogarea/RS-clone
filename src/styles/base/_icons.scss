@@ -9,6 +9,17 @@
 	background-size: 100%;
 }
 
+.icon--arrow {
+	background-image: var(--arrow-left);
+	@include icon-size(15px, 15px);
+	background-size: 100%;
+	cursor: pointer;
+
+	&:hover {
+		background-image: var(--arrow-left-hover);
+	}
+}
+
 .icon--promo {
 	background-image: url("./../assets/svg/promo/promo.svg");
 	@include icon-size(630px, 700px);
@@ -85,7 +96,20 @@
 	justify-content: center;
 
 	&--shadow {
-		background: var(--card-bg-color);
+		background: var(--round-icon-bg-color);
+		position: relative;
+	}
+}
+
+.icon-squared {
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	&--shadow {
 	}
 }
 
@@ -123,8 +147,112 @@
 	background-size: 100%;
 }
 
-.icon--lowebody-training {
-	background-image: url("./../assets/svg/workout/lowebody-workout.svg");
-	@include icon-size(73px, 90px);
+.icon--steps {
+	background-image: url("./../assets/svg/achievements/steps.svg");
+	@include icon-size(34px, 34px);
+	background-size: 100%;
+}
+
+.icon--fullbody {
+	background-image: url("./../assets/svg/workouts/fullbody.svg");
+	@include icon-size(77px, 95px);
+	background-size: 100%;
+}
+
+.icon--gym {
+	background-image: url("./../assets/svg/workouts/gym.svg");
+	@include icon-size(62px, 120px);
+	background-size: 100%;
+}
+
+.icon--beginners {
+	position: absolute;
+	left: 14px;
+	background-image: url("./../assets/svg/workouts/beginners.svg");
+	@include icon-size(55px, 114px);
+	background-size: 100%;
+}
+
+.icon--abs {
+	position: absolute;
+	top: 10px;
+	background-image: url("./../assets/svg/workouts/abs.svg");
+	@include icon-size(109px, 74px);
+	background-size: 100%;
+}
+
+.icon--cardio {
+	background-image: url("./../assets/svg/workouts/cardio.svg");
+	@include icon-size(80px, 115px);
+	background-size: 100%;
+}
+
+.icon--equipments {
+	background-image: url("./../assets/svg/workouts/equipments.svg");
+	@include icon-size(70px, 115px);
+	background-size: 100%;
+}
+
+.icon--fat-burning {
+	background-image: url("./../assets/svg/workouts/fat-burning.svg");
+	@include icon-size(75px, 106px);
+	background-size: 100%;
+}
+
+.icon--intense {
+	position: absolute;
+	left: 7px;
+	background-image: url("./../assets/svg/workouts/intense.svg");
+	@include icon-size(80px, 97px);
+	background-size: 100%;
+}
+
+.icon--meditation {
+	background-image: url("./../assets/svg/workouts/meditation.svg");
+	@include icon-size(75px, 91px);
+	background-size: 100%;
+}
+
+.icon--no-equipments {
+	background-image: url("./../assets/svg/workouts/no-equipments.svg");
+	@include icon-size(90px, 100px);
+	background-size: 100%;
+}
+
+.icon--no-jumping {
+	background-image: url("./../assets/svg/workouts/no-jumping.svg");
+	@include icon-size(75px, 118px);
+	background-size: 100%;
+}
+
+.icon-square {
+	width: 200px;
+	height: 200px;
+	border-radius: 22px 100px 22px 22px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	// .icon-square--shadow
+	&--shadow {
+		background: var(--card-bg-color);
+	}
+}
+
+.icon--breakfast {
+	background-image: url("./../assets/svg/meals/breakfast.svg");
+	@include icon-size(114px, 79px);
+	background-size: 100%;
+}
+
+.icon--lunch {
+	background-image: url("./../assets/svg/meals/lunch.svg");
+	@include icon-size(131px, 77px);
+	background-size: 100%;
+}
+
+.icon--dinner {
+	background-image: url("./../assets/svg/meals/dinner.svg");
+	@include icon-size(133px, 77px);
 	background-size: 100%;
 }
