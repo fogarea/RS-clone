@@ -9,6 +9,27 @@
 	background-size: 100%;
 }
 
+.icon--close {
+	background-image: var(--close-icon);
+	@include icon-size(20px, 20px);
+	background-size: 100%;
+	cursor: pointer;
+
+	&:hover {
+		filter: invert(50%);
+	}
+}
+
+.icon--burger {
+	background-image: var(--burger-menu-icon);
+	@include icon-size(18px, 10px);
+	display: none;
+	@include media-tablet {
+		display: inline-flex;
+		cursor: pointer;
+	}
+}
+
 .icon--arrow {
 	background-image: var(--arrow-left);
 	@include icon-size(15px, 15px);

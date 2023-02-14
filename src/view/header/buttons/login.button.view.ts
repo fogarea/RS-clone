@@ -1,26 +1,23 @@
-import navigationController from "controller/navigation.controller";
 import { Routing } from "types/route.types";
-import button from "../../components/button";
-import { getBtnLandingLang } from "../../../lang/header/buttons.landing.lang";
-import headerView from "../header.view";
+import { getBtnLandingLang } from "lang/header/buttons.landing.lang";
+import { state } from "../../../store/state";
 
 class LoginButtonsView {
   render(root: HTMLElement) {
     const { btn } = getBtnLandingLang();
 
-    const onSingIn = () => {
-      headerView.toggleActiveLink();
-      navigationController.createRoute(Routing.AUTHORIZATION);
-    };
-    const onSingUp = () => {
-      headerView.toggleActiveLink();
-      navigationController.createRoute(Routing.REGISTRATION);
-    };
-
     if (btn) {
-      button.render(root, "button--bordered", `${btn[0]}`, onSingIn);
+      const signInBtn = document.createElement("a");
+      signInBtn.className = "button button--bordered";
+      signInBtn.textContent = `${btn[0]}`;
+      signInBtn.href = state.basePath + Routing.AUTHORIZATION;
 
-      button.render(root, "button--colored", `${btn[1]}`, onSingUp);
+      const signUpBtn = document.createElement("a");
+      signUpBtn.className = "button button--colored";
+      signUpBtn.textContent = `${btn[1]}`;
+      signUpBtn.href = state.basePath + Routing.REGISTRATION;
+
+      root.replaceChildren(signInBtn, signUpBtn);
     }
   }
 }
