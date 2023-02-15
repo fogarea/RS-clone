@@ -8,6 +8,7 @@ import { state } from "store/state";
 import profileButtonView from "./buttons/profile.button.view";
 import navigationAppView from "./navigation/navigation.app.view";
 import navigationLandingView from "./navigation/navigation.landing.view";
+import burgerMenuView from "./burger.menu.view";
 
 class HeaderView {
   layout = {} as Layout;
@@ -43,6 +44,9 @@ class HeaderView {
 
     this.layout.logo = document.createElement("a");
 
+    this.layout.content = document.createElement("div");
+    this.layout.content.className = "header__content";
+
     this.layout.navigation = document.createElement("nav");
     this.layout.navigation.className = "header__nav nav";
 
@@ -52,12 +56,13 @@ class HeaderView {
     this.layout.buttons = document.createElement("div");
     this.layout.buttons.className = "header__buttons";
 
-    this.layout.wrapper.append(
-      this.layout.logo,
+    this.layout.content.append(
       this.layout.navigation,
       this.layout.colorScheme,
       this.layout.buttons
     );
+
+    this.layout.wrapper.append(this.layout.logo, this.layout.content);
 
     root.replaceChildren(this.layout.wrapper);
   }
@@ -73,6 +78,8 @@ class HeaderView {
       navigationLandingView.render(this.layout.navigation);
       loginButtonsView.render(this.layout.buttons);
     }
+
+    burgerMenuView.init(this.layout.wrapper, this.layout.content);
   }
 
   toggleActiveLink() {

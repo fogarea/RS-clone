@@ -1,19 +1,17 @@
-import navigationController from "controller/navigation.controller";
 import { Routing } from "types/route.types";
-import button from "../../components/button";
 import { getBtnAppLang } from "lang/header/button.app.lang";
-import headerView from "../header.view";
+import { state } from "../../../store/state";
 
 class ProfileButtonsView {
   render(root: HTMLElement) {
     const { btn } = getBtnAppLang();
 
-    const onProfile = () => {
-      headerView.toggleActiveLink();
-      navigationController.createRoute(Routing.PROFILE);
-    };
+    const profileBtn = document.createElement("a");
+    profileBtn.className = "button button--colored";
+    profileBtn.textContent = `${btn}`;
+    profileBtn.href = state.basePath + Routing.PROFILE;
 
-    button.render(root, "button--colored", `${btn}`, onProfile);
+    root.replaceChildren(profileBtn);
   }
 }
 
