@@ -26,6 +26,10 @@ const meditationListDictionary: Languages = {
     ru: "добавить",
     en: "add"
   },
+  back: {
+    ru: "назад",
+    en: "back"
+  },
   change: {
     ru: "изменить",
     en: "change"

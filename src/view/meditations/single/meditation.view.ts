@@ -1,8 +1,11 @@
 import meditationController from "controller/meditation.controller";
+import navigationController from "controller/navigation.controller";
 import { getMeditationsLang } from "lang/meditation/meditations.lang";
 import meditationModel from "model/meditation.model";
+import { state } from "store/state";
 import { Layout } from "types/layout.types";
 import { Meditation } from "types/meditation.types";
+import { Routing } from "types/route.types";
 import button from "view/components/button";
 import { audioCollector } from "../audio/audio.collector";
 import trackListView from "./track.list.view";
@@ -22,7 +25,7 @@ class MeditationView {
   }
 
   createLayout(root: HTMLElement) {
-    const { change } = getMeditationsLang();
+    const { change, back } = getMeditationsLang();
 
     const container = document.createElement("section");
     container.classList.add("meditations", "wrapper");
@@ -44,10 +47,17 @@ class MeditationView {
       trackPopupView.init(this.layout.popup, this.meditation);
     });
 
+    const backBtn = document.createElement("a");
+    backBtn.textContent = `${back}`;
+    backBtn.href = state.basePath + Routing.MEDITATIONS;
+    backBtn.addEventListener("click", (e: Event) => {
+      navigationController.route(e);
+    });
+
     this.layout.popup = document.createElement("div");
     this.layout.playlist = document.createElement("div");
 
-    container.append(info, this.layout.playlist, this.layout.popup);
+    container.append(backBtn, info, this.layout.playlist, this.layout.popup);
 
     root.replaceChildren(container);
   }
