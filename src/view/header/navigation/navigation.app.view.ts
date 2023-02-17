@@ -6,7 +6,7 @@ const routes = [
   Routing.DASHBOARD,
   Routing.WORKOUT,
   Routing.MEALS,
-  Routing.PROGRESS
+  Routing.MEDITATIONS
 ];
 
 class NavigationAppView extends NavigationView {
