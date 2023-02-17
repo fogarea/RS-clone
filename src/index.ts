@@ -15,7 +15,6 @@ import lang from "./lang/lang";
 import completeView from "./view/registration/complete/complete.view";
 import registrationView from "./view/registration/registration.view";
 import preloaderUtils from "utils/preloader.utils";
-import coverView from "view/cover/cover.view";
 import programsController from "controller/programs.controller";
 import profileController from "controller/profile.controller";
 import profileWrapperView from "./view/profile/profile.wrapper.view";
@@ -104,10 +103,6 @@ class App {
           if (parameter)
             mealView.init(this.layout.main, parameter as keyof Meals, category);
           else mealsView.init(this.layout.main);
-          break;
-
-        case Routing.PROGRESS:
-          coverView.init(this.layout.main);
           break;
 
         case Routing.PROFILE:
