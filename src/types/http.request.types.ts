@@ -1,3 +1,5 @@
+import { Meditation } from "./meditation.types";
+
 export type HttpRegisterRequest = {
   name: string;
   surname: string;
@@ -34,8 +36,18 @@ export type HttpProgressRequest = {
   finished: string[];
 };
 
+export type HttpMeditationRequest = {
+  _id: string;
+  owner: string;
+  title: string;
+  description: string;
+  media: string;
+  tracks: string[];
+};
+
 export type HttpUnionRequest =
   | HttpRegisterRequest
   | HttpLoginRequest
   | HttpUserRequest
-  | HttpProfileRequest;
+  | HttpProfileRequest
+  | HttpMeditationRequest;

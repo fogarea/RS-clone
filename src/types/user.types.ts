@@ -1,5 +1,6 @@
 import { Program } from "./program.types";
 import { Progress } from "./progress.types";
+import { Meditation } from "./meditation.types";
 import { Achievements } from "types/achievements.types";
 
 export type User = {
@@ -13,6 +14,7 @@ export type User = {
   profile: Profile;
   progress: Progress;
   achievements: Achievements;
+  meditations: Meditation[];
 };
 
 export type Profile = {

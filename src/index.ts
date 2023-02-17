@@ -27,6 +27,9 @@ import mealsView from "./view/meals/meals.view";
 import mealsController from "./controller/meals.controller";
 import mealView from "./view/meals/meal.view";
 import { Meals } from "types/meal.types";
+import meditationsView from "view/meditations/main/meditations.view";
+import meditationView from "view/meditations/single/meditation.view";
+import meditationController from "controller/meditation.controller";
 
 class App {
   layout = {} as Layout;
@@ -40,6 +43,7 @@ class App {
     preloaderUtils.init(root);
     await programsController.getAll();
     await mealsController.getAll();
+    await meditationController.getTracks();
     this.createLayout(root);
     await authController.autoLogin();
     this.render();
@@ -103,6 +107,11 @@ class App {
           if (parameter)
             mealView.init(this.layout.main, parameter as keyof Meals, category);
           else mealsView.init(this.layout.main);
+          break;
+
+        case Routing.MEDITATIONS:
+          if (parameter) meditationView.init(this.layout.main, parameter);
+          else meditationsView.init(this.layout.main);
           break;
 
         case Routing.PROFILE:
