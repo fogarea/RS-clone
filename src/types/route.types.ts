@@ -7,7 +7,7 @@ export enum Routing {
   COMPLETE = "complete",
   DASHBOARD = "dashboard",
   WORKOUT = "workout",
-  MEAL = "meal",
+  MEALS = "meals",
   PROGRESS = "progress",
   PROFILE = "profile",
   EDIT_PROFILE = "edit",

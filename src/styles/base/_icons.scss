@@ -277,3 +277,28 @@
 	@include icon-size(133px, 77px);
 	background-size: 100%;
 }
+
+.icon--kcal {
+	background-image: url("./../assets/svg/nutrition/calories.svg");
+	@include icon-size(18px, 18px);
+	background-size: 100%;
+}
+
+.icon--fats {
+	background-image: url("./../assets/svg/nutrition/fats.svg");
+	@include icon-size(18px, 18px);
+	background-size: 100%;
+}
+
+.icon--proteins {
+	background-image: url("./../assets/svg/nutrition/proteins.svg");
+	@include icon-size(18px, 18px);
+	background-size: 100%;
+}
+
+.icon--carbs {
+	background-image: url("./../assets/svg/nutrition/carbs.svg");
+	@include icon-size(18px, 18px);
+	background-size: 100%;
+}
+

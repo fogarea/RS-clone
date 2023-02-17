@@ -1,0 +1,172 @@
+@use "../abstract" as *;
+
+.meal {
+	// .meal__wrapper
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	// .meal__img
+	&__img {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	// .meal__content
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+
+	// .meal__title
+	&__title {
+	}
+
+	& .title {
+		margin-bottom: 30px;
+	}
+
+	&__info {
+		display: flex;
+	}
+
+	// .meal__nutrition
+	&__nutrition {
+	}
+
+	// .meal__desc
+	&__desc {
+		text-align: left;
+	}
+
+	// .meal__ingredients
+	&__ingredients {
+	}
+
+	// .meal__steps
+	&__steps {
+	}
+}
+
+.nutrition {
+	@extend %block-shadowed;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	background: var(--card-bg-color);
+	padding: 30px 32px 30px 32px;
+
+	// .nutrition__title
+	&__title {
+	}
+
+	// .nutrition__list
+	&__list {
+		display: flex;
+		gap: 10px;
+	}
+
+	// .nutrition__item
+	&__item {
+	}
+
+	// .nutrition__icon
+	&__icon {
+	}
+}
+
+.meal-desc {
+	@extend %block-shadowed;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	background: var(--card-bg-color);
+	padding: 30px 32px 30px 32px;
+
+	// .meal-desc__title
+	&__title {
+	}
+
+	// .meal-desc__text
+	&__text {
+	}
+}
+
+.ingredients {
+	@extend %block-shadowed;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	background: var(--card-bg-color);
+	padding: 30px 32px 30px 32px;
+
+	width: 100%;
+
+	// .ingredients__title
+	&__title {
+	}
+
+	// .ingredients__list
+	&__list {
+		display: flex;
+		justify-content: center;
+		gap: 30px;
+	}
+
+	// .ingredients__item
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	// .ingredients__amount
+	&__amount {
+	}
+
+	// .ingredients__name
+	&__name {
+	}
+}
+
+.meal-steps {
+	@extend %block-shadowed;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	background: var(--card-bg-color);
+	padding: 30px 32px 30px 32px;
+
+	width: 100%;
+
+	// .meal-steps__title
+	&__title {
+	}
+
+	// .meal-steps__list
+	&__list {
+	}
+
+	// .meal-steps__item
+	&__item {
+	}
+
+	// .meal-steps__step
+	&__step {
+	}
+
+	// .meal-steps__text
+	&__text {
+	}
+}
+
+.meal-desc {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}

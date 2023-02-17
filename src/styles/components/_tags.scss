@@ -17,4 +17,28 @@
 		background: var(--tag-bg-color);
 		color: var(--colored-btn-color);
 	}
+
+	&--rounded {
+		background: var(--tag-bg-color);
+		color: var(--colored-btn-color);
+		border-radius: 12px;
+		padding: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		margin: 0;
+	}
+
+	&--squared {
+		background: var(--tag-bg-color);
+		color: var(--colored-btn-color);
+		border-radius: 12px;
+		padding: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		margin: 0;
+	}
 }

@@ -24,11 +24,8 @@ class BurgerMenuView {
 
   addHandlers(wrapper: HTMLElement) {
     const navigation = document.querySelector(".header__content");
-    const overlay = document.createElement("div");
-    overlay.className = "overlay";
 
     const handleNavButtonClick = () => {
-      document.body.removeChild(overlay);
       navigation?.classList.remove("nav--show");
       document.body.classList.remove("body--scroll__disable");
     };
@@ -36,7 +33,6 @@ class BurgerMenuView {
     this.layout.openBtn.addEventListener("click", () => {
       navigation?.classList.add("nav--show");
       document.body.classList.add("body--scroll__disable");
-      document.body.append(overlay);
     });
 
     this.layout.closeBtn.addEventListener("click", (e: Event) => {

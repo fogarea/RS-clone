@@ -1,10 +1,12 @@
 import { User } from "types/user.types";
 import { Program } from "types/program.types";
+import { Meals } from "types/meal.types";
 
 interface State {
   basePath: string;
   user: User;
   programs: Program[];
+  meals: Meals;
 }
 
 export const initialUser = {
@@ -42,5 +44,10 @@ export const state: State = {
       trainings: [],
       id: ""
     }
-  ]
+  ],
+  meals: {
+    breakfast: [],
+    lunch: [],
+    dinner: []
+  }
 };
