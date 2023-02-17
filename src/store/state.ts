@@ -1,4 +1,5 @@
 import { User } from "types/user.types";
+import { Track } from "types/track.types";
 import { Program } from "types/program.types";
 import { Meals } from "types/meal.types";
 
@@ -7,6 +8,7 @@ interface State {
   user: User;
   programs: Program[];
   meals: Meals;
+  tracks: Track[];
 }
 
 export const initialUser = {
@@ -30,24 +32,18 @@ export const initialUser = {
     gender: "",
     birthday: ""
   },
+  meditations: [],
   achievements: { "": false }
 };
 
 export const state: State = {
   basePath: "",
   user: initialUser,
-  programs: [
-    {
-      title: "",
-      description: "",
-      media: [""],
-      trainings: [],
-      id: ""
-    }
-  ],
+  programs: [],
   meals: {
     breakfast: [],
     lunch: [],
     dinner: []
-  }
+  },
+  tracks: []
 };

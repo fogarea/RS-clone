@@ -41,7 +41,8 @@ class AxiosService {
     }
 
     const response = await fetch(
-      `https://rs-clone-back-production.up.railway.app/${URL}`,
+      //`https://rs-clone-back-production.up.railway.app/${URL}`,
+      `http://localhost:5000/${URL}`,
       request
     );
 

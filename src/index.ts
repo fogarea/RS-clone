@@ -15,7 +15,6 @@ import lang from "./lang/lang";
 import completeView from "./view/registration/complete/complete.view";
 import registrationView from "./view/registration/registration.view";
 import preloaderUtils from "utils/preloader.utils";
-import coverView from "view/cover/cover.view";
 import programsController from "controller/programs.controller";
 import profileController from "controller/profile.controller";
 import profileWrapperView from "./view/profile/profile.wrapper.view";
@@ -28,6 +27,9 @@ import mealsView from "./view/meals/meals.view";
 import mealsController from "./controller/meals.controller";
 import mealView from "./view/meals/meal.view";
 import { Meals } from "types/meal.types";
+import meditationsView from "view/meditations/main/meditations.view";
+import meditationView from "view/meditations/single/meditation.view";
+import meditationController from "controller/meditation.controller";
 
 class App {
   layout = {} as Layout;
@@ -41,6 +43,7 @@ class App {
     preloaderUtils.init(root);
     await programsController.getAll();
     await mealsController.getAll();
+    await meditationController.getTracks();
     this.createLayout(root);
     await authController.autoLogin();
     this.render();
@@ -106,8 +109,9 @@ class App {
           else mealsView.init(this.layout.main);
           break;
 
-        case Routing.PROGRESS:
-          coverView.init(this.layout.main);
+        case Routing.MEDITATIONS:
+          if (parameter) meditationView.init(this.layout.main, parameter);
+          else meditationsView.init(this.layout.main);
           break;
 
         case Routing.PROFILE:
