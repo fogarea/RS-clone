@@ -24,8 +24,7 @@ class HeaderView {
       const target = event.target as HTMLElement;
 
       if (target.closest(".nav__item--link")) {
-        this.toggleActiveLink();
-        target.classList.add("nav__item--active");
+        this.toggleActiveLink(target.id);
       }
 
       if (target.tagName === "A" || target.tagName === "SPAN") {
@@ -82,10 +81,14 @@ class HeaderView {
     burgerMenuView.init(this.layout.wrapper, this.layout.content);
   }
 
-  toggleActiveLink() {
+  toggleActiveLink(route: string) {
+    const active = document.getElementById(route);
+
     this.layout.navigation
       .querySelectorAll(".nav__item--link")
       .forEach((navItem) => navItem.classList.remove("nav__item--active"));
+
+    active?.classList.add("nav__item--active");
   }
 }
 

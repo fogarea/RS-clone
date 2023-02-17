@@ -1,11 +1,11 @@
 import { Routing } from "types/route.types";
 import NavigationView from "./navigation.view";
-import { getNavAppLang } from "../../../lang/header/navigation.app.lang";
+import { getNavAppLang } from "lang/header/navigation.app.lang";
 
 const routes = [
   Routing.DASHBOARD,
   Routing.WORKOUT,
-  Routing.MEAL,
+  Routing.MEALS,
   Routing.PROGRESS
 ];
 

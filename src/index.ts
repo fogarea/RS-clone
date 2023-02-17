@@ -24,6 +24,10 @@ import editProfileDetailsView from "./view/profile/edit/details/edit.profile.det
 import workoutView from "view/workouts/workouts.view";
 import trainingView from "view/workouts/training.view";
 import goalsView from "./view/goals/goals.view";
+import mealsView from "./view/meals/meals.view";
+import mealsController from "./controller/meals.controller";
+import mealView from "./view/meals/meal.view";
+import { Meals } from "types/meal.types";
 
 class App {
   layout = {} as Layout;
@@ -36,6 +40,7 @@ class App {
 
     preloaderUtils.init(root);
     await programsController.getAll();
+    await mealsController.getAll();
     this.createLayout(root);
     await authController.autoLogin();
     this.render();
@@ -56,7 +61,9 @@ class App {
         return;
       }
 
-      const parameter = navigationModel.route.parameter;
+      const { category, parameter } = navigationModel.route;
+
+      headerView.toggleActiveLink(navigationModel.route.resource);
 
       switch (navigationModel.route.resource) {
         case Routing.PROGRAMS:
@@ -73,12 +80,10 @@ class App {
           break;
 
         case Routing.REGISTRATION:
-          headerView.toggleActiveLink();
           registrationView.init(this.layout.main);
           break;
 
         case Routing.AUTHORIZATION:
-          headerView.toggleActiveLink();
           authorizationView.init(this.layout.main);
           break;
 
@@ -95,8 +100,10 @@ class App {
           else workoutView.init(this.layout.main);
           break;
 
-        case Routing.MEAL:
-          dashboardView.init(this.layout.main);
+        case Routing.MEALS:
+          if (parameter)
+            mealView.init(this.layout.main, parameter as keyof Meals, category);
+          else mealsView.init(this.layout.main);
           break;
 
         case Routing.PROGRESS:
@@ -104,22 +111,18 @@ class App {
           break;
 
         case Routing.PROFILE:
-          headerView.toggleActiveLink();
           profileWrapperView.init(this.layout.main);
           break;
 
         case Routing.EDIT_PROFILE:
-          headerView.toggleActiveLink();
           editProfileView.init(this.layout.main);
           break;
 
         case Routing.EDIT_DETAILS:
-          headerView.toggleActiveLink();
           editProfileDetailsView.init(this.layout.main);
           break;
 
         case Routing.GOALS:
-          headerView.toggleActiveLink();
           goalsView.init(this.layout.main);
           break;
 

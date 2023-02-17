@@ -28,6 +28,24 @@
 	}
 }
 
+.meals-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.meals {
+	&__title {
+		margin: 0 0 30px;
+	}
+
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+}
+
 .meal-card {
 	display: flex;
 	flex-direction: column;
@@ -54,6 +72,35 @@
 		gap: 5px;
 	}
 
+	&__img {
+		width: 200px;
+		height: 150px;
+
+		>* {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+
+		@include media-laptop {
+			height: auto;
+			>* {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+		}
+
+		@include media-tablet {
+			height: auto;
+			>* {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+		}
+	}
+
 	&__icon {
 		display: flex;
 		flex-grow: 1;
@@ -63,17 +110,20 @@
 		}
 	}
 
-	// .meals-card__text
+	&__title,
 	&__text {
 		@include font(2.2rem, 4.6rem, 300);
 		text-align: center;
 	}
 
-	&__data {
+	&__data,
+	&__time,
+	&__calories {
 		@include font(1.4rem, 2.6rem, 300);
 	}
 
 	&__edit-link {
+		margin-top: 10px;
 		text-align: center;
 
 		a {

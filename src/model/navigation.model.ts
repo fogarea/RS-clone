@@ -13,13 +13,14 @@ class NavigationModel extends EventEmitter {
   get route() {
     const route = new URL(window.location.href);
     const path = route.pathname.replace(state.basePath, "");
-    const [resource, parameter] = path.split("/");
+    const [resource, parameter, category] = path.split("/");
 
     return {
       protocol: route.protocol + `//`,
       host: route.host,
       path,
       resource,
+      category,
       parameter,
       href: route.href,
       origin: route.origin
