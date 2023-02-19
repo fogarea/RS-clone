@@ -58,7 +58,7 @@ class OtherView {
 
     const onLogout = () => {
       authController.logout();
-      navigationController.createRoute(Routing.LANDING);
+      navigationController.createRoute(Routing.MAIN);
     };
     const onDialog = () => {
       modalDialogView.buildModalDialog(`${title}`, onLogout);

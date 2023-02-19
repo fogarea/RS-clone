@@ -20,6 +20,17 @@
 	}
 }
 
+.icon--close-modal {
+	background-image: var(--close-modal-icon);
+	@include icon-size(20px, 20px);
+	background-size: 100%;
+	cursor: pointer;
+
+	&:hover {
+		filter: invert(50%);
+	}
+}
+
 .icon--burger {
 	background-image: var(--burger-menu-icon);
 	@include icon-size(18px, 10px);
@@ -340,6 +351,12 @@
 
 .icon--desc{
 	background-image: url("./../assets/svg/create-form/desc.svg");
+	@include icon-size(18px, 18px);
+	background-size: 100%;
+}
+
+.icon--goal {
+	background-image: url("./../assets/svg/goals/goal.svg");
 	@include icon-size(18px, 18px);
 	background-size: 100%;
 }

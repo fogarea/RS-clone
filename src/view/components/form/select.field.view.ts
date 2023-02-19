@@ -38,8 +38,28 @@ class SelectFieldView extends InputField {
 
     options.forEach((text) => {
       const option = document.createElement("option");
-      option.value = text;
       option.innerText = text;
+
+      switch (text[0]) {
+        case "М":
+          option.value = "male";
+          break;
+
+        case "M":
+          option.value = "male";
+          break;
+
+        case "Ж":
+          option.value = "female";
+          break;
+
+        case "F":
+          option.value = "female";
+          break;
+
+        default:
+          break;
+      }
 
       if (value && text === value) option.selected = true;
 

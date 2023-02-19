@@ -85,7 +85,10 @@ $burger-menu-icon-light: url("./../assets/svg/burger-menu/burger-menu-icon-light
 $burger-menu-icon-dark: url("./../assets/svg/burger-menu/burger-menu-icon-dark.svg");
 
 $close-icon-light: url("./../assets/svg/burger-menu/close-icon-light.svg");
-$close-icon-dark: url("./../assets/svg/burger-menu/close-icon-dark.svg");
+$close-icon-dark:  url("./../assets/svg/burger-menu/close-icon-light.svg"); //url("./../assets/svg/burger-menu/close-icon-dark.svg");
+
+$close-modal-icon-light: url("./../assets/svg/burger-menu/close-icon-modal-light.svg");
+$close-modal-icon-dark: url("./../assets/svg/burger-menu/close-icon-light.svg");
 
 $delete-icon-light: url("./../assets/svg/player/delete-light.svg");
 $delete-icon-dark: url("./../assets/svg/player/delete-dark.svg");

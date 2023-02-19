@@ -24,6 +24,8 @@ class AuthController {
   async login(request: HttpLoginRequest) {
     const { status, ...user } = await authService.login(request);
 
+    console.log("user", user);
+
     if (status === 403) return;
 
     if (status === 404) return;
@@ -37,7 +39,7 @@ class AuthController {
   }
 
   redirectToHome() {
-    navigationController.createRoute(Routing.DASHBOARD);
+    navigationController.createRoute(Routing.MAIN);
     this.headerUpdate();
   }
 

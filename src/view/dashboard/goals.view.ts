@@ -1,27 +1,19 @@
 import { Layout } from "types/layout.types";
 import { getDashboardGoalsLang } from "lang/dashboard/goals.lang";
+import button from "../components/button";
+import { ModalWindow } from "../components/modal/modal.view";
+import updateGoalsView from "./update.goals.view";
 import { state } from "../../store/state";
-import { Routing } from "types/route.types";
-import navigationController from "../../controller/navigation.controller";
+import goalsModel from "../../model/goals.model";
 
 class GoalsView {
   layout = {} as Layout;
 
   render(root: HTMLElement) {
     this.createLayout(root);
-    this.renderEditLink();
+    this.renderEditBtn();
     this.renderCards();
-    this.addHandler();
-  }
-
-  addHandler() {
-    this.layout.wrapper.addEventListener("click", (event: Event) => {
-      const target = event.target as HTMLElement;
-
-      if (target.tagName === "A" || target.tagName === "SPAN") {
-        navigationController.route(event);
-      }
-    });
+    this.subscribe();
   }
 
   createLayout(root: HTMLElement) {
@@ -36,7 +28,7 @@ class GoalsView {
     this.layout.top.className = "target__top card__top";
 
     this.layout.edit = document.createElement("span");
-    this.layout.edit.className = "aside__edit-link card__edit-btn";
+    this.layout.edit.className = "target__edit-btn card__edit-btn";
 
     this.layout.title = document.createElement("h3");
     this.layout.title.className = "target__title title";
@@ -47,6 +39,9 @@ class GoalsView {
     this.layout.content = document.createElement("div");
     this.layout.content.className = "target__content";
 
+    this.layout.modal = document.createElement("div");
+    this.layout.modal.className = "modal__create";
+
     this.layout.wrapper.append(this.layout.top, this.layout.content);
 
     this.layout.target.append(this.layout.wrapper);
@@ -54,14 +49,14 @@ class GoalsView {
     root.append(this.layout.target);
   }
 
-  renderEditLink() {
+  renderEditBtn() {
     const { btn } = getDashboardGoalsLang();
 
-    const editLink = document.createElement("a");
-    editLink.textContent = `${btn}`;
-    editLink.href = state.basePath + Routing.GOALS;
-
-    this.layout.edit.append(editLink);
+    button.render(this.layout.edit, "button--edit-link", `${btn}`, () => {
+      const modal = new ModalWindow();
+      modal.buildModal(this.layout.modal);
+      updateGoalsView.init(this.layout.modal, modal);
+    });
   }
 
   renderCards() {
@@ -71,9 +66,9 @@ class GoalsView {
                                         <span class="icon icon--water"></span>
                                     </div>
                                     <div class="target-card__content">
-                                        <span class="target-card__data">2${
-                                          water ? water[0] : ""
-                                        }</span>
+                                        <span class="target-card__data">${
+                                          state.user.goals.water
+                                        } ${water ? water[0] : ""}</span>
                                         <span class="target-card__text">${
                                           water ? water[1] : ""
                                         }</span>
@@ -85,10 +80,16 @@ class GoalsView {
                                         <span class="icon icon--steps"></span>
                                     </div>
                                     <div class="target-card__content">
-                                        <span class="target-card__data">2000</span>
+                                        <span class="target-card__data">${
+                                          state.user.goals.steps
+                                        }</span>
                                         <span class="target-card__text">${steps}</span>
                                     </div>
                                 </div>`;
+  }
+
+  subscribe() {
+    goalsModel.on("goals.update", () => this.renderCards());
   }
 }
 
