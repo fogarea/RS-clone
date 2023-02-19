@@ -17,7 +17,6 @@ class OtherView {
 
   createLayout(root: HTMLElement) {
     const { title, text } = getProfileOtherLang();
-    const { noBtn, yesBtn } = getExitLang();
 
     this.layout.wrapper = document.createElement("div");
     this.layout.wrapper.className = "other__wrapper cards__container";
@@ -35,15 +34,6 @@ class OtherView {
 
     this.layout.button = document.createElement("div");
     this.layout.button.className = "other__button";
-
-    this.layout.message = document.createElement("div");
-    this.layout.message.className = "confirm-message";
-
-    this.layout.message.innerHTML = `<span class="confirm-message__text"></span>
-                         <div class="confirm-message__buttons">
-                            <button class="button button--rounded">${noBtn}</button>
-                            <button class="button button--rounded">${yesBtn}</button>
-                         </div>`;
 
     this.layout.content.append(this.layout.text, this.layout.button);
 

@@ -91,6 +91,8 @@
 
 	--heart-icon: #{$heart-icon-dark};
 	--heart-icon-hover: #{$heart-icon-hover-dark};
+
+	--rs-logo: invert(1);
 }
 
 .body--light {
@@ -153,6 +155,8 @@
 
 	--heart-icon: #{$heart-icon-light};
 	--heart-icon-hover: #{$heart-icon-hover-light};
+
+	--rs-logo: invert(0);
 }
 
 h1 {

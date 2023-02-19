@@ -1,5 +1,4 @@
 import { Layout } from "types/layout.types";
-import logoView from "../components/logo.view";
 import navigationController from "../../controller/navigation.controller";
 import lang from "../../lang/lang";
 import langSwitcherView from "./lang.switcher.view";
@@ -13,18 +12,10 @@ class FooterView {
   init(root: HTMLElement) {
     this.createLayout(root);
     this.render();
-    this.addHandlers(root);
+    this.addHandlers();
   }
 
-  addHandlers(root: HTMLElement) {
-    root.addEventListener("click", (event: Event) => {
-      const target = event.target as HTMLElement;
-
-      if (target.tagName === "A" || target.tagName === "SPAN") {
-        navigationController.route(event);
-      }
-    });
-
+  addHandlers() {
     this.layout.select.addEventListener("change", async (e: Event) => {
       const select = e.target as HTMLSelectElement;
 
@@ -41,18 +32,33 @@ class FooterView {
     this.layout.wrapper = document.createElement("div");
     this.layout.wrapper.className = "wrapper footer__wrapper";
 
-    this.layout.logo = document.createElement("a");
+    this.layout.gh = document.createElement("div");
+    this.layout.gh.className = "footer__gh gh";
+
+    this.layout.gh.innerHTML = `<a class="gh__link" href="https://github.com/Elijah-I"><span class="icon icon--github"></span></a>
+                    <a class="gh__link" href="https://github.com/fogarea"><span class="icon icon--github"></span></a>
+                    <a class="gh__link" href="https://github.com/fogarea"><span class="icon icon--github"></span></a>`;
+
+    this.layout.rs = document.createElement("div");
+    this.layout.rs.className = "footer__rss rss";
+    this.layout.rs.innerHTML = `<a class="rss__link" href="https://rs.school/js/"><span class="icon icon--rss"></span></a>`;
+
+    //this.layout.logo = document.createElement("a");
 
     this.layout.select = document.createElement("div");
-    this.layout.select.className = "footer__select";
+    this.layout.select.className = "footer__select select-lang";
 
-    this.layout.wrapper.append(this.layout.logo, this.layout.select);
+    this.layout.wrapper.append(
+      this.layout.gh,
+      this.layout.select,
+      this.layout.rs
+    );
 
     root.replaceChildren(this.layout.wrapper);
   }
 
   render() {
-    logoView.render(this.layout.logo as HTMLAnchorElement, "footer__logo logo");
+    //logoView.render(this.layout.logo as HTMLAnchorElement, "footer__logo logo");
     langSwitcherView.render(this.layout.select);
   }
 }
