@@ -18,7 +18,7 @@ class NumberFieldView extends InputField {
 
             const val = e.target.value;
 
-            val.length > 1 && val.length < 4
+            val.length > 1 && val.length < 6
               ? this.addCorrectMessage(e.target)
               : this.addErrorMessage(e.target);
           }

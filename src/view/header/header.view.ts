@@ -9,6 +9,7 @@ import profileButtonView from "./buttons/profile.button.view";
 import navigationAppView from "./navigation/navigation.app.view";
 import navigationLandingView from "./navigation/navigation.landing.view";
 import burgerMenuView from "./burger.menu.view";
+import navigationModel from "../../model/navigation.model";
 
 class HeaderView {
   layout = {} as Layout;
@@ -17,6 +18,7 @@ class HeaderView {
     this.createLayout(root);
     this.render();
     this.addHandlers();
+    this.toggleActiveLink(navigationModel.route.resource);
   }
 
   addHandlers() {
@@ -82,7 +84,10 @@ class HeaderView {
   }
 
   toggleActiveLink(route: string) {
-    const active = document.getElementById(route);
+    console.log("route", route);
+    const active = route.length
+      ? document.getElementById(route)
+      : document.querySelector(".nav__item--link");
 
     this.layout.navigation
       .querySelectorAll(".nav__item--link")

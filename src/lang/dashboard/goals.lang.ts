@@ -7,8 +7,8 @@ const goalsDictionary: Languages = {
     en: "Today goals"
   },
   water: {
-    ru: ["л", "Воды"],
-    en: ["L", "Water intake"]
+    ru: ["мл", "Воды"],
+    en: ["ml", "Water intake"]
   },
   steps: {
     ru: "Шагов",

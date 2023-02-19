@@ -2,6 +2,7 @@ import { Program } from "./program.types";
 import { Progress } from "./progress.types";
 import { Meditation } from "./meditation.types";
 import { Achievements } from "types/achievements.types";
+import { Goals } from "types/goals.types";
 
 export type User = {
   authorized: boolean;
@@ -11,6 +12,7 @@ export type User = {
   surname: string;
   phone: string;
   avatar: number;
+  goals: Goals;
   profile: Profile;
   progress: Progress;
   achievements: Achievements;

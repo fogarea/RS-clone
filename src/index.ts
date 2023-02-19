@@ -22,7 +22,6 @@ import editProfileView from "./view/profile/edit/profile/edit.profile.view";
 import editProfileDetailsView from "./view/profile/edit/details/edit.profile.details.view";
 import workoutView from "view/workouts/workouts.view";
 import trainingView from "view/workouts/training.view";
-import goalsView from "./view/goals/goals.view";
 import mealsView from "./view/meals/meals.view";
 import mealsController from "./controller/meals.controller";
 import mealView from "./view/meals/meal.view";
@@ -31,6 +30,7 @@ import meditationsView from "view/meditations/main/meditations.view";
 import meditationView from "view/meditations/single/meditation.view";
 import meditationController from "controller/meditation.controller";
 import addTracksView from "./view/meditations/single/add.tracks.view";
+import { state } from "./store/state";
 
 class App {
   layout = {} as Layout;
@@ -79,8 +79,10 @@ class App {
           break;
 
         case "":
-        case Routing.LANDING:
-          mainView.init(this.layout.main);
+        case Routing.MAIN:
+          state.user.authorized
+            ? dashboardView.init(this.layout.main)
+            : mainView.init(this.layout.main);
           break;
 
         case Routing.REGISTRATION:
@@ -95,10 +97,6 @@ class App {
           completeView.init(this.layout.main);
           break;
 
-        case Routing.DASHBOARD:
-          dashboardView.init(this.layout.main);
-          break;
-
         case Routing.WORKOUT:
           if (parameter) trainingView.init(this.layout.main, parameter);
           else workoutView.init(this.layout.main);
@@ -111,16 +109,13 @@ class App {
           break;
 
         case Routing.MEDITATIONS:
-          console.log("category", category);
-          console.log("parameter", parameter);
-
           if (category && parameter)
-            addTracksView.init(this.layout.main, parameter); // parameter 63efbe59823872e883564c42 / category edit
+            addTracksView.init(this.layout.main, parameter);
 
           if (!category && parameter)
-            meditationView.init(this.layout.main, parameter); // parameter 63efbe59823872e883564c42 / category undefined
+            meditationView.init(this.layout.main, parameter);
 
-          if (!category && !parameter) meditationsView.init(this.layout.main); // undefined undefined
+          if (!category && !parameter) meditationsView.init(this.layout.main);
 
           break;
 
@@ -134,10 +129,6 @@ class App {
 
         case Routing.EDIT_DETAILS:
           editProfileDetailsView.init(this.layout.main);
-          break;
-
-        case Routing.GOALS:
-          goalsView.init(this.layout.main);
           break;
 
         default:

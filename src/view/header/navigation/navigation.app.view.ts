@@ -3,7 +3,7 @@ import NavigationView from "./navigation.view";
 import { getNavAppLang } from "lang/header/navigation.app.lang";
 
 const routes = [
-  Routing.DASHBOARD,
+  Routing.MAIN,
   Routing.WORKOUT,
   Routing.MEALS,
   Routing.MEDITATIONS

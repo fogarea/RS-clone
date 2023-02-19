@@ -4,6 +4,7 @@
 .html {
 	font-size: 10px;
 	scroll-behavior: smooth;
+	height: 100%;
 }
 
 .body {
@@ -17,7 +18,16 @@
 	overflow-y: hidden;
 }
 
+#root {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
 .main {
+	flex: 1 1 auto;
+	align-items: center;
+	justify-content: center;
 	margin-bottom: 80px;
 }
 
@@ -65,6 +75,8 @@
 
 	--close-icon: #{$close-icon-dark};
 	--burger-menu-icon: #{$burger-menu-icon-dark};
+
+	--close-modal-icon: #{$close-modal-icon-dark};
 
 	--delete-icon: #{$delete-icon-hover-dark};
 	--delete-icon-hover: #{$delete-icon-dark};
@@ -125,6 +137,8 @@
 
 	--close-icon: #{$close-icon-light};
 	--burger-menu-icon: #{$burger-menu-icon-light};
+
+	--close-modal-icon: #{$close-modal-icon-light};
 
 	--delete-icon: #{$delete-icon-light};
 	--delete-icon-hover: #{$delete-icon-hover-light};

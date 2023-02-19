@@ -15,7 +15,7 @@ export class ModalWindow {
       "span",
       "modal__close-icon",
       "icon",
-      "icon--close"
+      "icon--close-modal"
     );
   }
 

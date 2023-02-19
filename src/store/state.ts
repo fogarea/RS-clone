@@ -19,6 +19,10 @@ export const initialUser = {
   surname: "",
   phone: "",
   avatar: 0,
+  goals: {
+    steps: 2000,
+    water: 2
+  },
   progress: {
     id: "",
     watched: 0,

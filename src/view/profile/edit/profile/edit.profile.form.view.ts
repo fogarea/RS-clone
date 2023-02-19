@@ -1,6 +1,6 @@
 import submitButtonView from "../../../components/form/submit.button.view";
-import { getCompleteLang } from "../../../../lang/reg/complete.lang";
-import { getRegLang } from "../../../../lang/reg/reg.lang";
+import { getCompleteLang } from "lang/reg/complete.lang";
+import { getRegLang } from "lang/reg/reg.lang";
 import firstNameFieldView from "../../../components/form/first.name.field.view";
 import lastNameFieldView from "../../../components/form/last.name.field.view";
 import phoneFieldView from "../../../components/form/phone.field.view";
