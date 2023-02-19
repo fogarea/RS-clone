@@ -59,13 +59,15 @@ class MeditationController {
 
   async updateMeditationTracks(
     meditation: Meditation,
-    tracks: HTMLDivElement[]
+    tracks: HTMLLabelElement[]
   ) {
     const selectedTracks = [];
+
     for (const track of tracks) {
-      const cb = track.querySelector(".track__checkbox");
+      const cb = track.querySelector(".tracks-fields__input");
+
       if (cb && cb instanceof HTMLInputElement && cb.checked) {
-        selectedTracks.push(`${cb.dataset.id}`);
+        selectedTracks.push(`${cb.value}`);
       }
     }
 

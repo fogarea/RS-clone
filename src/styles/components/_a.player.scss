@@ -24,9 +24,9 @@
 
 .player {
   height: 50px;
-  background-color: #ffffff;
-  border-radius: 27px;
   position: relative;
+  display: flex;
+  flex-grow: 1;
 
   &:after,
   &:before {
@@ -37,16 +37,14 @@
 .a-progress-range,
 .a-sound,
 .a-progress {
-  transition: all 0.2s linear;
-
   position: absolute;
-  height: 10px;
+  height: 4px;
   width: calc(100% - 155px);
   left: 55px;
   top: 20px;
   z-index: 3;
   overflow: hidden;
-  border: 1px solid $color-accent-dark;
+  background: #f5f3f6;
   box-sizing: border-box;
   border-radius: 5px;
   transition: all 0.3s ease;
@@ -66,21 +64,21 @@
 .a-progress-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  background: $color-accent-light;
+  background: #c1bdc2;
   cursor: pointer;
 }
 
 .a-sound-bar,
 .a-progress-bar {
-  width: 0%;
+  width: 0;
   height: 100%;
   display: block;
   opacity: 0.5;
   transition: all 0.1s ease;
-  background-color: $color-accent-light;
+  background-color: #c1bdc2;
 }
 
 .a-progress-bar {
@@ -139,28 +137,25 @@
   transition: 0.3s;
 }
 
-.player-icon:hover {
-  transform: scale(1.2, 1.2);
-}
-
 .play {
-  left: 5px;
-  width: 40px;
-  height: 40px;
-  background-size: 40px 40px;
-  background-image: url("./../assets/svg/player/play.svg");
+  top: 12px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+  background-image: var(--play-icon);
 }
 
 .volume {
-  right: 5px;
-  width: 40px;
-  height: 40px;
-  background-size: 40px 40px;
-  background-image: url("./../assets/svg/player/volume.svg");
-  cursor: default;
+  top: 15px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+  background-image: var(--volume-icon);
+  cursor: pointer;
 }
 
 .pause {
-  left: 5px;
-  background-image: url("./../assets/svg/player/pause.svg");
+  background-image: var(--pause-icon);
 }

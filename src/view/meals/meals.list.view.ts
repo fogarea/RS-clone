@@ -18,6 +18,7 @@ class MealsListView {
 
     this.layout.meals = document.createElement("section");
     this.layout.meals.className = "meals";
+    this.layout.meals.id = title;
 
     this.layout.wrapper = document.createElement("div");
     this.layout.wrapper.className = "meals__wrapper wrapper cards__container";

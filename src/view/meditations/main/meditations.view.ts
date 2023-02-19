@@ -1,55 +1,82 @@
 import { Layout } from "types/layout.types";
 import button from "view/components/button";
 import { getMeditationsLang } from "lang/meditation/meditations.lang";
-import meditationList from "./meditation.list.view";
-import meditationPopup from "./meditation.popup.view";
+import meditationPopup from "./create.meditation.view";
 import meditationModel from "model/meditation.model";
+import { ModalWindow } from "../../components/modal/modal.view";
+import meditationsListView from "./meditation.list.view";
 
 class MeditationsView {
   layout = {} as Layout;
 
-  async init(root: HTMLElement) {
+  init(root: HTMLElement) {
     this.createLayout(root);
+    this.renderButton();
     this.render();
     this.subscribe();
   }
 
   createLayout(root: HTMLElement) {
-    const { title, add } = getMeditationsLang();
+    const { title } = getMeditationsLang();
 
-    const container = document.createElement("section");
-    container.classList.add("meditations", "wrapper");
+    this.layout.meditation = document.createElement("section");
+    this.layout.meditation.className = "meditations";
 
-    this.layout.meditations = document.createElement("div");
-    this.layout.meditations.classList.add("meditations__content");
+    this.layout.wrapper = document.createElement("div");
+    this.layout.wrapper.className =
+      "meditations__wrapper wrapper cards__container";
 
-    const titleContainer = document.createElement("h2");
-    titleContainer.textContent = `${title}`;
+    this.layout.content = document.createElement("div");
+    this.layout.content.className = "meditations__content";
 
-    this.layout.popup = document.createElement("div");
+    this.layout.top = document.createElement("div");
+    this.layout.top.className = "meditations__top card__top";
 
-    button.render(titleContainer, "button--bordered", `${add}`, () => {
-      meditationPopup.init(this.layout.popup, {
-        id: "",
-        owner: "",
-        title: "",
-        description: "",
-        media: "",
-        tracks: []
-      });
-    });
+    this.layout.create = document.createElement("span");
+    this.layout.create.className = "meditation-card__edit-btn card__edit-btn";
 
-    container.append(
-      titleContainer,
-      this.layout.popup,
-      this.layout.meditations
-    );
+    this.layout.title = document.createElement("h3");
+    this.layout.title.className = "meditations__title title top__title";
+    this.layout.title.innerText = `${title}`;
 
-    root.replaceChildren(container);
+    this.layout.top.append(this.layout.title, this.layout.create);
+
+    this.layout.meditationCards = document.createElement("div");
+    this.layout.meditationCards.className = "meditations__cards";
+
+    this.layout.modal = document.createElement("div");
+    this.layout.modal.className = "modal__create";
+
+    this.layout.content.append(this.layout.top, this.layout.meditationCards);
+    this.layout.wrapper.append(this.layout.content);
+    this.layout.meditation.append(this.layout.wrapper);
+
+    root.replaceChildren(this.layout.meditation);
   }
 
   render() {
-    meditationList.render(this.layout.meditations, this.layout.popup);
+    meditationsListView.init(this.layout.meditationCards);
+  }
+
+  renderButton() {
+    button.render(
+      this.layout.create,
+      "button__icon icon icon--create",
+      "",
+      () => {
+        const modal = new ModalWindow();
+        modal.buildModal(this.layout.modal);
+
+        meditationPopup.init(this.layout.modal, modal, {
+          id: "",
+          owner: "",
+          title: "",
+          description: "",
+          media: "",
+          tracks: []
+        });
+      }
+    );
   }
 
   subscribe() {

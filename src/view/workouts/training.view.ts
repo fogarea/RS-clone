@@ -12,7 +12,7 @@ class TrainingView {
 
   layout = {} as Layout;
 
-  async init(root: HTMLElement, trainingId: string) {
+  init(root: HTMLElement, trainingId: string) {
     this.trainingId = trainingId;
 
     this.createLayout(root);
@@ -86,7 +86,13 @@ class TrainingView {
     this.watchProgress();
 
     this.layout.back.addEventListener("click", (e: Event) => {
-      navigationController.route(e);
+      if (e.target instanceof HTMLSpanElement) {
+        const route = (e.target.nextElementSibling as HTMLAnchorElement).href;
+        navigationController.applyRoute(route);
+      }
+      if (e.target instanceof HTMLAnchorElement) {
+        navigationController.route(e);
+      }
     });
   }
 

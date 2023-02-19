@@ -1,12 +1,12 @@
 import navigationModel from "model/navigation.model";
 import { state } from "store/state";
 import { Layout } from "types/layout.types";
+import { MediaEndpoint } from "types/media.endpoint.types";
 
 interface Image {
   src: string;
   size: string;
 }
-const githubPath = "https://raw.githubusercontent.com/fogarea/assets/fitness/";
 
 const path =
   navigationModel.route.protocol +
@@ -21,8 +21,6 @@ const arrayImage: Image[] = [
   { src: path + "img/team/nataliya.jpeg", size: "39.1" },
   { src: path + "svg/color-scheme/dark.svg", size: "0.172" },
   { src: path + "svg/color-scheme/light.svg", size: "0.620" },
-  // { src:  path +  "svg/github/gh.svg", size: "2.15" },
-  // { src: path +  "svg/github/github-face.svg", size: "1.65" },
   { src: path + "svg/github/github.svg", size: "2.16" },
   { src: path + "svg/logo/logo-dark.svg", size: "13.9" },
   { src: path + "svg/logo/logo-light.svg", size: "13.9" },
@@ -32,12 +30,12 @@ const arrayImage: Image[] = [
   { src: path + "svg/promo/promo4.svg", size: "10.8" },
   { src: path + "svg/promo/promo5.svg", size: "17.9" },
   { src: path + "svg/rs/logo_rs.svg", size: "14.9" },
-  { src: githubPath + "programs/0.svg", size: "23.5" },
-  { src: githubPath + "programs/1.svg", size: "20.5" },
-  { src: githubPath + "programs/2.svg", size: "22.3" },
-  { src: githubPath + "programs/3.svg", size: "14.9" },
-  { src: githubPath + "programs/4.svg", size: "16.8" },
-  { src: githubPath + "programs/5.svg", size: "17.4" }
+  { src: MediaEndpoint.PROGRAM + "programs/0.svg", size: "23.5" },
+  { src: MediaEndpoint.PROGRAM + "programs/1.svg", size: "20.5" },
+  { src: MediaEndpoint.PROGRAM + "programs/2.svg", size: "22.3" },
+  { src: MediaEndpoint.PROGRAM + "programs/3.svg", size: "14.9" },
+  { src: MediaEndpoint.PROGRAM + "programs/4.svg", size: "16.8" },
+  { src: MediaEndpoint.PROGRAM + "programs/5.svg", size: "17.4" }
 ];
 
 class Preloader {
@@ -53,15 +51,29 @@ class Preloader {
   }
 
   render(root: HTMLElement) {
+    const localStorageScheme = localStorage.getItem("color-scheme");
+    const scheme = localStorageScheme
+      ? `${JSON.parse(localStorageScheme)}`
+      : "false";
+
     this.layout.preloader = document.createElement("div");
     this.layout.preloader.id = "preloader";
     this.layout.preloader.classList.add("preloader");
+    this.layout.preloader.style.background =
+      scheme === "true"
+        ? "linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%)"
+        : "#212224";
 
     this.layout.loader = document.createElement("div");
     this.layout.loader.classList.add("preloader__loader");
+    this.layout.loader.style.borderColor = "#fcfcff";
+    this.layout.loader.style.borderTopColor =
+      scheme === "true" ? "#7079fe" : "#ba8ca4";
 
     this.layout.preloaderPercents = document.createElement("span");
     this.layout.preloaderPercents.classList.add("preloader__percents");
+    this.layout.preloaderPercents.style.color =
+      scheme === "true" ? "#7079fe" : "#ba8ca4";
 
     this.layout.percentsNumber = document.createElement("span");
     this.layout.percentsNumber.classList.add("percents__number");
@@ -127,7 +139,6 @@ class Preloader {
 
           if (loaded >= 99) {
             if (this.timer) clearTimeout(this.timer);
-
             this.finishPreloader();
           }
         });

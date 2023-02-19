@@ -2,12 +2,10 @@ import { state } from "../../../store/state";
 import profileController from "../../../controller/profile.controller";
 import button from "../../components/button";
 import { Layout } from "types/layout.types";
-import { getProfileLang } from "../../../lang/profile/profile.lang";
+import { getProfileLang } from "lang/profile/profile.lang";
 import navigationController from "../../../controller/navigation.controller";
 import { Routing } from "types/route.types";
-
-const MEDIA_ENDPOINT =
-  "https://raw.githubusercontent.com/fogarea/assets/fitness/user";
+import { MediaEndpoint } from "types/media.endpoint.types";
 
 class ProfileView {
   layout = {} as Layout;
@@ -21,7 +19,9 @@ class ProfileView {
     const { title } = getProfileLang();
     const { name, surname, avatar } = state.user;
 
-    const avatarLink = `${MEDIA_ENDPOINT}/${state.user.profile.gender.toLowerCase()}/${avatar}.svg`;
+    const avatarLink = `${
+      MediaEndpoint.PROFILE
+    }/${state.user.profile.gender.toLowerCase()}/${avatar}.svg`;
 
     this.layout.wrapper = document.createElement("div");
     this.layout.wrapper.className = "profile__wrapper cards__container";

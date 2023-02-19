@@ -1,10 +1,11 @@
 import { Layout } from "types/layout.types";
 import button from "../../components/button";
 import authController from "../../../controller/auth.controller";
-import { getProfileOtherLang } from "../../../lang/profile/other.profile.lang";
+import { getProfileOtherLang } from "lang/profile/other.profile.lang";
 import navigationController from "../../../controller/navigation.controller";
 import { Routing } from "types/route.types";
 import modalDialogView from "../../components/modal/modal.dialog.view";
+import { getExitLang } from "lang/profile/exit.lang";
 
 class OtherView {
   layout = {} as Layout;
@@ -16,6 +17,8 @@ class OtherView {
 
   createLayout(root: HTMLElement) {
     const { title, text } = getProfileOtherLang();
+    const { noBtn, yesBtn } = getExitLang();
+
     this.layout.wrapper = document.createElement("div");
     this.layout.wrapper.className = "other__wrapper cards__container";
 
@@ -38,8 +41,8 @@ class OtherView {
 
     this.layout.message.innerHTML = `<span class="confirm-message__text"></span>
                          <div class="confirm-message__buttons">
-                            <button class="button button--rounded">No</button>
-                            <button class="button button--rounded">Yes</button>
+                            <button class="button button--rounded">${noBtn}</button>
+                            <button class="button button--rounded">${yesBtn}</button>
                          </div>`;
 
     this.layout.content.append(this.layout.text, this.layout.button);
@@ -51,22 +54,18 @@ class OtherView {
 
   renderButton() {
     const { btn } = getProfileOtherLang();
+    const { title } = getExitLang();
 
     const onLogout = () => {
       authController.logout();
       navigationController.createRoute(Routing.LANDING);
     };
     const onDialog = () => {
-      modalDialogView.buildModalDialog(
-        "Are you sure you want to leave the app?",
-        onLogout
-      );
+      modalDialogView.buildModalDialog(`${title}`, onLogout);
     };
 
     button.render(this.layout.button, "button--rounded", `${btn}`, onDialog);
   }
-
-  renderConfirmMessage() {}
 }
 
 export default new OtherView();

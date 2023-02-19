@@ -1,0 +1,140 @@
+@use "../abstract" as *;
+
+.meditation {
+	.aside__back-btn {
+		margin-bottom: 30px;
+	}
+	// .meditation__wrapper
+	&__wrapper {
+	}
+
+	// .meditation__info
+	&__info {
+		display: flex;
+
+		.meditation-card__img {
+			width: 250px;
+			height: 250px;
+			background: transparent;
+			margin-right: 30px;
+		}
+	}
+
+	// .meditation__content
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		flex-grow: 1;
+	}
+
+	&__content-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+
+		@extend %block-shadowed;
+		background: var(--card-bg-color);
+		padding: 20px 25px;
+	}
+
+	// .meditation__top
+	&__top {
+	}
+
+	// .meditation__title
+	&__title {
+	}
+
+	// .meditation__edit-btn
+	&__edit-btn {
+	}
+
+	// .meditation__desc
+	&__desc {
+	}
+
+	// .meditation__text
+	&__text {
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	// .meditation__playlist
+	&__playlist {
+	}
+}
+
+.meditation-card {
+	max-width: 600px;
+	width: 100%;
+
+	// .meditation-card__edit-btn
+	&__edit-btn {
+	}
+
+	// .meditation-card__img
+	&__img {
+		width: 150px;
+		height: 150px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--card-bg-color);
+		border-radius: 10px;
+
+		>* {
+			width: 100%;
+			object-fit: contain;
+			border-radius: 10px;
+		}
+	}
+
+	// .meditation-card__content
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-self: flex-start;
+		flex-grow: 1;
+		gap: 10px;
+	}
+
+	// .meditation-card__top
+	&__top {
+		margin: 0;
+	}
+
+	// .meditation-card__title
+	&__title {
+		max-width: 300px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		@include font(2.3rem, 4.2rem, 300);
+		@include media-mobile-big {
+			@include font(2.1rem, 3.1rem, 300);
+		}
+		color: #1d1617;
+	}
+
+	// .meditation-card__desc
+	&__desc {
+		margin-bottom: 30px;
+	}
+
+	// .meditation-card__text
+	&__text {
+		max-width: 300px;
+		//white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	// .meditation-card__buttons
+	&__buttons {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}

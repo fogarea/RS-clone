@@ -24,6 +24,7 @@
   &__desc {
     @include font(2.2rem, 4.6rem, 300);
     max-width: 900px;
+    text-align: left;
   }
 
   // t-training__info

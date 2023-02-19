@@ -6,7 +6,7 @@ import navigationModel from "model/navigation.model";
 import { getTrainingCardLang } from "lang/training.card.lang";
 
 class TrainingListView {
-  async init(root: HTMLElement) {
+  init(root: HTMLElement) {
     this.render(root);
     this.addHandlers(root);
   }

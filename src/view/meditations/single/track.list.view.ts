@@ -3,7 +3,7 @@ import { getMeditationsLang } from "lang/meditation/meditations.lang";
 import { Audio } from "../audio/audio";
 
 class TrackListView {
-  async init(root: HTMLElement, meditationId: string) {
+  init(root: HTMLElement, meditationId: string) {
     this.render(root, meditationId);
   }
 
@@ -13,11 +13,16 @@ class TrackListView {
     const { noTracks } = getMeditationsLang();
 
     const container = document.createElement("div");
+    container.className = "meditation__playlist playlist";
 
     for (const track of meditation.tracks) {
       const trackItem = document.createElement("div");
+      trackItem.className = "playlist__track";
+
       const trackData = meditationController.getTrack(track);
-      const trackInfo = document.createElement("div");
+
+      const trackInfo = document.createElement("span");
+      trackInfo.className = "playlist__title";
 
       if (trackData) {
         trackInfo.textContent = trackData.title;
@@ -32,6 +37,7 @@ class TrackListView {
 
     if (!tracks.length) {
       const trackItem = document.createElement("div");
+      trackItem.className = "playlist__empty";
       trackItem.textContent = `${noTracks}`;
 
       tracks.push(trackItem);

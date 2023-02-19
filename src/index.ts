@@ -30,6 +30,7 @@ import { Meals } from "types/meal.types";
 import meditationsView from "view/meditations/main/meditations.view";
 import meditationView from "view/meditations/single/meditation.view";
 import meditationController from "controller/meditation.controller";
+import addTracksView from "./view/meditations/single/add.tracks.view";
 
 class App {
   layout = {} as Layout;
@@ -110,8 +111,17 @@ class App {
           break;
 
         case Routing.MEDITATIONS:
-          if (parameter) meditationView.init(this.layout.main, parameter);
-          else meditationsView.init(this.layout.main);
+          console.log("category", category);
+          console.log("parameter", parameter);
+
+          if (category && parameter)
+            addTracksView.init(this.layout.main, parameter); // parameter 63efbe59823872e883564c42 / category edit
+
+          if (!category && parameter)
+            meditationView.init(this.layout.main, parameter); // parameter 63efbe59823872e883564c42 / category undefined
+
+          if (!category && !parameter) meditationsView.init(this.layout.main); // undefined undefined
+
           break;
 
         case Routing.PROFILE:

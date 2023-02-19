@@ -86,3 +86,35 @@
 		background: var(--accent-color);
 	}
 }
+
+.tracks-fields {
+
+	&__label {
+		display: flex;
+		align-items: center;
+
+		.icon--like {
+			background-image: var(--heart-icon);
+			@include icon-size(16px, 16px);
+			background-size: 100%;
+			cursor: pointer;
+
+			&:hover {
+				background-image: var(--heart-icon-hover);
+			}
+		}
+	}
+
+
+	&__input {
+		display: none;
+	}
+
+	&__input:checked + .icon--like{
+		background-image: var(--heart-icon-hover);
+	}
+
+	&__item {
+		display: flex;
+	}
+}

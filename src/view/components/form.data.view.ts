@@ -11,7 +11,7 @@ class FormDataView {
     this.layout.wrapper.className = "wrapper form__wrapper";
 
     this.layout.content = document.createElement("div");
-    this.layout.content.className = "form__content";
+    this.layout.content.className = "form__content cards__container";
 
     this.layout.desc = document.createElement("div");
     this.layout.desc.className = "form__desc";

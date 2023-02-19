@@ -1,5 +1,5 @@
 import { Layout } from "types/layout.types";
-import { getDashboardGoalsLang } from "../../lang/dashboard/goals.lang";
+import { getDashboardGoalsLang } from "lang/dashboard/goals.lang";
 import { state } from "../../store/state";
 import { Routing } from "types/route.types";
 import navigationController from "../../controller/navigation.controller";
@@ -33,10 +33,10 @@ class GoalsView {
     this.layout.wrapper.className = "target__wrapper cards__container";
 
     this.layout.top = document.createElement("div");
-    this.layout.top.className = "target__top";
+    this.layout.top.className = "target__top card__top";
 
     this.layout.edit = document.createElement("span");
-    this.layout.edit.className = "aside__edit-link";
+    this.layout.edit.className = "aside__edit-link card__edit-btn";
 
     this.layout.title = document.createElement("h3");
     this.layout.title.className = "target__title title";
@@ -66,7 +66,7 @@ class GoalsView {
 
   renderCards() {
     const { water, steps } = getDashboardGoalsLang();
-    this.layout.content.innerHTML = `<div class="target__card target-card">
+    this.layout.content.innerHTML = `<div class="target__card target-card card">
                                     <div class="icon-round">
                                         <span class="icon icon--water"></span>
                                     </div>
@@ -80,7 +80,7 @@ class GoalsView {
                                     </div>
                                 </div>
 
-                                <div class="target__card target-card">
+                                <div class="target__card target-card card">
                                     <div class="icon-round">
                                         <span class="icon icon--steps"></span>
                                     </div>

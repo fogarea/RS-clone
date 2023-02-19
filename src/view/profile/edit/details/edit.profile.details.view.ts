@@ -1,11 +1,12 @@
 import { Layout } from "types/layout.types";
-import { getProfileEditLang } from "../../../../lang/profile/edit.lang";
+import { getProfileEditLang } from "lang/profile/edit.lang";
 import { state } from "../../../../store/state";
 import profileController from "../../../../controller/profile.controller";
 import formDataView from "../../../components/form.data.view";
 import navigationController from "../../../../controller/navigation.controller";
 import { Routing } from "types/route.types";
 import editProfileDetailsFormView from "./edit.profile.details.form.view";
+import backButton from "../../../components/back.button";
 
 class EditProfileDetailsView {
   layout = {} as Layout;
@@ -17,9 +18,13 @@ class EditProfileDetailsView {
   }
 
   createLayout(root: HTMLElement) {
-    const { text, textBold } = getProfileEditLang();
+    const { text, textBold, back } = getProfileEditLang();
 
     this.layout = formDataView.createLayout(root, `${textBold}`, `${text}`);
+
+    this.layout.back = backButton.render(`${back}`, Routing.PROFILE);
+
+    this.layout.content.prepend(this.layout.back);
 
     this.layout.text.style.display = "flex";
     this.layout.text.style.order = "1";

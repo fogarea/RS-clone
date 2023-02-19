@@ -65,6 +65,20 @@
 
 	--close-icon: #{$close-icon-dark};
 	--burger-menu-icon: #{$burger-menu-icon-dark};
+
+	--delete-icon: #{$delete-icon-hover-dark};
+	--delete-icon-hover: #{$delete-icon-dark};
+
+	--create-icon: #{$create-icon-dark};
+	--create-icon-hover: #{$create-icon-hover-dark};
+
+	--volume-icon: #{$volume-icon-dark};
+
+	--play-icon: #{$play-icon-dark};
+	--pause-icon: #{$pause-icon-dark};
+
+	--heart-icon: #{$heart-icon-dark};
+	--heart-icon-hover: #{$heart-icon-hover-dark};
 }
 
 .body--light {
@@ -111,6 +125,20 @@
 
 	--close-icon: #{$close-icon-light};
 	--burger-menu-icon: #{$burger-menu-icon-light};
+
+	--delete-icon: #{$delete-icon-light};
+	--delete-icon-hover: #{$delete-icon-hover-light};
+
+	--create-icon: #{$create-icon-light};
+	--create-icon-hover: #{$create-icon-hover-light};
+
+	--volume-icon: #{$volume-icon-light};
+
+	--play-icon: #{$play-icon-light};
+	--pause-icon: #{$pause-icon-light};
+
+	--heart-icon: #{$heart-icon-light};
+	--heart-icon-hover: #{$heart-icon-hover-light};
 }
 
 h1 {

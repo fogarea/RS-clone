@@ -5,7 +5,7 @@ import { getTrainingListLang } from "lang/workout/training.list.lang";
 class WorkoutsView {
   layout = {} as Layout;
 
-  async init(root: HTMLElement) {
+  init(root: HTMLElement) {
     this.createLayout(root);
     this.render();
   }
