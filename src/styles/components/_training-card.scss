@@ -7,7 +7,7 @@
 	align-items: center;
 	flex-grow: 1;
 	gap: 30px;
-	max-width: 600px;
+	max-width: 550px;
 	width: 100%;
 	background: var(--card-bg-color);
 	padding: 15px 32px 30px 32px;
@@ -19,11 +19,7 @@
 	}
 
 	&__title {
-		@include font(2.3rem, 4.2rem, 300);
-		@include media-mobile-big {
-			@include font(2.1rem, 3.1rem, 300);
-		}
-		color: #1d1617;
+		@include font(2.3rem, 4.2rem, 400);
 	}
 
 	&__tags {

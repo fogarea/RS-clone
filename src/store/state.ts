@@ -37,7 +37,13 @@ export const initialUser = {
     birthday: ""
   },
   meditations: [],
-  achievements: { "": false }
+  achievements: {
+    fire: false,
+    salad: false,
+    dumbbells: false,
+    water: false,
+    calendar: false
+  }
 };
 
 export const state: State = {

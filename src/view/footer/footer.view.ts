@@ -37,13 +37,11 @@ class FooterView {
 
     this.layout.gh.innerHTML = `<a class="gh__link" href="https://github.com/Elijah-I"><span class="icon icon--github"></span></a>
                     <a class="gh__link" href="https://github.com/fogarea"><span class="icon icon--github"></span></a>
-                    <a class="gh__link" href="https://github.com/fogarea"><span class="icon icon--github"></span></a>`;
+                    <a class="gh__link" href="https://github.com/nataliyasamkevich"><span class="icon icon--github"></span></a>`;
 
     this.layout.rs = document.createElement("div");
     this.layout.rs.className = "footer__rss rss";
     this.layout.rs.innerHTML = `<a class="rss__link" href="https://rs.school/js/"><span class="icon icon--rss"></span></a>`;
-
-    //this.layout.logo = document.createElement("a");
 
     this.layout.select = document.createElement("div");
     this.layout.select.className = "footer__select select-lang";
@@ -58,7 +56,6 @@ class FooterView {
   }
 
   render() {
-    //logoView.render(this.layout.logo as HTMLAnchorElement, "footer__logo logo");
     langSwitcherView.render(this.layout.select);
   }
 }

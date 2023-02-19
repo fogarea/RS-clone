@@ -22,7 +22,7 @@ class Player {
 
     this.getTrainings();
     this.createLayout(root);
-    this.render();
+    this.renderPlayButton();
   }
 
   getTrainings() {
@@ -40,8 +40,8 @@ class Player {
     return this.trainings[this.training.id];
   }
 
-  set currentTraining(newTraning) {
-    this.trainings[this.training.id] = newTraning;
+  set currentTraining(newTraining) {
+    this.trainings[this.training.id] = newTraining;
   }
 
   createLayout(root: HTMLElement) {
@@ -53,28 +53,23 @@ class Player {
     );
     this.layout.player.id = "player-" + this.training.media;
 
+    this.layout.button = document.createElement("div");
+    this.layout.button.classList.add("yt-player__button");
+
+    this.layout.player.append(this.layout.button);
+
     root.append(this.layout.player);
   }
 
-  render() {
-    let text;
-    let type;
-
-    if (this.currentTraining.finished) {
-      // finished
-      text = "repeat workouts";
-      type = "button--colored button--shine";
-    } else if (this.currentTraining.currentTime) {
-      // started
-      text = "continue workouts";
-      type = "button--colored button--shine";
-    } else {
-      // new
-      text = "start workouts";
-      type = "button--colored button--shine";
-    }
-
-    button.render(this.layout.player, type, text, () => this.createPlayer());
+  renderPlayButton() {
+    button.render(
+      this.layout.button,
+      "button__icon icon icon--youtube",
+      "",
+      () => {
+        this.createPlayer();
+      }
+    );
   }
 
   private createPlayer() {
@@ -95,11 +90,11 @@ class Player {
     this.player.on("ended", () => this.finishTraining());
   }
 
-  private makeFullScreen() {
+  private async makeFullScreen() {
     if (!this.fullscreened) {
       this.fullscreened = true;
       const iPlayer = document.querySelector(`#${this.layout.player.id}`);
-      if (iPlayer) iPlayer.requestFullscreen();
+      if (iPlayer) await iPlayer.requestFullscreen();
     }
   }
 
@@ -129,10 +124,10 @@ class Player {
     localStorage.setItem("trainings", JSON.stringify(this.trainings));
   }
 
-  private finishTraining() {
+  private async finishTraining() {
     this.stackProgress(false);
     this.updateTrainings("drop");
-    progressController.finishTraning(this.training.id);
+    await progressController.finishTraining(this.training.id);
   }
 }
 

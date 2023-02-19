@@ -1,4 +1,5 @@
 @use "../abstract" as *;
+
 .icon {
 	display: inline-flex;
 }
@@ -27,7 +28,7 @@
 	cursor: pointer;
 
 	&:hover {
-		filter: invert(50%);
+		opacity: 0.5;
 	}
 }
 
@@ -82,6 +83,18 @@
 	}
 }
 
+.icon--youtube {
+	background-image: var(--youtube-icon);
+	@include icon-size(128px, 128px);
+	background-size: 100%;
+	transition: all 0.5s ease 0s;
+
+	&:hover {
+		transform: scale(1.1);
+		cursor: pointer;
+	}
+}
+
 .icon--promo {
 	background-image: url("./../assets/svg/promo/promo.svg");
 	@include icon-size(630px, 700px);
@@ -93,8 +106,8 @@
 	background-image: url("./../assets/svg/github/github.svg");
 	@include icon-size(30px, 30px);
 	background-size: 100%;
-
 	transition: all 0.5s ease 0s;
+
 	&:hover {
 		transform: scale(1.1);
 		cursor: pointer;

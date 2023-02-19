@@ -34,18 +34,6 @@
   }
 }
 
-@mixin media-mobile-huge {
-  @media screen and (max-width: $mobile-huge-width) {
-    @content;
-  }
-}
-
-@mixin media-notebook {
-  @media screen and (max-width: $notebook-width) {
-    @content;
-  }
-}
-
 @mixin media-mobile-big {
   @media screen and (max-width: $mobile-big-width) {
     @content;

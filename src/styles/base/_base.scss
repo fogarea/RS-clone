@@ -37,6 +37,8 @@
 
 	--secondary-bg-color: #{$color-secondary-bg-dark};
 
+	--modal-bg-color: #{$color-modal-bg-dark};
+
 	--accent-color: #{$color-accent-dark};
 
 	--bordered-btn-color: #{$color-bordered-btn-dark};
@@ -92,6 +94,11 @@
 	--heart-icon: #{$heart-icon-dark};
 	--heart-icon-hover: #{$heart-icon-hover-dark};
 
+	--youtube-icon: #{$youtube-icon-dark};
+
+	--thumb-color: #{$color-thumb-dark};
+	--track-color: #{$color-track-dark};
+
 	--rs-logo: invert(1);
 }
 
@@ -100,6 +107,8 @@
 	--primary-bg-color: #{$color-primary-bg-light};
 
 	--secondary-bg-color: #{$color-secondary-bg-light};
+
+	--modal-bg-color: #{$color-modal-bg-light};
 
 	--accent-color: #{$color-accent-light};
 
@@ -155,6 +164,11 @@
 
 	--heart-icon: #{$heart-icon-light};
 	--heart-icon-hover: #{$heart-icon-hover-light};
+
+	--youtube-icon: #{$youtube-icon-light};
+
+	--thumb-color: #{$color-thumb-light};
+	--track-color: #{$color-track-light};
 
 	--rs-logo: invert(0);
 }

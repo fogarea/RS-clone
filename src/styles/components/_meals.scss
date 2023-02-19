@@ -138,7 +138,8 @@
 	&__edit-link {
 		margin-top: 10px;
 		text-align: center;
-
+		border-color: #ba8ca4;
+		background: transparent;
 		a {
 			text-decoration: none;
 			background: var(--colored-btn-color);
@@ -149,6 +150,17 @@
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 			}
+		}
+	}
+}
+
+.body--light {
+	.meal-card__edit-link {
+		background: var(--bordered-link-btn-color);
+		border: 1px solid transparent;
+
+		&:hover {
+			background: var(--bordered-link-btn-hover-color);
 		}
 	}
 }

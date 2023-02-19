@@ -10,7 +10,7 @@ import meditationController from "../../../controller/meditation.controller";
 import { getUpdateMeditationLang } from "lang/meditation/update.meditation.lang";
 import { ModalWindow } from "../../components/modal/modal.view";
 
-const photoIds = [0, 1, 2, 3];
+const photoIds = [0, 1, 2];
 
 class CreateMeditationView {
   layout = {} as Layout;

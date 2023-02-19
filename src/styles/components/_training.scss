@@ -17,12 +17,10 @@
 
   // t-training__title
   &__title {
-    @include font(3.6rem, 4.6rem, 500);
   }
 
   // t-training__desc
   &__desc {
-    @include font(2.2rem, 4.6rem, 300);
     max-width: 900px;
     text-align: left;
   }
@@ -41,10 +39,6 @@
 
   &__tags {
     justify-content: center;
-
-    & .tag {
-      @include font(1.8rem, 3.6rem, 300);
-    }
   }
 
   // t-training__back
@@ -62,54 +56,5 @@
   &__last-line {
     display: flex;
     gap: 30px;
-  }
-}
-
-@include media-notebook {
-  .t-training {
-    // t-training__wrapper
-    &__wrapper {
-      flex-direction: column;
-    }
-
-    // t-training__training
-    &__training {
-      display: flex;
-      justify-content: center;
-    }
-
-    // t-training__desc
-    &__desc {
-      margin: 20px 0;
-    }
-  }
-}
-
-@include media-mobile-huge {
-  .t-training {
-    // t-training__first-line
-    // t-training__last-line
-    &__first-line,
-    &__last-line {
-      text-align: center;
-      flex-direction: column;
-      gap: 10px;
-    }
-    &__last-line {
-      gap: 20px;
-    }
-
-    // .t-training__back
-    &__back {
-      align-self: center;
-      justify-self: flex-end;
-      flex: 0;
-    }
-
-    // t-training__tags
-    &__tags {
-      display: flex;
-      justify-content: space-between;
-    }
   }
 }

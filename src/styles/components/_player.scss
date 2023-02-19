@@ -12,17 +12,4 @@
   background-size: cover;
   height: 400px;
   background-position: center;
-
-  @include media-notebook {
-    width: 100%;
-    max-width: 480px;
-  }
-}
-
-.button--shine {
-  margin-bottom: 30px;
-  margin-right: 30px;
-  border: 1px solid $color-bordered-btn-dark;
-  box-shadow: 0 4px 20px $color-bordered-btn-dark;
-  text-transform: uppercase;
 }

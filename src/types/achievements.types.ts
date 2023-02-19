@@ -1,3 +1,7 @@
 export type Achievements = {
-  [id: string]: boolean;
+  fire: boolean;
+  salad: boolean;
+  dumbbells: boolean;
+  water: boolean;
+  calendar: boolean;
 };
