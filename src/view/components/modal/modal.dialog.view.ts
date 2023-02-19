@@ -1,4 +1,5 @@
 import { ModalWindow } from "./modal.view";
+import { getExitLang } from "lang/profile/exit.lang";
 
 class ModalDialogWindow extends ModalWindow {
   dialog: HTMLElement;
@@ -13,6 +14,9 @@ class ModalDialogWindow extends ModalWindow {
 
   constructor() {
     super();
+
+    const { noBtn, yesBtn } = getExitLang();
+
     this.dialog = this.createDomNode("div", "modal__dialog");
     this.text = this.createDomNode("span", "dialog__text");
     this.buttons = this.createDomNode("div", "dialog__buttons");
@@ -23,10 +27,10 @@ class ModalDialogWindow extends ModalWindow {
       "button--rounded",
       "close-modal-dialog-btn"
     );
-    this.noBtn.innerText = "No";
+    this.noBtn.innerText = `${noBtn}`;
 
     this.yesBtn = this.createDomNode("button", "button", "button--rounded");
-    this.yesBtn.innerText = "Yes";
+    this.yesBtn.innerText = `${yesBtn}`;
 
     this.buttons.append(this.noBtn, this.yesBtn);
 
