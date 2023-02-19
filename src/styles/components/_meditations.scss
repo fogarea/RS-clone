@@ -1,0 +1,27 @@
+@use "../abstract" as *;
+
+.meditations {
+	// .meditations__wrapper
+	&__wrapper {
+	}
+
+	// .meditations__content
+	&__content {
+	}
+
+	// .meditations__top
+	&__top {
+	}
+
+	// .meditations__title
+	&__title {
+	}
+
+	// .meditations__cards
+	&__cards {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		align-items: center;
+	}
+}

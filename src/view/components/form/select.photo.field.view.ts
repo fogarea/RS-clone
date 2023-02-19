@@ -1,8 +1,6 @@
 import { InputField } from "./input.field";
 import { state } from "../../../store/state";
-
-const MEDIA_ENDPOINT =
-  "https://raw.githubusercontent.com/fogarea/assets/fitness/user";
+import { MediaEndpoint } from "types/media.endpoint.types";
 
 class SelectPhotoFieldView extends InputField {
   init(root: HTMLElement, photoIds: number[]) {
@@ -27,7 +25,9 @@ class SelectPhotoFieldView extends InputField {
 
       const img = document.createElement("img");
       img.alt = "Profile Picture";
-      img.src = `${MEDIA_ENDPOINT}/${state.user.profile.gender.toLowerCase()}/${photoId}.svg`;
+      img.src = `${
+        MediaEndpoint.PROFILE
+      }/${state.user.profile.gender.toLowerCase()}/${photoId}.svg`;
 
       if (state.user.avatar === photoId) input.checked = true;
 

@@ -58,6 +58,23 @@
 		}
 	}
 
+	&--edit-link {
+		color: var(--link-text-color);
+		background: transparent;
+		padding: 0;
+
+		&:hover {
+			color: var(--accent-color);
+		}
+	}
+
+	&__icon {
+		padding: 0;
+		border-radius: 0;
+		cursor: pointer;
+		background-color: transparent;
+	}
+
 	&--large {
 		width: 100%;
 	}

@@ -25,14 +25,7 @@
 
 	// .meal__title
 	&__title {
-	}
-
-	& .title {
 		margin-bottom: 30px;
-	}
-
-	&__info {
-		display: flex;
 	}
 
 	// .meal__nutrition
@@ -41,7 +34,6 @@
 
 	// .meal__desc
 	&__desc {
-		text-align: left;
 	}
 
 	// .meal__ingredients
@@ -63,6 +55,7 @@
 
 	// .nutrition__title
 	&__title {
+		margin-bottom: 20px;
 	}
 
 	// .nutrition__list
@@ -73,6 +66,7 @@
 
 	// .nutrition__item
 	&__item {
+		font-size: 1.6rem;
 	}
 
 	// .nutrition__icon
@@ -90,10 +84,12 @@
 
 	// .meal-desc__title
 	&__title {
+		margin-bottom: 20px;
 	}
 
 	// .meal-desc__text
 	&__text {
+		text-align: left;
 	}
 }
 
@@ -102,13 +98,13 @@
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	background: var(--card-bg-color);
 	padding: 30px 32px 30px 32px;
-
+	background: var(--card-bg-color);
 	width: 100%;
 
 	// .ingredients__title
 	&__title {
+		margin-bottom: 20px;
 	}
 
 	// .ingredients__list
@@ -121,16 +117,42 @@
 	// .ingredients__item
 	&__item {
 		display: flex;
+		flex-basis: 47%;
 		flex-direction: column;
+		text-align: center;
 		gap: 10px;
+		background: var(--tag-bg-color);
+		padding: 15px 25px;
+		border-radius: 10px;
+	}
+
+	&__data {
+		@include font(2.4rem, 2.6rem, 500);
+		display: flex;
+		justify-content: center;
+		align-items: baseline;
+		gap: 5px;
+		background: var(--colored-btn-color);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 
 	// .ingredients__amount
 	&__amount {
+
+	}
+
+	// .ingredients__amount
+	&__unit {
+		font-size: 1.4rem;
 	}
 
 	// .ingredients__name
 	&__name {
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 }
 
@@ -146,27 +168,38 @@
 
 	// .meal-steps__title
 	&__title {
+		margin-bottom: 20px;
 	}
 
 	// .meal-steps__list
 	&__list {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		justify-content: space-evenly;
 	}
 
 	// .meal-steps__item
 	&__item {
+		display: flex;
+		justify-content: center;
+		gap: 30px;
 	}
 
 	// .meal-steps__step
 	&__step {
+		@include font(2.4rem, 2.6rem, 500);
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		background: var(--colored-btn-color);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 
 	// .meal-steps__text
 	&__text {
+		width: 70%;
+		text-align: initial;
 	}
-}
-
-.meal-desc {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
 }

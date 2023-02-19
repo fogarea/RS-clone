@@ -41,6 +41,36 @@
 	}
 }
 
+.icon--create {
+	background-image: var(--create-icon);
+	@include icon-size(24px, 24px);
+	background-size: 100%;
+
+	&:hover {
+		background-image: var(--create-icon-hover);
+	}
+}
+
+.icon--delete {
+	background-image: var(--delete-icon);
+	@include icon-size(18px, 18px);
+	background-size: 100%;
+
+	&:hover {
+		background-image: var(--delete-icon-hover);
+	}
+}
+
+.icon--volume {
+	background-image: var(--volume-icon);
+	@include icon-size(24px, 24px);
+	background-size: 100%;
+
+	&:hover {
+		background-image: var(--volume-icon-hover);
+	}
+}
+
 .icon--promo {
 	background-image: url("./../assets/svg/promo/promo.svg");
 	@include icon-size(630px, 700px);
@@ -302,3 +332,14 @@
 	background-size: 100%;
 }
 
+.icon--title{
+	background-image: url("./../assets/svg/create-form/title.svg");
+	@include icon-size(18px, 18px);
+	background-size: 100%;
+}
+
+.icon--desc{
+	background-image: url("./../assets/svg/create-form/desc.svg");
+	@include icon-size(18px, 18px);
+	background-size: 100%;
+}

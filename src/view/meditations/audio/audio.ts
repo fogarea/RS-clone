@@ -1,5 +1,6 @@
 import { Meditation } from "types/meditation.types";
 import { Player } from "./player";
+import { MediaEndpoint } from "types/media.endpoint.types";
 
 export class Audio {
   src: string;
@@ -9,7 +10,7 @@ export class Audio {
   player: Player;
 
   constructor(src: string, id: string, meditation?: Meditation) {
-    this.src = `https://github.com/fogarea/assets/blob/fitness/sound/${src}?raw=true`;
+    this.src = MediaEndpoint.SOUND + src;
 
     this.self = this.create();
 

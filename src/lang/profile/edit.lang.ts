@@ -10,6 +10,10 @@ const profileEditDictionary: Languages = {
     ru: "Редактирование профиля",
     en: "Edit profile"
   },
+  back: {
+    ru: "Профиль",
+    en: "Profile"
+  },
   btn: {
     ru: "Подтвердить",
     en: "Complete"

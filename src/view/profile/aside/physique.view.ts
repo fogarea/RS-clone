@@ -33,14 +33,14 @@ class PhysiqueView {
     this.layout.wrapper.className = "physique__wrapper cards__container";
 
     this.layout.top = document.createElement("div");
-    this.layout.top.className = "physique__top";
+    this.layout.top.className = "physique__top card__top";
 
     this.layout.title = document.createElement("h3");
     this.layout.title.className = "physique__title title";
     this.layout.title.innerText = `${title}`;
 
     this.layout.edit = document.createElement("span");
-    this.layout.edit.className = "aside__edit-link";
+    this.layout.edit.className = "aside__edit-link card__edit-btn";
 
     this.layout.top.append(this.layout.title, this.layout.edit);
 

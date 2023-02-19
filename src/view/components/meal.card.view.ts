@@ -3,9 +3,7 @@ import { Routing } from "types/route.types";
 import { Meal } from "types/meal.types";
 import { getMealCardLang } from "lang/meals/meal.card.lang";
 import { state } from "../../store/state";
-
-const MEDIA_ENDPOINT =
-  "https://raw.githubusercontent.com/fogarea/assets/fitness/meals/";
+import { MediaEndpoint } from "types/media.endpoint.types";
 
 class MealCardView {
   layout = {} as Layout;
@@ -24,7 +22,7 @@ class MealCardView {
     this.layout.img = document.createElement("div");
     this.layout.img.className = "meal-card__img";
     this.layout.img.innerHTML = `<img src="${
-      MEDIA_ENDPOINT + media
+      MediaEndpoint.MEAL + media
     }" alt="Meal Image">`;
 
     this.layout.content = document.createElement("div");
@@ -35,14 +33,14 @@ class MealCardView {
     this.layout.title.innerText = `${title}`;
 
     this.layout.info = document.createElement("div");
-    this.layout.info.className = "meal-card__info";
+    this.layout.info.className = "meal-card__info tags";
 
     this.layout.time = document.createElement("span");
-    this.layout.time.className = "meal-card__time";
+    this.layout.time.className = "meal-card__time tag tag--bordered";
     this.layout.time.innerText = `${time} ${timeText}`;
 
     this.layout.calories = document.createElement("span");
-    this.layout.calories.className = "meal-card__calories";
+    this.layout.calories.className = "meal-card__calories tag tag--bordered";
     this.layout.calories.innerText = `${nutrition.calories} ${caloriesText}`;
 
     this.layout.info.append(this.layout.time, this.layout.calories);

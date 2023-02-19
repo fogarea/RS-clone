@@ -1,5 +1,3 @@
-import { Meditation } from "./meditation.types";
-
 export type HttpRegisterRequest = {
   name: string;
   surname: string;

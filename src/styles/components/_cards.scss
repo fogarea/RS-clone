@@ -81,3 +81,25 @@
 		grid-column: 1/2;
 	}
 }
+
+.card {
+	@extend %block-shadowed;
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	background: var(--card-bg-color);
+	padding: 18px 25px;
+
+	&__top {
+		@include font(1.6rem, 3.5rem, normal);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 0 30px;
+	}
+
+	&__edit-btn {
+		align-self: flex-end;
+		text-align: center;
+	}
+}

@@ -4,13 +4,6 @@
 	grid-area: goals;
 
 	&__top {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin: 0 0 30px;
-		font-family: $font-family-primary;
-		@include font(1.6rem, 3.5rem, normal);
-		@extend %transition;
 	}
 
 	&__content {
@@ -37,21 +30,15 @@
 }
 
 .target-card {
-	display: flex;
-	align-items: center;
-	padding: 10px 25px;
-	background: var(--card-bg-color);
-	box-shadow: 0 10px 40px rgba(29, 22, 23, 0.07);
-	border-radius: 16px;
 
 	& .icon-round {
 		width: 80px;
-		height: 80px;
+		height: 40px;
 	}
 
 	& .icon {
-		width: 45px;
-		height: 45px;
+		width: 40px;
+		height: 40px;
 	}
 	// .target-card__content
 	&__content {

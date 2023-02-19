@@ -7,9 +7,9 @@ class ModalDialogWindow extends ModalWindow {
 
   buttons: HTMLElement;
 
-  NoBtn: HTMLButtonElement;
+  noBtn: HTMLButtonElement;
 
-  YesBtn: HTMLButtonElement;
+  yesBtn: HTMLButtonElement;
 
   constructor() {
     super();
@@ -17,18 +17,18 @@ class ModalDialogWindow extends ModalWindow {
     this.text = this.createDomNode("span", "dialog__text");
     this.buttons = this.createDomNode("div", "dialog__buttons");
 
-    this.NoBtn = this.createDomNode(
+    this.noBtn = this.createDomNode(
       "button",
       "button",
       "button--rounded",
       "close-modal-dialog-btn"
     );
-    this.NoBtn.innerText = "No";
+    this.noBtn.innerText = "No";
 
-    this.YesBtn = this.createDomNode("button", "button", "button--rounded");
-    this.YesBtn.innerText = "Yes";
+    this.yesBtn = this.createDomNode("button", "button", "button--rounded");
+    this.yesBtn.innerText = "Yes";
 
-    this.buttons.append(this.NoBtn, this.YesBtn);
+    this.buttons.append(this.noBtn, this.yesBtn);
 
     this.dialog.append(this.text, this.buttons);
   }
@@ -41,8 +41,8 @@ class ModalDialogWindow extends ModalWindow {
   }
 
   bindCloseModalDialogEvents(confirmCb: (event: Event) => void) {
-    this.NoBtn.addEventListener("click", () => this.removeModal());
-    this.YesBtn.addEventListener("click", (e: Event) => {
+    this.noBtn.addEventListener("click", () => this.removeModal());
+    this.yesBtn.addEventListener("click", (e: Event) => {
       this.removeModal();
       confirmCb(e);
     });

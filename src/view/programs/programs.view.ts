@@ -1,14 +1,14 @@
 import { Layout } from "types/layout.types";
-import { getProgramsUnAuthLang } from "../../lang/programs/programs.un.auth.lang";
+import { getProgramsUnAuthLang } from "lang/programs/programs.un.auth.lang";
 import programContentVew from "./content.view";
 import { state } from "../../store/state";
-import { getProgramsAuthLang } from "../../lang/programs/programs.auth.lang";
+import { getProgramsAuthLang } from "lang/programs/programs.auth.lang";
 import profileController from "../../controller/profile.controller";
 
 class ProgramsView {
   layout = {} as Layout;
 
-  async init(root: HTMLElement) {
+  init(root: HTMLElement) {
     this.createLayout(root);
     this.render();
     this.addHandlers();
