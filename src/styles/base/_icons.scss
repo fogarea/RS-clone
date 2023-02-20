@@ -21,6 +21,12 @@
 	}
 }
 
+.icon--reg {
+	background-image: var(--reg-icon);
+	@include icon-size(32px, 32px);
+	background-size: 100%;
+}
+
 .icon--close-modal {
 	background-image: var(--close-modal-icon);
 	@include icon-size(20px, 20px);
@@ -187,6 +193,16 @@
 		background: var(--round-icon-bg-color);
 		position: relative;
 	}
+}
+
+.icon--button-round {
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--context-menu-icon-bg);
 }
 
 .icon-squared {

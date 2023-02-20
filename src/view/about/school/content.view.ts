@@ -1,6 +1,7 @@
-import { getSchoolLang } from "../../../lang/school.lang";
+import { getSchoolLang } from "lang/school.lang";
 
-const schoolLogo = require("../../../assets/svg/rs/logo_rs.svg") as string;
+const schoolLogo =
+  require("../../../assets/svg/rs/logo_rs_large.svg") as string;
 
 class SchoolContentView {
   render(root: HTMLElement) {

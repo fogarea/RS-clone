@@ -1,6 +1,5 @@
 import { Layout } from "types/layout.types";
 import contentView from "../goals/content.view";
-import goalsButtonView from "./goals.button.view";
 
 class GoalsView {
   layout = {} as Layout;
@@ -8,7 +7,6 @@ class GoalsView {
   init(root: HTMLElement) {
     this.createLayout(root);
     this.render();
-    //this.addHandlers(root);
   }
 
   createLayout(root: HTMLElement) {
@@ -28,7 +26,6 @@ class GoalsView {
 
   render() {
     contentView.render(this.layout.content);
-    goalsButtonView.render(this.layout.button);
   }
 }
 

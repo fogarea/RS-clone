@@ -30,6 +30,7 @@ class HeaderView {
       }
 
       if (target.tagName === "A" || target.tagName === "SPAN") {
+        console.log(target);
         navigationController.route(event);
       }
 
@@ -84,7 +85,6 @@ class HeaderView {
   }
 
   toggleActiveLink(route: string) {
-    console.log("route", route);
     const active = route.length
       ? document.getElementById(route)
       : document.querySelector(".nav__item--link");

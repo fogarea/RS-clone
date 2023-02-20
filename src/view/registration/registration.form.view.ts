@@ -4,7 +4,7 @@ import phoneFieldView from "../components/form/phone.field.view";
 import emailFieldView from "../components/form/email.field.view";
 import passwordFieldView from "../components/form/password.field.view";
 import submitButtonView from "../components/form/submit.button.view";
-import { getRegLang } from "../../lang/reg/reg.lang";
+import { getRegLang } from "lang/reg/reg.lang";
 
 class RegistrationFormView {
   render(root: HTMLElement) {
@@ -22,7 +22,7 @@ class RegistrationFormView {
     phoneFieldView.init(root, `${phonePlace}`);
     emailFieldView.init(root, "reg-email", `${emailPlace}`);
     passwordFieldView.init(root, "reg-password", `${passwordPlace}`);
-    submitButtonView.render(root, `${btn}`);
+    return submitButtonView.render(root, `${btn}`);
   }
 }
 

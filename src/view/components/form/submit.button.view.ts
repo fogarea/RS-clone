@@ -11,6 +11,8 @@ class SubmitButtonView {
     wrapper.append(input);
 
     root.append(wrapper);
+
+    return input;
   }
 }
 

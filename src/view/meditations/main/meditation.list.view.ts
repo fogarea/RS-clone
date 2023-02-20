@@ -6,7 +6,7 @@ import { Routing } from "types/route.types";
 import navigationController from "controller/navigation.controller";
 import { Layout } from "types/layout.types";
 import meditationCardView from "../../components/meditation.card.view";
-import loading from "utils/loading";
+import modalDialogView from "../../components/modal/modal.dialog.view";
 
 class MeditationsListView {
   layout = {} as Layout;
@@ -44,8 +44,13 @@ class MeditationsListView {
           text: "",
           classes: "button__icon icon icon--delete",
           callback: async () => {
-            loading.on(document.querySelector(".icon--delete"), false);
-            await meditationController.delete(meditation);
+            modalDialogView.buildModalDialog(
+              `${"Are you sure you want to delete this playlist?"}`,
+              async () => {
+                await meditationController.delete(meditation);
+                modalDialogView.removeModal();
+              }
+            );
           }
         }
       ]);

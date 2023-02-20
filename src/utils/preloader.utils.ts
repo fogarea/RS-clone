@@ -69,7 +69,7 @@ class Preloader {
     this.layout.preloader.style.background =
       scheme === "true"
         ? "linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%)"
-        : "#212224";
+        : "#2a2e3d";
 
     this.layout.loader = document.createElement("div");
     this.layout.loader.classList.add("preloader__loader");

@@ -1,17 +1,21 @@
 import { Routing } from "types/route.types";
-import { getBtnAppLang } from "lang/header/button.app.lang";
 import { state } from "../../../store/state";
+import { Layout } from "types/layout.types";
 
 class ProfileButtonsView {
+  layout = {} as Layout;
+
   render(root: HTMLElement) {
-    const { btn } = getBtnAppLang();
+    const iconWrapper = document.createElement("a");
+    iconWrapper.className = "sign__icon icon icon--button-round";
+    iconWrapper.href = state.basePath + Routing.PROFILE;
 
-    const profileBtn = document.createElement("a");
-    profileBtn.className = "button button--colored";
-    profileBtn.textContent = `${btn}`;
-    profileBtn.href = state.basePath + Routing.PROFILE;
+    const icon = document.createElement("span");
+    icon.className = "icon icon--reg";
 
-    root.replaceChildren(profileBtn);
+    iconWrapper.append(icon);
+
+    root.replaceChildren(iconWrapper);
   }
 }
 

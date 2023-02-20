@@ -9,6 +9,7 @@ import selectPlaylistPhotoFieldView from "../../components/form/select.playlist.
 import meditationController from "../../../controller/meditation.controller";
 import { getUpdateMeditationLang } from "lang/meditation/update.meditation.lang";
 import { ModalWindow } from "../../components/modal/modal.view";
+import loading from "../../../utils/loading";
 
 const photoIds = [0, 1, 2];
 
@@ -17,7 +18,7 @@ class CreateMeditationView {
 
   init(root: HTMLElement, modal: ModalWindow, meditation: Meditation) {
     this.createLayout(root, meditation);
-    this.createForm(meditation);
+    meditation.id ? this.renderUpdateForm(meditation) : this.renderCreateForm();
     this.addHandler(meditation, modal);
   }
 
@@ -32,40 +33,46 @@ class CreateMeditationView {
     this.layout.text.style.order = "1";
   }
 
-  createForm(meditation: Meditation) {
-    if (meditation.id) {
-      const { titlePlace, descPlace, btn } = getUpdateMeditationLang();
+  renderUpdateForm(meditation: Meditation) {
+    const { titlePlace, descPlace, btn } = getUpdateMeditationLang();
 
-      selectPlaylistPhotoFieldView.init(
-        this.layout.formFields,
-        photoIds,
-        meditation.media
-      );
+    selectPlaylistPhotoFieldView.init(
+      this.layout.formFields,
+      photoIds,
+      meditation.media
+    );
 
-      titleFieldView.init(
-        this.layout.formFields,
-        `${titlePlace}`,
-        meditation.title
-      );
+    titleFieldView.init(
+      this.layout.formFields,
+      `${titlePlace}`,
+      meditation.title
+    );
 
-      descFieldView.init(
-        this.layout.formFields,
-        `${descPlace}`,
-        meditation.description
-      );
+    descFieldView.init(
+      this.layout.formFields,
+      `${descPlace}`,
+      meditation.description
+    );
 
-      submitButtonView.render(this.layout.formFields, `${btn}`);
-    } else {
-      const { titlePlace, descPlace, btn } = getCreateMeditationLang();
+    this.layout.submit = submitButtonView.render(
+      this.layout.formFields,
+      `${btn}`
+    );
+  }
 
-      selectPlaylistPhotoFieldView.init(this.layout.formFields, photoIds, "0");
+  renderCreateForm() {
+    const { titlePlace, descPlace, btn } = getCreateMeditationLang();
 
-      titleFieldView.init(this.layout.formFields, `${titlePlace}`);
+    selectPlaylistPhotoFieldView.init(this.layout.formFields, photoIds, "0");
 
-      descFieldView.init(this.layout.formFields, `${descPlace}`);
+    titleFieldView.init(this.layout.formFields, `${titlePlace}`);
 
-      submitButtonView.render(this.layout.formFields, `${btn}`);
-    }
+    descFieldView.init(this.layout.formFields, `${descPlace}`);
+
+    this.layout.submit = submitButtonView.render(
+      this.layout.formFields,
+      `${btn}`
+    );
   }
 
   addHandler(meditation: Meditation, modal: ModalWindow) {
@@ -74,6 +81,8 @@ class CreateMeditationView {
 
       if (e.target instanceof HTMLFormElement) {
         const form = e.target;
+
+        loading.on(this.layout.submit);
 
         const formData = Object.fromEntries(new FormData(form).entries());
 

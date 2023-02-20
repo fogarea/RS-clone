@@ -2,7 +2,7 @@ import dateFieldView from "../../components/form/date.field.view";
 import selectFieldView from "../../components/form/select.field.view";
 import numberFieldView from "../../components/form/number.field.view";
 import submitButtonView from "../../components/form/submit.button.view";
-import { getCompleteLang } from "../../../lang/reg/complete.lang";
+import { getCompleteLang } from "lang/reg/complete.lang";
 
 class CompleteFormView {
   render(root: HTMLElement) {
@@ -32,7 +32,7 @@ class CompleteFormView {
       "height",
       `${heightPlace}`
     );
-    submitButtonView.render(root, `${btn}`);
+    return submitButtonView.render(root, `${btn}`);
   }
 }
 

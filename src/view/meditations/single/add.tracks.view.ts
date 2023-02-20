@@ -10,6 +10,7 @@ import navigationModel from "../../../model/navigation.model";
 import { Routing } from "types/route.types";
 import navigationController from "../../../controller/navigation.controller";
 import backButton from "../../components/back.button";
+import loading from "../../../utils/loading";
 
 class AddTracksView {
   layout = {} as Layout;
@@ -57,7 +58,10 @@ class AddTracksView {
       this.meditation
     );
 
-    submitButtonView.render(this.layout.formFields, `${btn}`);
+    this.layout.submit = submitButtonView.render(
+      this.layout.formFields,
+      `${btn}`
+    );
   }
 
   addHandler() {
@@ -67,6 +71,8 @@ class AddTracksView {
         navigationModel.createRoute(Routing.MEDITATIONS) +
         "/" +
         this.meditation.id;
+
+      loading.on(this.layout.submit);
 
       await meditationController.updateMeditationTracks(
         this.meditation,

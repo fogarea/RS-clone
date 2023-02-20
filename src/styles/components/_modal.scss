@@ -42,7 +42,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	//padding: 50px;
 }
 
 .modal__dialog {
@@ -63,6 +62,43 @@
 	&__buttons {
 		display: flex;
 		justify-content: space-around;
+	}
+
+	&__button {
+		margin-top: 10px;
+		text-align: center;
+		border-color: #ba8ca4;
+		background: transparent;
+
+		span {
+			text-decoration: none;
+			background: var(--colored-btn-color);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		&:hover span{
+			background: $color-light;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	}
+}
+
+.body--light {
+	.dialog__button {
+		background: linear-gradient(274.42deg, #f6f4f7 0%, #f6f4f7 124.45%) padding-box, linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%) border-box;
+		border: 1px solid transparent;
+
+		&:hover {
+			background: var(--bordered-link-btn-hover-color);
+		}
+	}
+}
+
+.modal__dialog {
+	.loading {
+		padding: 10px 0;
 	}
 }
 

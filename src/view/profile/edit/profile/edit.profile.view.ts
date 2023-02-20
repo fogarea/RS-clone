@@ -31,7 +31,7 @@ class EditProfileView {
   }
 
   render() {
-    editProfileFormView.render(this.layout.formFields);
+    this.layout.submit = editProfileFormView.render(this.layout.formFields);
   }
 
   addHandler() {
@@ -43,10 +43,9 @@ class EditProfileView {
 
       if (e.target instanceof HTMLFormElement) {
         const form = e.target;
-        const submit = form.querySelector('[type="submit"]') as HTMLElement;
         const formData = Object.fromEntries(new FormData(form).entries());
 
-        loading.on(submit);
+        loading.on(this.layout.submit);
 
         await profileController.updateProfileCredentials({
           avatar: parseInt(`${formData.avatar}`),

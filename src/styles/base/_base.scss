@@ -65,6 +65,8 @@
   --link-text-color: #{$color-link-text-dark};
   --link-text-hover-color: #{$color-link-hover-text-dark};
 
+  --link-context-text-hover-color: #{$color-link-hover-context-text-dark};
+
   --icon--invert: invert(0%);
 
   --input-border-color: #{$color-input-bordered-dark};
@@ -107,6 +109,12 @@
   --thumb-color: #{$color-thumb-dark};
   --track-color: #{$color-track-dark};
 
+  --reg-icon: #{$reg-icon-dark};
+
+  --context-menu: #{$color-context-bg-dark};
+  --context-menu-icon-bg: #{$color-context-icon-bg-dark};
+  --context-accent: #{$color-context-accent-dark};
+
   --rs-logo: invert(1);
 }
 
@@ -135,6 +143,8 @@
   --text-color: #{$color-text-light};
   --link-text-color: #{$color-link-text-light};
   --link-text-hover-color: #{$color-link-hover-text-light};
+
+  --link-context-text-hover-color: #{$color-link-hover-context-text-light};
 
   --icon--invert: invert(100%);
 
@@ -177,6 +187,12 @@
 
   --thumb-color: #{$color-thumb-light};
   --track-color: #{$color-track-light};
+
+  --reg-icon: #{$reg-icon-light};
+
+  --context-menu: #{$color-context-bg-light};
+  --context-menu-icon-bg: #{$color-context-icon-bg-light};
+  --context-accent: #{$color-context-accent-light};
 
   --rs-logo: invert(0);
 }

@@ -2,7 +2,7 @@ import { Layout } from "types/layout.types";
 import completeFormView from "./complete.form.view";
 import profileController from "../../../controller/profile.controller";
 import { state } from "../../../store/state";
-import { getCompleteLang } from "../../../lang/reg/complete.lang";
+import { getCompleteLang } from "lang/reg/complete.lang";
 import formDataView from "../../components/form.data.view";
 import loading from "utils/loading";
 
@@ -25,7 +25,7 @@ class CompleteView {
   }
 
   render() {
-    completeFormView.render(this.layout.formFields);
+    this.layout.submit = completeFormView.render(this.layout.formFields);
   }
 
   addHandler() {
@@ -37,18 +37,25 @@ class CompleteView {
 
       if (e.target instanceof HTMLFormElement) {
         const form = e.target;
-        const submit = form.querySelector('[type="submit"]') as HTMLElement;
         const formData = Object.fromEntries(new FormData(form).entries());
 
-        loading.on(submit);
+        loading.on(this.layout.submit);
 
-        await profileController.createProfile({
+        const complete = await profileController.createProfile({
           _id: state.user.profile.id,
           gender: `${formData.gender}`,
           birthday: `${formData.birthday}`,
           weight: parseInt(`${formData.weight}`),
           height: parseInt(`${formData.height}`)
         });
+
+        if (complete.error) {
+          alert(
+            `error: ${complete.error}\nmessage: ${complete.message}\ncode: ${complete.code}`
+          );
+          loading.off(this.layout.submit);
+          return;
+        }
       }
     });
   }

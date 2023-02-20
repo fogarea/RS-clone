@@ -21,6 +21,16 @@ $color-primary-bg-dark: #2a2e3d;
 $color-modal-bg-light: #f6f4f7;
 $color-modal-bg-dark: #2a2e3d;
 
+$color-context-icon-bg-light: #b0c5fd;
+$color-context-icon-bg-dark: #494c59;
+
+$color-context-bg-light: #f6f4f7;
+$color-context-bg-dark: rgba(248, 249, 250, 0.15);
+
+$color-context-accent-light: #f6f4f7;
+$color-context-accent-dark: #484b58;
+
+
 $color-secondary-bg-light: #f6f4f7;
 $color-secondary-bg-dark: rgba(248, 249, 250, 0.15);
 
@@ -47,6 +57,9 @@ $color-link-text-dark: #fcfcff;
 
 $color-link-hover-text-light: #fcfcffcc;
 $color-link-hover-text-dark: #7f7f89;
+
+$color-link-hover-context-text-light: #7079fe;
+$color-link-hover-context-text-dark: #7f7f89;
 
 $color-input-bordered-light: #ddd;
 $color-input-bordered-dark: #fcfcff;
@@ -126,3 +139,6 @@ $heart-icon-hover-dark: url("./../assets/svg/player/heart-hover-dark.svg");
 
 $youtube-icon-light: url("./../assets/svg/player/youtube-light.svg");
 $youtube-icon-dark: url("./../assets/svg/player/youtube-dark.svg");
+
+$reg-icon-light: url("./../assets/svg/navigation/reg-light.svg");
+$reg-icon-dark: url("./../assets/svg/navigation/reg-dark.svg");
