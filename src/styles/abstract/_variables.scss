@@ -16,16 +16,16 @@ $color-accent-light: #7079fe;
 $color-accent-dark: #ba8ca4;
 
 $color-primary-bg-light: linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%);
-$color-primary-bg-dark: #2A2E3D;
+$color-primary-bg-dark: #2a2e3d;
 
 $color-modal-bg-light: #f6f4f7;
-$color-modal-bg-dark: #2A2E3D;
+$color-modal-bg-dark: #2a2e3d;
 
 $color-secondary-bg-light: #f6f4f7;
 $color-secondary-bg-dark: rgba(248, 249, 250, 0.15);
 
 $color-text-light: #1d1617;
-$color-text-dark: #FAFAFA;
+$color-text-dark: #fafafa;
 
 $color-text-btn-light: #173a56;
 $color-text-btn-dark: #1d1617;
@@ -33,7 +33,7 @@ $color-text-btn-dark: #1d1617;
 $color-bordered-btn-light: #fcfcff;
 $color-bordered-btn-dark: #fcfcff;
 
-$color-colored-btn-light: linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%);
+$color-colored-btn-light: linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%);
 $color-colored-btn-dark: #ba8ca4;
 
 $color-hover-colored-btn-light: #92a3fd;
@@ -63,14 +63,11 @@ $color-card-bg-dark: rgb(248 249 250 / 15%);
 $color-round-bg-light: #f8f9fa;
 $color-round-bg-dark: rgb(248 249 250 / 15%);
 
-$logo-light: url("./../assets/svg/logo/logo-light.svg");
-$logo-dark: url("./../assets/svg/logo/logo-dark.svg");
-
-$color-bordered-link-btn-light: linear-gradient(274.42deg, #fbfbfc 0%, #fbfbfc 124.45%) padding-box, linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%) border-box;
+$color-bordered-link-btn-light: linear-gradient(274.42deg, #fbfbfc 0%, #fbfbfc 124.45%) padding-box, linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%) border-box;
 
 $color-bordered-link-btn-dark: linear-gradient(274.42deg,  rgb(248 249 250 / 15%) 0%,  rgb(248 249 250 / 15%) 124.45%) padding-box, linear-gradient(274.42deg,  rgb(248 249 250 / 15%) 0%,  rgb(248 249 250 / 15%) 124.45%) border-box;
 
-$color-hover-colored-btn-light: linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%) padding-box, linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%) border-box;
+$color-hover-colored-btn-light: linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%) padding-box, linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%) border-box;
 $color-hover-colored-btn-dark: #ba8ca4;
 
 $color-tag-bg-light: #f2f2f2a6;
@@ -81,6 +78,9 @@ $color-thumb-dark: #3b3e4c;
 
 $color-track-light: rgb(151 153 161 / 27%);
 $color-track-dark: rgb(193 189 194 / 58%);
+
+$logo-light: url("./../assets/svg/logo/logo-light.svg");
+$logo-dark: url("./../assets/svg/logo/logo-dark.svg");
 
 $arrow-left-light: url("./../assets/svg/arrow/arrow-left-light.svg");
 $arrow-left-dark: url("./../assets/svg/arrow/arrow-left-dark.svg");
