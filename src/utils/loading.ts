@@ -31,12 +31,12 @@ class Loading {
   }
 
   globalOn(root: HTMLElement | null) {
+    window.scrollTo(0, 0);
     if (root) preloaderUtils.init(root, false);
   }
 
   globalOff() {
     preloaderUtils.finishPreloader();
-    window.scrollTo(0, 0);
   }
 }
 

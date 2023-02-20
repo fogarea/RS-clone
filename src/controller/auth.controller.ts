@@ -55,6 +55,10 @@ class AuthController {
   headerUpdate() {
     authModel.emit("auth.update.header");
   }
+
+  updateLoaded() {
+    authModel.updateLoaded();
+  }
 }
 
 export default new AuthController();

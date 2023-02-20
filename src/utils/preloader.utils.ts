@@ -41,6 +41,8 @@ const arrayImage: Image[] = [
 class Preloader {
   layout = {} as Layout;
 
+  repeats = 0;
+
   timer: ReturnType<typeof setTimeout> | null = null;
 
   init(root: HTMLElement, withNumbers = true) {
@@ -142,10 +144,10 @@ class Preloader {
         file.addEventListener("load", () => {
           loaded += +percentAll[index];
 
+          if (loaded > 80) loaded = 80;
           this.layout.percentsNumber.innerHTML = loaded.toFixed(0);
 
-          if (loaded >= 99) {
-            if (this.timer) clearTimeout(this.timer);
+          if (loaded >= 80) {
             this.finishPreloader();
           }
         });
@@ -153,16 +155,42 @@ class Preloader {
     });
   }
 
-  finishPreloader() {
-    const preloader = document.getElementById("preloader");
-    if (!preloader) {
-      return console.log("error");
+  finishPreloader(withForce = "") {
+    if (!this.timer && !withForce) return;
+
+    if (this.timer) {
+      clearTimeout(this.timer);
+      this.timer = null;
     }
 
-    preloader.classList.add("hide-preloader");
+    if (!state.loaded) {
+      this.repeats++;
+      let totalLoaded = 80 + this.repeats;
+      if (totalLoaded > 100) totalLoaded = 100;
+
+      this.layout.percentsNumber.innerHTML = totalLoaded.toFixed(0);
+
+      setTimeout(() => {
+        this.finishPreloader("force");
+      }, 200);
+
+      return;
+    }
+
     this.layout.percentsNumber.innerHTML = "100";
-    document.body.classList.remove("body--scroll__disable");
-    if (this.layout.imgContainer) this.layout.imgContainer.remove();
+
+    setTimeout(() => {
+      const preloader = document.getElementById("preloader");
+
+      if (!preloader) {
+        return console.log("error");
+      }
+
+      preloader.classList.add("hide-preloader");
+      this.layout.percentsNumber.innerHTML = "100";
+      document.body.classList.remove("body--scroll__disable");
+      if (this.layout.imgContainer) this.layout.imgContainer.remove();
+    }, 500);
   }
 }
 

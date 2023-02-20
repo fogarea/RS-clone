@@ -48,6 +48,9 @@ class App {
     await meditationController.getTracks();
     this.createLayout(root);
     await authController.autoLogin();
+
+    authController.updateLoaded();
+
     this.render();
     this.subscribe();
 
