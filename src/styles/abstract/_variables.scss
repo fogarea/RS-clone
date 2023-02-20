@@ -6,8 +6,6 @@ $font-family-primary: "Montserrat", sans-serif;
 $width-container: 1260px;
 
 $tablet-width: 768px;
-$notebook-width: 1050px;
-$mobile-huge-width: 600px;
 $mobile-big-width: 414px;
 $mobile-small-width: 320px;
 
@@ -18,13 +16,16 @@ $color-accent-light: #7079fe;
 $color-accent-dark: #ba8ca4;
 
 $color-primary-bg-light: linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%);
-$color-primary-bg-dark: #212224;
+$color-primary-bg-dark: #2a2e3d;
+
+$color-modal-bg-light: #f6f4f7;
+$color-modal-bg-dark: #2a2e3d;
 
 $color-secondary-bg-light: #f6f4f7;
-$color-secondary-bg-dark: linear-gradient(274.42deg, #99BB83 0%, #9F9DFF 124.45%);
+$color-secondary-bg-dark: rgba(248, 249, 250, 0.15);
 
 $color-text-light: #1d1617;
-$color-text-dark: #fcfcff;
+$color-text-dark: #fafafa;
 
 $color-text-btn-light: #173a56;
 $color-text-btn-dark: #1d1617;
@@ -32,7 +33,7 @@ $color-text-btn-dark: #1d1617;
 $color-bordered-btn-light: #fcfcff;
 $color-bordered-btn-dark: #fcfcff;
 
-$color-colored-btn-light: linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%);
+$color-colored-btn-light: linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%);
 $color-colored-btn-dark: #ba8ca4;
 
 $color-hover-colored-btn-light: #92a3fd;
@@ -57,23 +58,29 @@ $color-input-text-light: #2f281e;
 $color-input-text-dark: #2f281e;
 
 $color-card-bg-light: #fbfbfc;
-$color-card-bg-dark: rgb(248 249 250 / 15%); //#f8f9fa6b;
+$color-card-bg-dark: rgb(248 249 250 / 15%);
 
 $color-round-bg-light: #f8f9fa;
-$color-round-bg-dark: rgb(248 249 250 / 15%); //#f8f9fa6b;
+$color-round-bg-dark: rgb(248 249 250 / 15%);
 
-$logo-light: url("./../assets/svg/logo/logo-light.svg");
-$logo-dark: url("./../assets/svg/logo/logo-dark.svg");
+$color-bordered-link-btn-light: linear-gradient(274.42deg, #fbfbfc 0%, #fbfbfc 124.45%) padding-box, linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%) border-box;
 
-$color-bordered-link-btn-light: linear-gradient(274.42deg, #fbfbfc 0%, #fbfbfc 124.45%) padding-box, linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%) border-box;
+$color-bordered-link-btn-dark: linear-gradient(274.42deg,  rgb(248 249 250 / 15%) 0%,  rgb(248 249 250 / 15%) 124.45%) padding-box, linear-gradient(274.42deg,  rgb(248 249 250 / 15%) 0%,  rgb(248 249 250 / 15%) 124.45%) border-box;
 
-$color-bordered-link-btn-dark: linear-gradient(274.42deg, rgb(255 255 255 / 30%) 0%, rgb(255 255 255 / 30%) 124.45%) padding-box, linear-gradient(274.42deg, rgba(153, 187, 131, 0) 0%, rgba(159, 157, 255, 0) 124.45%) border-box;
-
-$color-hover-colored-btn-light: linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%) padding-box, linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%) border-box;
+$color-hover-colored-btn-light: linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%) padding-box, linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%) border-box;
 $color-hover-colored-btn-dark: #ba8ca4;
 
 $color-tag-bg-light: #f2f2f2a6;
-$color-tag-bg-dark: rgb(248 249 250 / 15%);//#f8f9fa6b;
+$color-tag-bg-dark: rgb(248 249 250 / 15%);
+
+$color-thumb-light: rgb(151 153 161);
+$color-thumb-dark: #3b3e4c;
+
+$color-track-light: rgb(151 153 161 / 27%);
+$color-track-dark: rgb(193 189 194 / 58%);
+
+$logo-light: url("./../assets/svg/logo/logo-light.svg");
+$logo-dark: url("./../assets/svg/logo/logo-dark.svg");
 
 $arrow-left-light: url("./../assets/svg/arrow/arrow-left-light.svg");
 $arrow-left-dark: url("./../assets/svg/arrow/arrow-left-dark.svg");
@@ -85,7 +92,7 @@ $burger-menu-icon-light: url("./../assets/svg/burger-menu/burger-menu-icon-light
 $burger-menu-icon-dark: url("./../assets/svg/burger-menu/burger-menu-icon-dark.svg");
 
 $close-icon-light: url("./../assets/svg/burger-menu/close-icon-light.svg");
-$close-icon-dark:  url("./../assets/svg/burger-menu/close-icon-light.svg"); //url("./../assets/svg/burger-menu/close-icon-dark.svg");
+$close-icon-dark:  url("./../assets/svg/burger-menu/close-icon-light.svg");
 
 $close-modal-icon-light: url("./../assets/svg/burger-menu/close-icon-modal-light.svg");
 $close-modal-icon-dark: url("./../assets/svg/burger-menu/close-icon-light.svg");
@@ -116,3 +123,6 @@ $heart-icon-dark: url("./../assets/svg/player/heart-dark.svg");
 
 $heart-icon-hover-light: url("./../assets/svg/player/heart-hover-light.svg");
 $heart-icon-hover-dark: url("./../assets/svg/player/heart-hover-dark.svg");
+
+$youtube-icon-light: url("./../assets/svg/player/youtube-light.svg");
+$youtube-icon-dark: url("./../assets/svg/player/youtube-dark.svg");

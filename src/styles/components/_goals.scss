@@ -50,7 +50,7 @@
 
 	// .target-card__data
 	&__data {
-		@include font(2.2rem, 4.6rem, 300);
+		@include font(2.2rem, 4.6rem, 500);
 		background: var(--colored-btn-color);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;

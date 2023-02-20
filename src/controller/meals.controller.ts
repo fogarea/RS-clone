@@ -2,6 +2,8 @@ import mealsService from "../service/meals.service";
 import mealsModel from "../model/meals.model";
 import { state } from "../store/state";
 import { Meals } from "types/meal.types";
+import achievementsController from "./achievements.controller";
+import { Achievements } from "types/achievements.types";
 
 class MealsController {
   async getAll() {
@@ -13,7 +15,15 @@ class MealsController {
   }
 
   getMeal(id: string, category: keyof Meals) {
+    this.updateMealAchievement();
     return state.meals[category].find((meal) => meal.id === id);
+  }
+
+  async updateMealAchievement() {
+    await achievementsController.updateAchievements(
+      "salad" as keyof Achievements,
+      true
+    );
   }
 }
 

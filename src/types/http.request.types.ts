@@ -1,4 +1,5 @@
 import { Goals } from "types/goals.types";
+import { Achievements } from "types/achievements.types";
 
 export type HttpRegisterRequest = {
   name: string;
@@ -17,6 +18,10 @@ export type HttpUserRequest = {
 
 export type HttpGoalsRequest = {
   goals: Goals;
+};
+
+export type HttpAchievementsRequest = {
+  achievements: Achievements;
 };
 
 export type HttpLoginRequest = {
@@ -55,4 +60,5 @@ export type HttpUnionRequest =
   | HttpUserRequest
   | HttpProfileRequest
   | HttpGoalsRequest
+  | HttpAchievementsRequest
   | HttpMeditationRequest;

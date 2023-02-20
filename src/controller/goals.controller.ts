@@ -1,6 +1,8 @@
 import { HttpGoalsRequest } from "types/http.request.types";
 import goalsService from "../service/goals.service";
 import goalsModel from "../model/goals.model";
+import achievementsController from "./achievements.controller";
+import { Achievements } from "types/achievements.types";
 
 class GoalsController {
   async updateGoals(goalsReq: HttpGoalsRequest) {
@@ -13,6 +15,15 @@ class GoalsController {
     goalsModel.updateGoals({ ...goals });
 
     goalsModel.emit("goals.update");
+
+    await this.updateGoalsAchievement();
+  }
+
+  async updateGoalsAchievement() {
+    await achievementsController.updateAchievements(
+      "water" as keyof Achievements,
+      true
+    );
   }
 }
 

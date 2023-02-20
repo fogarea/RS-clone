@@ -21,7 +21,12 @@
 	max-height: 90%;
 	border-radius: 10px;
 	overflow: auto;
-	background: var(--secondary-bg-color);
+	//background: var(--secondary-bg-color);
+	background: var(--modal-bg-color);
+
+	.cards__container {
+
+	}
 }
 
 .modal__close-icon {
@@ -37,12 +42,15 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 50px;
+	//padding: 50px;
 }
 
 .modal__dialog {
 	display: flex;
 	flex-direction: column;
+	max-width: 400px;
+	width: 100%;
+	padding: 40px;
 }
 
 .dialog {
@@ -61,15 +69,17 @@
 .modal__create {
 	display: flex;
 	flex-direction: column;
-	width: 70vw;
+	width: 60vw;
 
 	.form {
+		padding-top: 20px;
 		margin-bottom: 0;
 	}
 
 	.form__content {
+		background: transparent;
 		box-shadow: none;
-		border-radius: 0;
+		//width: 40vw;
 	}
 
 	.image-fields__label {

@@ -4,23 +4,26 @@ import { state } from "store/state";
 import { HttpProgressRequest } from "types/http.request.types";
 import { Progress } from "types/progress.types";
 import { Trainings } from "types/training.types";
+import achievementsController from "./achievements.controller";
+import { Achievements } from "types/achievements.types";
 
 class ProgressController {
-  finishTraning(id: string) {
+  async finishTraining(id: string) {
     const progress = { ...state.user.progress };
     progress.finished.push(id);
     progressModel.update(progress);
 
-    progressService.update(this.createHttpProgress(progress));
+    await progressService.update(this.createHttpProgress(progress));
+    await this.updateProgressAchievement();
   }
 
-  updateProgress(watched: number, calories: number) {
+  async updateProgress(watched: number, calories: number) {
     const progress = { ...state.user.progress };
     progress.watched += watched;
     progress.calories += calories;
     progressModel.update(progress);
 
-    progressService.update(this.createHttpProgress(progress));
+    await progressService.update(this.createHttpProgress(progress));
   }
 
   private createHttpProgress(progress: Progress): HttpProgressRequest {
@@ -32,7 +35,7 @@ class ProgressController {
     };
   }
 
-  watchProgress() {
+  async watchProgress() {
     let watched = 0;
     let calories = 0;
 
@@ -49,9 +52,16 @@ class ProgressController {
     }
 
     if (watched || calories) {
-      this.updateProgress(watched, calories);
+      await this.updateProgress(watched, calories);
       localStorage.setItem("trainings", JSON.stringify(trainings));
     }
+  }
+
+  async updateProgressAchievement() {
+    await achievementsController.updateAchievements(
+      "dumbbells" as keyof Achievements,
+      true
+    );
   }
 }
 

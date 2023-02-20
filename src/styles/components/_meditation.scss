@@ -112,10 +112,6 @@
 		text-overflow: ellipsis;
 
 		@include font(2.3rem, 4.2rem, 300);
-		@include media-mobile-big {
-			@include font(2.1rem, 3.1rem, 300);
-		}
-		color: #1d1617;
 	}
 
 	// .meditation-card__desc

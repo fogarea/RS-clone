@@ -11,11 +11,11 @@
 .tag {
 	border-radius: 90px;
 	padding: 0 14px;
-	@include font(1.3rem, 2.8rem, normal);
+	@include font(1.2rem, 2.8rem, 400);
 
 	&--bordered {
 		background: var(--tag-bg-color);
-		color: var(--colored-btn-color);
+		//color: var(--colored-btn-color);
 	}
 
 	&--rounded {

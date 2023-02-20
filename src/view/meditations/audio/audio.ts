@@ -10,7 +10,7 @@ export class Audio {
   player: Player;
 
   constructor(src: string, id: string, meditation?: Meditation) {
-    this.src = MediaEndpoint.SOUND + src;
+    this.src = MediaEndpoint.SOUND + src + "?raw=true";
 
     this.self = this.create();
 

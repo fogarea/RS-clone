@@ -3,6 +3,8 @@ import meditationService from "service/meditation.service";
 import { state } from "store/state";
 import { HttpMeditationRequest } from "types/http.request.types";
 import { Meditation } from "types/meditation.types";
+import achievementsController from "./achievements.controller";
+import { Achievements } from "types/achievements.types";
 
 class MeditationController {
   async create(meditation: Meditation) {
@@ -13,6 +15,8 @@ class MeditationController {
     if (createdMeditation) {
       meditationModel.create(createdMeditation);
       meditationModel.emit("meditation.update.list");
+
+      await this.updateMeditationAchievement();
     }
   }
 
@@ -74,6 +78,13 @@ class MeditationController {
     meditation.tracks = [...selectedTracks];
 
     await this.update(meditation);
+  }
+
+  async updateMeditationAchievement() {
+    await achievementsController.updateAchievements(
+      "calendar" as keyof Achievements,
+      true
+    );
   }
 }
 
