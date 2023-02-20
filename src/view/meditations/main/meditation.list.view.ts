@@ -18,7 +18,7 @@ class MeditationsListView {
   }
 
   renderItems(root: HTMLElement) {
-    const { nothing, edit, open } = getMeditationsLang();
+    const { nothing, open } = getMeditationsLang();
 
     this.layout.empty = document.createElement("p");
     this.layout.empty.textContent = `${nothing}`;
@@ -32,7 +32,7 @@ class MeditationsListView {
       const route =
         navigationModel.createRoute(Routing.MEDITATIONS) + "/" + meditation.id;
 
-      meditationCardView.render(root, meditation, `${edit}`, [
+      meditationCardView.render(root, meditation, [
         {
           text: `${open}`,
           classes: "button--rounded",
@@ -44,7 +44,7 @@ class MeditationsListView {
           text: "",
           classes: "button__icon icon icon--delete",
           callback: async () => {
-            loading.on(document.querySelector(".button--rm"));
+            loading.on(document.querySelector(".icon--delete"), false);
             await meditationController.delete(meditation);
           }
         }

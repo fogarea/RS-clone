@@ -3,17 +3,17 @@ import preloaderUtils from "./preloader.utils";
 class Loading {
   prevState = new Map();
 
-  on(elem: HTMLElement | null) {
+  on(elem: HTMLElement | null, withDots = true) {
     if (!elem) return;
 
     elem.classList.add("loading");
 
     if (elem instanceof HTMLInputElement) {
       this.prevState.set(elem, elem.value);
-      elem.value = ". . .";
+      if (withDots) elem.value = ". . .";
     } else {
       this.prevState.set(elem, elem.textContent);
-      elem.textContent = ". . .";
+      if (withDots) elem.textContent = ". . .";
     }
   }
 
