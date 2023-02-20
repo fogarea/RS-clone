@@ -4,7 +4,6 @@ class Loading {
   prevState = new Map();
 
   on(elem: HTMLElement | null, withDots = true) {
-    console.log(elem);
     if (!elem) return;
 
     elem.classList.add("loading");

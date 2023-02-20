@@ -18,7 +18,7 @@ class MeditationsListView {
   }
 
   renderItems(root: HTMLElement) {
-    const { nothing, open } = getMeditationsLang();
+    const { nothing, open, confirm } = getMeditationsLang();
 
     this.layout.empty = document.createElement("p");
     this.layout.empty.textContent = `${nothing}`;
@@ -44,13 +44,10 @@ class MeditationsListView {
           text: "",
           classes: "button__icon icon icon--delete",
           callback: async () => {
-            modalDialogView.buildModalDialog(
-              `${"Are you sure you want to delete this playlist?"}`,
-              async () => {
-                await meditationController.delete(meditation);
-                modalDialogView.removeModal();
-              }
-            );
+            modalDialogView.buildModalDialog(`${confirm}`, async () => {
+              await meditationController.delete(meditation);
+              modalDialogView.removeModal();
+            });
           }
         }
       ]);

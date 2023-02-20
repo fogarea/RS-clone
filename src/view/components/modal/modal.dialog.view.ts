@@ -1,26 +1,19 @@
 import { ModalWindow } from "./modal.view";
 import { getExitLang } from "lang/profile/exit.lang";
 import loading from "../../../utils/loading";
+import { Layout } from "types/layout.types";
 
 class ModalDialogWindow extends ModalWindow {
-  dialog: HTMLElement;
+  layout = {} as Layout;
 
-  text: HTMLElement;
+  buildModalDialog(text: string, confirmCb: (event: Event) => void) {
+    const { noBtn, yesBtn } = getExitLang();
 
-  buttons: HTMLElement;
+    this.layout.dialog = this.createDomNode("div", "modal__dialog");
+    this.layout.text = this.createDomNode("span", "dialog__text");
+    this.layout.buttons = this.createDomNode("div", "dialog__buttons");
 
-  noBtn: HTMLButtonElement;
-
-  yesBtn: HTMLButtonElement;
-
-  constructor() {
-    super();
-
-    this.dialog = this.createDomNode("div", "modal__dialog");
-    this.text = this.createDomNode("span", "dialog__text");
-    this.buttons = this.createDomNode("div", "dialog__buttons");
-
-    this.noBtn = this.createDomNode(
+    this.layout.noBtn = this.createDomNode(
       "span",
       "dialog__button",
       "button",
@@ -28,36 +21,32 @@ class ModalDialogWindow extends ModalWindow {
       "close-modal-dialog-btn"
     );
 
-    this.yesBtn = this.createDomNode(
+    this.layout.yesBtn = this.createDomNode(
       "span",
       "dialog__button",
       "button",
       "button--link"
     );
-  }
 
-  buildModalDialog(text: string, confirmCb: (event: Event) => void) {
-    const { noBtn, yesBtn } = getExitLang();
+    loading.off(this.layout.buttons);
 
-    loading.off(this.buttons);
+    this.layout.noBtn.innerHTML = `<span>${noBtn}</span>`;
+    this.layout.yesBtn.innerHTML = `<span>${yesBtn}</span>`;
 
-    this.noBtn.innerHTML = `<span>${noBtn}</span>`;
-    this.yesBtn.innerHTML = `<span>${yesBtn}</span>`;
+    this.layout.buttons.append(this.layout.noBtn, this.layout.yesBtn);
 
-    this.buttons.replaceChildren(this.noBtn, this.yesBtn);
+    this.layout.dialog.append(this.layout.text, this.layout.buttons);
 
-    this.dialog.replaceChildren(this.text, this.buttons);
+    this.layout.text.innerText = text;
 
-    this.text.innerText = text;
-
-    this.buildModal(this.dialog);
+    this.buildModal(this.layout.dialog);
     this.bindCloseModalDialogEvents(confirmCb);
   }
 
   bindCloseModalDialogEvents(confirmCb: (event: Event) => void) {
-    this.noBtn.addEventListener("click", () => this.removeModal());
-    this.yesBtn.addEventListener("click", (e: Event) => {
-      loading.on(this.buttons);
+    this.layout.noBtn.addEventListener("click", () => this.removeModal());
+    this.layout.yesBtn.addEventListener("click", (e: Event) => {
+      loading.on(this.layout.buttons);
       confirmCb(e);
     });
   }

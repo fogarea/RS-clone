@@ -25,6 +25,10 @@ const meditationsListDictionary: Languages = {
   noTracks: {
     ru: "Пока что у вас нет добавленных треков",
     en: "No tracks yet"
+  },
+  confirm: {
+    ru: "Вы уверены, что хотите удалить плейлист?",
+    en: "Are you sure you want to delete this playlist?"
   }
 };
 

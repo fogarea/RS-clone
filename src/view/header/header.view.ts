@@ -30,7 +30,6 @@ class HeaderView {
       }
 
       if (target.tagName === "A" || target.tagName === "SPAN") {
-        console.log(target);
         navigationController.route(event);
       }
 

@@ -51,7 +51,10 @@ class OtherView {
       navigationController.createRoute(Routing.MAIN);
     };
     const onDialog = () => {
-      modalDialogView.buildModalDialog(`${title}`, onLogout);
+      modalDialogView.buildModalDialog(`${title}`, () => {
+        onLogout();
+        modalDialogView.removeModal();
+      });
     };
 
     button.render(this.layout.button, "button--rounded", `${btn}`, onDialog);
