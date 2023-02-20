@@ -39,6 +39,7 @@ class App {
     const root = document.querySelector("#root");
 
     if (!(root instanceof HTMLElement)) return;
+
     lang.init();
 
     preloaderUtils.init(root);
@@ -47,6 +48,9 @@ class App {
     await meditationController.getTracks();
     this.createLayout(root);
     await authController.autoLogin();
+
+    authController.updateLoaded();
+
     this.render();
     this.subscribe();
 

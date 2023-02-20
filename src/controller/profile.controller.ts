@@ -11,13 +11,14 @@ class ProfileController {
       profileReq
     );
 
-    if (status === 403) return;
-
-    if (status === 404) return;
+    if (status === 403) return profile;
+    if (status === 404) return profile;
 
     profileModel.updateProfile({ ...profile });
 
     programsController.redirectToPrograms();
+
+    return profile;
   }
 
   async updateProfile(profileReq: HttpProfileRequest) {
@@ -25,11 +26,12 @@ class ProfileController {
       profileReq
     );
 
-    if (status === 403) return;
-
-    if (status === 404) return;
+    if (status === 403) return profile;
+    if (status === 404) return profile;
 
     profileModel.updateProfile({ ...profile });
+
+    return profile;
   }
 
   async updateProfileCredentials(credentialsReq: HttpUserRequest) {
@@ -37,11 +39,12 @@ class ProfileController {
       credentialsReq
     );
 
-    if (status === 403) return;
-
-    if (status === 404) return;
+    if (status === 403) return credentials;
+    if (status === 404) return credentials;
 
     profileModel.updateProfileCredentials({ ...credentials });
+
+    return credentials;
   }
 
   async createProgram(programId: string) {
@@ -50,14 +53,15 @@ class ProfileController {
       program: programId
     });
 
-    if (status === 403) return;
-
-    if (status === 404) return;
+    if (status === 403) return program;
+    if (status === 404) return program;
 
     profileModel.updateProfile({ ...program });
 
     await authController.autoLogin();
     authController.redirectToHome();
+
+    return program;
   }
 
   get program() {

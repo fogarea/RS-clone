@@ -41,16 +41,21 @@ const arrayImage: Image[] = [
 class Preloader {
   layout = {} as Layout;
 
+  repeats = 0;
+
   timer: ReturnType<typeof setTimeout> | null = null;
 
-  init(root: HTMLElement) {
-    this.render(root);
+  init(root: HTMLElement, withNumbers = true) {
+    this.render(root, withNumbers);
     this.loadPreloader();
-    this.renderImgContainer();
-    document.body.classList.remove("non-transition");
+
+    if (withNumbers) {
+      this.renderImgContainer();
+      document.body.classList.remove("non-transition");
+    }
   }
 
-  render(root: HTMLElement) {
+  render(root: HTMLElement, withNumbers = true) {
     const localStorageScheme = localStorage.getItem("color-scheme");
     const scheme = localStorageScheme
       ? `${JSON.parse(localStorageScheme)}`
@@ -59,6 +64,8 @@ class Preloader {
     this.layout.preloader = document.createElement("div");
     this.layout.preloader.id = "preloader";
     this.layout.preloader.classList.add("preloader");
+    if (!withNumbers) this.layout.preloader.classList.add("preloader-only");
+
     this.layout.preloader.style.background =
       scheme === "true"
         ? "linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%)"
@@ -86,10 +93,12 @@ class Preloader {
       this.layout.percentsNumber,
       this.layout.percents
     );
-    this.layout.preloader.append(
-      this.layout.loader,
-      this.layout.preloaderPercents
-    );
+
+    this.layout.preloader.append(this.layout.loader);
+
+    if (withNumbers)
+      this.layout.preloader.append(this.layout.preloaderPercents);
+
     root.append(this.layout.preloader);
   }
 
@@ -135,10 +144,10 @@ class Preloader {
         file.addEventListener("load", () => {
           loaded += +percentAll[index];
 
+          if (loaded > 80) loaded = 80;
           this.layout.percentsNumber.innerHTML = loaded.toFixed(0);
 
-          if (loaded >= 99) {
-            if (this.timer) clearTimeout(this.timer);
+          if (loaded >= 80) {
             this.finishPreloader();
           }
         });
@@ -146,15 +155,42 @@ class Preloader {
     });
   }
 
-  finishPreloader() {
-    const preloader = document.getElementById("preloader");
-    if (!preloader) {
-      return console.log("error");
+  finishPreloader(withForce = "") {
+    if (!this.timer && !withForce) return;
+
+    if (this.timer) {
+      clearTimeout(this.timer);
+      this.timer = null;
     }
 
-    preloader.classList.add("hide-preloader");
+    if (!state.loaded) {
+      this.repeats++;
+      let totalLoaded = 80 + this.repeats;
+      if (totalLoaded > 100) totalLoaded = 100;
+
+      this.layout.percentsNumber.innerHTML = totalLoaded.toFixed(0);
+
+      setTimeout(() => {
+        this.finishPreloader("force");
+      }, 200);
+
+      return;
+    }
+
     this.layout.percentsNumber.innerHTML = "100";
-    document.body.classList.remove("body--scroll__disable");
+
+    setTimeout(() => {
+      const preloader = document.getElementById("preloader");
+
+      if (!preloader) {
+        return console.log("error");
+      }
+
+      preloader.classList.add("hide-preloader");
+      this.layout.percentsNumber.innerHTML = "100";
+      document.body.classList.remove("body--scroll__disable");
+      if (this.layout.imgContainer) this.layout.imgContainer.remove();
+    }, 500);
   }
 }
 

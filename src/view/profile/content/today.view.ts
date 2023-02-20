@@ -34,10 +34,6 @@ class TodayView {
     if (profileController.program?.trainings) {
       const { btn } = getTrainingCardLang();
 
-      console.log(
-        "profileController.program.trainings",
-        profileController.program.trainings
-      );
       profileController.program.trainings.forEach((training: Training) =>
         trainingCartView.render(this.layout.content, training, {
           text: `${btn}`,

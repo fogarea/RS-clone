@@ -5,6 +5,7 @@ import { HttpLoginRequest } from "types/http.request.types";
 import authController from "../../controller/auth.controller";
 import { getAuthLang } from "../../lang/auth.lang";
 import formDataView from "../components/form.data.view";
+import loading from "utils/loading";
 
 class AuthView {
   layout = {} as Layout;
@@ -37,6 +38,7 @@ class AuthView {
 
       if (e.target instanceof HTMLFormElement) {
         const form = e.target;
+        const submit = form.querySelector('[type="submit"]') as HTMLElement;
         const formData = Object.fromEntries(new FormData(form).entries());
 
         const request: HttpLoginRequest = {
@@ -44,8 +46,19 @@ class AuthView {
           password: `${formData.password}`
         };
 
-        await authController.login(request);
-        await authController.redirectToHome();
+        loading.on(submit);
+
+        const auth = await authController.login(request);
+
+        if (auth.error) {
+          alert(
+            `error: ${auth.error}\nmessage: ${auth.message}\ncode: ${auth.code}`
+          );
+          loading.off(submit);
+          return;
+        }
+
+        authController.redirectToHome();
       }
     });
   }

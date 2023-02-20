@@ -7,6 +7,7 @@ import navigationController from "../../../../controller/navigation.controller";
 import { Routing } from "types/route.types";
 import editProfileDetailsFormView from "./edit.profile.details.form.view";
 import backButton from "../../../components/back.button";
+import loading from "utils/loading";
 
 class EditProfileDetailsView {
   layout = {} as Layout;
@@ -43,7 +44,10 @@ class EditProfileDetailsView {
 
       if (e.target instanceof HTMLFormElement) {
         const form = e.target;
+        const submit = form.querySelector('[type="submit"]') as HTMLElement;
         const formData = Object.fromEntries(new FormData(form).entries());
+
+        loading.on(submit);
 
         await profileController.updateProfile({
           _id: state.user.profile.id,

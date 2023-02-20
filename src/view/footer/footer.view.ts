@@ -5,6 +5,7 @@ import langSwitcherView from "./lang.switcher.view";
 import programsController from "../../controller/programs.controller";
 import authController from "../../controller/auth.controller";
 import mealsController from "../../controller/meals.controller";
+import loading from "utils/loading";
 
 class FooterView {
   layout = {} as Layout;
@@ -21,8 +22,13 @@ class FooterView {
 
       lang.setLang(`${select.value}`);
 
+      loading.globalOn(document.querySelector(".main"));
+
       await programsController.getAll();
       await mealsController.getAll();
+
+      loading.globalOff();
+
       navigationController.reRenderRoute();
       authController.headerUpdate();
     });

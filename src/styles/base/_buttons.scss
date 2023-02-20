@@ -1,102 +1,109 @@
 @use "../abstract" as *;
 
 .button {
-	padding: 15px 40px 15px;
-	border-radius: 10px;
-	cursor: pointer;
-	font-family: $font-family-primary;
-	@include font(1.6rem, 2.2rem, normal);
-	//@extend %transition;
+  padding: 15px 40px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: $font-family-primary;
+  @include font(1.6rem, 2.2rem, normal);
+  //@extend %transition;
 
-	&--bordered{
-		background: var(--bordered-btn-color);
-		border: 1px solid var(--border-btn-color);
-		color: var(--bordered-btn-text-color);
+  &--bordered {
+    background: var(--bordered-btn-color);
+    border: 1px solid var(--border-btn-color);
+    color: var(--bordered-btn-text-color);
 
-		&:hover {
-			background: var(--bordered-btn-hover-color);
-		}
-	}
+    &:hover {
+      background: var(--bordered-btn-hover-color);
+    }
+  }
 
-	&--colored{
-		background: var(--colored-btn-color);
-		border: 1px solid var(--colored-btn-color);
-		color: var(--colored-btn-text-color);
+  &--colored {
+    background: var(--colored-btn-color);
+    border: 1px solid var(--colored-btn-color);
+    color: var(--colored-btn-text-color);
 
-		&:hover {
-			background: var(--colored-btn-hover-color);
-		}
-	}
+    &:hover {
+      background: var(--colored-btn-hover-color);
+    }
+  }
 
-	&--rounded {
-		border-radius: 99px;
-		padding: 6px 30px;
-		background: var(--colored-btn-color);
-		//border: 1px solid var(--colored-btn-color);
-		color: var(--colored-btn-text-color);
+  &--rounded {
+    border-radius: 99px;
+    padding: 6px 30px;
+    background: var(--colored-btn-color);
+    //border: 1px solid var(--colored-btn-color);
+    color: var(--colored-btn-text-color);
 
-		&:hover {
-			opacity: 0.8;
-		}
-	}
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 
-	&--link {
-		background: var(--bordered-link-btn-color);
-		border: 1px solid transparent;
-		border-radius: 99px;
-		padding: 6px 30px;
+  &--link {
+    background: var(--bordered-link-btn-color);
+    border: 1px solid transparent;
+    border-radius: 99px;
+    padding: 6px 30px;
 
-		&:hover {
-			background: var(--bordered-link-btn-hover-color);
-			color: var(--colored-btn-text-color);
+    &:hover {
+      background: var(--bordered-link-btn-hover-color);
+      color: var(--colored-btn-text-color);
 
-			& a {
-				background: $color-light;
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-			}
-		}
-	}
+      & a {
+        background: $color-light;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
 
-	&--edit-link {
-		color: var(--link-text-color);
-		background: transparent;
-		padding: 0;
+  &--edit-link {
+    color: var(--link-text-color);
+    background: transparent;
+    padding: 0;
 
-		&:hover {
-			color: var(--accent-color);
-		}
-	}
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
 
-	&__icon {
-		padding: 0;
-		border-radius: 0;
-		cursor: pointer;
-		background-color: transparent;
-	}
+  &__icon {
+    padding: 0;
+    border-radius: 0;
+    cursor: pointer;
+    background-color: transparent;
+  }
 
-	&--large {
-		width: 100%;
-	}
+  &--large {
+    width: 100%;
+  }
 }
 
 .open-btn,
 .close-btn {
-	font-size: 30px;
-	cursor: pointer;
-	display: none;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
 
-	@include media-laptop {
-		display: inline-flex;
-		color: #ffffff;
-		background-color: inherit;
-	}
+  @include media-laptop {
+    display: inline-flex;
+    color: #ffffff;
+    background-color: inherit;
+  }
 }
 
 .close-btn {
-	@include media-laptop {
-		position: absolute;
-		top: 40px;
-		right: 60px;
-	}
+  @include media-laptop {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+  }
+}
+
+.loading {
+  filter: grayscale(100%);
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.5;
 }

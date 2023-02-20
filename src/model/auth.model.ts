@@ -8,6 +8,10 @@ class AuthModel extends EventEmitter {
 
     console.log("state", state);
   }
+
+  updateLoaded() {
+    state.loaded = true;
+  }
 }
 
 export default new AuthModel();

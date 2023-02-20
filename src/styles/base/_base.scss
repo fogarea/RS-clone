@@ -1,203 +1,211 @@
 @use "../abstract" as *;
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
 .html {
-	font-size: 10px;
-	scroll-behavior: smooth;
-	height: 100%;
+  font-size: 10px;
+  height: 100%;
 }
 
 .body {
-	font-family: $font-family-primary;
-	@include font(1.6rem, 2.6rem, normal);
-	background: var(--primary-bg-color);
-	color: var(--text-color);
+  font-family: $font-family-primary;
+  @include font(1.6rem, 2.6rem, normal);
+  background: var(--primary-bg-color);
+  color: var(--text-color);
+  overflow: hidden overlay;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba($color-accent-dark, 0.7);
 }
 
 .body--scroll__disable {
-	overflow-y: hidden;
+  overflow-y: hidden;
 }
 
 #root {
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .main {
-	flex: 1 1 auto;
-	align-items: center;
-	justify-content: center;
-	margin-bottom: 80px;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
 }
 
 :root {
-	--primary-color: #{$color-primary-dark};
-	--primary-bg-color: #{$color-primary-bg-dark};
+  --primary-color: #{$color-primary-dark};
+  --primary-bg-color: #{$color-primary-bg-dark};
 
-	--secondary-bg-color: #{$color-secondary-bg-dark};
+  --secondary-bg-color: #{$color-secondary-bg-dark};
 
-	--modal-bg-color: #{$color-modal-bg-dark};
+  --modal-bg-color: #{$color-modal-bg-dark};
 
-	--accent-color: #{$color-accent-dark};
+  --accent-color: #{$color-accent-dark};
 
-	--bordered-btn-color: #{$color-bordered-btn-dark};
-	--border-btn-color: #{$color-primary-dark};
-	--bordered-btn-text-color: #{$color-text-btn-dark};
-	--bordered-btn-hover-color: #{$color-hover-bordered-btn-dark};
+  --bordered-btn-color: #{$color-bordered-btn-dark};
+  --border-btn-color: #{$color-primary-dark};
+  --bordered-btn-text-color: #{$color-text-btn-dark};
+  --bordered-btn-hover-color: #{$color-hover-bordered-btn-dark};
 
-	--colored-btn-color: #{$color-colored-btn-dark};
-	--colored-btn-text-color: #{$color-light};
-	--colored-btn-hover-color: #{$color-hover-colored-btn-dark};
+  --colored-btn-color: #{$color-colored-btn-dark};
+  --colored-btn-text-color: #{$color-light};
+  --colored-btn-hover-color: #{$color-hover-colored-btn-dark};
 
-	--bordered-link-btn-color: #{$color-bordered-link-btn-dark};
-	--bordered-link-btn-hover-color: #{$color-hover-colored-btn-dark};
+  --bordered-link-btn-color: #{$color-bordered-link-btn-dark};
+  --bordered-link-btn-hover-color: #{$color-hover-colored-btn-dark};
 
-	--text-color: #{$color-text-dark};
-	--link-text-color: #{$color-link-text-dark};
-	--link-text-hover-color: #{$color-link-hover-text-dark};
+  --text-color: #{$color-text-dark};
+  --link-text-color: #{$color-link-text-dark};
+  --link-text-hover-color: #{$color-link-hover-text-dark};
 
-	--icon--invert: invert(0%);
+  --icon--invert: invert(0%);
 
-	--input-border-color: #{$color-input-bordered-dark};
-	--input-bg-color: #{$color-input-bg-dark};
+  --input-border-color: #{$color-input-bordered-dark};
+  --input-bg-color: #{$color-input-bg-dark};
 
-	--input-text-color: #{$color-input-text-dark};
+  --input-text-color: #{$color-input-text-dark};
 
-	--card-bg-color: #{$color-card-bg-dark};
+  --card-bg-color: #{$color-card-bg-dark};
 
-	--round-icon-bg-color: #{$color-round-bg-dark};
+  --round-icon-bg-color: #{$color-round-bg-dark};
 
-	--tag-bg-color: #{$color-tag-bg-dark};
+  --tag-bg-color: #{$color-tag-bg-dark};
 
-	--logo: #{$logo-dark};
+  --logo: #{$logo-dark};
 
-	--arrow-left: #{$arrow-left-dark};
-	--arrow-left-hover: #{$arrow-left-hover-dark};
+  --arrow-left: #{$arrow-left-dark};
+  --arrow-left-hover: #{$arrow-left-hover-dark};
 
-	--close-icon: #{$close-icon-dark};
-	--burger-menu-icon: #{$burger-menu-icon-dark};
+  --close-icon: #{$close-icon-dark};
+  --burger-menu-icon: #{$burger-menu-icon-dark};
 
-	--close-modal-icon: #{$close-modal-icon-dark};
+  --close-modal-icon: #{$close-modal-icon-dark};
 
-	--delete-icon: #{$delete-icon-hover-dark};
-	--delete-icon-hover: #{$delete-icon-dark};
+  --delete-icon: #{$delete-icon-hover-dark};
+  --delete-icon-hover: #{$delete-icon-dark};
 
-	--create-icon: #{$create-icon-dark};
-	--create-icon-hover: #{$create-icon-hover-dark};
+  --create-icon: #{$create-icon-dark};
+  --create-icon-hover: #{$create-icon-hover-dark};
 
-	--volume-icon: #{$volume-icon-dark};
+  --volume-icon: #{$volume-icon-dark};
 
-	--play-icon: #{$play-icon-dark};
-	--pause-icon: #{$pause-icon-dark};
+  --play-icon: #{$play-icon-dark};
+  --pause-icon: #{$pause-icon-dark};
 
-	--heart-icon: #{$heart-icon-dark};
-	--heart-icon-hover: #{$heart-icon-hover-dark};
+  --heart-icon: #{$heart-icon-dark};
+  --heart-icon-hover: #{$heart-icon-hover-dark};
 
-	--youtube-icon: #{$youtube-icon-dark};
+  --youtube-icon: #{$youtube-icon-dark};
 
-	--thumb-color: #{$color-thumb-dark};
-	--track-color: #{$color-track-dark};
+  --thumb-color: #{$color-thumb-dark};
+  --track-color: #{$color-track-dark};
 
-	--rs-logo: invert(1);
+  --rs-logo: invert(1);
 }
 
 .body--light {
-	--primary-color: #{$color-primary-light};
-	--primary-bg-color: #{$color-primary-bg-light};
+  --primary-color: #{$color-primary-light};
+  --primary-bg-color: #{$color-primary-bg-light};
 
-	--secondary-bg-color: #{$color-secondary-bg-light};
+  --secondary-bg-color: #{$color-secondary-bg-light};
 
-	--modal-bg-color: #{$color-modal-bg-light};
+  --modal-bg-color: #{$color-modal-bg-light};
 
-	--accent-color: #{$color-accent-light};
+  --accent-color: #{$color-accent-light};
 
-	--bordered-btn-color: #{$color-bordered-btn-light};
-	--border-btn-color: #{$color-primary-light};
-	--bordered-btn-text-color: #{$color-text-btn-light};
-	--bordered-btn-hover-color: #{$color-hover-bordered-btn-light};
+  --bordered-btn-color: #{$color-bordered-btn-light};
+  --border-btn-color: #{$color-primary-light};
+  --bordered-btn-text-color: #{$color-text-btn-light};
+  --bordered-btn-hover-color: #{$color-hover-bordered-btn-light};
 
-	--colored-btn-color: #{$color-colored-btn-light};
-	--colored-btn-text-color: #{$color-light};
-	--colored-btn-hover-color: #{$color-hover-colored-btn-light};
+  --colored-btn-color: #{$color-colored-btn-light};
+  --colored-btn-text-color: #{$color-light};
+  --colored-btn-hover-color: #{$color-hover-colored-btn-light};
 
-	--bordered-link-btn-color: #{$color-bordered-link-btn-light};
-	--bordered-link-btn-hover-color: #{$color-hover-colored-btn-light};
+  --bordered-link-btn-color: #{$color-bordered-link-btn-light};
+  --bordered-link-btn-hover-color: #{$color-hover-colored-btn-light};
 
-	--text-color: #{$color-text-light};
-	--link-text-color: #{$color-link-text-light};
-	--link-text-hover-color: #{$color-link-hover-text-light};
+  --text-color: #{$color-text-light};
+  --link-text-color: #{$color-link-text-light};
+  --link-text-hover-color: #{$color-link-hover-text-light};
 
-	--icon--invert: invert(100%);
+  --icon--invert: invert(100%);
 
-	--input-border-color: #{$color-input-bordered-light};
-	--input-bg-color: #{$color-input-bg-light};
+  --input-border-color: #{$color-input-bordered-light};
+  --input-bg-color: #{$color-input-bg-light};
 
-	--input-text-color: #{$color-input-text-light};
+  --input-text-color: #{$color-input-text-light};
 
-	--card-bg-color: #{$color-card-bg-light};
+  --card-bg-color: #{$color-card-bg-light};
 
-	--round-icon-bg-color: #{$color-round-bg-light};
+  --round-icon-bg-color: #{$color-round-bg-light};
 
-	--tag-bg-color: #{$color-tag-bg-light};
+  --tag-bg-color: #{$color-tag-bg-light};
 
-	--logo: #{$logo-light};
+  --logo: #{$logo-light};
 
-	--arrow-left: #{$arrow-left-light};
-	--arrow-left-hover: #{$arrow-left-hover-light};
+  --arrow-left: #{$arrow-left-light};
+  --arrow-left-hover: #{$arrow-left-hover-light};
 
-	--close-icon: #{$close-icon-light};
-	--burger-menu-icon: #{$burger-menu-icon-light};
+  --close-icon: #{$close-icon-light};
+  --burger-menu-icon: #{$burger-menu-icon-light};
 
-	--close-modal-icon: #{$close-modal-icon-light};
+  --close-modal-icon: #{$close-modal-icon-light};
 
-	--delete-icon: #{$delete-icon-light};
-	--delete-icon-hover: #{$delete-icon-hover-light};
+  --delete-icon: #{$delete-icon-light};
+  --delete-icon-hover: #{$delete-icon-hover-light};
 
-	--create-icon: #{$create-icon-light};
-	--create-icon-hover: #{$create-icon-hover-light};
+  --create-icon: #{$create-icon-light};
+  --create-icon-hover: #{$create-icon-hover-light};
 
-	--volume-icon: #{$volume-icon-light};
+  --volume-icon: #{$volume-icon-light};
 
-	--play-icon: #{$play-icon-light};
-	--pause-icon: #{$pause-icon-light};
+  --play-icon: #{$play-icon-light};
+  --pause-icon: #{$pause-icon-light};
 
-	--heart-icon: #{$heart-icon-light};
-	--heart-icon-hover: #{$heart-icon-hover-light};
+  --heart-icon: #{$heart-icon-light};
+  --heart-icon-hover: #{$heart-icon-hover-light};
 
-	--youtube-icon: #{$youtube-icon-light};
+  --youtube-icon: #{$youtube-icon-light};
 
-	--thumb-color: #{$color-thumb-light};
-	--track-color: #{$color-track-light};
+  --thumb-color: #{$color-thumb-light};
+  --track-color: #{$color-track-light};
 
-	--rs-logo: invert(0);
+  --rs-logo: invert(0);
 }
 
 h1 {
-	font-family: $font-family-primary;
-	@include font(7.4rem, 9.4rem);
-	@include media-mobile-big {
-		@include font(3.2rem, 4.2rem);
-	}
+  font-family: $font-family-primary;
+  @include font(7.4rem, 9.4rem);
+  @include media-mobile-big {
+    @include font(3.2rem, 4.2rem);
+  }
 }
 
 h2 {
-	@include font(5.7rem, 6.6rem);
-	@include media-mobile-big {
-		@include font(2.4rem, 3.3rem);
-	}
+  @include font(5.7rem, 6.6rem);
+  @include media-mobile-big {
+    @include font(2.4rem, 3.3rem);
+  }
 }
 
 h3 {
-	@include font(2.6rem, 4.2rem, 300);
-	@include media-mobile-big {
-		@include font(2.1rem, 3.1rem, 300);
-	}
+  @include font(2.6rem, 4.2rem, 300);
+  @include media-mobile-big {
+    @include font(2.1rem, 3.1rem, 300);
+  }
 }
 
 h4 {
-	@include font(2.6rem, 3.0rem, 600);
-	@include media-tablet {
-		@include font(2.0rem, 3.0rem, 600);
-	}
+  @include font(2.6rem, 3rem, 600);
+  @include media-tablet {
+    @include font(2rem, 3rem, 600);
+  }
 }

@@ -9,6 +9,7 @@ interface State {
   programs: Program[];
   meals: Meals;
   tracks: Track[];
+  loaded: boolean;
 }
 
 export const initialUser = {
@@ -55,5 +56,6 @@ export const state: State = {
     lunch: [],
     dinner: []
   },
-  tracks: []
+  tracks: [],
+  loaded: false
 };

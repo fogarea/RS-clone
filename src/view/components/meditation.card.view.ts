@@ -10,12 +10,7 @@ import { MediaEndpoint } from "types/media.endpoint.types";
 class MeditationCardView {
   layout = {} as Layout;
 
-  render(
-    root: HTMLElement,
-    meditation: Meditation,
-    edit: string,
-    btnProps?: ButtonProps[]
-  ) {
+  render(root: HTMLElement, meditation: Meditation, btnProps?: ButtonProps[]) {
     this.createLayout(root, meditation);
     this.renderEditBtn(meditation);
     if (btnProps) this.renderButtons(meditation.id, btnProps);

@@ -4,6 +4,7 @@ import profileController from "../../../controller/profile.controller";
 import { state } from "../../../store/state";
 import { getCompleteLang } from "../../../lang/reg/complete.lang";
 import formDataView from "../../components/form.data.view";
+import loading from "utils/loading";
 
 class CompleteView {
   layout = {} as Layout;
@@ -36,7 +37,10 @@ class CompleteView {
 
       if (e.target instanceof HTMLFormElement) {
         const form = e.target;
+        const submit = form.querySelector('[type="submit"]') as HTMLElement;
         const formData = Object.fromEntries(new FormData(form).entries());
+
+        loading.on(submit);
 
         await profileController.createProfile({
           _id: state.user.profile.id,
