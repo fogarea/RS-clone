@@ -12,25 +12,26 @@ class AuthController {
   async register(request: HttpRegisterRequest) {
     const { status, ...user } = await authService.register(request);
 
-    if (status === 403) return;
-
-    if (status === 404) return;
+    if (status === 403) return user;
+    if (status === 404) return user;
+    if (status === 409) return user;
 
     if (user.id) await this.login(request);
 
     navigationController.createRoute(Routing.COMPLETE);
+
+    return user;
   }
 
   async login(request: HttpLoginRequest) {
     const { status, ...user } = await authService.login(request);
 
-    console.log("user", user);
-
-    if (status === 403) return;
-
-    if (status === 404) return;
+    if (status === 403) return user;
+    if (status === 404) return user;
 
     authModel.updateUserState({ authorized: true, ...user });
+
+    return user;
   }
 
   async autoLogin() {

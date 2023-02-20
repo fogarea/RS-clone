@@ -1,4 +1,4 @@
-@use "../abstract"as *;
+@use "../abstract" as *;
 
 .non-transition * {
   transition: none !important;
@@ -16,6 +16,11 @@
   align-items: center;
 
   transition: 0.5s;
+}
+
+.preloader-only {
+  height: calc(100% - 105px) !important;
+  top: 105px !important;
 }
 
 #preloader.hide-preloader {

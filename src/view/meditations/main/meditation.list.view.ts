@@ -6,6 +6,7 @@ import { Routing } from "types/route.types";
 import navigationController from "controller/navigation.controller";
 import { Layout } from "types/layout.types";
 import meditationCardView from "../../components/meditation.card.view";
+import loading from "utils/loading";
 
 class MeditationsListView {
   layout = {} as Layout;
@@ -43,6 +44,7 @@ class MeditationsListView {
           text: "",
           classes: "button__icon icon icon--delete",
           callback: async () => {
+            loading.on(document.querySelector(".button--rm"));
             await meditationController.delete(meditation);
           }
         }

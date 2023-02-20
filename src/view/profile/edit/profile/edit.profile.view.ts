@@ -6,6 +6,7 @@ import formDataView from "../../../components/form.data.view";
 import navigationController from "../../../../controller/navigation.controller";
 import { Routing } from "types/route.types";
 import backButton from "../../../components/back.button";
+import loading from "utils/loading";
 
 class EditProfileView {
   layout = {} as Layout;
@@ -42,8 +43,10 @@ class EditProfileView {
 
       if (e.target instanceof HTMLFormElement) {
         const form = e.target;
-
+        const submit = form.querySelector('[type="submit"]') as HTMLElement;
         const formData = Object.fromEntries(new FormData(form).entries());
+
+        loading.on(submit);
 
         await profileController.updateProfileCredentials({
           avatar: parseInt(`${formData.avatar}`),

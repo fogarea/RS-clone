@@ -39,6 +39,7 @@ class App {
     const root = document.querySelector("#root");
 
     if (!(root instanceof HTMLElement)) return;
+
     lang.init();
 
     preloaderUtils.init(root);

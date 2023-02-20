@@ -49,6 +49,7 @@ class AxiosService {
     if (accessToken) localStorage.setItem("accessToken", accessToken);
 
     const data = await response.json();
+
     return { ...data, status: response.status };
   }
 }

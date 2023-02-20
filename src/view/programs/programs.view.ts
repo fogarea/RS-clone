@@ -4,6 +4,7 @@ import programContentVew from "./content.view";
 import { state } from "../../store/state";
 import { getProgramsAuthLang } from "lang/programs/programs.auth.lang";
 import profileController from "../../controller/profile.controller";
+import loading from "utils/loading";
 
 class ProgramsView {
   layout = {} as Layout;
@@ -53,9 +54,13 @@ class ProgramsView {
   addHandlers() {
     this.layout.content.addEventListener("click", async (e: Event) => {
       const target = e.target as HTMLElement;
+      const id = target.id;
 
-      if (target.tagName === "BUTTON")
-        await profileController.createProgram(target.id);
+      if (target.tagName === "BUTTON") {
+        loading.globalOn(document.querySelector(".main"));
+        await profileController.createProgram(id);
+        loading.globalOff();
+      }
     });
   }
 }

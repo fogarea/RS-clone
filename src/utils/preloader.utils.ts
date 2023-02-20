@@ -43,14 +43,17 @@ class Preloader {
 
   timer: ReturnType<typeof setTimeout> | null = null;
 
-  init(root: HTMLElement) {
-    this.render(root);
+  init(root: HTMLElement, withNumbers = true) {
+    this.render(root, withNumbers);
     this.loadPreloader();
-    this.renderImgContainer();
-    document.body.classList.remove("non-transition");
+
+    if (withNumbers) {
+      this.renderImgContainer();
+      document.body.classList.remove("non-transition");
+    }
   }
 
-  render(root: HTMLElement) {
+  render(root: HTMLElement, withNumbers = true) {
     const localStorageScheme = localStorage.getItem("color-scheme");
     const scheme = localStorageScheme
       ? `${JSON.parse(localStorageScheme)}`
@@ -59,6 +62,8 @@ class Preloader {
     this.layout.preloader = document.createElement("div");
     this.layout.preloader.id = "preloader";
     this.layout.preloader.classList.add("preloader");
+    if (!withNumbers) this.layout.preloader.classList.add("preloader-only");
+
     this.layout.preloader.style.background =
       scheme === "true"
         ? "linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%)"
@@ -86,10 +91,12 @@ class Preloader {
       this.layout.percentsNumber,
       this.layout.percents
     );
-    this.layout.preloader.append(
-      this.layout.loader,
-      this.layout.preloaderPercents
-    );
+
+    this.layout.preloader.append(this.layout.loader);
+
+    if (withNumbers)
+      this.layout.preloader.append(this.layout.preloaderPercents);
+
     root.append(this.layout.preloader);
   }
 
@@ -155,6 +162,7 @@ class Preloader {
     preloader.classList.add("hide-preloader");
     this.layout.percentsNumber.innerHTML = "100";
     document.body.classList.remove("body--scroll__disable");
+    if (this.layout.imgContainer) this.layout.imgContainer.remove();
   }
 }
 
