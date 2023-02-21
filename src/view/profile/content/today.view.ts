@@ -4,6 +4,9 @@ import { Training } from "types/training.types";
 import trainingCartView from "../../components/training.cart.view";
 import { getProfileTrainingsLang } from "../../../lang/profile/trainings.profile.lang";
 import { getTrainingCardLang } from "../../../lang/training.card.lang";
+import navigationModel from "../../../model/navigation.model";
+import { Routing } from "types/route.types";
+import navigationController from "../../../controller/navigation.controller";
 
 class TodayView {
   layout = {} as Layout;
@@ -34,12 +37,16 @@ class TodayView {
     if (profileController.program?.trainings) {
       const { btn } = getTrainingCardLang();
 
-      profileController.program.trainings.forEach((training: Training) =>
+      profileController.program.trainings.forEach((training: Training) => {
+        const route =
+          navigationModel.createRoute(Routing.WORKOUT) + "/" + training.id;
+
         trainingCartView.render(this.layout.content, training, {
           text: `${btn}`,
-          classes: "button--rounded"
-        })
-      );
+          classes: "button--rounded",
+          callback: () => navigationController.applyRoute(route)
+        });
+      });
     }
   }
 }

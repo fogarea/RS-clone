@@ -1,5 +1,5 @@
 import { Training } from "types/training.types";
-import { getTrainingCardLang } from "../../lang/training.card.lang";
+import { getTrainingCardLang } from "lang/training.card.lang";
 import { Layout } from "types/layout.types";
 import button from "./button";
 import { ButtonProps } from "./program.cart.view";
