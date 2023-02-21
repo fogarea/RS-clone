@@ -271,9 +271,9 @@
 
 .icon--beginners {
 	position: absolute;
-	left: 14px;
+	left: 17px;
 	background-image: url("./../assets/svg/workouts/beginners.svg");
-	@include icon-size(55px, 114px);
+	@include icon-size(48px, 100px);
 	background-size: 100%;
 }
 
@@ -281,7 +281,7 @@
 	position: absolute;
 	top: 10px;
 	background-image: url("./../assets/svg/workouts/abs.svg");
-	@include icon-size(109px, 74px);
+	@include icon-size(98px, 74px);
 	background-size: 100%;
 }
 
@@ -299,7 +299,7 @@
 
 .icon--fat-burning {
 	background-image: url("./../assets/svg/workouts/fat-burning.svg");
-	@include icon-size(75px, 106px);
+	@include icon-size(65px, 97px);
 	background-size: 100%;
 }
 
@@ -325,7 +325,7 @@
 
 .icon--no-jumping {
 	background-image: url("./../assets/svg/workouts/no-jumping.svg");
-	@include icon-size(75px, 118px);
+	@include icon-size(62px, 99px);
 	background-size: 100%;
 }
 

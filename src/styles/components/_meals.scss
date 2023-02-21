@@ -34,7 +34,7 @@
 	}
 }
 
-.meals-wrapper {
+.meals__wrapper {
 	display: flex;
 	flex-direction: column;
 	gap: 30px;
@@ -42,7 +42,6 @@
 
 .meals {
 	&__title {
-		margin: 0 0 30px;
 	}
 
 	&__content {
@@ -151,6 +150,10 @@
 				-webkit-text-fill-color: transparent;
 			}
 		}
+	}
+
+	@include media-large-laptop {
+		min-width: 260px;
 	}
 }
 

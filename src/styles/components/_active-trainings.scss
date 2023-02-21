@@ -18,6 +18,10 @@
 	// .active-trainings__title
 	&__title {
 		margin: 0 0 30px;
+
+		@media screen and (max-width: 700px) {
+			text-align: center;
+		}
 	}
 
 	// .active-trainings__content

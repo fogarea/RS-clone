@@ -9,18 +9,17 @@
 }
 
 .tag {
+	flex-grow: 1;
 	border-radius: 90px;
 	padding: 0 14px;
 	@include font(1.2rem, 2.8rem, 400);
 
 	&--bordered {
 		background: var(--tag-bg-color);
-		//color: var(--colored-btn-color);
 	}
 
 	&--rounded {
 		background: var(--tag-bg-color);
-		color: var(--colored-btn-color);
 		border-radius: 12px;
 		padding: 10px;
 		display: flex;

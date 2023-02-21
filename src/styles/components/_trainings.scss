@@ -33,22 +33,38 @@
 	&__img {
 		display: flex;
 		justify-content: center;
+		width: 80%;
+
+		>* {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
 
 		@include media-laptop {
-			height: 600px;
 			>* {
 				width: 100%;
 				height: 100%;
-				object-fit: cover;
+				object-fit: contain;
+			}
+		}
+
+		@include media-large-laptop {
+			height: 10%;
+			width: auto;
+			>* {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
 			}
 		}
 
 		@include media-tablet {
-			height: 350px;
+			height: 10%;
 			>* {
 				width: 100%;
 				height: 100%;
-				object-fit: cover;
+				object-fit: contain;
 			}
 		}
 	}

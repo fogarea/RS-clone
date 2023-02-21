@@ -57,4 +57,10 @@
     display: flex;
     gap: 30px;
   }
+
+  &__video {
+    @media screen and (max-width: 876px) {
+      width: 100%;
+    }
+  }
 }

@@ -20,7 +20,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 20px;
+		gap: 30px;
 	}
 
 	// .meal__title
@@ -43,6 +43,18 @@
 	// .meal__steps
 	&__steps {
 	}
+
+	@media screen and (max-width: 1000px) {
+		&__info {
+			flex-direction: column;
+			gap: 30px;
+		}
+
+		&__tutorial {
+			flex-direction: column;
+			gap: 30px;
+		}
+	}
 }
 
 .nutrition {
@@ -62,6 +74,11 @@
 	&__list {
 		display: flex;
 		gap: 10px;
+
+		@media screen and (max-width: 640px) {
+			flex-direction: column;
+			width: 100%;
+		}
 	}
 
 	// .nutrition__item
@@ -71,6 +88,12 @@
 
 	// .nutrition__icon
 	&__icon {
+	}
+
+	@media screen and (max-width: 1000px) {
+		&__item {
+			flex-basis: 40%;
+		}
 	}
 }
 
@@ -117,10 +140,11 @@
 	// .ingredients__item
 	&__item {
 		display: flex;
-		flex-basis: 47%;
+		flex-basis: 30%;
 		flex-direction: column;
 		text-align: center;
 		gap: 10px;
+		flex-grow: 1;
 		background: var(--tag-bg-color);
 		padding: 15px 25px;
 		border-radius: 10px;
@@ -175,15 +199,19 @@
 	&__list {
 		display: flex;
 		flex-direction: column;
+		gap: 30px;
 		flex-grow: 1;
-		justify-content: space-evenly;
 	}
 
 	// .meal-steps__item
 	&__item {
 		display: flex;
 		justify-content: center;
-		gap: 30px;
+		gap: 20px;
+
+		@media screen and (max-width: 640px) {
+			flex-direction: column;
+		}
 	}
 
 	// .meal-steps__step
@@ -195,11 +223,19 @@
 		background: var(--colored-btn-color);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
+
+		@include media-mobile-big {
+			@include font(2.1rem, 3.1rem, 300);
+		}
 	}
 
 	// .meal-steps__text
 	&__text {
 		width: 70%;
 		text-align: initial;
+
+		@media screen and (max-width: 640px) {
+			width: 100%;
+		}
 	}
 }

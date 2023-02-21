@@ -25,6 +25,7 @@
 		flex-basis: 45%;
 		flex-direction: column;
 		text-align: center;
+		flex-grow: 1;
 		background: var(--card-bg-color);
 		padding: 11px 25px;
 	}
@@ -37,10 +38,26 @@
 		background: var(--colored-btn-color);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
+
+		@include media-mobile-big {
+			@include font(4rem, 4.6rem, 300);
+		}
+
+		/*
+		font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 4.6rem;
+		 */
 	}
 
 	// .progress-item__text
 	&__text {
 		@include font(2.2rem, 4.6rem, 300);
+		white-space: nowrap;
+
+		@include media-mobile-big {
+			@include font(1.6rem, 2.6rem, 300);
+		}
 	}
 }

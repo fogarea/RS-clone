@@ -130,6 +130,10 @@
 			opacity: 0.8;
 		}
 	}
+
+	@include media-laptop {
+		width: 100%;
+	}
 }
 
 .form-fields select {

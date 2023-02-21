@@ -28,4 +28,25 @@
 
 	&__button {
 	}
+
+	@include media-tablet {
+		flex-direction: column;
+		padding: 20px 28px 28px 28px;
+
+		&__content {
+			align-items: center;
+			text-align: center;
+		}
+
+		&__tags {
+			justify-content: center;
+		}
+
+		.icon-round {
+			order: -1;
+		}
+	}
+
+	@include media-mobile-big {
+	}
 }

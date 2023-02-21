@@ -11,15 +11,6 @@
   @include font(1.6rem, 2.6rem, normal);
   background: var(--primary-bg-color);
   color: var(--text-color);
-  overflow: hidden overlay;
-}
-
-::-webkit-scrollbar {
-  width: 14px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba($color-accent-dark, 0.7);
 }
 
 .body--scroll__disable {

@@ -6,7 +6,6 @@
 	margin-bottom: 60px;
 
 	&__logo {
-		margin-right: 80px;
 	}
 
 	&__wrapper {
@@ -32,15 +31,22 @@
 	}
 
 	&__nav {
-		flex-basis: 45%;
+		flex-basis: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
 
+	.switch-scheme {
+		margin-right: 60px;
+
+		@include media-large-laptop {
+			margin-right: 30px;
+		}
+	}
+
 	&__buttons {
 		display: flex;
-		flex-basis: 45%;
 		justify-content: flex-end;
 
 		>* {

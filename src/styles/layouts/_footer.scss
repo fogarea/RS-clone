@@ -24,10 +24,6 @@
 
 	&__select {
 		grid-column: 3/4;
-		text-align: center;
-		display: flex;
-		gap: 20px;
-		opacity: 0.5;
 	}
 
 	&__rss {
@@ -37,13 +33,29 @@
 		filter: var(--rs-logo);
 	}
 
-	@media screen and (max-width: 550px) {
+	@include media-tablet {
 		padding: 15px 5px;
+	}
+
+	@include media-mobile-big {
+		&__wrapper {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+		}
+
+		&__gh {
+			gap: 10px;
+		}
 	}
 }
 
 .select-lang {
 	display: flex;
+	justify-content: center;
+	text-align: center;
+	gap: 20px;
+	opacity: 0.5;
 
 	// .select-lang__text
 	&__text {
@@ -52,5 +64,11 @@
 	// .select-lang__select
 	&__select {
 		width: 100px;
+	}
+
+	@include media-tablet {
+		&__text {
+			display: none;
+		}
 	}
 }

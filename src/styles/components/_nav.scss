@@ -41,6 +41,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		gap: 30px;
 
 		.header__nav {
 			flex-basis: 0;
@@ -60,11 +61,10 @@
 			flex-direction: column;
 			justify-content: space-between;
 			align-items: center;
-			padding: 20px 0 5px;
 		}
 
 		.header__scheme {
-			order: 1;
+			margin-right: 0;
 		}
 
 		.header__buttons {
@@ -72,8 +72,8 @@
 			flex-direction: column;
 			justify-content: flex-end;
 			text-align: center;
-			margin-bottom: 20px;
 			flex-basis: 0;
+			order: -1;
 
 			>* {
 				text-decoration: none;
