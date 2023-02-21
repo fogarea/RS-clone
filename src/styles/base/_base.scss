@@ -28,6 +28,14 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 80px;
+
+  @media screen and (max-width: 1000px) {
+    margin-bottom: 40px;
+  }
+
+  @include media-mobile-big {
+    margin-bottom: 20px;
+  }
 }
 
 :root {
@@ -191,6 +199,10 @@
 h1 {
   font-family: $font-family-primary;
   @include font(7.4rem, 9.4rem);
+
+  @include media-tablet {
+    @include font(5.4rem, 8.4rem);
+  }
   @include media-mobile-big {
     @include font(3.2rem, 4.2rem);
   }
@@ -198,6 +210,11 @@ h1 {
 
 h2 {
   @include font(5.7rem, 6.6rem);
+
+  @include media-tablet {
+    @include font(4.7rem, 5.6rem);
+  }
+
   @include media-mobile-big {
     @include font(2.4rem, 3.3rem);
   }

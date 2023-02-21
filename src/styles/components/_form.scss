@@ -16,7 +16,7 @@
 	&__desc {
 		display: flex;
 		flex-direction: column;
-		margin: 0 0 30px;
+		margin: 20px 0 30px 0;
 		text-align: center;
 	}
 
@@ -26,6 +26,14 @@
 		// .registration__text--bold
 		&--bold {
 			@include font(2.8rem, 4.6rem, 500);
+		}
+
+		@include media-tablet {
+			@include font(1.6rem, 2.6rem, 300);
+
+			&--bold {
+				@include font(2.1rem, 4.6rem, 500);
+			}
 		}
 	}
 
@@ -68,7 +76,11 @@
 	display: flex;
 	flex-direction: column;
 	gap: 30px;
-	width: 50%;
+	width: 600px;
+
+	@media screen and (min-width: 1440px) {
+		width: auto;
+	}
 
 	// .reg-form__label
 	&__label {
@@ -91,6 +103,11 @@
 		flex-wrap: wrap;
 		justify-content: space-around;
 		gap: 20px;
+
+		@include media-tablet {
+			gap: 10px;
+			justify-content: space-around;
+		}
 	}
 
 	// .reg-form__input
@@ -102,10 +119,6 @@
 		border: 1px solid var(--input-border-color);
 		border-radius: 10px;
 		color: var(--input-text-color);
-
-		@include media-mobile-big {
-			width: 230px;
-		}
 	}
 
 	&__submit {
@@ -131,7 +144,15 @@
 		}
 	}
 
+	@include media-large-laptop {
+		width: 500px;
+	}
+
+
 	@include media-laptop {
+		width: 60%;
+	}
+	@include media-tablet {
 		width: 100%;
 	}
 }

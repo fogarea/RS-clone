@@ -11,7 +11,7 @@ import { getUpdateMeditationLang } from "lang/meditation/update.meditation.lang"
 import { ModalWindow } from "../../components/modal/modal.view";
 import loading from "../../../utils/loading";
 
-const photoIds = [0, 1, 2];
+const photoIds = [0, 1, 2, 3];
 
 class CreateMeditationView {
   layout = {} as Layout;

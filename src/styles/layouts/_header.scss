@@ -69,4 +69,12 @@
 			display: none;
 		}
 	}
+
+	@media	screen and (max-width: 1000px) {
+		margin-bottom: 30px;
+	}
+
+	@include media-mobile-big {
+		margin-bottom: 10px;
+	}
 }

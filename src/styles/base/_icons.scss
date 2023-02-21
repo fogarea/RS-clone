@@ -265,7 +265,7 @@
 
 .icon--gym {
 	background-image: url("./../assets/svg/workouts/gym.svg");
-	@include icon-size(62px, 120px);
+	@include icon-size(54px, 104px);
 	background-size: 100%;
 }
 
@@ -293,7 +293,7 @@
 
 .icon--equipments {
 	background-image: url("./../assets/svg/workouts/equipments.svg");
-	@include icon-size(70px, 115px);
+	@include icon-size(60px, 100px);
 	background-size: 100%;
 }
 
@@ -313,7 +313,7 @@
 
 .icon--meditation {
 	background-image: url("./../assets/svg/workouts/meditation.svg");
-	@include icon-size(75px, 91px);
+	@include icon-size(65px, 80px);
 	background-size: 100%;
 }
 

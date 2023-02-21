@@ -44,7 +44,7 @@
   top: 20px;
   z-index: 3;
   overflow: hidden;
-  background: var(--track-color); //#f5f3f6;
+  background: var(--track-color);
   box-sizing: border-box;
   border-radius: 5px;
   transition: all 0.3s ease;
@@ -67,7 +67,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--thumb-color); //#c1bdc2;
+  background: var(--thumb-color);
   cursor: pointer;
 }
 
@@ -76,7 +76,6 @@
   width: 0;
   height: 100%;
   display: block;
-  //opacity: 0.5;
   transition: all 0.1s ease;
   background-color: var(--thumb-color);
 }

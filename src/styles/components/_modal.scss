@@ -17,16 +17,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	//min-height: 400px;
 	max-height: 90%;
+	margin: 5px;
 	border-radius: 10px;
 	overflow: auto;
-	//background: var(--secondary-bg-color);
 	background: var(--modal-bg-color);
-
-	.cards__container {
-
-	}
 }
 
 .modal__close-icon {
@@ -42,6 +37,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	max-width: 90%;
+	width: 100%;
 }
 
 .modal__dialog {
@@ -105,7 +102,7 @@
 .modal__create {
 	display: flex;
 	flex-direction: column;
-	width: 60vw;
+	//width: 60vw;
 
 	.form {
 		padding-top: 20px;
@@ -115,7 +112,10 @@
 	.form__content {
 		background: transparent;
 		box-shadow: none;
-		//width: 40vw;
+
+		@include media-tablet {
+			padding: 0;
+		}
 	}
 
 	.image-fields__label {

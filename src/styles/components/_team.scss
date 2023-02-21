@@ -10,6 +10,10 @@
 	// .team__title
 	&__title {
 		margin: 30px 0 60px;
+
+		@include media-tablet {
+			margin: 10px 0 30px;
+		}
 	}
 
 	// .team__content
@@ -36,6 +40,11 @@
 		flex-direction: column;
 		gap: 10px;
 		padding: 26px 36px 26px;
+
+		@include media-tablet {
+			text-align: center;
+			padding: 10px 20px 20px;
+		}
 	}
 
 	// .team-member__title
@@ -45,11 +54,19 @@
 	&__credentials {
 		display: flex;
 		justify-content: space-between;
+
+		@include media-tablet {
+			justify-content: center;
+		}
 	}
 
 	// .team-member__role
 	&__role {
 		@include font(2.2rem, 4.6rem, 300);
+
+		@include media-tablet {
+			text-align: center;
+		}
 	}
 
 	// .team-member__gh

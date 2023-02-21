@@ -76,6 +76,11 @@
 			object-fit: contain;
 			padding-top: 20px;
 		}
+
+		@include media-tablet {
+			width: 90px;
+			height: 90px;
+		}
 	}
 
 	&__input {
