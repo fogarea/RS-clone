@@ -55,3 +55,31 @@
 .icon--reg:hover {
 	opacity: 0.5;
 }
+
+.sign__list--burger-menu {
+	display: none;
+}
+
+.nav--show {
+	.sign__wrapper {
+		display: none;
+	}
+
+	.icon--reg {
+		display: none;
+	}
+
+	.sign__list--burger-menu {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.header__nav {
+		order: -1;
+	}
+
+	.nav__item--link:hover {
+		color: var(--link-text-hover-color);
+	}
+}

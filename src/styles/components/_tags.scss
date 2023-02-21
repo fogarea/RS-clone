@@ -9,10 +9,11 @@
 }
 
 .tag {
+	@include font(1.2rem, 2.8rem, 400);
 	flex-grow: 1;
 	border-radius: 90px;
 	padding: 0 14px;
-	@include font(1.2rem, 2.8rem, 400);
+	text-align: center;
 
 	&--bordered {
 		background: var(--tag-bg-color);

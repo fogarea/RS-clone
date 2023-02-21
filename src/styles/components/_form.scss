@@ -79,7 +79,7 @@
 	width: 600px;
 
 	@media screen and (min-width: 1440px) {
-		width: auto;
+		//width: auto;
 	}
 
 	// .reg-form__label
@@ -148,10 +148,6 @@
 		width: 500px;
 	}
 
-
-	@include media-laptop {
-		width: 60%;
-	}
 	@include media-tablet {
 		width: 100%;
 	}

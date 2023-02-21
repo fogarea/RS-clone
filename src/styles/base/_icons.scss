@@ -27,6 +27,12 @@
 	background-size: 100%;
 }
 
+.icon--auth {
+	background-image: var(--reg-icon);
+	@include icon-size(32px, 32px);
+	background-size: 100%;
+}
+
 .icon--close-modal {
 	background-image: var(--close-modal-icon);
 	@include icon-size(20px, 20px);

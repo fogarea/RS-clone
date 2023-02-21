@@ -9,6 +9,14 @@
 		grid-template: 1fr / minmax(auto, 300px) 1fr minmax(auto, 300px) 1fr minmax(auto, 300px);
 		align-items: center;
 		padding-bottom: 30px;
+
+		@media screen and (max-width: 1000px) {
+			padding-bottom: 20px;
+		}
+
+		@include media-mobile-big {
+			padding-bottom: 0;
+		}
 	}
 
 	&__gh {

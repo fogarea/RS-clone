@@ -1,29 +1,49 @@
 import { Routing } from "types/route.types";
 import { getBtnLandingLang } from "lang/header/buttons.landing.lang";
 import { state } from "../../../store/state";
+import { Layout } from "types/layout.types";
 
 class LoginButtonsView {
+  layout = {} as Layout;
+
   render(root: HTMLElement) {
+    this.layout.sign = document.createElement("div");
+    this.layout.sign.className = "sign";
+
+    this.layout.wrapper = document.createElement("div");
+    this.layout.wrapper.className = "sign__wrapper";
+
+    this.layout.iconWrapper = document.createElement("span");
+    this.layout.iconWrapper.className = "sign__icon icon icon--button-round";
+
+    this.layout.icon = document.createElement("span");
+    this.layout.icon.className = "icon icon--reg";
+
+    this.layout.iconWrapper.append(this.layout.icon);
+
+    this.layout.signNav = document.createElement("ul");
+    this.layout.signNav.className = "sign__list";
+
+    this.layout.signNavBurgerMenu = document.createElement("ul");
+    this.layout.signNavBurgerMenu.className = "sign__list--burger-menu";
+
+    this.renderSignButtons(this.layout.signNav);
+    this.renderSignButtons(this.layout.signNavBurgerMenu);
+
+    this.layout.wrapper.replaceChildren(
+      this.layout.iconWrapper,
+      this.layout.signNav
+    );
+
+    this.layout.sign.append(this.layout.wrapper, this.layout.signNavBurgerMenu);
+
+    root.replaceChildren(this.layout.sign);
+  }
+
+  renderSignButtons(root: HTMLElement) {
     const { btn } = getBtnLandingLang();
 
     if (btn) {
-      const sign = document.createElement("div");
-      sign.className = "sign";
-
-      const wrapper = document.createElement("div");
-      wrapper.className = "sign__wrapper";
-
-      const iconWrapper = document.createElement("span");
-      iconWrapper.className = "sign__icon icon icon--button-round";
-
-      const icon = document.createElement("span");
-      icon.className = "icon icon--reg";
-
-      iconWrapper.append(icon);
-
-      const signNav = document.createElement("ul");
-      signNav.className = "sign__list";
-
       const signItem1 = document.createElement("li");
       signItem1.className = "sign__item";
 
@@ -44,13 +64,7 @@ class LoginButtonsView {
 
       signItem2.append(signUpBtn);
 
-      signNav.replaceChildren(signItem1, signUpBtn);
-
-      wrapper.replaceChildren(iconWrapper, signNav);
-
-      sign.append(wrapper);
-
-      root.replaceChildren(sign);
+      root.replaceChildren(signItem1, signItem2);
     }
   }
 }

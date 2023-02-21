@@ -11,7 +11,7 @@ class ProfileButtonsView {
     iconWrapper.href = state.basePath + Routing.PROFILE;
 
     const icon = document.createElement("span");
-    icon.className = "icon icon--reg";
+    icon.className = "icon icon--auth";
 
     iconWrapper.append(icon);
 
