@@ -22,7 +22,7 @@ class HeaderView {
   }
 
   addHandlers() {
-    this.layout.wrapper.addEventListener("click", (event: Event) => {
+    this.layout.wrapper.addEventListener("click", (event: MouseEvent) => {
       const target = event.target as HTMLElement;
 
       if (target.closest(".nav__item--link")) {

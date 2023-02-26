@@ -95,7 +95,7 @@ class TodayMealsView {
   }
 
   addHandler() {
-    this.layout.wrapper.addEventListener("click", (event: Event) => {
+    this.layout.wrapper.addEventListener("click", (event: MouseEvent) => {
       const target = event.target as HTMLElement;
 
       if (target.tagName === "A" || target.tagName === "SPAN") {

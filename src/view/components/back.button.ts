@@ -15,7 +15,7 @@ class BackButton {
 
     backButton.append(icon, backBtn);
 
-    backButton.addEventListener("click", (e: Event) => {
+    backButton.addEventListener("click", (e: MouseEvent) => {
       if (e.target instanceof HTMLSpanElement) {
         const buttonRoute = (e.target.nextElementSibling as HTMLAnchorElement)
           .href;

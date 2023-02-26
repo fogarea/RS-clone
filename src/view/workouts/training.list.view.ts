@@ -29,7 +29,7 @@ class TrainingListView {
   }
 
   addHandlers(root: HTMLElement) {
-    root.addEventListener("click", (e: Event) => {
+    root.addEventListener("click", (e: MouseEvent) => {
       if (!e.target) return;
       if (!(e.target instanceof HTMLAnchorElement)) return;
 

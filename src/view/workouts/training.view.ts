@@ -85,7 +85,7 @@ class TrainingView {
   addHandlers() {
     this.watchProgress();
 
-    this.layout.back.addEventListener("click", (e: Event) => {
+    this.layout.back.addEventListener("click", (e: MouseEvent) => {
       if (e.target instanceof HTMLSpanElement) {
         const route = (e.target.nextElementSibling as HTMLAnchorElement).href;
         navigationController.applyRoute(route);

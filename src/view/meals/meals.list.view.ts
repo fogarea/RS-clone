@@ -44,7 +44,7 @@ class MealsListView {
   }
 
   addHandler() {
-    this.layout.wrapper.addEventListener("click", (e: Event) => {
+    this.layout.wrapper.addEventListener("click", (e: MouseEvent) => {
       if (e.target instanceof HTMLSpanElement) {
         const route = (e.target.firstChild as HTMLAnchorElement).href;
         navigationController.applyRoute(route);

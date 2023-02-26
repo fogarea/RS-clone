@@ -2,7 +2,7 @@ import navigationModel from "model/navigation.model";
 import { Routing } from "types/route.types";
 
 class NavigationController {
-  route(event: Event) {
+  route(event: MouseEvent) {
     event.preventDefault();
     if (!(event.target instanceof HTMLElement)) return;
 
@@ -14,7 +14,8 @@ class NavigationController {
 
     const route = target.href;
 
-    this.applyRoute(route);
+    if (event.ctrlKey) window.open(route);
+    else this.applyRoute(route);
   }
 
   applyRoute(route: string) {

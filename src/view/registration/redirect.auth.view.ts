@@ -32,7 +32,7 @@ class RedirectAuthView {
   }
 
   addHandler() {
-    this.link?.addEventListener("click", (e: Event) => {
+    this.link?.addEventListener("click", (e: MouseEvent) => {
       navigationController.route(e);
     });
   }
