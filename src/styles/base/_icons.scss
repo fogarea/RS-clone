@@ -6,7 +6,7 @@
 
 .icon--logo {
 	background-image: var(--logo);
-	@include icon-size(160px, 60px);
+	@include icon-size(175px, 40px);
 	background-size: 100%;
 }
 
@@ -105,12 +105,6 @@
 		transform: scale(1.1);
 		cursor: pointer;
 	}
-}
-
-.icon--promo {
-	background-image: url("./../assets/svg/promo/promo.svg");
-	@include icon-size(630px, 700px);
-	background-size: 100%;
 }
 
 .icon--github {

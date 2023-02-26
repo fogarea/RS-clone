@@ -5,6 +5,8 @@ import { state } from "../../../store/state";
 import { getCompleteLang } from "lang/reg/complete.lang";
 import formDataView from "../../components/form.data.view";
 import loading from "utils/loading";
+import { getRegLang } from "lang/reg/reg.lang";
+import popup from "../../components/modal/popup";
 
 class CompleteView {
   layout = {} as Layout;
@@ -50,10 +52,8 @@ class CompleteView {
         });
 
         if (complete.error) {
-          alert(
-            `error: ${complete.error}\nmessage: ${complete.message}\ncode: ${complete.code}`
-          );
-          loading.off(this.layout.submit);
+          const { error } = getRegLang();
+          popup.buildPopup(`${error}`);
           return;
         }
       }

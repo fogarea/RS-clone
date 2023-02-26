@@ -1,6 +1,6 @@
 import { Layout } from "types/layout.types";
 import { state } from "../../../store/state";
-import { getProfileAchievementsLang } from "../../../lang/profile/achievements.profile.lang";
+import { getProfileAchievementsLang } from "lang/profile/achievements.profile.lang";
 
 class AchievementsView {
   layout = {} as Layout;
@@ -29,6 +29,8 @@ class AchievementsView {
   }
 
   renderItems() {
+    const { ...achievements } = getProfileAchievementsLang();
+
     for (const [key, value] of Object.entries(state.user.achievements)) {
       this.layout.list.innerHTML += `<li class="achievements__item">
                                         <div class="icon-round icon-round--shadow">
@@ -36,6 +38,9 @@ class AchievementsView {
         value ? "" : "icon--blur"
       }"></span>
                                         </div>
+                                        <span class="achievements__desc">${
+                                          achievements[key]
+                                        }</span>
                                      </li>`;
     }
   }

@@ -137,11 +137,11 @@
 	&__edit-link {
 		margin-top: 10px;
 		text-align: center;
-		border-color: #ba8ca4;
+		border-color: #8388CF;
 		background: transparent;
 		a {
 			text-decoration: none;
-			background: var(--colored-btn-color);
+			background: var(--bordered-button-text-color);
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 			&:hover {

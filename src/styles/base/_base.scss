@@ -59,10 +59,13 @@
 
   --bordered-link-btn-color: #{$color-bordered-link-btn-dark};
   --bordered-link-btn-hover-color: #{$color-hover-colored-btn-dark};
+  --bordered-button-text-color: #{$color-bordered-btn-text-dark};
 
   --text-color: #{$color-text-dark};
   --link-text-color: #{$color-link-text-dark};
   --link-text-hover-color: #{$color-link-hover-text-dark};
+
+  --unit-text: #{$color-unit-text-dark};
 
   --link-context-text-hover-color: #{$color-link-hover-context-text-dark};
 
@@ -74,6 +77,8 @@
   --input-text-color: #{$color-input-text-dark};
 
   --card-bg-color: #{$color-card-bg-dark};
+
+  --popup-bg-color: #{$color-popup-bg-dark};
 
   --round-icon-bg-color: #{$color-round-bg-dark};
 
@@ -138,10 +143,13 @@
 
   --bordered-link-btn-color: #{$color-bordered-link-btn-light};
   --bordered-link-btn-hover-color: #{$color-hover-colored-btn-light};
+  --bordered-button-text-color: #{$color-bordered-btn-text-light};
 
   --text-color: #{$color-text-light};
   --link-text-color: #{$color-link-text-light};
   --link-text-hover-color: #{$color-link-hover-text-light};
+
+  --unit-text: #{$color-unit-text-light};
 
   --link-context-text-hover-color: #{$color-link-hover-context-text-light};
 
@@ -153,6 +161,8 @@
   --input-text-color: #{$color-input-text-light};
 
   --card-bg-color: #{$color-card-bg-light};
+
+  --popup-bg-color: #{$color-popup-bg-light};
 
   --round-icon-bg-color: #{$color-round-bg-light};
 

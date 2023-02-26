@@ -105,7 +105,7 @@ class MealView {
   }
 
   createNutrition({ calories, fat, protein, carbs }: Nutrition) {
-    const { nutrition, calorie, fats, proteins, carb } = getMealLang();
+    const { nutrition, calorie, fats, proteins, carb, gram } = getMealLang();
 
     this.layout.nutrition = document.createElement("div");
     this.layout.nutrition.className = "meal__nutrition nutrition";
@@ -123,15 +123,15 @@ class MealView {
                                     </li>
                                     <li class="nutrition__item tag tag--rounded">
                                         <span class="nutrition__icon icon icon--fats"></span>
-                                        ${fat} ${fats}
+                                        ${fat}${gram} ${fats}
                                     </li>
                                     <li class="nutrition__item tag tag--rounded">
                                         <span class="nutrition__icon icon icon--proteins"></span>
-                                        ${protein} ${proteins}
+                                        ${protein}${gram} ${proteins}
                                     </li>
                                     <li class="nutrition__item tag tag--rounded">
                                         <span class="nutrition__icon icon icon--carbs"></span>
-                                        ${carbs} ${carb}
+                                        ${carbs}${gram} ${carb}
                                     </li>`;
 
     this.layout.nutrition.append(

@@ -16,20 +16,21 @@ const path =
 
 const arrayImage: Image[] = [
   { src: path + "img/404.jpg", size: "215" },
-  { src: path + "img/team/ilya.jpeg", size: "18.6" },
-  { src: path + "img/team/kostya.png", size: "317" },
-  { src: path + "img/team/nataliya.jpeg", size: "39.1" },
+  { src: path + "img/team/ilya.jpg", size: "119" },
+  { src: path + "img/team/kostya.jpg", size: "205" },
+  { src: path + "img/team/nataliya.jpg", size: "166" },
   { src: path + "svg/color-scheme/dark.svg", size: "0.172" },
   { src: path + "svg/color-scheme/light.svg", size: "0.620" },
   { src: path + "svg/github/github.svg", size: "2.16" },
   { src: path + "svg/logo/logo-dark.svg", size: "13.9" },
   { src: path + "svg/logo/logo-light.svg", size: "13.9" },
-  { src: path + "svg/promo/promo.svg", size: "26.8" },
-  { src: path + "svg/promo/promo2.svg", size: "14.3" },
-  { src: path + "svg/promo/promo3.svg", size: "12.1" },
-  { src: path + "svg/promo/promo4.svg", size: "10.8" },
-  { src: path + "svg/promo/promo5.svg", size: "17.9" },
-  { src: path + "svg/rs/logo_rs.svg", size: "14.9" },
+  { src: path + "img/landing/promo.png", size: "26.8" },
+  { src: path + "img/landing/promo2.png", size: "14.3" },
+  { src: path + "img/landing/promo3.png", size: "12.1" },
+  { src: path + "img/landing/promo4.png", size: "10.8" },
+  { src: path + "img/landing/promo5.png", size: "17.9" },
+  { src: path + "svg/rs/logo_rs_large.svg", size: "15.8" },
+  { src: path + "svg/rs/logo_rs.svg", size: "10.38" },
   { src: MediaEndpoint.PROGRAM + "programs/0.svg", size: "23.5" },
   { src: MediaEndpoint.PROGRAM + "programs/1.svg", size: "20.5" },
   { src: MediaEndpoint.PROGRAM + "programs/2.svg", size: "22.3" },
@@ -75,12 +76,12 @@ class Preloader {
     this.layout.loader.classList.add("preloader__loader");
     this.layout.loader.style.borderColor = "#fcfcff";
     this.layout.loader.style.borderTopColor =
-      scheme === "true" ? "#7079fe" : "#ba8ca4";
+      scheme === "true" ? "#7079fe" : "#8388cf";
 
     this.layout.preloaderPercents = document.createElement("span");
     this.layout.preloaderPercents.classList.add("preloader__percents");
     this.layout.preloaderPercents.style.color =
-      scheme === "true" ? "#7079fe" : "#ba8ca4";
+      scheme === "true" ? "#7079fe" : "#8388cf";
 
     this.layout.percentsNumber = document.createElement("span");
     this.layout.percentsNumber.classList.add("percents__number");

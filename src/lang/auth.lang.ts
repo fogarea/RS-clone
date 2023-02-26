@@ -29,6 +29,10 @@ const authDictionary: Languages = {
   link: {
     ru: "Регистрация",
     en: "Register"
+  },
+  error: {
+    ru: "Неверный адрес почты или пароль. Попробуйте еще раз!",
+    en: "Wrong email or password. Please try again!"
   }
 };
 

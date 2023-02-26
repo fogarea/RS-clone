@@ -5,7 +5,6 @@ export enum Routing {
   REGISTRATION = "registration",
   AUTHORIZATION = "authorization",
   COMPLETE = "complete",
-  //DASHBOARD = "dashboard",
   WORKOUT = "workout",
   MEALS = "meals",
   MEDITATIONS = "meditations",

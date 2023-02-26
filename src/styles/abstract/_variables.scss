@@ -15,7 +15,7 @@ $color-primary-light: #7079fe;
 $color-primary-dark: #454550;
 
 $color-accent-light: #7079fe;
-$color-accent-dark: #ba8ca4;
+$color-accent-dark: #8388cf;
 
 $color-primary-bg-light: linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%);
 $color-primary-bg-dark: #2a2e3d;
@@ -46,7 +46,10 @@ $color-bordered-btn-light: #fcfcff;
 $color-bordered-btn-dark: #fcfcff;
 
 $color-colored-btn-light: linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%);
-$color-colored-btn-dark: #ba8ca4;
+$color-colored-btn-dark: #8388cf;
+
+$color-bordered-btn-text-light: linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%);
+$color-bordered-btn-text-dark: #fafafa;
 
 $color-hover-colored-btn-light: #92a3fd;
 $color-hover-colored-btn-dark: #ac8da8d4;
@@ -72,8 +75,14 @@ $color-input-bg-dark: #f7f8f8;
 $color-input-text-light: #2f281e;
 $color-input-text-dark: #2f281e;
 
+$color-unit-text-light: linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%);;
+$color-unit-text-dark: #989de1;
+
 $color-card-bg-light: #fbfbfc;
 $color-card-bg-dark: rgb(248 249 250 / 15%);
+
+$color-popup-bg-light: #fbfbfc;
+$color-popup-bg-dark: rgb(73 76 89);
 
 $color-round-bg-light: #f8f9fa;
 $color-round-bg-dark: rgb(248 249 250 / 15%);
@@ -83,7 +92,7 @@ $color-bordered-link-btn-light: linear-gradient(274.42deg, #fbfbfc 0%, #fbfbfc 1
 $color-bordered-link-btn-dark: linear-gradient(274.42deg,  rgb(248 249 250 / 15%) 0%,  rgb(248 249 250 / 15%) 124.45%) padding-box, linear-gradient(274.42deg,  rgb(248 249 250 / 15%) 0%,  rgb(248 249 250 / 15%) 124.45%) border-box;
 
 $color-hover-colored-btn-light: linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%) padding-box, linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%) border-box;
-$color-hover-colored-btn-dark: #ba8ca4;
+$color-hover-colored-btn-dark: #8388cf;
 
 $color-tag-bg-light: #f2f2f2a6;
 $color-tag-bg-dark: rgb(248 249 250 / 15%);

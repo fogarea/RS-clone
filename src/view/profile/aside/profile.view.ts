@@ -16,7 +16,7 @@ class ProfileView {
   }
 
   createLayout(root: HTMLElement) {
-    const { title } = getProfileLang();
+    const { program } = getProfileLang();
     const { name, surname, avatar } = state.user;
 
     const avatarLink = `${
@@ -44,7 +44,7 @@ class ProfileView {
     this.layout.program.className = "profile__program";
     this.layout.program.innerText = `${
       profileController.program ? profileController.program.title : ""
-    } ${title}`;
+    } ${program} `;
 
     this.layout.button = document.createElement("div");
     this.layout.button.className = "profile__edit-btn";

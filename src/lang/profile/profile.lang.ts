@@ -2,7 +2,7 @@ import lang from "../lang";
 import { Languages } from "types/lang.types";
 
 const profileDictionary: Languages = {
-  title: {
+  program: {
     ru: "",
     en: "Program"
   },

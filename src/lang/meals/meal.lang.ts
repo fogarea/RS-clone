@@ -26,6 +26,10 @@ const mealDictionary: Languages = {
     ru: "углеводы",
     en: "carbs"
   },
+  gram: {
+    ru: "г",
+    en: "g"
+  },
   steps: {
     ru: "Рецепт",
     en: "Step by Step"

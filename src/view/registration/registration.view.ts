@@ -5,6 +5,7 @@ import authController from "../../controller/auth.controller";
 import { getRegLang } from "lang/reg/reg.lang";
 import formDataView from "../components/form.data.view";
 import loading from "utils/loading";
+import popup from "../components/modal/popup";
 
 class RegistrationView {
   layout = {} as Layout;
@@ -48,9 +49,8 @@ class RegistrationView {
         });
 
         if (register.error) {
-          alert(
-            `error: ${register.error}\nmessage: ${register.message}\ncode: ${register.code}`
-          );
+          const { error } = getRegLang();
+          popup.buildPopup(`${error}`);
           loading.off(this.layout.submit);
           return;
         }

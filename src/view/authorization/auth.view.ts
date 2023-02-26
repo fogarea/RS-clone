@@ -5,6 +5,7 @@ import authController from "../../controller/auth.controller";
 import { getAuthLang } from "lang/auth.lang";
 import formDataView from "../components/form.data.view";
 import loading from "utils/loading";
+import popup from "../components/modal/popup";
 
 class AuthView {
   layout = {} as Layout;
@@ -47,9 +48,8 @@ class AuthView {
         });
 
         if (auth.error) {
-          alert(
-            `error: ${auth.error}\nmessage: ${auth.message}\ncode: ${auth.code}`
-          );
+          const { error } = getAuthLang();
+          popup.buildPopup(`${error}`);
           loading.off(this.layout.submit);
           return;
         }
