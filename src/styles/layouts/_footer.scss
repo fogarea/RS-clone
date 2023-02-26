@@ -25,7 +25,7 @@
 		align-items: center;
 
 		.icon {
-			opacity: 0.5;
+			opacity: var(--footer-opacity);
 			filter: var(--rs-logo);
 		}
 	}
@@ -37,7 +37,7 @@
 	&__rss {
 		grid-column: 5/6;
 		text-align: end;
-		opacity: 0.5;
+		opacity: var(--footer-opacity);
 		filter: var(--rs-logo);
 	}
 
@@ -63,7 +63,7 @@
 	justify-content: center;
 	text-align: center;
 	gap: 20px;
-	opacity: 0.5;
+	opacity: var(--footer-opacity);
 
 	// .select-lang__text
 	&__text {

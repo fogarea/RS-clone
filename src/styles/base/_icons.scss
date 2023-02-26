@@ -6,8 +6,12 @@
 
 .icon--logo {
 	background-image: var(--logo);
-	@include icon-size(175px, 40px);
+	@include icon-size(160px, 60px);
 	background-size: 100%;
+
+	@include media-tablet {
+		@include icon-size(130px, 45px);
+	}
 }
 
 .icon--close {

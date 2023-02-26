@@ -28,13 +28,12 @@ class MeditationView {
     const { back } = getMeditationsLang();
 
     this.layout.meditation = document.createElement("section");
-    this.layout.meditation.className = "meditation";
+    this.layout.meditation.className = "meditation wrapper";
 
     this.layout.back = backButton.render(`${back}`, Routing.MEDITATIONS);
 
     this.layout.wrapper = document.createElement("div");
-    this.layout.wrapper.className =
-      "meditation__wrapper wrapper cards__container";
+    this.layout.wrapper.className = "meditation__wrapper cards__container";
 
     this.layout.meditation.append(this.layout.wrapper);
 

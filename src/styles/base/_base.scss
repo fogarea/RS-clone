@@ -120,6 +120,8 @@
   --context-accent: #{$color-context-accent-dark};
 
   --rs-logo: invert(1);
+
+  --footer-opacity: 0.5;
 }
 
 .body--light {
@@ -204,6 +206,8 @@
   --context-accent: #{$color-context-accent-light};
 
   --rs-logo: invert(0);
+
+  --footer-opacity: 0.7;
 }
 
 h1 {

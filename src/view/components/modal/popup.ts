@@ -38,7 +38,7 @@ class PopupWindow {
       this.popup.classList.add("popup--show");
     }, 1000);
 
-    //setTimeout(this.closePopup, 5000);
+    setTimeout(this.closePopup, 5000);
   }
 
   closePopup() {
