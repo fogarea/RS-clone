@@ -83,7 +83,7 @@ class App {
           break;
 
         case Routing.ABOUT:
-          aboutView.init(this.layout.main);
+          this.withUnAuth(() => aboutView.init(this.layout.main));
           break;
 
         case "":
@@ -94,49 +94,61 @@ class App {
           break;
 
         case Routing.REGISTRATION:
-          registrationView.init(this.layout.main);
+          this.withUnAuth(() => registrationView.init(this.layout.main));
           break;
 
         case Routing.AUTHORIZATION:
-          authorizationView.init(this.layout.main);
+          this.withUnAuth(() => authorizationView.init(this.layout.main));
           break;
 
         case Routing.COMPLETE:
-          completeView.init(this.layout.main);
+          this.withUnAuth(() => completeView.init(this.layout.main));
           break;
 
         case Routing.WORKOUT:
-          if (parameter) trainingView.init(this.layout.main, parameter);
-          else workoutView.init(this.layout.main);
+          if (parameter)
+            this.withAuth(() => trainingView.init(this.layout.main, parameter));
+          else this.withAuth(() => workoutView.init(this.layout.main));
           break;
 
         case Routing.MEALS:
           if (parameter)
-            mealView.init(this.layout.main, parameter as keyof Meals, category);
-          else mealsView.init(this.layout.main);
+            this.withAuth(() =>
+              mealView.init(
+                this.layout.main,
+                parameter as keyof Meals,
+                category
+              )
+            );
+          else this.withAuth(() => mealsView.init(this.layout.main));
           break;
 
         case Routing.MEDITATIONS:
           if (category && parameter)
-            addTracksView.init(this.layout.main, parameter);
+            this.withAuth(() =>
+              addTracksView.init(this.layout.main, parameter)
+            );
 
           if (!category && parameter)
-            meditationView.init(this.layout.main, parameter);
+            this.withAuth(() =>
+              meditationView.init(this.layout.main, parameter)
+            );
 
-          if (!category && !parameter) meditationsView.init(this.layout.main);
+          if (!category && !parameter)
+            this.withAuth(() => meditationsView.init(this.layout.main));
 
           break;
 
         case Routing.PROFILE:
-          profileWrapperView.init(this.layout.main);
+          this.withAuth(() => profileWrapperView.init(this.layout.main));
           break;
 
         case Routing.EDIT_PROFILE:
-          editProfileView.init(this.layout.main);
+          this.withAuth(() => editProfileView.init(this.layout.main));
           break;
 
         case Routing.EDIT_DETAILS:
-          editProfileDetailsView.init(this.layout.main);
+          this.withAuth(() => editProfileDetailsView.init(this.layout.main));
           break;
 
         default:
@@ -155,6 +167,16 @@ class App {
     authModel.on("auth.update.header", () => {
       this.render();
     });
+  }
+
+  withAuth(routeCallback: () => void) {
+    if (state.user.authorized) routeCallback();
+    else navigationController.createRoute(Routing.MAIN);
+  }
+
+  withUnAuth(routeCallback: () => void) {
+    if (!state.user.authorized) routeCallback();
+    else navigationController.createRoute(Routing.MAIN);
   }
 
   createLayout(root: HTMLElement) {
