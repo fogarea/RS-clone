@@ -20,11 +20,10 @@ class MeditationsView {
     const { title } = getMeditationsLang();
 
     this.layout.meditation = document.createElement("section");
-    this.layout.meditation.className = "meditations";
+    this.layout.meditation.className = "meditations wrapper";
 
     this.layout.wrapper = document.createElement("div");
-    this.layout.wrapper.className =
-      "meditations__wrapper wrapper cards__container";
+    this.layout.wrapper.className = "meditations__wrapper cards__container";
 
     this.layout.content = document.createElement("div");
     this.layout.content.className = "meditations__content";

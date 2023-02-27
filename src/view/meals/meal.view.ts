@@ -32,14 +32,12 @@ class MealView {
 
   createLayout(root: HTMLElement, button: string) {
     this.layout.meal = document.createElement("section");
-    this.layout.meal.className = "meal cards__container wrapper";
-
-    this.layout.back = backButton.render(`${button}`, Routing.MEALS);
+    this.layout.meal.className = "meal wrapper";
 
     this.layout.wrapper = document.createElement("div");
-    this.layout.wrapper.className = "meal__wrapper";
+    this.layout.wrapper.className = "meal__wrapper cards__container";
 
-    this.layout.meal.append(this.layout.back, this.layout.wrapper);
+    this.layout.back = backButton.render(`${button}`, Routing.MEALS);
 
     this.layout.img = document.createElement("div");
     this.layout.img.className = "meal__img";
@@ -47,7 +45,11 @@ class MealView {
     this.layout.content = document.createElement("div");
     this.layout.content.className = "meal__content";
 
-    this.layout.wrapper.append(this.layout.img, this.layout.content);
+    this.layout.wrapper.append(
+      this.layout.back,
+      this.layout.img,
+      this.layout.content
+    );
 
     this.layout.title = document.createElement("h3");
     this.layout.title.className = "meal__title title";
@@ -69,6 +71,8 @@ class MealView {
       this.layout.info,
       this.layout.tutorial
     );
+
+    this.layout.meal.append(this.layout.wrapper);
 
     root.replaceChildren(this.layout.meal);
   }
@@ -101,7 +105,7 @@ class MealView {
   }
 
   createNutrition({ calories, fat, protein, carbs }: Nutrition) {
-    const { nutrition, calorie, fats, proteins, carb } = getMealLang();
+    const { nutrition, calorie, fats, proteins, carb, gram } = getMealLang();
 
     this.layout.nutrition = document.createElement("div");
     this.layout.nutrition.className = "meal__nutrition nutrition";
@@ -119,15 +123,15 @@ class MealView {
                                     </li>
                                     <li class="nutrition__item tag tag--rounded">
                                         <span class="nutrition__icon icon icon--fats"></span>
-                                        ${fat} ${fats}
+                                        ${fat}${gram} ${fats}
                                     </li>
                                     <li class="nutrition__item tag tag--rounded">
                                         <span class="nutrition__icon icon icon--proteins"></span>
-                                        ${protein} ${proteins}
+                                        ${protein}${gram} ${proteins}
                                     </li>
                                     <li class="nutrition__item tag tag--rounded">
                                         <span class="nutrition__icon icon icon--carbs"></span>
-                                        ${carbs} ${carb}
+                                        ${carbs}${gram} ${carb}
                                     </li>`;
 
     this.layout.nutrition.append(

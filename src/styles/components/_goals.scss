@@ -22,10 +22,21 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 20px;
+		text-align: center;
+
+
+		@include media-large-laptop {
+			flex-direction: row;
+
+			>* {
+				flex-basis: 48%;
+			}
+		}
 	}
 
 	// .target__card
 	&__card {
+		flex-grow: 1;
 	}
 }
 

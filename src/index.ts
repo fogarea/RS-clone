@@ -143,6 +143,8 @@ class App {
           console.log(404);
           break;
       }
+
+      window.scrollTo(0, 0);
     };
     window.addEventListener("popstate", routeCallback);
     navigationModel.on("route.update", routeCallback);

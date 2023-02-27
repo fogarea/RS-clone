@@ -41,6 +41,10 @@ const regDictionary: Languages = {
   link: {
     ru: "Вход",
     en: "Login"
+  },
+  error: {
+    ru: "Тут что-то не так, попробуйте еще раз!",
+    en: "Something went wrong, please try again!"
   }
 };
 

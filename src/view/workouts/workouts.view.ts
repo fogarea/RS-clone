@@ -13,11 +13,10 @@ class WorkoutsView {
   createLayout(root: HTMLElement) {
     const { title } = getTrainingListLang();
     this.layout.workouts = document.createElement("section");
-    this.layout.workouts.className = "workouts";
+    this.layout.workouts.className = "workouts wrapper";
 
     this.layout.wrapper = document.createElement("div");
-    this.layout.wrapper.className =
-      "workouts__wrapper wrapper cards__container";
+    this.layout.wrapper.className = "workouts__wrapper cards__container";
 
     this.layout.title = document.createElement("h3");
     this.layout.title.className = "workouts__title title";

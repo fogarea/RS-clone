@@ -6,9 +6,13 @@ class NavigationController {
     event.preventDefault();
     if (!(event.target instanceof HTMLElement)) return;
 
-    const target = event.target.closest(".logo")
+    let target = event.target.closest(".logo")
       ? (event.target.closest(".logo") as HTMLAnchorElement)
       : (event.target as HTMLAnchorElement);
+
+    if (event.target.closest(".sign__icon")) {
+      target = event.target.closest(".sign__icon") as HTMLAnchorElement;
+    }
 
     if (!target) return;
 

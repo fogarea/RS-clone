@@ -13,10 +13,21 @@
 		display: flex;
 
 		.meditation-card__img {
-			width: 250px;
+			max-width: 250px;
+			width: 100%;
 			height: 250px;
 			background: transparent;
 			margin-right: 30px;
+		}
+
+		@media screen and (max-width: 760px) {
+			flex-direction: column;
+			align-items: center;
+			gap: 30px;
+
+			.meditation-card__img {
+				margin-right: 0;
+			}
 		}
 	}
 
@@ -26,6 +37,15 @@
 		flex-direction: column;
 		justify-content: space-evenly;
 		flex-grow: 1;
+
+		@media screen and (max-width: 760px) {
+			width: 100%;
+		}
+
+		@include media-mobile-big {
+			text-align: center;
+			gap: 10px;
+		}
 	}
 
 	&__content-wrapper {
@@ -36,6 +56,10 @@
 		@extend %block-shadowed;
 		background: var(--card-bg-color);
 		padding: 20px 25px;
+
+		@include media-mobile-big {
+			padding: 10px 15px;
+		}
 	}
 
 	// .meditation__top
@@ -48,6 +72,10 @@
 
 	// .meditation__edit-btn
 	&__edit-btn {
+		@include media-mobile-big {
+			align-self: center;
+			order: -1;
+		}
 	}
 
 	// .meditation__desc
@@ -97,6 +125,10 @@
 		align-self: flex-start;
 		flex-grow: 1;
 		gap: 10px;
+
+		@media screen and (max-width: 760px) {
+			width: 100%;
+		}
 	}
 
 	// .meditation-card__top
@@ -132,5 +164,9 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+	}
+
+	@media screen and (max-width: 760px) {
+		flex-direction: column;
 	}
 }

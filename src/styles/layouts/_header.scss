@@ -6,7 +6,6 @@
 	margin-bottom: 60px;
 
 	&__logo {
-		margin-right: 80px;
 	}
 
 	&__wrapper {
@@ -18,7 +17,6 @@
 	&__logo {
 		display: flex;
 		align-items: center;
-		height: 70px;
 	}
 
 	&__content {
@@ -32,15 +30,22 @@
 	}
 
 	&__nav {
-		flex-basis: 45%;
+		flex-basis: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
 
+	.switch-scheme {
+		margin-right: 60px;
+
+		@include media-large-laptop {
+			margin-right: 30px;
+		}
+	}
+
 	&__buttons {
 		display: flex;
-		flex-basis: 45%;
 		justify-content: flex-end;
 
 		>* {
@@ -62,5 +67,13 @@
 		@include media-mobile-big {
 			display: none;
 		}
+	}
+
+	@media	screen and (max-width: 1000px) {
+		margin-bottom: 30px;
+	}
+
+	@include media-mobile-big {
+		margin-bottom: 15px;
 	}
 }

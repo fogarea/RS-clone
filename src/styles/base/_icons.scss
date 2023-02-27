@@ -8,6 +8,10 @@
 	background-image: var(--logo);
 	@include icon-size(160px, 60px);
 	background-size: 100%;
+
+	@include media-tablet {
+		@include icon-size(130px, 45px);
+	}
 }
 
 .icon--close {
@@ -19,6 +23,18 @@
 	&:hover {
 		filter: invert(50%);
 	}
+}
+
+.icon--reg {
+	background-image: var(--reg-icon);
+	@include icon-size(32px, 32px);
+	background-size: 100%;
+}
+
+.icon--auth {
+	background-image: var(--reg-icon);
+	@include icon-size(32px, 32px);
+	background-size: 100%;
 }
 
 .icon--close-modal {
@@ -93,12 +109,6 @@
 		transform: scale(1.1);
 		cursor: pointer;
 	}
-}
-
-.icon--promo {
-	background-image: url("./../assets/svg/promo/promo.svg");
-	@include icon-size(630px, 700px);
-	background-size: 100%;
 }
 
 .icon--github {
@@ -189,6 +199,16 @@
 	}
 }
 
+.icon--button-round {
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--context-menu-icon-bg);
+}
+
 .icon-squared {
 	width: 100px;
 	height: 100px;
@@ -249,15 +269,15 @@
 
 .icon--gym {
 	background-image: url("./../assets/svg/workouts/gym.svg");
-	@include icon-size(62px, 120px);
+	@include icon-size(54px, 104px);
 	background-size: 100%;
 }
 
 .icon--beginners {
 	position: absolute;
-	left: 14px;
+	left: 17px;
 	background-image: url("./../assets/svg/workouts/beginners.svg");
-	@include icon-size(55px, 114px);
+	@include icon-size(48px, 100px);
 	background-size: 100%;
 }
 
@@ -265,7 +285,7 @@
 	position: absolute;
 	top: 10px;
 	background-image: url("./../assets/svg/workouts/abs.svg");
-	@include icon-size(109px, 74px);
+	@include icon-size(98px, 74px);
 	background-size: 100%;
 }
 
@@ -277,13 +297,13 @@
 
 .icon--equipments {
 	background-image: url("./../assets/svg/workouts/equipments.svg");
-	@include icon-size(70px, 115px);
+	@include icon-size(60px, 100px);
 	background-size: 100%;
 }
 
 .icon--fat-burning {
 	background-image: url("./../assets/svg/workouts/fat-burning.svg");
-	@include icon-size(75px, 106px);
+	@include icon-size(65px, 97px);
 	background-size: 100%;
 }
 
@@ -297,7 +317,7 @@
 
 .icon--meditation {
 	background-image: url("./../assets/svg/workouts/meditation.svg");
-	@include icon-size(75px, 91px);
+	@include icon-size(65px, 80px);
 	background-size: 100%;
 }
 
@@ -309,7 +329,7 @@
 
 .icon--no-jumping {
 	background-image: url("./../assets/svg/workouts/no-jumping.svg");
-	@include icon-size(75px, 118px);
+	@include icon-size(62px, 99px);
 	background-size: 100%;
 }
 

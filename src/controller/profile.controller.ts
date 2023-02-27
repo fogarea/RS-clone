@@ -4,6 +4,7 @@ import { state } from "../store/state";
 import authController from "./auth.controller";
 import programsController from "./programs.controller";
 import profileModel from "../model/profile.model";
+import { Training } from "types/training.types";
 
 class ProfileController {
   async createProfile(profileReq: HttpProfileRequest) {
@@ -77,9 +78,11 @@ class ProfileController {
   }
 
   get completedTrainings() {
-    return this.program?.trainings.map((training) => {
-      if (state.user.progress.finished.includes(training.id)) return training;
-    });
+    return this.program?.trainings.reduce((acc: Training[], training) => {
+      if (state.user.progress.finished.includes(training.id))
+        acc.push(training);
+      return acc;
+    }, []);
   }
 
   get isCompletedReg() {

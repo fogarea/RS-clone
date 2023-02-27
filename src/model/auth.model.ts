@@ -5,8 +5,6 @@ import EventEmitter from "utils/observer.utils";
 class AuthModel extends EventEmitter {
   updateUserState(user: User) {
     state.user = { ...user };
-
-    console.log("state", state);
   }
 
   updateLoaded() {

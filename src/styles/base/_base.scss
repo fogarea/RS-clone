@@ -11,15 +11,6 @@
   @include font(1.6rem, 2.6rem, normal);
   background: var(--primary-bg-color);
   color: var(--text-color);
-  overflow: hidden overlay;
-}
-
-::-webkit-scrollbar {
-  width: 14px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba($color-accent-dark, 0.7);
 }
 
 .body--scroll__disable {
@@ -37,6 +28,14 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 80px;
+
+  @media screen and (max-width: 1000px) {
+    margin-bottom: 40px;
+  }
+
+  @include media-mobile-big {
+    margin-bottom: 20px;
+  }
 }
 
 :root {
@@ -60,10 +59,15 @@
 
   --bordered-link-btn-color: #{$color-bordered-link-btn-dark};
   --bordered-link-btn-hover-color: #{$color-hover-colored-btn-dark};
+  --bordered-button-text-color: #{$color-bordered-btn-text-dark};
 
   --text-color: #{$color-text-dark};
   --link-text-color: #{$color-link-text-dark};
   --link-text-hover-color: #{$color-link-hover-text-dark};
+
+  --unit-text: #{$color-unit-text-dark};
+
+  --link-context-text-hover-color: #{$color-link-hover-context-text-dark};
 
   --icon--invert: invert(0%);
 
@@ -73,6 +77,8 @@
   --input-text-color: #{$color-input-text-dark};
 
   --card-bg-color: #{$color-card-bg-dark};
+
+  --popup-bg-color: #{$color-popup-bg-dark};
 
   --round-icon-bg-color: #{$color-round-bg-dark};
 
@@ -107,7 +113,15 @@
   --thumb-color: #{$color-thumb-dark};
   --track-color: #{$color-track-dark};
 
+  --reg-icon: #{$reg-icon-dark};
+
+  --context-menu: #{$color-context-bg-dark};
+  --context-menu-icon-bg: #{$color-context-icon-bg-dark};
+  --context-accent: #{$color-context-accent-dark};
+
   --rs-logo: invert(1);
+
+  --footer-opacity: 0.5;
 }
 
 .body--light {
@@ -131,10 +145,15 @@
 
   --bordered-link-btn-color: #{$color-bordered-link-btn-light};
   --bordered-link-btn-hover-color: #{$color-hover-colored-btn-light};
+  --bordered-button-text-color: #{$color-bordered-btn-text-light};
 
   --text-color: #{$color-text-light};
   --link-text-color: #{$color-link-text-light};
   --link-text-hover-color: #{$color-link-hover-text-light};
+
+  --unit-text: #{$color-unit-text-light};
+
+  --link-context-text-hover-color: #{$color-link-hover-context-text-light};
 
   --icon--invert: invert(100%);
 
@@ -144,6 +163,8 @@
   --input-text-color: #{$color-input-text-light};
 
   --card-bg-color: #{$color-card-bg-light};
+
+  --popup-bg-color: #{$color-popup-bg-light};
 
   --round-icon-bg-color: #{$color-round-bg-light};
 
@@ -178,12 +199,24 @@
   --thumb-color: #{$color-thumb-light};
   --track-color: #{$color-track-light};
 
+  --reg-icon: #{$reg-icon-light};
+
+  --context-menu: #{$color-context-bg-light};
+  --context-menu-icon-bg: #{$color-context-icon-bg-light};
+  --context-accent: #{$color-context-accent-light};
+
   --rs-logo: invert(0);
+
+  --footer-opacity: 0.7;
 }
 
 h1 {
   font-family: $font-family-primary;
   @include font(7.4rem, 9.4rem);
+
+  @include media-tablet {
+    @include font(5.4rem, 8.4rem);
+  }
   @include media-mobile-big {
     @include font(3.2rem, 4.2rem);
   }
@@ -191,6 +224,11 @@ h1 {
 
 h2 {
   @include font(5.7rem, 6.6rem);
+
+  @include media-tablet {
+    @include font(4.7rem, 5.6rem);
+  }
+
   @include media-mobile-big {
     @include font(2.4rem, 3.3rem);
   }

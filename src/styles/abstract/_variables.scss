@@ -1,25 +1,37 @@
-$color-light: #fcfcff;
+$color-light: #fafafa;
 
 $color-overlay: rgba(80, 80, 80, 0.4);
 $font-family-primary: "Montserrat", sans-serif;
 
 $width-container: 1260px;
 
+$large-laptop-width: 1150px;
 $tablet-width: 768px;
-$mobile-big-width: 414px;
+$mobile-big-width: 425px;
+$mobile-large-width: 350px;
 $mobile-small-width: 320px;
 
 $color-primary-light: #7079fe;
 $color-primary-dark: #454550;
 
 $color-accent-light: #7079fe;
-$color-accent-dark: #ba8ca4;
+$color-accent-dark: #8388cf;
 
-$color-primary-bg-light: linear-gradient(274.42deg, #92A3FD 0%, #9DCEFF 124.45%);
+$color-primary-bg-light: linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%);
 $color-primary-bg-dark: #2a2e3d;
 
 $color-modal-bg-light: #f6f4f7;
 $color-modal-bg-dark: #2a2e3d;
+
+$color-context-icon-bg-light: #b0c5fd;
+$color-context-icon-bg-dark: #494c59;
+
+$color-context-bg-light: #f6f4f7;
+$color-context-bg-dark: rgba(248, 249, 250, 0.15);
+
+$color-context-accent-light: #f6f4f7;
+$color-context-accent-dark: #484b58;
+
 
 $color-secondary-bg-light: #f6f4f7;
 $color-secondary-bg-dark: rgba(248, 249, 250, 0.15);
@@ -34,7 +46,10 @@ $color-bordered-btn-light: #fcfcff;
 $color-bordered-btn-dark: #fcfcff;
 
 $color-colored-btn-light: linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%);
-$color-colored-btn-dark: #ba8ca4;
+$color-colored-btn-dark: #8388cf;
+
+$color-bordered-btn-text-light: linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%);
+$color-bordered-btn-text-dark: #fafafa;
 
 $color-hover-colored-btn-light: #92a3fd;
 $color-hover-colored-btn-dark: #ac8da8d4;
@@ -48,6 +63,9 @@ $color-link-text-dark: #fcfcff;
 $color-link-hover-text-light: #fcfcffcc;
 $color-link-hover-text-dark: #7f7f89;
 
+$color-link-hover-context-text-light: #7079fe;
+$color-link-hover-context-text-dark: #7f7f89;
+
 $color-input-bordered-light: #ddd;
 $color-input-bordered-dark: #fcfcff;
 
@@ -57,8 +75,14 @@ $color-input-bg-dark: #f7f8f8;
 $color-input-text-light: #2f281e;
 $color-input-text-dark: #2f281e;
 
+$color-unit-text-light: linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%);;
+$color-unit-text-dark: #989de1;
+
 $color-card-bg-light: #fbfbfc;
 $color-card-bg-dark: rgb(248 249 250 / 15%);
+
+$color-popup-bg-light: #fbfbfc;
+$color-popup-bg-dark: rgb(73 76 89);
 
 $color-round-bg-light: #f8f9fa;
 $color-round-bg-dark: rgb(248 249 250 / 15%);
@@ -68,7 +92,7 @@ $color-bordered-link-btn-light: linear-gradient(274.42deg, #fbfbfc 0%, #fbfbfc 1
 $color-bordered-link-btn-dark: linear-gradient(274.42deg,  rgb(248 249 250 / 15%) 0%,  rgb(248 249 250 / 15%) 124.45%) padding-box, linear-gradient(274.42deg,  rgb(248 249 250 / 15%) 0%,  rgb(248 249 250 / 15%) 124.45%) border-box;
 
 $color-hover-colored-btn-light: linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%) padding-box, linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%) border-box;
-$color-hover-colored-btn-dark: #ba8ca4;
+$color-hover-colored-btn-dark: #8388cf;
 
 $color-tag-bg-light: #f2f2f2a6;
 $color-tag-bg-dark: rgb(248 249 250 / 15%);
@@ -126,3 +150,6 @@ $heart-icon-hover-dark: url("./../assets/svg/player/heart-hover-dark.svg");
 
 $youtube-icon-light: url("./../assets/svg/player/youtube-light.svg");
 $youtube-icon-dark: url("./../assets/svg/player/youtube-dark.svg");
+
+$reg-icon-light: url("./../assets/svg/navigation/reg-light.svg");
+$reg-icon-dark: url("./../assets/svg/navigation/reg-dark.svg");

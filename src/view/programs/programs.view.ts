@@ -35,7 +35,7 @@ class ProgramsView {
     this.layout.desc.innerText = `${subtitle}`;
 
     this.layout.content = document.createElement("div");
-    this.layout.content.className = "trainings__content layout-3-columns";
+    this.layout.content.className = "trainings__content";
 
     this.layout.section.append(this.layout.wrapper);
     this.layout.wrapper.append(

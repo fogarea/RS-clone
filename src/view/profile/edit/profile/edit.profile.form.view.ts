@@ -25,7 +25,7 @@ class EditProfileFormView {
 
     phoneFieldView.init(root, `${phonePlace}`, phone);
 
-    submitButtonView.render(root, `${btn}`);
+    return submitButtonView.render(root, `${btn}`);
   }
 }
 

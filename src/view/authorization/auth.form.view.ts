@@ -1,7 +1,7 @@
 import emailFieldView from "../components/form/email.field.view";
 import passwordFieldView from "../components/form/password.field.view";
 import submitButtonView from "../components/form/submit.button.view";
-import { getAuthLang } from "../../lang/auth.lang";
+import { getAuthLang } from "lang/auth.lang";
 
 class AuthFormView {
   render(root: HTMLElement) {
@@ -9,7 +9,7 @@ class AuthFormView {
 
     emailFieldView.init(root, "auth-email", `${email}`);
     passwordFieldView.init(root, "auth-password", `${password}`);
-    submitButtonView.render(root, `${btn}`);
+    return submitButtonView.render(root, `${btn}`);
   }
 }
 

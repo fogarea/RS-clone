@@ -25,6 +25,9 @@ class TrainingView {
     const userTraining = profileController.getTraining(this.trainingId);
     if (!userTraining) return;
 
+    this.layout.training = document.createElement("section");
+    this.layout.training.className = "t-training wrapper";
+
     this.layout.wrapper = document.createElement("div");
     this.layout.wrapper.className =
       "wrapper t-training__wrapper cards__container";
@@ -66,7 +69,9 @@ class TrainingView {
 
     this.layout.wrapper.append(this.layout.back, this.layout.content);
 
-    root.replaceChildren(this.layout.wrapper);
+    this.layout.training.append(this.layout.wrapper);
+
+    root.replaceChildren(this.layout.training);
   }
 
   renderBackButton() {

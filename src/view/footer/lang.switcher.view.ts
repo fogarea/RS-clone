@@ -3,11 +3,11 @@ import { getSwitcherLang } from "lang/footer/switcher.lang";
 
 class LangSwitcherView {
   render(root: HTMLElement) {
-    const { optionRu, optionEn } = getSwitcherLang();
+    const { title, optionRu, optionEn } = getSwitcherLang();
 
     const text = document.createElement("p");
     text.className = "select-lang__text";
-    text.innerText = `${"Select language"}`;
+    text.innerText = `${title}`;
 
     const select = document.createElement("select");
     select.className = "select-lang";

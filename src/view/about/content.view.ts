@@ -1,9 +1,9 @@
 import { getAboutLang } from "../../lang/about.lang";
 
 const images = [
-  require("../../assets/img/team/ilya.jpeg") as string,
-  require("../../assets/img/team/kostya.png") as string,
-  require("../../assets/img/team/nataliya.jpeg") as string
+  require("../../assets/img/team/ilya.jpg") as string,
+  require("../../assets/img/team/kostya.jpg") as string,
+  require("../../assets/img/team/nataliya.jpg") as string
 ];
 
 const links = [

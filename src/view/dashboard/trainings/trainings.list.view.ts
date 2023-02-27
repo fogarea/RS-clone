@@ -13,8 +13,14 @@ class TrainingsListView {
   layout = {} as Layout;
 
   init(root: HTMLElement, completed?: string) {
-    this.createLayout(root, completed);
-    completed ? this.renderCompletedTrainings() : this.renderActiveTrainings();
+    const trainings = completed
+      ? profileController.completedTrainings
+      : profileController.program?.trainings;
+
+    if (trainings?.length) {
+      this.createLayout(root, completed);
+      this.renderTrainings(trainings);
+    }
   }
 
   createLayout(root: HTMLElement, completed?: string) {
@@ -38,44 +44,19 @@ class TrainingsListView {
     root.replaceChildren(this.layout.wrapper);
   }
 
-  renderActiveTrainings() {
-    const activeTrainings = profileController.program?.trainings;
+  renderTrainings(trainings: Training[]) {
+    const { btn } = getTrainingCardLang();
 
-    if (activeTrainings) {
-      const { btn } = getTrainingCardLang();
+    trainings.forEach((training: Training) => {
+      const route =
+        navigationModel.createRoute(Routing.WORKOUT) + "/" + training.id;
 
-      activeTrainings.forEach((training: Training) => {
-        const route =
-          navigationModel.createRoute(Routing.WORKOUT) + "/" + training.id;
-
-        trainingCartView.render(this.layout.content, training, {
-          text: `${btn}`,
-          classes: "button--rounded",
-          callback: () => navigationController.applyRoute(route)
-        });
+      trainingCartView.render(this.layout.content, training, {
+        text: `${btn}`,
+        classes: "button--rounded",
+        callback: () => navigationController.applyRoute(route)
       });
-    }
-  }
-
-  renderCompletedTrainings() {
-    const completedTrainings = profileController.completedTrainings;
-
-    if (completedTrainings) {
-      const { btn } = getTrainingCardLang();
-
-      completedTrainings.forEach((training) => {
-        if (training) {
-          const route =
-            navigationModel.createRoute(Routing.WORKOUT) + "/" + training.id;
-
-          trainingCartView.render(this.layout.content, training, {
-            text: `${btn}`,
-            classes: "button--rounded",
-            callback: () => navigationController.applyRoute(route)
-          });
-        }
-      });
-    }
+    });
   }
 }
 

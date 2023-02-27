@@ -45,7 +45,10 @@ class BurgerMenuView {
     });
 
     wrapper.addEventListener("click", (e: Event) => {
-      if (e.target instanceof HTMLElement && e.target.tagName === "A") {
+      if (
+        e.target instanceof HTMLElement &&
+        (e.target.tagName === "A" || e.target.closest(".sign__icon"))
+      ) {
         handleNavButtonClick();
       }
     });

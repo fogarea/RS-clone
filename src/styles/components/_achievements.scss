@@ -20,5 +20,43 @@
 
 	// .achievements__item
 	&__item {
+		position: relative;
+	}
+
+	&__desc {
+		display: none;
+		background: var(--primary-bg-color);
+		padding: 20px;
+		border-radius: 10px;
+		color: #fafafa;
+	}
+
+	&__desc:before {
+		content: "";
+		position: absolute;
+		top: -28px;
+		left: 50px;
+		border: 22px solid transparent;
+		border-bottom: 27px solid var(--primary-bg-color);
+	}
+
+	&__item:hover &__desc {
+		position: absolute;
+		z-index: 10;
+		top: 95px;
+		left: -30px;
+		width: 230px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+
+		@include media-tablet {
+			width: 180px;
+		}
+
+		@include media-mobile-big {
+			width: 150px;
+		}
 	}
 }

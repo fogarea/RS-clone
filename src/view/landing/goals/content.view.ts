@@ -1,10 +1,10 @@
-import { getGoalsLang } from "../../../lang/landing/goals.lang";
+import { getGoalsLang } from "lang/landing/goals.lang";
 
 const images = [
-  require("../../../assets/svg/promo/promo2.svg") as string,
-  require("../../../assets/svg/promo/promo3.svg") as string,
-  require("../../../assets/svg/promo/promo4.svg") as string,
-  require("../../../assets/svg/promo/promo5.svg") as string
+  require("../../../assets/img/landing/promo2.png") as string,
+  require("../../../assets/img/landing/promo3.png") as string,
+  require("../../../assets/img/landing/promo4.png") as string,
+  require("../../../assets/img/landing/promo5.png") as string
 ];
 
 class GoalsContentView {

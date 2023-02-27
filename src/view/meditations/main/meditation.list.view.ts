@@ -6,7 +6,7 @@ import { Routing } from "types/route.types";
 import navigationController from "controller/navigation.controller";
 import { Layout } from "types/layout.types";
 import meditationCardView from "../../components/meditation.card.view";
-import loading from "utils/loading";
+import modalDialogView from "../../components/modal/modal.dialog.view";
 
 class MeditationsListView {
   layout = {} as Layout;
@@ -18,7 +18,7 @@ class MeditationsListView {
   }
 
   renderItems(root: HTMLElement) {
-    const { nothing, open } = getMeditationsLang();
+    const { nothing, open, confirm } = getMeditationsLang();
 
     this.layout.empty = document.createElement("p");
     this.layout.empty.textContent = `${nothing}`;
@@ -44,8 +44,10 @@ class MeditationsListView {
           text: "",
           classes: "button__icon icon icon--delete",
           callback: async () => {
-            loading.on(document.querySelector(".icon--delete"), false);
-            await meditationController.delete(meditation);
+            modalDialogView.buildModalDialog(`${confirm}`, async () => {
+              await meditationController.delete(meditation);
+              modalDialogView.removeModal();
+            });
           }
         }
       ]);

@@ -17,16 +17,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	//min-height: 400px;
 	max-height: 90%;
+	margin: 5px;
 	border-radius: 10px;
 	overflow: auto;
-	//background: var(--secondary-bg-color);
 	background: var(--modal-bg-color);
-
-	.cards__container {
-
-	}
 }
 
 .modal__close-icon {
@@ -42,7 +37,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	//padding: 50px;
+	max-width: 90%;
+	width: 100%;
 }
 
 .modal__dialog {
@@ -64,12 +60,49 @@
 		display: flex;
 		justify-content: space-around;
 	}
+
+	&__button {
+		margin-top: 10px;
+		text-align: center;
+		border-color: #8388cf;
+		background: transparent;
+
+		span {
+			text-decoration: none;
+			background: var(--colored-btn-color);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		&:hover span{
+			background: $color-light;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	}
+}
+
+.body--light {
+	.dialog__button {
+		background: linear-gradient(274.42deg, #f6f4f7 0%, #f6f4f7 124.45%) padding-box, linear-gradient(274.42deg, #92a3fd 0%, #9dceff 124.45%) border-box;
+		border: 1px solid transparent;
+
+		&:hover {
+			background: var(--bordered-link-btn-hover-color);
+		}
+	}
+}
+
+.modal__dialog {
+	.loading {
+		padding: 10px 0;
+	}
 }
 
 .modal__create {
 	display: flex;
 	flex-direction: column;
-	width: 60vw;
+	//width: 60vw;
 
 	.form {
 		padding-top: 20px;
@@ -79,7 +112,10 @@
 	.form__content {
 		background: transparent;
 		box-shadow: none;
-		//width: 40vw;
+
+		@include media-tablet {
+			padding: 0;
+		}
 	}
 
 	.image-fields__label {

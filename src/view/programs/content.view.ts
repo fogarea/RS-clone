@@ -1,6 +1,6 @@
 import { state } from "store/state";
 import programCartView from "../components/program.cart.view";
-import { getProgramsAuthLang } from "../../lang/programs/programs.auth.lang";
+import { getProgramsAuthLang } from "lang/programs/programs.auth.lang";
 
 class ProgramsContentView {
   render(root: HTMLElement) {

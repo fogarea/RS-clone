@@ -6,6 +6,7 @@ import { ModalWindow } from "../components/modal/modal.view";
 import formDataView from "../components/form.data.view";
 import submitButtonView from "../components/form/submit.button.view";
 import { getUpdateGoalsLang } from "lang/dashboard/udate.goals.lang";
+import loading from "../../utils/loading";
 
 class UpdateGoalsView {
   layout = {} as Layout;
@@ -47,7 +48,10 @@ class UpdateGoalsView {
       `${water}`
     );
 
-    submitButtonView.render(this.layout.formFields, `${btn}`);
+    this.layout.submit = submitButtonView.render(
+      this.layout.formFields,
+      `${btn}`
+    );
   }
 
   addHandler(modal: ModalWindow) {
@@ -59,6 +63,8 @@ class UpdateGoalsView {
 
       if (e.target instanceof HTMLFormElement) {
         const form = e.target;
+
+        loading.on(this.layout.submit);
 
         const formData = Object.fromEntries(new FormData(form).entries());
 

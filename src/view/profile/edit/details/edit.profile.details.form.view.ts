@@ -41,7 +41,7 @@ class EditProfileDetailsFormView {
       `${height}`
     );
 
-    submitButtonView.render(root, `${btn}`);
+    return submitButtonView.render(root, `${btn}`);
   }
 }
 

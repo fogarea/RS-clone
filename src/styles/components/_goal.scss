@@ -27,11 +27,21 @@
 
 	// .goal__img
 	&__img {
+		max-width: 400px;
 		>* {
-			max-width: 400px;
 			width: 100%;
+			height: auto;
 			background-size: 100%;
+			object-fit: contain;
 			background-repeat: no-repeat;
+		}
+
+		@include media-tablet {
+			//max-width: 350px;
+		}
+
+		@include media-tablet {
+			max-width: 250px;
 		}
 	}
 
@@ -39,6 +49,14 @@
 	&__content {
 		max-width: 550px;
 		text-align: center;
+
+		@media screen and (max-width: 1090px) {
+			max-width: 450px;
+		}
+
+		@include media-tablet {
+			max-width: 550px;
+		}
 	}
 
 	// .goal__title
@@ -49,9 +67,22 @@
 	// .goal__text
 	&__text {
 		@include font(2.5rem, 4.6rem, 300);
+
+		@include media-mobile-big {
+			@include font(2rem, 3.6rem, 300);
+		}
+	}
+
+	@include media-tablet {
+		flex-direction: column;
+		gap: 20px;
 	}
 }
 
 .order {
 	order: -1;
+
+	@include media-tablet {
+		order: 0;
+	}
 }

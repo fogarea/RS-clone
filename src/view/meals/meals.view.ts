@@ -12,7 +12,7 @@ class MealsView {
 
   createLayout(root: HTMLElement) {
     this.layout.mealsWrapper = document.createElement("div");
-    this.layout.mealsWrapper.className = "meals-wrapper";
+    this.layout.mealsWrapper.className = "meals__wrapper wrapper";
 
     root.replaceChildren(this.layout.mealsWrapper);
   }

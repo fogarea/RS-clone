@@ -1,11 +1,11 @@
 import { Layout } from "types/layout.types";
 import authFormView from "./auth.form.view";
 import redirectRegView from "./redirect.reg.view";
-import { HttpLoginRequest } from "types/http.request.types";
 import authController from "../../controller/auth.controller";
-import { getAuthLang } from "../../lang/auth.lang";
+import { getAuthLang } from "lang/auth.lang";
 import formDataView from "../components/form.data.view";
 import loading from "utils/loading";
+import popup from "../components/modal/popup";
 
 class AuthView {
   layout = {} as Layout;
@@ -25,7 +25,7 @@ class AuthView {
   }
 
   render() {
-    authFormView.render(this.layout.formFields);
+    this.layout.submit = authFormView.render(this.layout.formFields);
     redirectRegView.init(this.layout.redirect);
   }
 
@@ -38,23 +38,19 @@ class AuthView {
 
       if (e.target instanceof HTMLFormElement) {
         const form = e.target;
-        const submit = form.querySelector('[type="submit"]') as HTMLElement;
         const formData = Object.fromEntries(new FormData(form).entries());
 
-        const request: HttpLoginRequest = {
+        loading.on(this.layout.submit);
+
+        const auth = await authController.login({
           email: `${formData.email}`,
           password: `${formData.password}`
-        };
-
-        loading.on(submit);
-
-        const auth = await authController.login(request);
+        });
 
         if (auth.error) {
-          alert(
-            `error: ${auth.error}\nmessage: ${auth.message}\ncode: ${auth.code}`
-          );
-          loading.off(submit);
+          const { error } = getAuthLang();
+          popup.buildPopup(`${error}`);
+          loading.off(this.layout.submit);
           return;
         }
 
