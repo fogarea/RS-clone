@@ -43,11 +43,15 @@ class App {
     lang.init();
 
     preloaderUtils.init(root);
-    await programsController.getAll();
-    await mealsController.getAll();
-    await meditationController.getTracks();
+
+    await Promise.allSettled([
+      programsController.getAll(),
+      mealsController.getAll(),
+      meditationController.getTracks(),
+      authController.autoLogin()
+    ]);
+
     this.createLayout(root);
-    await authController.autoLogin();
 
     authController.updateLoaded();
 

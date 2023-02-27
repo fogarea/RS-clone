@@ -24,8 +24,10 @@ class FooterView {
 
       loading.globalOn(document.querySelector(".main"));
 
-      await programsController.getAll();
-      await mealsController.getAll();
+      await Promise.allSettled([
+        programsController.getAll(),
+        mealsController.getAll()
+      ]);
 
       loading.globalOff();
 
