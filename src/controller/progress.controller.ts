@@ -24,6 +24,8 @@ class ProgressController {
     progressModel.update(progress);
 
     await progressService.update(this.createHttpProgress(progress));
+
+    await this.updateCaloriesAchievement();
   }
 
   private createHttpProgress(progress: Progress): HttpProgressRequest {
@@ -60,6 +62,13 @@ class ProgressController {
   async updateProgressAchievement() {
     await achievementsController.updateAchievements(
       "dumbbells" as keyof Achievements,
+      true
+    );
+  }
+
+  async updateCaloriesAchievement() {
+    await achievementsController.updateAchievements(
+      "fire" as keyof Achievements,
       true
     );
   }

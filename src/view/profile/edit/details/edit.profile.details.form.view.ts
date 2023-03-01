@@ -1,9 +1,10 @@
 import dateFieldView from "../../../components/form/date.field.view";
 import selectFieldView from "../../../components/form/select.field.view";
-import numberFieldView from "../../../components/form/number.field.view";
 import submitButtonView from "../../../components/form/submit.button.view";
 import { getCompleteLang } from "lang/reg/complete.lang";
 import { state } from "../../../../store/state";
+import weightFieldView from "../../../components/form/weight.field.view";
+import heightFieldView from "../../../components/form/height.field.view";
 
 class EditProfileDetailsFormView {
   render(root: HTMLElement) {
@@ -23,7 +24,7 @@ class EditProfileDetailsFormView {
 
     dateFieldView.init(root, `${birthdayPlace}`, birthday.substring(0, 10));
 
-    numberFieldView.init(
+    weightFieldView.init(
       root,
       "weight",
       "icon--weight",
@@ -32,7 +33,7 @@ class EditProfileDetailsFormView {
       `${weight}`
     );
 
-    numberFieldView.init(
+    heightFieldView.init(
       root,
       "height",
       "icon--height",

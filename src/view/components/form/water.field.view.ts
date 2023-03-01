@@ -1,6 +1,6 @@
 import { InputField } from "./input.field";
 
-class NumberFieldView extends InputField {
+class WaterFieldView extends InputField {
   init(
     root: HTMLElement,
     id: string,
@@ -18,7 +18,7 @@ class NumberFieldView extends InputField {
 
             const val = e.target.value;
 
-            parseInt(val) > 30 && val.length < 4
+            parseInt(val) > 0 && val.length < 5
               ? this.addCorrectMessage(e.target)
               : this.addErrorMessage(e.target);
           }
@@ -40,4 +40,4 @@ class NumberFieldView extends InputField {
   }
 }
 
-export default new NumberFieldView();
+export default new WaterFieldView();

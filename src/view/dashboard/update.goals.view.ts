@@ -1,5 +1,4 @@
 import { Layout } from "types/layout.types";
-import numberFieldView from "../components/form/number.field.view";
 import { state } from "../../store/state";
 import goalsController from "../../controller/goals.controller";
 import { ModalWindow } from "../components/modal/modal.view";
@@ -7,6 +6,8 @@ import formDataView from "../components/form.data.view";
 import submitButtonView from "../components/form/submit.button.view";
 import { getUpdateGoalsLang } from "lang/dashboard/udate.goals.lang";
 import loading from "../../utils/loading";
+import stepsFieldView from "../components/form/steps.field.view";
+import waterFieldView from "../components/form/water.field.view";
 
 class UpdateGoalsView {
   layout = {} as Layout;
@@ -30,7 +31,7 @@ class UpdateGoalsView {
     const { btn } = getUpdateGoalsLang();
 
     const { steps, water } = state.user.goals;
-    numberFieldView.init(
+    stepsFieldView.init(
       this.layout.formFields,
       "steps",
       "icon icon--steps",
@@ -39,7 +40,7 @@ class UpdateGoalsView {
       `${steps}`
     );
 
-    numberFieldView.init(
+    waterFieldView.init(
       this.layout.formFields,
       "water",
       "icon icon--water",
