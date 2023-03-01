@@ -61,7 +61,9 @@ class SelectFieldView extends InputField {
           break;
       }
 
-      if (value && text.toLowerCase() === value) option.selected = true;
+      if (value && option.value === value) {
+        option.selected = true;
+      }
 
       select.append(option);
     });
