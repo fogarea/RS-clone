@@ -1,8 +1,11 @@
 <p align="center">
   <a href="https://github.com/fogarea/graphiql-app">
-  <img src="https://raw.githubusercontent.com/fogarea/RS-clone/10631e67a75c56f166f718b8090c7b28e06ca8f6/src/assets/svg/logo/logo-light.svg" alt="Fitness X" width="247" height="120">
+  <img src="https://raw.githubusercontent.com/fogarea/RS-clone/10631e67a75c56f166f718b8090c7b28e06ca8f6/src/assets/svg/logo/logo-light.svg" alt="FitnessX" width="247" height="120">
   </a>
 </p>
+
+![FitnestX](https://github.com/fogarea/RS-clone/assets/68968769/5dd636ee-c6e1-484e-9bf6-22b28bfe4f22)
+
 
 ## Description
 FitnestX is an application that combine workout app, meals recipes and playlists for meditations in one so that users will no longer need to use separate apps to keep.
@@ -28,7 +31,7 @@ $ git clone https://github.com/fogarea/RS-clone.git
 $ cd RS-clone
 
 # Install the dependencies
-$ npm install --force
+$ npm install
 
 # Start the development server
 $ npm run start
